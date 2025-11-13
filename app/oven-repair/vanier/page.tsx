@@ -111,11 +111,11 @@ export default function OvenRepairVanierPage() {
             <h2 className="heading-md mb-6 text-center">Oven Installation in Vanier</h2>
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p className="text-center mb-6">
-                Looking for oven installation in Vanier? Before making the switch, read our repair vs. 
+                Looking for oven installation in Vanier? Before making the switch, read our repair vs.
                 replace guide — it compares repair costs and replacement value.
               </p>
               <p className="text-center">
-                Already bought one? We provide oven installation in Vanier. We'll connect, level, and 
+                Already bought one? We provide oven installation in Vanier. We'll connect, level, and
                 test it using your existing electrical setup.
               </p>
               <p className="text-center text-sm text-gray-600">
@@ -215,9 +215,9 @@ export default function OvenRepairVanierPage() {
               </li>
             </ul>
             <p className="text-gray-700">
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-600 hover:text-primary-700 underline"
               >
@@ -252,7 +252,7 @@ export default function OvenRepairVanierPage() {
         </div>
       </section>
 
-      {/* Other Services */}
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Stittsville – Local Experts You Can Trust | Fixer",
@@ -110,11 +111,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Stittsville", href: "/washer-repair/stittsville" },
   { name: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
-  { name: "Fridge Repair Stittsville", href: "/fridge-repair" },
-  { name: "Freezer Repair Stittsville", href: "/freezer-repair" },
-  { name: "Oven Repair Stittsville", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Stittsville", href: "/cooktop-repair" },
-  { name: "Microwave Repair Stittsville", href: "/microwave-repair" },
+  { name: "Fridge Repair Stittsville", href: "/fridge-repair/stittsville" },
+  { name: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
+  { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
+  { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
+  { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
   { name: "Dishwasher Installation Stittsville", href: "/dishwasher-installation" },
 ];
 
@@ -189,22 +190,7 @@ export default function DishwasherRepairStittsvillePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">

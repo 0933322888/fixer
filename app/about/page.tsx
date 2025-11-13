@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Fixer Appliance Repair Inc. – Ottawa Appliance Experts",
-  description: "Family-owned Ottawa appliance repair by Michael Russky – 15+ years of trusted service, friendly approach, and a 90-day guarantee.",
+  description: "Family-owned Ottawa appliance repair by Michael R. – 15+ years of trusted service, friendly approach, and a 90-day guarantee.",
 };
 
 const whatMakesUsDifferent = [
@@ -31,14 +31,16 @@ const serviceAreas = [
 ];
 
 const brands = [
-  "LG",
-  "Samsung",
-  "Whirlpool",
-  "GE",
   "Bosch",
   "Frigidaire",
+  "GE",
+  "Kenmore",
+  "LG",
   "Maytag",
-  "KitchenAid",
+  "Panasonic",
+  "Samsung",
+  "Whirlpool",
+  "Electrolux",
 ];
 
 export default function AboutPage() {
@@ -62,7 +64,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
               <p>
-                <strong>Fixer Appliance Repair Inc.</strong> is a family-owned business proudly serving Ottawa and the surrounding communities. Led by owner and head technician <strong>Michael Russky</strong>, we bring over 15 years of hands-on experience in appliance repair and installation of all major household appliances.
+                <strong>Fixer Appliance Repair Inc.</strong> is a family-owned business proudly serving Ottawa and the surrounding communities. Led by owner and head technician <strong>Michael R.</strong>, we bring over 15 years of hands-on experience in appliance repair and installation of all major household appliances.
               </p>
               <p>
                 Michael is well-known among our customers — not only for his technical skills, but also for his friendly approach and dedication to doing the job right the first time. Many clients recognize him instantly from past visits, which is why we proudly feature his photo here on our website.
@@ -80,14 +82,14 @@ export default function AboutPage() {
               <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
                 <Image
                   src="/gallery/output2.jpg"
-                  alt="Michael Russky - Owner & Head Technician at Fixer Appliance Repair"
+                  alt="Michael R. - Owner & Head Technician at Fixer Appliance Repair"
                   fill
                   style={{ objectFit: 'cover' }}
                   quality={85}
                 />
               </div>
               <p className="text-center text-gray-600 italic">
-                Michael Russky - Owner & Head Technician
+                Michael R - Owner & Head Technician
               </p>
             </div>
           </div>
@@ -134,14 +136,18 @@ export default function AboutPage() {
               We proudly serve Ottawa and nearby communities, including:
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {serviceAreas.map((area, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg font-medium"
-                >
-                  {area}
-                </span>
-              ))}
+              {serviceAreas.map((area, index) => {
+                const slug = area.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link
+                    key={index}
+                    href={`/service-areas/${slug}`}
+                    className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg font-medium hover:bg-primary-100 hover:text-primary-700 transition-colors"
+                  >
+                    {area}
+                  </Link>
+                );
+              })}
               <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg font-medium">
                 and more
               </span>
@@ -154,22 +160,26 @@ export default function AboutPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Brands We Service</h2>
+            <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands We Service</Link></h2>
             <p className="text-center text-gray-700 text-lg mb-8">
               We work with all major appliance brands, including:
             </p>
             <div className="flex flex-wrap justify-center gap-3 mb-6">
-              {brands.map((brand, index) => (
-                <span
-                  key={index}
-                  className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold shadow-sm"
-                >
-                  {brand}
-                </span>
-              ))}
+              {brands.map((brand, index) => {
+                const slug = brand.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link
+                    key={index}
+                    href={`/brands/${slug}`}
+                    className="px-6 py-3 bg-white text-gray-900 rounded-lg font-semibold shadow-sm hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                  >
+                    {brand}
+                  </Link>
+                );
+              })}
             </div>
             <p className="text-center text-gray-700">
-              and others
+              KitchenAid, and others
             </p>
           </div>
         </div>
@@ -183,7 +193,7 @@ export default function AboutPage() {
             <blockquote className="text-xl italic leading-relaxed mb-6">
               "My goal is simple — to fix your appliance quickly, properly, and with respect for your home. Every repair is personal to me, and I want every customer to feel confident they've made the right choice."
             </blockquote>
-            <p className="text-lg font-semibold">— Michael Russky</p>
+            <p className="text-lg font-semibold">— Michael</p>
           </div>
         </div>
       </section>

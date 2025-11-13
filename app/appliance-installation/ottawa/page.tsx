@@ -10,16 +10,16 @@ export const metadata: Metadata = {
 };
 
 const serviceAreas = [
-  { install: "Appliance Installation Kanata", hrefInstall: "/appliance-installation/kanata", repair: "Kanata Appliance Repair", hrefRepair: "/kanata" },
-  { install: "Appliance Installation Stittsville", hrefInstall: "/appliance-installation/stittsville", repair: "Stittsville Appliance Repair", hrefRepair: "/stittsville" },
-  { install: "Appliance Installation Nepean", hrefInstall: "/appliance-installation/nepean", repair: "Nepean Appliance Repair", hrefRepair: "/nepean" },
-  { install: "Carp Installation", hrefInstall: "/appliance-installation/carp", repair: "Carp Appliance Repair", hrefRepair: "/carp" },
-  { install: "Orleans Installation", hrefInstall: "/appliance-installation/orleans", repair: "Orleans Appliance Repair", hrefRepair: "/orleans" },
-  { install: "Barrhaven Installation", hrefInstall: "/appliance-installation/barrhaven", repair: "Barrhaven Appliance Repair", hrefRepair: "/barrhaven" },
-  { install: "Vanier Installation", hrefInstall: "/appliance-installation/vanier", repair: "Vanier Appliance Repair", hrefRepair: "/vanier" },
-  { install: "Arnprior Installation", hrefInstall: "/appliance-installation/arnprior", repair: "Arnprior Appliance Repair", hrefRepair: "/arnprior" },
-  { install: "Carleton Place Installation", hrefInstall: "/appliance-installation/carleton-place", repair: "Carleton Place Appliance Repair", hrefRepair: "/carleton-place" },
-  { install: "Mississippi Mills Installation", hrefInstall: "/appliance-installation/mississippi-mills", repair: "Mississippi Mills Appliance Repair", hrefRepair: "/mississippi-mills" },
+  { install: "Appliance Installation Kanata", hrefInstall: "/appliance-installation/kanata", repair: "Kanata Appliance Repair", hrefRepair: "/service-areas/kanata" },
+  { install: "Appliance Installation Stittsville", hrefInstall: "/appliance-installation/stittsville", repair: "Stittsville Appliance Repair", hrefRepair: "/service-areas/stittsville" },
+  { install: "Appliance Installation Nepean", hrefInstall: "/appliance-installation/nepean", repair: "Nepean Appliance Repair", hrefRepair: "/service-areas/nepean" },
+  { install: "Carp Installation", hrefInstall: "/appliance-installation/carp", repair: "Carp Appliance Repair", hrefRepair: "/service-areas/carp" },
+  { install: "Orleans Installation", hrefInstall: "/appliance-installation/orleans", repair: "Orleans Appliance Repair", hrefRepair: "/service-areas/orleans" },
+  { install: "Barrhaven Installation", hrefInstall: "/appliance-installation/barrhaven", repair: "Barrhaven Appliance Repair", hrefRepair: "/service-areas/barrhaven" },
+  { install: "Vanier Installation", hrefInstall: "/appliance-installation/vanier", repair: "Vanier Appliance Repair", hrefRepair: "/service-areas/vanier" },
+  { install: "Arnprior Installation", hrefInstall: "/appliance-installation/arnprior", repair: "Arnprior Appliance Repair", hrefRepair: "/service-areas/arnprior" },
+  { install: "Carleton Place Installation", hrefInstall: "/appliance-installation/carleton-place", repair: "Carleton Place Appliance Repair", hrefRepair: "/service-areas/carleton-place" },
+  { install: "Mississippi Mills Installation", hrefInstall: "/appliance-installation/mississippi-mills", repair: "Mississippi Mills Appliance Repair", hrefRepair: "/service-areas/mississippi-mills" },
 ];
 
 const appliances = [
@@ -75,23 +75,26 @@ export default function InstallationServicesPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-6">Our Service Areas</h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <h2 className="heading-md text-center mb-4">Our Service Areas</h2>
+            <p className="text-center text-lg text-neutral-600 mb-8 max-w-3xl mx-auto">
               We provide appliance installation and repair services across Ottawa and nearby suburbs, including:
             </p>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {serviceAreas.map((area) => (
-                <div key={area.install} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <Link href={area.hrefInstall} className="text-primary-600 font-semibold hover:underline">
+                <div key={area.install} className="bg-white border text-center border-light-200 rounded-lg p-5 hover:border-primary-400 hover:shadow-md transition-all group">
+                  <div className="flex flex-col gap-3 text-center">
+                    <Link href={area.hrefInstall} className="text-primary-600 font-semibold hover:text-primary-700 transition-colors group-hover:text-primary-500">
                       {area.install}
                     </Link>
-                    <Link href={area.hrefRepair} className="text-gray-700 hover:text-primary-700 hover:underline">
-                      {area.repair}
-                    </Link>
+                    <span className="text-neutral-400 text-sm">and</span>
+                    <div className="flex items-center justify-center gap-2 text-center">
+                      <Link href={area.hrefRepair} className="text-primary-600 text-center font-semibold hover:text-primary-700 transition-colors group-hover:text-primary-500">
+                        {area.repair}
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -127,19 +130,44 @@ export default function InstallationServicesPage() {
       </section>
 
       {/* Important Notes */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-light-100">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Important Installation Notes!</h2>
-            <ul className="space-y-3 text-lg text-gray-700">
-              <li>We install appliances only on existing connections.</li>
-              <li>No plumbing work: our technicians connect appliances to pre-installed water lines only.</li>
-              <li>No electrical rewiring: installation is done on existing outlets.</li>
-              <li>If special modifications are required, we’ll let you know before starting.</li>
-            </ul>
-            <p className="text-lg text-gray-700 mt-4">
-              This way, you know exactly what’s included in our service — clear, safe, and reliable.
+          <div className="max-w-5xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Important Installation Notes</h2>
+            <p className="text-center text-lg text-neutral-600 mb-8">
+              To ensure clarity and set proper expectations, here's what you need to know about our installation service:
             </p>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-background border-l-4 border-primary-500 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold text-primary-500 mb-2">Existing Connections Only</h3>
+                <p className="text-neutral-700">
+                  We install appliances only on existing connections. Our technicians connect to pre-installed water lines and electrical outlets.
+                </p>
+              </div>
+              <div className="bg-background border-l-4 border-accent-500 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold text-accent-500 mb-2">No Plumbing Work</h3>
+                <p className="text-neutral-700">
+                  Our technicians connect appliances to pre-installed water lines only. We do not perform plumbing modifications or installations.
+                </p>
+              </div>
+              <div className="bg-background border-l-4 border-accent-500 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold text-accent-500 mb-2">No Electrical Rewiring</h3>
+                <p className="text-neutral-700">
+                  Installation is done on existing outlets. We do not perform electrical rewiring or install new circuits.
+                </p>
+              </div>
+              <div className="bg-background border-l-4 border-primary-500 p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg font-semibold text-primary-500 mb-2">Special Modifications</h3>
+                <p className="text-neutral-700">
+                  If special modifications are required, we'll let you know before starting so you can make an informed decision.
+                </p>
+              </div>
+            </div>
+            <div className="bg-light-200 border border-light-300 rounded-lg p-6 text-center">
+              <p className="text-lg text-neutral-700 font-medium">
+                This way, you know exactly what's included in our service — <span className="text-primary-500 font-semibold">clear, safe, and reliable</span>.
+              </p>
+            </div>
           </div>
         </div>
       </section>

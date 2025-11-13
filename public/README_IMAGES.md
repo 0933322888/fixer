@@ -15,13 +15,18 @@ public/
 │   ├── dryer.jpg               (800x600px)
 │   ├── stove.jpg               (800x600px)
 │   └── oven.jpg                (800x600px)
-├── brands/                     ← Brand logos
+├── brands-img/                 ← Brand logos
 │   ├── samsung.png             (300x150px, PNG with transparency)
 │   ├── lg.png
 │   ├── whirlpool.png
 │   ├── ge.png
 │   ├── maytag.png
-│   ├── bosch.png
+│   ├── bosch/
+│   │   ├── washer.webp
+│   │   ├── dryer.webp
+│   │   ├── dishwasher.webp
+│   │   ├── cooktop.webp
+│   │   └── mw.webp
 │   └── ... (add more as needed)
 ├── gallery/                    ← Before/after photos, work examples
 │   ├── repair-1.jpg            (1000x1000px square)
@@ -47,7 +52,7 @@ public/
 
 ### 2. **SHOULD HAVE** (Add Next)
 - [ ] `hero-appliance-repair.jpg` - Background for homepage hero
-- [ ] Brand logos in `brands/` folder (at least 6-8 major brands)
+- [ ] Brand logos in `brands-img/` folder (at least 6-8 major brands)
 
 ### 3. **NICE TO HAVE** (Add When Possible)
 - [ ] Gallery images in `gallery/` (your actual repair work)
@@ -73,7 +78,7 @@ public/
 - **File Size:** 100-300KB each
 - **Use:** Service cards on homepage
 
-### Brand Logos (`brands/`)
+### Brand Logos (`brands-img/`)
 - **Size:** 300x150px (landscape)
 - **Format:** PNG with transparent background
 - **File Size:** Under 30KB each

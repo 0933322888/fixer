@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Vanier – Local, Reliable Refrigerator Service | Fixer",
@@ -153,20 +153,7 @@ export default function FridgeRepairVanierPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
       <CTASection />
 
@@ -303,7 +290,6 @@ export default function FridgeRepairVanierPage() {
         </div>
       </section>
 
-      <MapSection />
     </>
   );
 }

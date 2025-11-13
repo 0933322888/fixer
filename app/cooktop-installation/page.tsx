@@ -4,7 +4,7 @@ import { FaFire, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-icon
 
 export const metadata: Metadata = {
   title: "Stove Installation Ottawa | Professional Gas & Electric Stove Setup",
-  description: "Expert stove installation services in Ottawa, ON. Professional installation for gas and electric stoves. Licensed technicians. Call now!",
+  description: "Expert stove installation services in Ottawa. Professional installation for gas and electric stoves. Licensed technicians. Call now!",
   keywords: "stove installation Ottawa, gas stove installation, electric stove installation, cooktop installation, Ottawa ON",
 };
 

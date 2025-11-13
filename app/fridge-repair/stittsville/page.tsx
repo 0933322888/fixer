@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Stittsville – Fast, Local Service You Can Trust | Fixer",
@@ -148,48 +148,20 @@ export default function FridgeRepairStittsvillePage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Upgrading your fridge in Stittsville?
-              </p>
-              <p className="text-center">
-                Check our repair vs. replace guide — it shows when repair makes sense and when replacement is smarter.
-              </p>
-              <p className="text-center">
-                When you've got a new unit, we provide fridge installation in Stittsville. We'll set it up and test it using your existing water and power supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ No new plumbing or electrical work included.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/fridge-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Fridge Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Fridge? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new fridge? We also provide fridge installation in Stittsville with same-day service available in most areas.
+          </p>
+          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Fridge Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
       <CTASection />
 
@@ -326,7 +298,6 @@ export default function FridgeRepairStittsvillePage() {
         </div>
       </section>
 
-      <MapSection />
     </>
   );
 }

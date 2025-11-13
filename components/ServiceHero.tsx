@@ -20,10 +20,10 @@ export default function ServiceHero({ title, description, icon }: ServiceHeroPro
             {description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
+            <Link href="/contact" className="btn-primary">
               Book Repair Now
             </Link>
-            <a href="tel:+16135551234" className="btn-outline border-white text-white hover:bg-white hover:text-primary-700">
+            <a href="tel:+16135551234" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
               Call (613) 555-1234
             </a>
           </div>

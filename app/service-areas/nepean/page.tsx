@@ -51,17 +51,16 @@ const services = [
 ];
 
 const brands = [
-  "LG",
-  "Samsung",
-  "Whirlpool",
-  "GE",
-  "Maytag",
-  "Frigidaire",
-  "Bosch",
-  "Kenmore",
-  "Panasonic",
-  "Electrolux",
-  "Amana",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const attractions = [
@@ -125,36 +124,42 @@ const additionalAreas = [
 
 export default function NepeanServiceAreaPage() {
   return (
-    <div className="bg-gray-50">
-      <div className="container-custom py-16 text-gray-800 space-y-16">
-        <header className="space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent-500">
-            Appliance Service in Nepean, ON
-          </p>
-          <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-            Appliance Service in Nepean, ON
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Looking for dependable appliance service in Nepean? Our friendly,
-            Ottawa-based team has been repairing appliances for over 15 years.
-            From{" "}
-            <Link
-              href="/washer-repair/nepean"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              washer repair in Nepean
-            </Link>{" "}
-            to{" "}
-            <Link
-              href="/fridge-repair/nepean"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              fridge repair in Nepean
-            </Link>
-            , we provide honest guidance, same-day bookings in many neighbourhoods,
-            and a 90-day service guarantee.
-          </p>
-        </header>
+    <>
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="heading-xl text-white mb-6">
+              Appliance Service in Nepean
+            </h1>
+            <p className="text-xl text-gray-100 mb-4">
+              Looking for dependable appliance service in Nepean? Our friendly,
+              Ottawa-based team has been repairing appliances for over 15 years.
+              From{" "}
+              <Link
+                href="/washer-repair/nepean"
+                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+              >
+                washer repair in Nepean
+              </Link>{" "}
+              to{" "}
+              <Link
+                href="/fridge-repair/nepean"
+                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+              >
+                fridge repair in Nepean
+              </Link>
+              , we provide honest guidance, same-day bookings in many neighbourhoods,
+              and a 90-day service guarantee.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="space-y-16">
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
@@ -211,15 +216,21 @@ export default function NepeanServiceAreaPage() {
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
-            Brands We Work With
+            <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Work With
           </h2>
           <p className="text-gray-700">
             We repair all major household brands, including:
           </p>
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-medium text-gray-900">
-              {brands.join(" | ")}
-            </p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {brands.map((brand, index) => (
+              <Link
+                key={index}
+                href={brand.href}
+                className="text-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:bg-accent-50 hover:border-accent-300 hover:text-accent-700 transition-colors"
+              >
+                <p className="text-sm font-medium text-gray-900 hover:text-accent-700">{brand.name}</p>
+              </Link>
+            ))}
           </div>
           <p className="text-gray-700">
             Not sure about your brand or model? Give us a call — chances are,
@@ -321,28 +332,40 @@ export default function NepeanServiceAreaPage() {
           </div>
         </section>
 
-        <section className="rounded-2xl bg-gray-900 p-8 text-white">
-          <h2 className="text-3xl font-semibold">Ready to book service?</h2>
-          <p className="mt-4 text-sm text-gray-200">
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-lg mb-4 text-white">Ready to book service?</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
             Fast, friendly help from your local team.
           </p>
-          <div className="mt-6 flex flex-col gap-4 text-sm font-medium md:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:613-413-6969"
-              className="rounded-lg bg-accent-500 px-6 py-3 text-center text-white transition hover:bg-accent-600"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
             >
-              📞 Call/Text: 613-413-6969
+              Call or Text (613) 413-6969
             </a>
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="rounded-lg border border-white/20 px-6 py-3 text-center transition hover:border-white hover:text-white"
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
             >
-              📧 Email: service@fixerappliancerepair.ca
-            </a>
+              Book Online Now
+            </Link>
           </div>
-        </section>
-      </div>
-    </div>
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
 

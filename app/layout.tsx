@@ -8,11 +8,11 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Professional Appliance Repair Services in Ottawa, ON | Same Day Service",
+  title: "Professional Appliance Repair Services in Ottawa | Same Day Service",
   description: "Expert appliance repair services in Ottawa and surrounding areas. We repair fridges, dishwashers, washers, dryers, stoves, and ovens. Fast, reliable, and affordable service. Call now!",
   keywords: "appliance repair Ottawa, fridge repair, dishwasher repair, washer repair, dryer repair, stove repair, oven repair, Ottawa ON",
   openGraph: {
-    title: "Professional Appliance Repair Services in Ottawa, ON",
+    title: "Professional Appliance Repair Services in Ottawa",
     description: "Expert appliance repair services for all major brands. Same day service available.",
     type: "website",
   },

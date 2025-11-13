@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Nepean – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -103,6 +103,15 @@ const faqs = [
   },
 ];
 
+const relatedServices = [
+  { name: "Washer Repair in Ottawa", href: "/washer-repair" },
+  { name: "Dryer Repair in Ottawa", href: "/dryer-repair" },
+  { name: "Dishwasher Repair in Ottawa", href: "/dishwasher-repair" },
+  { name: "Fridge Repair in Ottawa", href: "/fridge-repair" },
+  { name: "Oven Repair in Ottawa", href: "/oven-repair" },
+  { name: "Freezer Installation in Ottawa", href: "/appliance-installation" },
+];
+
 export default function FreezerRepairNepeanPage() {
   return (
     <>
@@ -148,48 +157,20 @@ export default function FreezerRepairNepeanPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Considering freezer replacement in Nepean?
-              </p>
-              <p className="text-center">
-                Read our repair vs. replace guide first — it explains when repair is still a good option.
-              </p>
-              <p className="text-center">
-                If you've already purchased one, we provide freezer installation in Nepean. Our team installs and tests it using the current power supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't add new circuits or plumbing.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/freezer-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Freezer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Freezer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new freezer? We also provide freezer installation in Nepean with same-day service available in most areas.
+          </p>
+          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Freezer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Freezer" benefits={benefits} />
 
       <CTASection />
 
@@ -303,37 +284,26 @@ export default function FreezerRepairNepeanPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            We handle more than freezers — here are our other services in Nepean:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/nepean" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Nepean
-            </Link>
-            <Link href="/dryer-repair/nepean" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Nepean
-            </Link>
-            <Link href="/dishwasher-repair/nepean" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Nepean
-            </Link>
-            <Link href="/fridge-repair/nepean" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Repair Nepean
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Nepean
-            </Link>
-            <Link href="/freezer-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Freezer Installation Nepean
-            </Link>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just freezer repair — check out our other Ottawa services:
+            </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {relatedServices.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-gray-700 mt-8">
-            Need help with another appliance? We're ready to assist in Nepean.
-          </p>
         </div>
       </section>
 
-      <MapSection />
     </>
   );
 }

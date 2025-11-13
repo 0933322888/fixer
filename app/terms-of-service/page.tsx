@@ -106,7 +106,7 @@ export default function TermsOfServicePage() {
             <h2 className="text-3xl font-bold mb-8 text-white">📌 Contact Information</h2>
             <div className="space-y-4">
               <p className="text-xl font-semibold">Fixer Appliance Repair Inc.</p>
-              <p className="text-lg">Ottawa, ON, Canada</p>
+              <p className="text-lg">Ottawa, Canada</p>
               <div className="flex flex-col items-center gap-4 mt-6">
                 <div className="flex items-center gap-3 text-xl">
                   <FaEnvelope className="text-accent-400" />

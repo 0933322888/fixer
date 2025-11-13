@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Mississippi Mills – Trusted Local Service | Fixer",
@@ -92,11 +93,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Mississippi Mills", href: "/washer-repair/mississippi-mills" },
   { name: "Dryer Repair Mississippi Mills", href: "/dryer-repair/mississippi-mills" },
-  { name: "Fridge Repair Mississippi Mills", href: "/fridge-repair" },
-  { name: "Freezer Repair Mississippi Mills", href: "/freezer-repair" },
-  { name: "Oven Repair Mississippi Mills", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Mississippi Mills", href: "/cooktop-repair" },
-  { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair" },
+  { name: "Fridge Repair Mississippi Mills", href: "/fridge-repair/mississippi-mills" },
+  { name: "Freezer Repair Mississippi Mills", href: "/freezer-repair/mississippi-mills" },
+  { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
+  { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
+  { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
   { name: "Dishwasher Installation Mississippi Mills", href: "/dishwasher-installation" },
 ];
 
@@ -171,22 +172,7 @@ export default function DishwasherRepairMississippiMillsPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -273,16 +259,16 @@ export default function DishwasherRepairMississippiMillsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Mississippi Mills</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

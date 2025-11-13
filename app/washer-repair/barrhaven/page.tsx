@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Barrhaven Washer Repair – Trusted Local Experts | Fixer",
@@ -82,13 +83,13 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { name: "Dryer Repair Barrhaven", href: "/dryer-repair" },
-  { name: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Barrhaven", href: "/fridge-repair" },
-  { name: "Freezer Repair Barrhaven", href: "/freezer-repair" },
-  { name: "Oven Repair Barrhaven", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Barrhaven", href: "/cooktop-repair" },
-  { name: "Microwave Repair Barrhaven", href: "/microwave-repair" },
+  { name: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
+  { name: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair/barrhaven" },
+  { name: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
+  { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
+  { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
+  { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
+  { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
   { name: "Washer Installation Barrhaven", href: "/washer-installation" },
 ];
 
@@ -99,13 +100,13 @@ export default function WasherRepairBarrhavenPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Washer Repair Services in Barrhaven, ON</h1>
+            <h1 className="heading-lg mb-6 text-white">Washer Repair Services in Barrhaven</h1>
             <p className="text-xl leading-relaxed mb-8">
               If your washer stops mid-cycle, makes unusual noises, or leaks water, our Barrhaven repair team is ready to help. We service all makes and models, offering clear pricing, same-day availability in many neighbourhoods, and a 90-day workmanship guarantee on every repair.
             </p>
             <p className="text-lg">
               👉 For all appliance services in your area, check our{" "}
-              <Link href="/barrhaven" className="font-semibold hover:underline">
+              <Link href="/service-areas/barrhaven" className="font-semibold hover:underline">
                 Barrhaven appliance repair page
               </Link>
               .
@@ -131,51 +132,20 @@ export default function WasherRepairBarrhavenPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Thinking of a new washer in Barrhaven?</strong> Before making the purchase, check our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it explains typical repair costs and lifespan.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                If you already have one, we offer washer installation in Barrhaven. We'll install and test your unit with the current water and power connections.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 No new plumbing or wiring included.
-              </p>
-              <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Washer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new washer? We also provide washer installation in Barrhaven with same-day service available in most areas.
+          </p>
+          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Washer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -227,51 +197,44 @@ export default function WasherRepairBarrhavenPage() {
         </div>
       </section>
 
-      {/* Explore Barrhaven While We Fix Your Washer */}
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Explore Barrhaven While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Explore Barrhaven While We Fix Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
               While we handle the repair, you could:
             </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {barrhavenAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                👉 See what's happening in Barrhaven:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+            <ul className="space-y-3 text-gray-700">
+              {barrhavenAttractions.map((attraction, index) => (
+                <li key={index}>{attraction}</li>
+              ))}
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="text-accent-600 font-medium ml-2 hover:underline"
               >
-                Ottawa Events Calendar
+                Ottawa Tourism Events
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Washer Repair in Barrhaven</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

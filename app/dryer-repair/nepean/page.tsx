@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Nepean – Fast, Professional Service | Fixer",
@@ -110,12 +111,12 @@ const faqs = [
 
 const relatedServices = [
   { name: "Washer Repair Nepean", href: "/washer-repair/nepean" },
-  { name: "Dishwasher Repair Nepean", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Nepean", href: "/fridge-repair" },
-  { name: "Freezer Repair Nepean", href: "/freezer-repair" },
-  { name: "Oven Repair Nepean", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Nepean", href: "/cooktop-repair" },
-  { name: "Microwave Repair Nepean", href: "/microwave-repair" },
+  { name: "Dishwasher Repair Nepean", href: "/dishwasher-repair/nepean" },
+  { name: "Fridge Repair Nepean", href: "/fridge-repair/nepean" },
+  { name: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
+  { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
+  { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
+  { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
   { name: "Dryer Installation Nepean", href: "/dryer-installation" },
 ];
 
@@ -158,51 +159,20 @@ export default function DryerRepairNepeanPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Upgrading your laundry setup in Nepean?</strong> Our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}helps you decide which option saves more in the long run.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Once you've purchased a dryer, we provide installation in Nepean. We'll set it up and test it using existing hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 Please note: no new wiring or ductwork provided.
-              </p>
-              <div className="text-center">
-                <Link href="/dryer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dryer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dryer? We also provide dryer installation in Nepean with same-day service available in most areas.
+          </p>
+          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dryer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area: Nepean and Nearby */}
       <section className="section-padding bg-gray-50">

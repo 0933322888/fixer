@@ -4,7 +4,7 @@ import { FaUtensils, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-
 
 export const metadata: Metadata = {
   title: "Dishwasher Installation Ottawa | Professional Dishwasher Setup",
-  description: "Expert dishwasher installation services in Ottawa, ON. Professional installation for all brands. Same-day service available. Call now!",
+  description: "Expert dishwasher installation services in Ottawa. Professional installation for all brands. Same-day service available. Call now!",
   keywords: "dishwasher installation Ottawa, new dishwasher setup, dishwasher hookup, Ottawa ON",
 };
 

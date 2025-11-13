@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Washer Repair Stittsville – Fast, Local Experts | Fixer",
@@ -92,13 +93,13 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { name: "Dryer Repair Stittsville", href: "/dryer-repair" },
-  { name: "Dishwasher Repair Stittsville", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Stittsville", href: "/fridge-repair" },
-  { name: "Freezer Repair Stittsville", href: "/freezer-repair" },
-  { name: "Oven Repair Stittsville", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Stittsville", href: "/cooktop-repair" },
-  { name: "Microwave Repair Stittsville", href: "/microwave-repair" },
+  { name: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
+  { name: "Dishwasher Repair Stittsville", href: "/dishwasher-repair/stittsville" },
+  { name: "Fridge Repair Stittsville", href: "/fridge-repair/stittsville" },
+  { name: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
+  { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
+  { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
+  { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
   { name: "Washer Installation Stittsville", href: "/washer-installation" },
 ];
 
@@ -115,7 +116,7 @@ export default function WasherRepairStittsvillePage() {
             </p>
             <p className="text-lg">
               👉 For all appliance services in your area, visit our{" "}
-              <Link href="/stittsville" className="font-semibold hover:underline">
+              <Link href="/service-areas/stittsville" className="font-semibold hover:underline">
                 Stittsville appliance repair page
               </Link>
               .
@@ -174,15 +175,7 @@ export default function WasherRepairStittsvillePage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Stittsville Calls Fixer</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
+            <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
           </div>
         </div>
       </section>
@@ -237,51 +230,44 @@ export default function WasherRepairStittsvillePage() {
         </div>
       </section>
 
-      {/* Explore Stittsville While We Fix Your Washer */}
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Explore Stittsville While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Explore Stittsville While We Fix Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
               Waiting for your laundry machine to be back on track? Spend some time around town:
             </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {stittsvilleAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                See local happenings:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+            <ul className="space-y-3 text-gray-700">
+              {stittsvilleAttractions.map((attraction, index) => (
+                <li key={index}>{attraction}</li>
+              ))}
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="text-accent-600 font-medium ml-2 hover:underline"
               >
-                Events in Stittsville
+                Ottawa Tourism Events
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Washer Repair Stittsville</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

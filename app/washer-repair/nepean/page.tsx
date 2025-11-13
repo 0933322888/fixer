@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Washer Repair Nepean – Reliable Local Service | Fixer",
@@ -93,13 +94,13 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { name: "Dryer Repair Nepean", href: "/dryer-repair" },
-  { name: "Dishwasher Repair Nepean", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Nepean", href: "/fridge-repair" },
-  { name: "Freezer Repair Nepean", href: "/freezer-repair" },
-  { name: "Oven Repair Nepean", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Nepean", href: "/cooktop-repair" },
-  { name: "Microwave Repair Nepean", href: "/microwave-repair" },
+  { name: "Dryer Repair Nepean", href: "/dryer-repair/nepean" },
+  { name: "Dishwasher Repair Nepean", href: "/dishwasher-repair/nepean" },
+  { name: "Fridge Repair Nepean", href: "/fridge-repair/nepean" },
+  { name: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
+  { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
+  { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
+  { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
   { name: "Washer Installation Nepean", href: "/washer-installation" },
 ];
 
@@ -171,22 +172,7 @@ export default function WasherRepairNepeanPage() {
         </div>
       </section>
 
-      {/* Why Nepean Trusts Fixer */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Nepean Trusts Fixer</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -228,7 +214,7 @@ export default function WasherRepairNepeanPage() {
             <div className="text-center bg-white p-6 rounded-lg shadow-sm">
               <p className="text-lg text-gray-700">
                 👉 Looking for washer service across the city? Learn more about our{" "}
-                <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+                <Link href="/service-areas/nepean" className="text-primary-600 hover:text-primary-700 font-semibold">
                   washer repair in Ottawa
                 </Link>
                 .
@@ -238,51 +224,44 @@ export default function WasherRepairNepeanPage() {
         </div>
       </section>
 
-      {/* Explore Nepean While We Repair Your Washer */}
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Explore Nepean While We Repair Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Explore Nepean While We Repair Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
               Waiting for the laundry to be back on track? Take a little break nearby:
             </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {nepeanAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                🔍 Curious about local events? Check what's happening this week:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+            <ul className="space-y-3 text-gray-700">
+              {nepeanAttractions.map((attraction, index) => (
+                <li key={index}>{attraction}</li>
+              ))}
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="text-accent-600 font-medium ml-2 hover:underline"
               >
-                Events in Nepean
+                Ottawa Tourism Events
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Washer Repair Nepean</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

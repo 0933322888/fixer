@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Arnprior – Fast, Reliable Local Service | Fixer",
@@ -92,11 +93,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Arnprior", href: "/washer-repair/arnprior" },
   { name: "Dryer Repair Arnprior", href: "/dryer-repair/arnprior" },
-  { name: "Fridge Repair Arnprior", href: "/fridge-repair" },
-  { name: "Freezer Repair Arnprior", href: "/freezer-repair" },
-  { name: "Oven Repair Arnprior", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Arnprior", href: "/cooktop-repair" },
-  { name: "Microwave Repair Arnprior", href: "/microwave-repair" },
+  { name: "Fridge Repair Arnprior", href: "/fridge-repair/arnprior" },
+  { name: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
+  { name: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
+  { name: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
+  { name: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
   { name: "Dishwasher Installation Arnprior", href: "/dishwasher-installation" },
 ];
 
@@ -107,7 +108,8 @@ export default function DishwasherRepairArnpriorPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Arnprior – Fast, Reliable Local Service</h1>
+            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Arnprior 
+              <br /> Fast, Reliable Local Service</h1>
             <p className="text-xl leading-relaxed mb-8">
               If your dishwasher in Arnprior is leaking, stopping mid-cycle, or leaving cloudy glasses, Fixer Appliance Repair can help. Our technicians know the area and provide fast, reliable repairs you can trust.
             </p>
@@ -142,51 +144,20 @@ export default function DishwasherRepairArnpriorPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Dishwasher Installation in Arnprior</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Need dishwasher installation in Arnprior?</strong> First, look at our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it explains when repair can extend lifespan and when replacement is better.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                If you've purchased a new dishwasher, we'll handle the installation in Arnprior. We'll connect and test it using the existing hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 We don't create new plumbing lines or wiring.
-              </p>
-              <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dishwasher Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dishwasher? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dishwasher? We also provide dishwasher installation in Arnprior with same-day service available in most areas.
+          </p>
+          <Link href="/dishwasher-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dishwasher Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -273,16 +244,16 @@ export default function DishwasherRepairArnpriorPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Arnprior</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -311,10 +282,10 @@ export default function DishwasherRepairArnpriorPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
             <p className="text-center text-gray-700 mb-8">
-              We fix more than just dishwashers — explore our other services in Arnprior:
+              We do more than just dishwasher repair — check out our other Ottawa services:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
               {relatedServices.map((service, index) => (
@@ -327,12 +298,6 @@ export default function DishwasherRepairArnpriorPage() {
                 </Link>
               ))}
             </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need another appliance serviced? We're here for Arnprior homes.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your dishwasher repair experts in Arnprior.
-            </p>
           </div>
         </div>
       </section>

@@ -253,31 +253,28 @@ export default function CooktopRepairKanataPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Explore Kanata While We Fix Your Cooktop</h2>
+            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Cooktop</h2>
             <p className="text-lg text-gray-700 mb-6">
               Your cooktop repair is underway — why not enjoy Kanata while you wait?
             </p>
-            <ul className="space-y-4 text-gray-700">
+            <ul className="space-y-3 text-gray-700">
               {highlights.map((item) => (
-                <li key={item.title} className="flex items-start">
-                  <span className="mr-3 text-primary-600">•</span>
-                  <span>
-                    <strong>{item.title}</strong> - {item.description}
-                  </span>
-                </li>
+                <li key={item.title}>{item.title} – {item.description}</li>
               ))}
             </ul>
-            <p className="mt-6 text-gray-700">
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
               <a
                 href="https://ottawatourism.ca/en/see-and-do/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
+                className="text-accent-600 font-medium ml-2 hover:underline"
               >
-                Browse local events in Kanata
+                Ottawa Tourism Events
               </a>
             </p>
           </div>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Vanier – Fast, Reliable Local Service | Fixer",
@@ -91,11 +92,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Vanier", href: "/washer-repair/vanier" },
   { name: "Dryer Repair Vanier", href: "/dryer-repair/vanier" },
-  { name: "Fridge Repair Vanier", href: "/fridge-repair" },
-  { name: "Freezer Repair Vanier", href: "/freezer-repair" },
-  { name: "Oven Repair Vanier", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Vanier", href: "/cooktop-repair" },
-  { name: "Microwave Repair Vanier", href: "/microwave-repair" },
+  { name: "Fridge Repair Vanier", href: "/fridge-repair/vanier" },
+  { name: "Freezer Repair Vanier", href: "/freezer-repair/vanier" },
+  { name: "Oven Repair Vanier", href: "/oven-repair/vanier" },
+  { name: "Cooktop Repair Vanier", href: "/cooktop-repair/vanier" },
+  { name: "Microwave Repair Vanier", href: "/microwave-repair/vanier" },
   { name: "Dishwasher Installation Vanier", href: "/dishwasher-installation" },
 ];
 
@@ -106,7 +107,8 @@ export default function DishwasherRepairVanierPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Vanier – Fast, Reliable Local Service</h1>
+            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Vanier 
+              <br /> Fast, Reliable Local Service</h1>
             <p className="text-xl leading-relaxed mb-8">
               Vanier residents know the hassle of a dishwasher that won't drain or keeps flashing error codes. Fixer Appliance Repair delivers quick, transparent service with a 90-day workmanship guarantee.
             </p>
@@ -170,22 +172,7 @@ export default function DishwasherRepairVanierPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -272,16 +259,16 @@ export default function DishwasherRepairVanierPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Vanier</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -310,10 +297,10 @@ export default function DishwasherRepairVanierPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
             <p className="text-center text-gray-700 mb-8">
-              Dishwashers aren't all we repair — here are our other services in Vanier:
+              We do more than just dishwasher repair — check out our other Ottawa services:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
               {relatedServices.map((service, index) => (
@@ -326,12 +313,6 @@ export default function DishwasherRepairVanierPage() {
                 </Link>
               ))}
             </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need something else fixed? We've got Vanier covered.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly dishwasher repair team in Vanier.
-            </p>
           </div>
         </div>
       </section>

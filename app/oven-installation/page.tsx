@@ -4,7 +4,7 @@ import { FaFire, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-icon
 
 export const metadata: Metadata = {
   title: "Oven Installation Ottawa | Professional Oven Setup Service",
-  description: "Expert oven installation services in Ottawa, ON. Professional installation for gas and electric ovens. Licensed technicians. Call now!",
+  description: "Expert oven installation services in Ottawa. Professional installation for gas and electric ovens. Licensed technicians. Call now!",
   keywords: "oven installation Ottawa, wall oven installation, gas oven installation, electric oven installation, Ottawa ON",
 };
 

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Carp – Expert Service for Homes & Farms | Fixer",
@@ -109,11 +110,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Carp", href: "/washer-repair/carp" },
   { name: "Dryer Repair Carp", href: "/dryer-repair/carp" },
-  { name: "Fridge Repair Carp", href: "/fridge-repair" },
-  { name: "Freezer Repair Carp", href: "/freezer-repair" },
-  { name: "Oven Repair Carp", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Carp", href: "/cooktop-repair" },
-  { name: "Microwave Repair Carp", href: "/microwave-repair" },
+  { name: "Fridge Repair Carp", href: "/fridge-repair/carp" },
+  { name: "Freezer Repair Carp", href: "/freezer-repair/carp" },
+  { name: "Oven Repair Carp", href: "/oven-repair/carp" },
+  { name: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
+  { name: "Microwave Repair Carp", href: "/microwave-repair/carp" },
   { name: "Dishwasher Installation Carp", href: "/dishwasher-installation" },
 ];
 
@@ -188,22 +189,7 @@ export default function DishwasherRepairCarpPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">

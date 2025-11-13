@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Vanier Dryer Repair – Expert Local Service | Fixer",
@@ -95,13 +96,13 @@ const faqs = [
 
 const relatedServices = [
   { name: "Washer Repair Vanier", href: "/washer-repair/vanier" },
-  { name: "Dishwasher Repair Vanier", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Vanier", href: "/fridge-repair" },
-  { name: "Freezer Repair Vanier", href: "/freezer-repair" },
-  { name: "Oven Repair Vanier", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Vanier", href: "/cooktop-repair" },
-  { name: "Microwave Repair Vanier", href: "/microwave-repair" },
-  { name: "Dryer Installation Vanier", href: "/dryer-installation" },
+  { name: "Dishwasher Repair Vanier", href: "/dishwasher-repair/vanier" },
+  { name: "Fridge Repair Vanier", href: "/fridge-repair/vanier" },
+  { name: "Freezer Repair Vanier", href: "/freezer-repair/vanier" },
+  { name: "Oven Repair Vanier", href: "/oven-repair/vanier" },
+  { name: "Cooktop Repair Vanier", href: "/cooktop-repair/vanier" },
+  { name: "Microwave Repair Vanier", href: "/microwave-repair/vanier" },
+  { name: "Dryer Installation Vanier", href: "/appliance-installation" },
 ];
 
 export default function DryerRepairVanierPage() {
@@ -111,7 +112,7 @@ export default function DryerRepairVanierPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Local Dryer Repair Experts in Vanier, ON</h1>
+            <h1 className="heading-lg mb-6 text-white">Local Dryer Repair Experts in Vanier</h1>
             <p className="text-xl leading-relaxed mb-8">
               When your Vanier dryer takes forever to finish or produces unusual smells, it's time to call Fixer Appliance Repair. With 15+ years of experience in Ottawa East, we provide trusted dryer repairs for apartments and houses alike — always with honest pricing and a 90-day guarantee. Brands we service include Whirlpool, Maytag, Samsung, LG, and GE.
             </p>
@@ -143,51 +144,20 @@ export default function DryerRepairVanierPage() {
         </div>
       </section>
 
-      {/* Dryer Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Dryer Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Looking at dryer replacement in Vanier?</strong> Before buying, read our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it shows when a repair can be smarter.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Once you've got a new dryer, we'll install it in Vanier. We'll set it up and test it using the current electrical hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 We don't create new wiring or vents.
-              </p>
-              <div className="text-center">
-                <Link href="/dryer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dryer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dryer? We also provide dryer installation in Vanier with same-day service available in most areas.
+          </p>
+          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dryer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us for Dryer Repair</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -274,16 +244,16 @@ export default function DryerRepairVanierPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dryer Repair in Vanier</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -312,10 +282,10 @@ export default function DryerRepairVanierPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
             <p className="text-center text-gray-700 mb-8">
-              Dryers aren't all we handle — here are our other services in Vanier:
+              We do more than just dryer repair — check out our other Ottawa services:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
               {relatedServices.map((service, index) => (
@@ -328,12 +298,6 @@ export default function DryerRepairVanierPage() {
                 </Link>
               ))}
             </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need another appliance repaired? We've got Vanier covered.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly dryer repair team in Vanier.
-            </p>
           </div>
         </div>
       </section>

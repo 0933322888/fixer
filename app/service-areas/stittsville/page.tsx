@@ -51,17 +51,16 @@ const services = [
 ];
 
 const brands = [
-  "LG",
-  "Samsung",
-  "Whirlpool",
-  "GE",
-  "Maytag",
-  "Frigidaire",
-  "Bosch",
-  "Kenmore",
-  "Panasonic",
-  "Electrolux",
-  "Amana",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const attractions = [
@@ -126,24 +125,30 @@ const additionalAreas = [
 
 export default function StittsvilleServiceAreaPage() {
   return (
-    <div className="bg-gray-50">
-      <div className="container-custom py-16 text-gray-800 space-y-16">
-        <header className="space-y-6">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent-500">
-            Expert Appliance Repair in Stittsville, ON
-          </p>
-          <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-            Expert Appliance Repair in Stittsville, ON
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-700">
-            When you need appliance repair in Stittsville, Fixer is here to help. From washer repair in Stittsville to fridge repair in Stittsville, our technicians cover the full range of home appliances. With over 15 years of hands-on experience, we deliver same-day service in many areas, transparent pricing, and a 90-day guarantee.
-          </p>
-        </header>
+    <>
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="heading-xl text-white mb-6">
+              Expert Appliance Repair in Stittsville
+            </h1>
+            <p className="text-xl text-gray-100 mb-4">
+              When you need appliance repair in Stittsville, Fixer is here to help. From washer repair in Stittsville to fridge repair in Stittsville, our technicians cover the full range of home appliances. With over 15 years of hands-on experience, we deliver same-day service in many areas, transparent pricing, and a 90-day guarantee.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Appliance Repair Services in Stittsville
-          </h2>
+      {/* Services Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="space-y-16">
+
+            <section className="space-y-6">
+              <h2 className="text-3xl font-semibold text-gray-900">
+                Appliance Repair Services in Stittsville
+              </h2>
           <p className="text-gray-700">We repair and maintain:</p>
           <div className="grid gap-4 md:grid-cols-2">
             {services.map((service) => (
@@ -191,20 +196,26 @@ export default function StittsvilleServiceAreaPage() {
           </p>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Brands We Service in Stittsville
-          </h2>
+            <section className="space-y-6">
+              <h2 className="text-3xl font-semibold text-gray-900">
+                <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Service in Stittsville
+              </h2>
           <p className="text-gray-700">
             We repair all major household brands, including:
           </p>
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <p className="text-sm font-medium text-gray-900">
-              {brands.join(" | ")}
-            </p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {brands.map((brand, index) => (
+              <Link
+                key={index}
+                href={brand.href}
+                className="text-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:bg-accent-50 hover:border-accent-300 hover:text-accent-700 transition-colors"
+              >
+                <p className="text-sm font-medium text-gray-900 hover:text-accent-700">{brand.name}</p>
+              </Link>
+            ))}
           </div>
           <p className="text-gray-700">
-            Not sure about your brand or model? Give us a call — chances are, we’ve repaired it before.
+            Not sure about your brand or model? Give us a call — chances are, we've repaired it before.
           </p>
           <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-sm">
             <p className="text-lg italic">
@@ -216,10 +227,10 @@ export default function StittsvilleServiceAreaPage() {
           </blockquote>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Explore Stittsville While We Work
-          </h2>
+            <section className="space-y-6">
+              <h2 className="text-3xl font-semibold text-gray-900">
+                Explore Stittsville While We Work
+              </h2>
           <p className="text-gray-700">
             While we repair your appliance, you can enjoy:
           </p>
@@ -258,10 +269,10 @@ export default function StittsvilleServiceAreaPage() {
           </div>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Neighbourhoods We Serve in Stittsville
-          </h2>
+            <section className="space-y-6">
+              <h2 className="text-3xl font-semibold text-gray-900">
+                Neighbourhoods We Serve in Stittsville
+              </h2>
           <p className="text-gray-700">
             Looking for appliance repair in a specific Stittsville community? Explore
             detailed pages for these neighbourhoods:
@@ -281,10 +292,10 @@ export default function StittsvilleServiceAreaPage() {
           <p className="text-sm text-gray-700">{additionalAreas.join(" • ")}</p>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            FAQ – Stittsville Appliance Repair
-          </h2>
+            <section className="space-y-6">
+              <h2 className="text-3xl font-semibold text-gray-900">
+                FAQ – Stittsville Appliance Repair
+              </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div
@@ -300,28 +311,40 @@ export default function StittsvilleServiceAreaPage() {
           </div>
         </section>
 
-        <section className="rounded-2xl bg-gray-900 p-8 text-white">
-          <h2 className="text-3xl font-semibold">Call Us Today</h2>
-          <p className="mt-4 text-sm text-gray-200">
-            Fast. Friendly. Local. Fixer Appliance Repair – Stittsville’s trusted choice.
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-lg mb-4 text-white">Call Us Today</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Fast. Friendly. Local. Fixer Appliance Repair – Stittsville's trusted choice.
           </p>
-          <div className="mt-6 flex flex-col gap-4 text-sm font-medium md:flex-row">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:613-413-6969"
-              className="rounded-lg bg-accent-500 px-6 py-3 text-center text-white transition hover:bg-accent-600"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
             >
-              📞 613-413-6969
+              Call or Text (613) 413-6969
             </a>
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="rounded-lg border border-white/20 px-6 py-3 text-center transition hover:border-white hover:text-white"
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
             >
-              📧 service@fixerappliancerepair.ca
-            </a>
+              Book Online Now
+            </Link>
           </div>
-        </section>
-      </div>
-    </div>
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
 

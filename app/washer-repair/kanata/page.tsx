@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Washer Repair Kanata – Fast, Local Service | Fixer",
@@ -61,6 +62,7 @@ const nearbyAreas = [
   { name: "Washer Repair Mississippi Mills", slug: "mississippi-mills" },
   { name: "Washer Repair Arnprior", slug: "arnprior" },
   { name: "Washer Repair Carleton Place", slug: "carleton-place" },
+  { name: "Washer Repair Carp", slug: "carp" },
 ];
 
 const kanataAttractions = [
@@ -90,13 +92,13 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { name: "Dryer Repair Kanata", href: "/dryer-repair" },
+  { name: "Dryer Repair Kanata", href: "/dryer-repair/kanata" },
   { name: "Dishwasher Repair Kanata", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Kanata", href: "/fridge-repair" },
-  { name: "Freezer Repair Kanata", href: "/freezer-repair" },
-  { name: "Oven Repair Kanata", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Kanata", href: "/cooktop-repair" },
-  { name: "Microwave Repair Kanata", href: "/microwave-repair" },
+  { name: "Fridge Repair Kanata", href: "/fridge-repair/kanata" },
+  { name: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
+  { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
+  { name: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
+  { name: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
   { name: "Washer Installation Kanata", href: "/washer-installation" },
 ];
 
@@ -113,7 +115,7 @@ export default function WasherRepairKanataPage() {
             </p>
             <p className="text-lg">
               👉 For all appliance services in your area, see our full{" "}
-              <Link href="/kanata" className="font-semibold hover:underline">
+              <Link href="/service-areas/kanata" className="font-semibold hover:underline">
                 Kanata appliance repair page
               </Link>
               .
@@ -139,54 +141,20 @@ export default function WasherRepairKanataPage() {
         </div>
       </section>
 
-      {/* Washer Installation */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Washer Installation in Kanata</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Thinking of replacing your washer in Kanata?</strong> Before you make the call, check out our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it breaks down costs, lifespan, and common issues.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Already purchased a new machine? We provide washer installation in Kanata. Our team will connect, level, and test it using your existing water and power hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 <strong>Note:</strong> we don't install new plumbing or high-voltage wiring.
-              </p>
-              <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
-                  Learn more about washer installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Washer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new washer? We also provide washer installation in Kanata with same-day service available in most areas.
+          </p>
+          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Washer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Kanata Residents Choose Fixer */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Kanata Residents Choose Fixer</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-gray-700 mt-6 text-center">
-              We arrive with the most common parts on hand to complete repairs in one visit whenever possible.
-            </p>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -238,51 +206,65 @@ export default function WasherRepairKanataPage() {
         </div>
       </section>
 
-      {/* Explore Kanata While We Fix Your Washer */}
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Explore Kanata While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
               While we handle your washer repair, why not take a break and enjoy some of the best places in Kanata? Whether you're into nature, food, or family fun, there's always something to explore:
             </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {kanataAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
+            <div className="grid md:grid-cols-2 gap-4">
+              {kanataAttractions.map((attraction, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                const parts = attraction.split(" – ");
+                const name = parts[0];
+                const description = parts[1] || "";
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
+                      <p className="text-gray-600 text-sm">{description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                Want to see what's happening this week?
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
               </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
               >
-                Check local events in Kanata
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ — Washer Repair in Kanata</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

@@ -4,7 +4,7 @@ import { FaTshirt, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-ic
 
 export const metadata: Metadata = {
   title: "Washer Installation Ottawa | Washing Machine Installation Service",
-  description: "Expert washer installation services in Ottawa, ON. Professional installation for all washing machine brands. Same-day service available. Call now!",
+  description: "Expert washer installation services in Ottawa. Professional installation for all washing machine brands. Same-day service available. Call now!",
   keywords: "washer installation Ottawa, washing machine installation, washer hookup, Ottawa ON",
 };
 

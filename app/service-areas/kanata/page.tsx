@@ -52,17 +52,16 @@ const services = [
 ];
 
 const brands = [
-  "LG",
-  "Samsung",
-  "Whirlpool",
-  "GE",
-  "Maytag",
-  "Frigidaire",
-  "Bosch",
-  "Kenmore",
-  "Panasonic",
-  "Electrolux",
-  "Amana",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const attractions = [
@@ -133,7 +132,7 @@ export default function KanataServiceAreaPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">
-              Appliance Repair Services in Kanata, ON
+              Appliance Repair Services in Kanata
             </h1>
             <p className="text-xl text-gray-100 mb-4">
               Need appliance repair in Kanata that's fast, friendly, and reliable?
@@ -204,14 +203,20 @@ export default function KanataServiceAreaPage() {
       {/* Brands Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Brands We Service in Kanata</h2>
+          <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands</Link> We Service in Kanata</h2>
           <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
             We repair all major household brands, including:
           </p>
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-md max-w-4xl mx-auto mb-6">
-            <p className="text-sm font-medium text-gray-900 text-center">
-              {brands.join(" | ")}
-            </p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto mb-6">
+            {brands.map((brand, index) => (
+              <Link
+                key={index}
+                href={brand.href}
+                className="text-center p-4 bg-white rounded-xl border border-gray-200 shadow-md hover:bg-primary-50 hover:border-primary-300 hover:text-primary-700 transition-colors"
+              >
+                <p className="text-sm font-medium text-gray-900 hover:text-primary-700">{brand.name}</p>
+              </Link>
+            ))}
           </div>
           <p className="text-center text-gray-700 mb-8">
             Not sure about your brand or model? Give us a call — chances are,
@@ -305,26 +310,29 @@ export default function KanataServiceAreaPage() {
       {/* FAQ Section */}
       <FAQSection applianceName="Kanata" faqs={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom text-center">
           <h2 className="heading-lg mb-4 text-white">
             Book Your Appliance Service in Kanata Today
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
             We're local. We're reliable. We're Fixer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:613-413-6969" className="btn-primary bg-white text-accent-600 hover:bg-gray-100">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <a href="mailto:service@fixerappliancerepair.ca" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
-              📧 Email: service@fixerappliancerepair.ca
+              Call or Text (613) 413-6969
             </a>
             <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
-              Book Online
+              Book Online Now
             </Link>
           </div>
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
+          </p>
         </div>
       </section>
     </>

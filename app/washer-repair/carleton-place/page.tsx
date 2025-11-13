@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Carleton Place Washer Repair – Dependable, Local Service | Fixer",
@@ -81,13 +82,13 @@ const faqs = [
 ];
 
 const relatedServices = [
-  { name: "Dryer Repair Carleton Place", href: "/dryer-repair" },
-  { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Carleton Place", href: "/fridge-repair" },
-  { name: "Freezer Repair Carleton Place", href: "/freezer-repair" },
-  { name: "Oven Repair Carleton Place", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Carleton Place", href: "/cooktop-repair" },
-  { name: "Microwave Repair Carleton Place", href: "/microwave-repair" },
+  { name: "Dryer Repair Carleton Place", href: "/dryer-repair/carleton-place" },
+  { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair/carleton-place" },
+  { name: "Fridge Repair Carleton Place", href: "/fridge-repair/carleton-place" },
+  { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
+  { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
+  { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
+  { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
   { name: "Washer Installation Carleton Place", href: "/washer-installation" },
 ];
 
@@ -98,13 +99,13 @@ export default function WasherRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Washer Repair in Carleton Place, ON</h1>
+            <h1 className="heading-lg mb-6 text-white">Trusted Washer Repair in Carleton Place</h1>
             <p className="text-xl leading-relaxed mb-8">
               Laundry piling up because your washer won't cooperate? Our skilled Carleton Place team provides reliable repairs for all major washer brands. We offer same-day service in many areas, clear upfront pricing, and a 90-day warranty on all labour — so you can have peace of mind long after the repair is done.
             </p>
             <p className="text-lg">
               👉 For all appliance services in your area, check our{" "}
-              <Link href="/carleton-place" className="font-semibold hover:underline">
+              <Link href="/service-areas/carleton-place" className="font-semibold hover:underline">
                 Carleton Place appliance repair page
               </Link>
               .
@@ -130,51 +131,20 @@ export default function WasherRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Need washer installation in Carleton Place?</strong> Check our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}before investing — it shows when a fix is better and when replacement is worth it.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                Already got a new washer? We'll install it in Carleton Place. We connect, level, and run it using your existing hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 New plumbing or high-voltage wiring isn't included.
-              </p>
-              <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Washer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new washer? We also provide washer installation in Carleton Place with same-day service available in most areas.
+          </p>
+          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Washer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -226,51 +196,44 @@ export default function WasherRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* Explore Carleton Place While We Fix Your Washer */}
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Explore Carleton Place While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Explore Carleton Place While We Fix Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
               While we service your washer, check out:
             </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {carletonPlaceAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                👉 See what's happening in Carleton Place:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+            <ul className="space-y-3 text-gray-700">
+              {carletonPlaceAttractions.map((attraction, index) => (
+                <li key={index}>{attraction}</li>
+              ))}
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="text-accent-600 font-medium ml-2 hover:underline"
               >
-                Ottawa Events Calendar
+                Ottawa Tourism Events
               </a>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Washer Repair in Carleton Place</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

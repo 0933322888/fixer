@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Kanata – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -104,6 +104,15 @@ const faqs = [
   },
 ];
 
+const relatedServices = [
+  { name: "Washer Repair in Ottawa", href: "/washer-repair" },
+  { name: "Dryer Repair in Ottawa", href: "/dryer-repair" },
+  { name: "Dishwasher Repair in Ottawa", href: "/dishwasher-repair" },
+  { name: "Fridge Repair in Ottawa", href: "/fridge-repair" },
+  { name: "Oven Repair in Ottawa", href: "/oven-repair" },
+  { name: "Freezer Installation in Ottawa", href: "/appliance-installation" },
+];
+
 export default function FreezerRepairKanataPage() {
   return (
     <>
@@ -168,7 +177,7 @@ export default function FreezerRepairKanataPage() {
                 ⚠️ Note: we don't add new wiring or plumbing lines.
               </p>
               <div className="text-center mt-6">
-                <Link href="/freezer-installation" className="btn-primary">
+                <Link href="/appliance-installation" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -177,20 +186,7 @@ export default function FreezerRepairKanataPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Freezer" benefits={benefits} />
 
       <CTASection />
 
@@ -233,39 +229,30 @@ export default function FreezerRepairKanataPage() {
         </div>
       </section>
 
-      {/* Explore Kanata */}
-      <section className="section-padding bg-gray-50">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Explore Kanata While We Fix...</h2>
-          <p className="text-center text-gray-700 mb-8">Don't let a freezer repair freeze your day — explore Kanata instead:</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">South March Highlands</h3>
-              <p className="text-gray-600">Scenic forest trails</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Walter Baker Park</h3>
-              <p className="text-gray-600">A quiet walk or picnic</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Kanata Centrum</h3>
-              <p className="text-gray-600">Shopping and dining</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Canadian Tire Centre</h3>
-              <p className="text-gray-600">Sports and concerts</p>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Freezer</h2>
+            <p className="text-lg text-gray-700 mb-6">Don't let a freezer repair freeze your day — explore Kanata instead:</p>
+            <ul className="space-y-3 text-gray-700">
+              <li>South March Highlands – scenic forest trails</li>
+              <li>Walter Baker Park – a quiet walk or picnic</li>
+              <li>Kanata Centrum – shopping and dining</li>
+              <li>Canadian Tire Centre – sports and concerts</li>
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-600 font-medium ml-2 hover:underline"
+              >
+                Ottawa Tourism Events
+              </a>
+            </p>
           </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              See the latest Kanata events here
-            </a>
-          </p>
         </div>
       </section>
 
@@ -304,33 +291,23 @@ export default function FreezerRepairKanataPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            We fix more than just freezers — here are our other services in Kanata:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Kanata
-            </Link>
-            <Link href="/dryer-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Kanata
-            </Link>
-            <Link href="/dishwasher-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Kanata
-            </Link>
-            <Link href="/fridge-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Repair Kanata
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Kanata
-            </Link>
-            <Link href="/freezer-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Freezer Installation Kanata
-            </Link>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just freezer repair — check out our other Ottawa services:
+            </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {relatedServices.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-gray-700 mt-8">
-            Need another appliance repaired? We've got you covered across Kanata.
-          </p>
         </div>
       </section>
     </>

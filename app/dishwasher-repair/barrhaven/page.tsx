@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Barrhaven – Fast, Local Service | Fixer",
@@ -92,11 +93,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Barrhaven", href: "/washer-repair/barrhaven" },
   { name: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
-  { name: "Fridge Repair Barrhaven", href: "/fridge-repair" },
-  { name: "Freezer Repair Barrhaven", href: "/freezer-repair" },
-  { name: "Oven Repair Barrhaven", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Barrhaven", href: "/cooktop-repair" },
-  { name: "Microwave Repair Barrhaven", href: "/microwave-repair" },
+  { name: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
+  { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
+  { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
+  { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
+  { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
   { name: "Dishwasher Installation Barrhaven", href: "/dishwasher-installation" },
 ];
 
@@ -142,51 +143,20 @@ export default function DishwasherRepairbarrhavenPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Dishwasher Installation in Barrhaven</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Upgrading your kitchen in Barrhaven?</strong> Before you swap out your old dishwasher, check our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it compares costs and reliability.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                For new purchases, we provide dishwasher installation in Barrhaven. We'll set it up and test it with the current water and electrical connections.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 New plumbing or high-voltage wiring is not part of the service.
-              </p>
-              <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dishwasher Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dishwasher? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dishwasher? We also provide dishwasher installation in Barrhaven with same-day service available in most areas.
+          </p>
+          <Link href="/dishwasher-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dishwasher Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -273,16 +243,16 @@ export default function DishwasherRepairbarrhavenPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Barrhaven</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

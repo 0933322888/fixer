@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaTshirt, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
-import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
+import BenefitsSection from "@/components/BenefitsSection";
+import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Washer Repair Ottawa | Fast & Reliable Washing Machine Repair",
@@ -75,29 +75,29 @@ const whyChooseUs = [
 ];
 
 const brands = [
-  "LG",
-  "Samsung",
-  "Whirlpool",
-  "GE",
-  "Maytag",
-  "Frigidaire",
-  "Bosch",
-  "Electrolux",
-  "Amana",
-  "Kenmore",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const serviceAreas = [
-  { name: "Kanata", slug: "kanata" },
-  { name: "Carp", slug: "carp" },
-  { name: "Stittsville", slug: "stittsville" },
-  { name: "Nepean", slug: "nepean" },
-  { name: "Orleans", slug: "orleans" },
-  { name: "Barrhaven", slug: "barrhaven" },
-  { name: "Vanier", slug: "vanier" },
-  { name: "Arnprior", slug: "arnprior" },
-  { name: "Carleton Place", slug: "carleton-place" },
-  { name: "Mississippi Mills", slug: "mississippi-mills" },
+  "Kanata",
+  "Stittsville",
+  "Nepean",
+  "Orleans",
+  "Vanier",
+  "Barrhaven",
+  "Carp",
+  "Arnprior",
+  "Carleton Place",
+  "Mississippi Mills",
 ];
 
 const faqs = [
@@ -172,20 +172,26 @@ const relatedServices = [
 export default function WasherRepairPage() {
   return (
     <>
-      <ServiceHero
-        title="Fast & Reliable Washer Repair Across Ottawa"
-        description="Is your washing machine not draining, spinning, or starting at all? Don't worry — Fixer Appliance Repair is here to help. We provide professional washer repair services across Ottawa, offering fast diagnostics, same-day service options, and dependable local support in every major neighborhood."
-        icon={<FaTshirt className="text-6xl text-white" />}
-      />
-
-      {/* Introduction */}
-      <section className="section-padding bg-white">
+      {/* Hero Section */}
+      <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              Our technicians have experience with most popular washer brands and models. From top-loaders and 
-              front-loaders to high-efficiency units, we know how to fix them all — quickly and reliably.
+            <h1 className="heading-lg mb-6 text-white">
+              Fast & Reliable Washer Repair Across Ottawa
+            </h1>
+            <p className="text-xl leading-relaxed mb-8">
+              Is your washing machine not draining, spinning, or starting at all? Don't worry — Fixer Appliance Repair is here to help. We provide professional washer repair services across Ottawa, offering fast diagnostics, same-day service options, and dependable local support in every major neighborhood.
             </p>
+            <p className="mb-8">Our technicians have experience with most popular washer brands and models. From top-loaders and
+              front-loaders to high-efficiency units, we know how to fix them all — quickly and reliably.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Book Online
+              </Link>
+              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                Call us
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -205,7 +211,7 @@ export default function WasherRepairPage() {
             </div>
             <div className="mt-8 text-center">
               <p className="text-lg text-gray-700">
-                If you notice any of these issues, it's time to schedule a visit. Early repairs prevent bigger 
+                If you notice any of these issues, it's time to schedule a visit. Early repairs prevent bigger
                 breakdowns and water damage.
               </p>
             </div>
@@ -213,48 +219,33 @@ export default function WasherRepairPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Fixer Appliance Repair?</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-xl flex-shrink-0 mt-1" />
-                  <p className="text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Repair or Replace */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="heading-md mb-6">Repair or Replace?</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide 
+              Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide
               for washers to make a smart decision based on cost, age, and reliability.
             </p>
             <Link href="/repair-vs-replace" className="btn-primary">
-              Read Our Guide
+              Read Our Repair vs. Replace Guide
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Washer Installation */}
+      {/* Washer Installation CTA */}
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Washer Installation Services</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
             Upgrading to a new unit? We also offer washer installation in Ottawa — fast, safe, and fully insured.
           </p>
           <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Installation
+            Learn About Washer Installation
           </Link>
         </div>
       </section>
@@ -263,15 +254,19 @@ export default function WasherRepairPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Brands We Repair</h2>
+            <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands We Repair</Link></h2>
             <p className="text-center text-gray-700 mb-8">
               We service all major washer brands, including:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
               {brands.map((brand, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                  <p className="font-semibold text-gray-900">{brand}</p>
-                </div>
+                <Link
+                  key={index}
+                  href={brand.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                >
+                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                </Link>
               ))}
             </div>
             <p className="text-center text-gray-700">
@@ -285,24 +280,26 @@ export default function WasherRepairPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Washer Repair Services Near You</h2>
+            <h2 className="heading-md text-center mb-8">We Repair Washers Across Ottawa</h2>
             <p className="text-center text-gray-700 mb-8">
-              Fixer Appliance Repair proudly serves all neighborhoods in and around Ottawa:
+              We proudly repair washers across all Ottawa neighborhoods, including:
             </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/washer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition-colors"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+              {serviceAreas.map((area, index) => {
+                const slug = area.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link 
+                    key={index} 
+                    href={`/washer-repair/${slug}`}
+                    className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
+                  >
+                    <p className="text-gray-900 font-medium hover:text-primary-700">{area}</p>
+                  </Link>
+                );
+              })}
             </div>
             <p className="text-center text-gray-700">
-              Don't see your neighborhood? Contact us to check service availability.
+              If you don't see your area listed — feel free to ask. Chances are, we're already nearby.
             </p>
           </div>
         </div>
@@ -325,57 +322,79 @@ export default function WasherRepairPage() {
         </div>
       </section>
 
-      {/* Things to Explore in Ottawa */}
-      <section className="section-padding bg-gray-50">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Things to Explore in Ottawa While We Fix Your Washer</h2>
-            <p className="text-center text-gray-700 mb-8">
-              While our technician takes care of your washer, why not take a break and enjoy some of Ottawa's best 
+            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Washer</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              While our technician takes care of your washer, why not take a break and enjoy some of Ottawa's best
               spots? Here are a few great places locals love:
             </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {ottawaAttractions.map((attraction, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">{attraction.name}</h3>
-                  <p className="text-gray-700">{attraction.description}</p>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 gap-4">
+              {ottawaAttractions.map((attraction, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{attraction.name}</h3>
+                      <p className="text-gray-600 text-sm">{attraction.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-gray-700 mb-2">
-                🎉 Looking for something fun this month? Check out local Ottawa events here:
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
               </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
               >
-                https://ottawatourism.ca/en/see-and-do/events
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Ready to Book?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="heading-lg mb-4 text-white">Ready to Book?</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
             Washer trouble can ruin your day — let's get it fixed. Call or text us today to schedule your appointment.
           </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:613-413-6969"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
+            >
+              Call or Text (613) 413-6969
+            </a>
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
+            >
+              Book Online Now
+            </Link>
           </div>
-          <p className="text-2xl font-semibold">
-            We're local. We're reliable. We're Fixer.
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
           </p>
         </div>
       </section>
@@ -390,7 +409,7 @@ export default function WasherRepairPage() {
             </p>
             <div className="grid md:grid-cols-4 gap-4">
               {relatedServices.map((service, index) => (
-                <Link 
+                <Link
                   key={index}
                   href={service.href}
                   className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"

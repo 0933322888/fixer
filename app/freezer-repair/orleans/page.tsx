@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Orleans – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -85,6 +85,15 @@ const faqs = [
   },
 ];
 
+const relatedServices = [
+  { name: "Washer Repair in Ottawa", href: "/washer-repair" },
+  { name: "Dryer Repair in Ottawa", href: "/dryer-repair" },
+  { name: "Dishwasher Repair in Ottawa", href: "/dishwasher-repair" },
+  { name: "Fridge Repair in Ottawa", href: "/fridge-repair" },
+  { name: "Oven Repair in Ottawa", href: "/oven-repair" },
+  { name: "Freezer Installation in Ottawa", href: "/appliance-installation" },
+];
+
 export default function FreezerRepairOrleansPage() {
   return (
     <>
@@ -149,7 +158,7 @@ export default function FreezerRepairOrleansPage() {
                 ⚠️ We don't create new wiring or plumbing lines.
               </p>
               <div className="text-center mt-6">
-                <Link href="/freezer-installation" className="btn-primary">
+                <Link href="/appliance-installation" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -158,20 +167,7 @@ export default function FreezerRepairOrleansPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Freezer" benefits={benefits} />
 
       <CTASection />
 
@@ -281,37 +277,25 @@ export default function FreezerRepairOrleansPage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Our expertise goes beyond freezers — here's what else we offer in Orleans:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/orleans" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Orleans
-            </Link>
-            <Link href="/dryer-repair/orleans" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Orleans
-            </Link>
-            <Link href="/dishwasher-repair/orleans" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Orleans
-            </Link>
-            <Link href="/fridge-repair/orleans" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Repair Orleans
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Orleans
-            </Link>
-            <Link href="/freezer-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Freezer Installation Orleans
-            </Link>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just freezer repair — check out our other Ottawa services:
+            </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {relatedServices.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-gray-700 mt-8">
-            Looking for another service? We've got Orleans covered.
-          </p>
         </div>
       </section>
-
-      <MapSection />
     </>
   );
 }

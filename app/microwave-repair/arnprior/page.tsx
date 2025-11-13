@@ -2,11 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 import {
   FaBolt,
-  FaCheckCircle,
   FaMapMarkerAlt,
-  FaQuestionCircle,
   FaTools,
+  FaUtensils,
+  FaTree,
+  FaBook,
 } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Arnprior – Local, Experienced Service | Fixer",
@@ -189,47 +191,20 @@ export default function MicrowaveRepairArnpriorPage() {
         </div>
       </section>
 
-      {/* Installation Section */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Microwave Installation in Arnprior</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Replacing your microwave in Arnprior? Before buying, see our{" "}
-              <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                repair vs. replace guide
-              </Link>{" "}
-              — it compares repair vs. replacement value.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              If you’ve bought a new unit, we provide microwave installation in Arnprior. We’ll connect and test it using your current power setup.
-            </p>
-            <p className="text-gray-700 mb-6">
-              👉 We don’t create new electrical lines or cabinetry modifications.
-            </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
-              Learn more about Installation
-            </Link>
-          </div>
+      {/* Microwave Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Microwave? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new microwave? We also provide microwave installation in Arnprior with same-day service available in most areas.
+          </p>
+          <Link href="/microwave-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Microwave Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-10">Why Choose Us</h2>
-            <div className="grid md:grid-cols-2 gap-4 text-left">
-              {whyChooseUs.map((item) => (
-                <div key={item} className="flex items-start gap-3 bg-gray-50 p-5 rounded-lg border border-gray-100">
-                  <FaCheckCircle className="text-accent-500 mt-1" />
-                  <p className="text-gray-700">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-100">
@@ -273,49 +248,59 @@ export default function MicrowaveRepairArnpriorPage() {
       </section>
 
       {/* Things to Do */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Discover Arnprior While We Work on Your Microwave</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">Here are a few ideas:</p>
-            <ul className="space-y-3 text-gray-700 mb-6">
-              {highlights.map((item) => (
-                <li key={item.title} className="flex items-start gap-3">
-                  <span className="text-accent-500 mt-1">•</span>
-                  <span>
-                    <strong>{item.title}</strong> – {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-gray-700">
-              👉{" "}
+            <h2 className="heading-md mb-4">Discover Arnprior While We Work on Your Microwave</h2>
+            <p className="text-lg text-gray-700 mb-6">Here are a few ideas:</p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {highlights.map((item, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
+              </p>
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
               <a
-                href="https://arnprior.ca/en/explore-and-play/events-calendar.aspx"
+                href="https://ottawatourism.ca/en/see-and-do/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
               >
-                See events in Arnprior
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
-            </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-100">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-6">
-              <FaQuestionCircle className="text-accent-500 text-3xl" />
-              <h2 className="heading-md mb-0">FAQ – Microwave Repair in Arnprior</h2>
-            </div>
-            <div className="space-y-5">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
-                  <h3 className="text-lg font-semibold text-primary-800">{faq.question}</h3>
-                  <p className="text-gray-600 mt-2">{faq.answer}</p>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
+            <div className="space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -347,29 +332,25 @@ export default function MicrowaveRepairArnpriorPage() {
         </div>
       </section>
 
-      {/* Other Services */}
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We service more than just microwaves — here are our other options in Arnprior:
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just microwave repair — check out our other Ottawa services:
             </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {services.map((service) => (
+            <div className="grid md:grid-cols-4 gap-4">
+              {services.map((service, index) => (
                 <Link
-                  key={service.label}
+                  key={index}
                   href={service.href}
-                  className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-lg px-4 py-3 text-gray-700 hover:border-accent-500 hover:text-accent-600 transition"
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
                 >
-                  <FaTools className="text-accent-500" />
-                  <span>{service.label}</span>
+                  {service.label}
                 </Link>
               ))}
             </div>
-            <p className="text-center text-gray-800 font-semibold mt-8">
-              Fixer Appliance Repair — your microwave repair experts in Arnprior.
-            </p>
           </div>
         </div>
       </section>

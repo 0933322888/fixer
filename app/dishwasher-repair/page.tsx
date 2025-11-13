@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
+import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Ottawa – Fast & Reliable Service | Fixer",
@@ -78,28 +79,29 @@ const whyChooseUs = [
 ];
 
 const brands = [
-  "Bosch",
-  "Whirlpool",
-  "LG",
-  "Samsung",
-  "GE",
-  "Frigidaire",
-  "Maytag",
-  "KitchenAid",
-  "Kenmore",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const serviceAreas = [
-  { name: "Kanata", slug: "kanata" },
-  { name: "Carp", slug: "carp" },
-  { name: "Stittsville", slug: "stittsville" },
-  { name: "Nepean", slug: "nepean" },
-  { name: "Orleans", slug: "orleans" },
-  { name: "Barrhaven", slug: "barrhaven" },
-  { name: "Vanier", slug: "vanier" },
-  { name: "Arnprior", slug: "arnprior" },
-  { name: "Carleton Place", slug: "carleton-place" },
-  { name: "Mississippi Mills", slug: "mississippi-mills" },
+  "Kanata",
+  "Stittsville",
+  "Nepean",
+  "Orleans",
+  "Vanier",
+  "Barrhaven",
+  "Carp",
+  "Arnprior",
+  "Carleton Place",
+  "Mississippi Mills",
 ];
 
 const ottawaAttractions = [
@@ -170,13 +172,22 @@ export default function DishwasherRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Ottawa – Get Your Dishes Clean Again</h1>
+            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Ottawa 
+              <br /> Get Your Dishes Clean Again</h1>
             <p className="text-xl leading-relaxed mb-8">
               A broken dishwasher means more than dirty dishes — it eats up your time. Fixer Appliance Repair delivers professional, affordable dishwasher repair across Ottawa. Whether it's leaking, not draining, or not turning on, we'll get it back in action fast.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               We repair all major dishwasher brands, including Bosch, LG, Samsung, Whirlpool, GE, Maytag, and more.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Book Online
+              </Link>
+              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                Call us
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -198,22 +209,7 @@ export default function DishwasherRepairPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4 text-center">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Repair or Replace */}
       <section className="section-padding bg-white">
@@ -230,37 +226,36 @@ export default function DishwasherRepairPage() {
         </div>
       </section>
 
-      {/* Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Installation Services</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Need a new dishwasher installed? Our technicians provide safe, code-compliant dishwasher installation across Ottawa.
-            </p>
-            <Link href="/dishwasher-installation" className="btn-primary">
-              Learn About Dishwasher Installation
-            </Link>
-          </div>
+      {/* Dishwasher Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dishwasher? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dishwasher? We also provide dishwasher installation in Ottawa with same-day service available in most areas.
+          </p>
+          <Link href="/dishwasher-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dishwasher Installation
+          </Link>
         </div>
       </section>
 
       {/* Brands We Repair */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Brands We Repair</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands We Repair</Link></h2>
             <p className="text-center text-gray-700 mb-8">
               We work with all popular dishwasher brands:
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
               {brands.map((brand, index) => (
-                <div 
-                  key={index} 
-                  className="text-center p-4 bg-gray-50 rounded-lg font-semibold text-gray-900"
+                <Link
+                  key={index}
+                  href={brand.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
                 >
-                  {brand}
-                </div>
+                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                </Link>
               ))}
             </div>
             <p className="text-center text-gray-700">
@@ -270,27 +265,30 @@ export default function DishwasherRepairPage() {
         </div>
       </section>
 
-      {/* We Serve These Areas */}
+      {/* Service Areas */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">We Serve These Areas</h2>
+            <h2 className="heading-md text-center mb-8">We Repair Dishwashers Across Ottawa</h2>
             <p className="text-center text-gray-700 mb-8">
-              Fixer Appliance Repair provides trusted dishwasher repair services across Ottawa and beyond. We proudly serve neighborhoods such as:
+              We proudly repair dishwashers across all Ottawa neighborhoods, including:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/dishwasher-repair/${area.slug}`}
-                  className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
-                >
-                  <p className="text-gray-900 font-medium hover:text-primary-700">{area.name}</p>
-                </Link>
-              ))}
+              {serviceAreas.map((area, index) => {
+                const slug = area.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link 
+                    key={index} 
+                    href={`/dishwasher-repair/${slug}`}
+                    className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
+                  >
+                    <p className="text-gray-900 font-medium hover:text-primary-700">{area}</p>
+                  </Link>
+                );
+              })}
             </div>
             <p className="text-center text-gray-700">
-              Don't see your area listed? Give us a call — we may already be servicing your neighborhood.
+              If you don't see your area listed — feel free to ask. Chances are, we're already nearby.
             </p>
           </div>
         </div>
@@ -300,12 +298,12 @@ export default function DishwasherRepairPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Ottawa</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -313,69 +311,92 @@ export default function DishwasherRepairPage() {
         </div>
       </section>
 
-      {/* Things to Do in Ottawa */}
-      <section className="section-padding bg-gray-50">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Things to Do in Ottawa While We Repair Your Dishwasher</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
+            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Dishwasher</h2>
+            <p className="text-lg text-gray-700 mb-6">
               Give yourself a break while we fix your dishwasher. Whether you're into culture, coffee, or calm — Ottawa has something nearby:
             </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {ottawaAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
+            <div className="grid md:grid-cols-2 gap-4">
+              {ottawaAttractions.map((attraction, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                const parts = attraction.split(" – ");
+                const name = parts[0];
+                const description = parts[1] || "";
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
+                      <p className="text-gray-600 text-sm">{description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                🔍 Want to catch a live event or exhibit? Check what's happening this week:
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
               </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
               >
-                Ottawa Events Calendar
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Book Your Repair CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Book Your Dishwasher Repair in Ottawa</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <h2 className="heading-lg mb-4 text-white">Book Your Dishwasher Repair in Ottawa</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
             Ready to get your dishwasher back in action? Call or text us now to book your appointment.
           </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call or text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:613-413-6969"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
+            >
+              Call or Text (613) 413-6969
+            </a>
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
+            >
+              Book Online Now
+            </Link>
           </div>
-          <p className="text-lg">
-            Fixer is your trusted Ottawa technician — fast, friendly, and reliable.
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
           </p>
         </div>
       </section>
 
-      {/* We Also Offer */}
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">We Also Offer</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
             <p className="text-center text-gray-700 mb-8">
-              Looking for more appliance repair services in Ottawa? We also handle:
+              We do more than just dishwasher repair — check out our other Ottawa services:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
               {relatedServices.map((service, index) => (

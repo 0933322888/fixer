@@ -4,7 +4,7 @@ import { FaFan, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-icons
 
 export const metadata: Metadata = {
   title: "Dryer Installation Ottawa | Professional Dryer Setup Service",
-  description: "Expert dryer installation services in Ottawa, ON. Professional installation for gas and electric dryers. Same-day service available. Call now!",
+  description: "Expert dryer installation services in Ottawa. Professional installation for gas and electric dryers. Same-day service available. Call now!",
   keywords: "dryer installation Ottawa, gas dryer installation, electric dryer installation, dryer hookup, Ottawa ON",
 };
 

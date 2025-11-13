@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Stittsville – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -103,6 +103,15 @@ const faqs = [
   },
 ];
 
+const relatedServices = [
+  { name: "Washer Repair in Ottawa", href: "/washer-repair" },
+  { name: "Dryer Repair in Ottawa", href: "/dryer-repair" },
+  { name: "Dishwasher Repair in Ottawa", href: "/dishwasher-repair" },
+  { name: "Fridge Repair in Ottawa", href: "/fridge-repair" },
+  { name: "Oven Repair in Ottawa", href: "/oven-repair" },
+  { name: "Freezer Installation in Ottawa", href: "/appliance-installation" },
+];
+
 export default function FreezerRepairStittsvillePage() {
   return (
     <>
@@ -167,7 +176,7 @@ export default function FreezerRepairStittsvillePage() {
                 ⚠️ No new wiring or plumbing included.
               </p>
               <div className="text-center mt-6">
-                <Link href="/freezer-installation" className="btn-primary">
+                <Link href="/appliance-installation" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -176,20 +185,7 @@ export default function FreezerRepairStittsvillePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Freezer" benefits={benefits} />
 
       <CTASection />
 
@@ -299,37 +295,26 @@ export default function FreezerRepairStittsvillePage() {
       {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Need more than freezer repair? Here's what else we service in Stittsville:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Stittsville
-            </Link>
-            <Link href="/dryer-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Stittsville
-            </Link>
-            <Link href="/dishwasher-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Stittsville
-            </Link>
-            <Link href="/fridge-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Repair Stittsville
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Stittsville
-            </Link>
-            <Link href="/freezer-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Freezer Installation Stittsville
-            </Link>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just freezer repair — check out our other Ottawa services:
+            </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {relatedServices.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-gray-700 mt-8">
-            From fridges to ovens, we've got Stittsville covered.
-          </p>
         </div>
       </section>
 
-      <MapSection />
     </>
   );
 }

@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
-import ServiceHero from "@/components/ServiceHero";
 import CTASection from "@/components/CTASection";
-import FeedbacksSection from "@/components/FeedbacksSection";
 import FAQSection from "@/components/FAQSection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Ottawa – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -65,28 +63,40 @@ const commonIssues = [
 ];
 
 const serviceAreas = [
-  { name: "Kanata", slug: "/freezer-repair/kanata" },
-  { name: "Carp", slug: "/freezer-repair/carp" },
-  { name: "Stittsville", slug: "/freezer-repair/stittsville" },
-  { name: "Nepean", slug: "/freezer-repair/nepean" },
-  { name: "Orleans", slug: "/freezer-repair/orleans" },
-  { name: "Barrhaven", slug: "/freezer-repair/barrhaven" },
-  { name: "Vanier", slug: "/freezer-repair/vanier" },
-  { name: "Arnprior", slug: "/freezer-repair/arnprior" },
-  { name: "Carleton Place", slug: "/freezer-repair/carleton-place" },
-  { name: "Mississippi Mills", slug: "/freezer-repair/mississippi-mills" },
+  "Kanata",
+  "Stittsville",
+  "Nepean",
+  "Orleans",
+  "Vanier",
+  "Barrhaven",
+  "Carp",
+  "Arnprior",
+  "Carleton Place",
+  "Mississippi Mills",
 ];
 
 const brands = [
-  "Frigidaire",
-  "GE",
-  "Whirlpool",
-  "Samsung",
-  "LG",
-  "Maytag",
-  "Electrolux",
-  "Danby",
-  "Haier",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
+];
+
+const relatedServices = [
+  { name: "Fridge Repair in Ottawa", href: "/fridge-repair" },
+  { name: "Washer Repair in Ottawa", href: "/washer-repair" },
+  { name: "Dryer Repair in Ottawa", href: "/dryer-repair" },
+  { name: "Oven Repair in Ottawa", href: "/oven-repair" },
+  { name: "Cooktop Repair in Ottawa", href: "/stove-repair" },
+  { name: "Microwave Repair in Ottawa", href: "/microwave-repair" },
+  { name: "Dishwasher Repair in Ottawa", href: "/dishwasher-repair" },
+  { name: "Appliance Installation in Ottawa", href: "/appliance-installation" },
 ];
 
 const faqs = [
@@ -135,11 +145,25 @@ const faqs = [
 export default function FreezerRepairPage() {
   return (
     <>
-      <ServiceHero
-        title="Freezer Repair in Ottawa – Stop the Thaw Today"
-        description="Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice."
-        icon={<FaSnowflake className="text-6xl text-white" />}
-      />
+      {/* Hero Section */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="heading-lg mb-6 text-white">Freezer Repair in Ottawa – Stop the Thaw Today</h1>
+            <p className="text-xl text-gray-100 mb-8">
+              Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Book Online
+              </Link>
+              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                Call us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Service Description */}
       <section className="section-padding bg-white">
@@ -167,184 +191,197 @@ export default function FreezerRepairPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Freezer" benefits={benefits} />
 
       <CTASection />
 
-      <FeedbacksSection applianceName="Freezer" />
-
       {/* Repair or Replace */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Repair or Replace?</h2>
-            <p className="text-lg text-gray-700">
-              A good freezer can last well over a decade. If yours isn't cooling right, read our article 
-              to find out if a repair makes more sense than a new unit.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Installation Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Installation Services</h2>
+            <h2 className="heading-md mb-6">Repair or Replace?</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Buying a chest or upright freezer? We install all types of units across Ottawa. 
-              Fast and reliable freezer installation available.
+              A good freezer can last well over a decade. If yours isn't cooling right, read our article 
+              to find out if a repair makes more sense than a new unit.
             </p>
-            <Link href="/freezer-installation" className="btn-primary">
-              Learn About Freezer Installation
+            <Link href="/repair-vs-replace" className="btn-primary">
+              Read Our Repair vs. Replace Guide
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Freezer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Freezer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new freezer? We also provide freezer installation in Ottawa with same-day service available in most areas.
+          </p>
+          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Freezer Installation
+          </Link>
+        </div>
+      </section>
+
       {/* Brands We Repair */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Brands We Repair</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We handle upright and chest freezer repairs for:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-4xl mx-auto">
-            {brands.map((brand, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm text-center font-semibold text-gray-800">
-                {brand}
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands We Repair</Link></h2>
+            <p className="text-center text-gray-700 mb-8">
+              We handle upright and chest freezer repairs for:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+              {brands.map((brand, index) => (
+                <Link
+                  key={index}
+                  href={brand.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                >
+                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center text-gray-700">
+              Have a specialty or garage freezer? We've probably fixed it before — contact us to be sure.
+            </p>
           </div>
-          <p className="text-center text-gray-600 mt-8">
-            Have a specialty or garage freezer? We've probably fixed it before — contact us to be sure.
-          </p>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">We Serve These Areas</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            Fixer Appliance Repair offers freezer repairs throughout Ottawa and the greater region:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {serviceAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center space-x-2 p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
-              >
-                <FaMapMarkerAlt className="text-primary-600" />
-                <span className="font-medium">Freezer Repair {area.name}</span>
-              </Link>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">We Repair Freezers Across Ottawa</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We proudly repair freezers across all Ottawa neighborhoods, including:
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+              {serviceAreas.map((area, index) => {
+                const slug = area.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link 
+                    key={index} 
+                    href={`/freezer-repair/${slug}`}
+                    className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
+                  >
+                    <p className="text-gray-900 font-medium hover:text-primary-700">{area}</p>
+                  </Link>
+                );
+              })}
+            </div>
+            <p className="text-center text-gray-700">
+              If you don't see your area listed — feel free to ask. Chances are, we're already nearby.
+            </p>
           </div>
-          <p className="text-center text-gray-600 mt-8">
-            Need a visit outside these zones? Get in touch — we might already serve your area.
-          </p>
         </div>
       </section>
 
       <FAQSection applianceName="Freezer" faqs={faqs} />
 
-      {/* Things to Do in Ottawa */}
-      <section className="section-padding bg-gray-50">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Things to Do in Ottawa While We Repair Your Freezer</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            Frozen dinners on hold? No worries — step out and explore:
-          </p>
-          <div className="max-w-4xl mx-auto space-y-4">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Bank Street Promenade</h3>
-              <p className="text-gray-600">Local shops, vegan eats, and indie vibe</p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Freezer</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Frozen dinners on hold? No worries — step out and explore:
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { name: "Bank Street Promenade", description: "local shops, vegan eats, and indie vibe" },
+                { name: "Mooney's Bay Park", description: "beachfront, picnic tables, and volleyball" },
+                { name: "House of TARG", description: "arcade, pierogis, and retro fun" },
+                { name: "Orange Art Gallery", description: "hidden gem with local artists" },
+              ].map((attraction, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{attraction.name}</h3>
+                      <p className="text-gray-600 text-sm">{attraction.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Mooney's Bay Park</h3>
-              <p className="text-gray-600">Beachfront, picnic tables, and volleyball</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">House of TARG</h3>
-              <p className="text-gray-600">Arcade, pierogis, and retro fun</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Orange Art Gallery</h3>
-              <p className="text-gray-600">Hidden gem with local artists</p>
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
+              </p>
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
+              >
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
-          <p className="text-center text-gray-700 mt-8">
-            🔍 Want to catch a live event or exhibit? Check what's happening this week:{" "}
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-lg mb-4 text-white">Book Your Freezer Repair in Ottawa</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Is your freezer giving you trouble? Contact us now for fast, professional service in Ottawa. 
+            We're just a phone call (or click) away.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+16135550199"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
             >
-              https://ottawatourism.ca/en/see-and-do/events
+              Call or Text (613) 555-0199
+            </a>
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
+            >
+              Book Online Now
+            </Link>
+          </div>
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
             </a>
           </p>
         </div>
       </section>
 
-      {/* Book Your Repair */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Freezer Repair in Ottawa</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Is your freezer giving you trouble? Contact us now for fast, professional service in Ottawa. 
-            We're just a phone call (or click) away.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">📞 Call or text: (613) 555-0199</p>
-            <p className="text-xl">📧 Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
-
-      {/* We Also Offer */}
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">We Also Offer</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Need more appliance help in Ottawa? We also provide:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/fridge-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Repair in Ottawa
-            </Link>
-            <Link href="/washer-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair in Ottawa
-            </Link>
-            <Link href="/dryer-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair in Ottawa
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair in Ottawa
-            </Link>
-            <Link href="/stove-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Cooktop Repair in Ottawa
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Appliance Installation in Ottawa
-            </Link>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just freezer repair — check out our other Ottawa services:
+            </p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {relatedServices.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Orleans – Fast, Local Experts | Fixer",
@@ -92,11 +93,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Orleans", href: "/washer-repair/orleans" },
   { name: "Dryer Repair Orleans", href: "/dryer-repair/orleans" },
-  { name: "Fridge Repair Orleans", href: "/fridge-repair" },
-  { name: "Freezer Repair Orleans", href: "/freezer-repair" },
-  { name: "Oven Repair Orleans", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Orleans", href: "/cooktop-repair" },
-  { name: "Microwave Repair Orleans", href: "/microwave-repair" },
+  { name: "Fridge Repair Orleans", href: "/fridge-repair/orleans" },
+  { name: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
+  { name: "Oven Repair Orleans", href: "/oven-repair/orleans" },
+  { name: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
+  { name: "Microwave Repair Orleans", href: "/microwave-repair/orleans" },
   { name: "Dishwasher Installation Orleans", href: "/dishwasher-installation" },
 ];
 
@@ -171,22 +172,7 @@ export default function DishwasherRepairOrleansPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -273,16 +259,16 @@ export default function DishwasherRepairOrleansPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Orleans</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

@@ -100,7 +100,7 @@ export default function OvenRepairStittsvillePage() {
     <>
       <ServiceHero
         title="Stittsville Oven Repair – Done Right the First Time"
-        description="An oven that bakes unevenly or won't preheat is frustrating. Fixer Appliance Repair serves Stittsville with professional, on-time electric oven repair. We handle all popular brands, including LG, Samsung, Whirlpool, GE, and Maytag."
+        description="An oven that bakes unevenly or won't preheat is frustrating. Fixer Appliance Repair serves Stittsville with professional-time electric oven repair. We handle all popular brands, including LG, Samsung, Whirlpool, GE, and Maytag."
         icon={<FaFire className="text-6xl text-white" />}
       />
 
@@ -272,7 +272,7 @@ export default function OvenRepairStittsvillePage() {
         </div>
       </section>
 
-      {/* Other Services */}
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">

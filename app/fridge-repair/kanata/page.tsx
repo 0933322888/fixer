@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaSnowflake, FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
-import MapSection from "@/components/MapSection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Kanata – Fast, Reliable Local Experts | Fixer",
@@ -177,20 +177,7 @@ export default function FridgeRepairKanataPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <FaCheckCircle className="text-primary-600 flex-shrink-0 mt-1" />
-                <span className="text-gray-700">{benefit}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
       <CTASection />
 
@@ -233,41 +220,32 @@ export default function FridgeRepairKanataPage() {
         </div>
       </section>
 
-      {/* Discover Kanata */}
-      <section className="section-padding bg-gray-50">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Explore Kanata While We Fix...</h2>
-          <p className="text-center text-gray-700 mb-8">
-            While our technician is taking care of your fridge, you don't need to waste the day — Kanata has plenty to see:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">South March Highlands</h3>
-              <p className="text-gray-600">Scenic forest trails for walking or biking</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Walter Baker Park</h3>
-              <p className="text-gray-600">Open green spaces for a family break</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Kanata Centrum</h3>
-              <p className="text-gray-600">Shopping, coffee, and local dining</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Canadian Tire Centre</h3>
-              <p className="text-gray-600">Hockey, shows, and live concerts</p>
-            </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Fridge</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              While our technician is taking care of your fridge, you don't need to waste the day — Kanata has plenty to see:
+            </p>
+            <ul className="space-y-3 text-gray-700">
+              <li>South March Highlands – scenic forest trails for walking or biking</li>
+              <li>Walter Baker Park – open green spaces for a family break</li>
+              <li>Kanata Centrum – shopping, coffee, and local dining</li>
+              <li>Canadian Tire Centre – hockey, shows, and live concerts</li>
+            </ul>
+            <p className="text-lg text-gray-700 mt-6">
+              Want to catch a live event or exhibit? Check what's happening this week:
+              <a
+                href="https://ottawatourism.ca/en/see-and-do/events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent-600 font-medium ml-2 hover:underline"
+              >
+                Ottawa Tourism Events
+              </a>
+            </p>
           </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              Check out what's on this week in Kanata
-            </a>
-          </p>
         </div>
       </section>
 
@@ -333,7 +311,6 @@ export default function FridgeRepairKanataPage() {
         </div>
       </section>
 
-      <MapSection />
     </>
   );
 }

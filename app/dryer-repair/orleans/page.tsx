@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Orleans Dryer Repair – Fast, Local Service | Fixer",
@@ -100,11 +101,11 @@ const faqs = [
 
 const relatedServices = [
   { name: "Washer Repair Orleans", href: "/washer-repair/orleans" },
-  { name: "Dishwasher Repair Orleans", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Orleans", href: "/fridge-repair" },
-  { name: "Freezer Repair Orleans", href: "/freezer-repair" },
-  { name: "Oven Repair Orleans", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Orleans", href: "/cooktop-repair" },
+  { name: "Dishwasher Repair Orleans", href: "/dishwasher-repair/orleans" },
+  { name: "Fridge Repair Orleans", href: "/fridge-repair/orleans" },
+  { name: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
+  { name: "Oven Repair Orleans", href: "/oven-repair/orleans" },
+  { name: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
   { name: "Microwave Repair Orleans", href: "/microwave-repair" },
   { name: "Dryer Installation Orleans", href: "/dryer-installation" },
 ];
@@ -116,7 +117,7 @@ export default function DryerRepairOrleansPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Expert Dryer Repair in Orleans, ON</h1>
+            <h1 className="heading-lg mb-6 text-white">Expert Dryer Repair in Orleans</h1>
             <p className="text-xl leading-relaxed mb-8">
               Dryer taking two cycles to dry a single load? Fixer Appliance Repair serves Orleans with quick, reliable dryer service. From heating element failures to noisy drums, our local team restores your laundry routine with upfront pricing and a 90-day guarantee. We repair all major brands, including LG, Samsung, Whirlpool, GE, and Maytag.
             </p>
@@ -148,51 +149,20 @@ export default function DryerRepairOrleansPage() {
         </div>
       </section>
 
-      {/* Dryer Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Dryer Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Looking for dryer installation in Orleans?</strong> Check our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}before you buy — it compares costs, reliability, and lifespan.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                If you've already picked a new unit, we'll install and test it in Orleans using your current power setup.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 We don't add high-voltage wiring or new venting.
-              </p>
-              <div className="text-center">
-                <Link href="/dryer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dryer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dryer? We also provide dryer installation in Orleans with same-day service available in most areas.
+          </p>
+          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dryer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us for Dryer Repair</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -279,16 +249,16 @@ export default function DryerRepairOrleansPage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dryer Repair in Orleans</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

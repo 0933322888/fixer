@@ -2,51 +2,51 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Appliance Service in Mississippi Mills – Dependable Local Technicians",
+  title: "Vanier Appliance Service – Skilled Repairs & Local Expertise | Fixer",
   description:
-    "Serving Mississippi Mills with professional appliance repairs. Transparent pricing, rural service available, and 90-day coverage on all work.",
+    "Serving Vanier homes with expert appliance service for over 15 years. Quick response, fair pricing, and quality repairs backed by a 90-day workmanship promise.",
 };
 
 const services = [
   {
-    name: "Washer repair Mississippi Mills",
-    description: "No leaks, no hassles.",
-    href: "/washer-repair/mississippi-mills",
+    name: "Washer repair Vanier",
+    description: "End mid-cycle breakdowns.",
+    href: "/washer-repair/vanier",
   },
   {
-    name: "Dryer repair Mississippi Mills",
-    description: "Efficient and quiet operation.",
-    href: "/dryer-repair/mississippi-mills",
+    name: "Dryer repair Vanier",
+    description: "Restore fast, quiet operation.",
+    href: "/dryer-repair/vanier",
   },
   {
-    name: "Dishwasher repair Mississippi Mills",
-    description: "Thorough cleaning every cycle.",
-    href: "/dishwasher-repair/mississippi-mills",
+    name: "Dishwasher repair Vanier",
+    description: "Get every load sparkling clean.",
+    href: "/dishwasher-repair/vanier",
   },
   {
-    name: "Fridge repair Mississippi Mills",
-    description: "Freshness that lasts.",
-    href: "/fridge-repair/mississippi-mills",
+    name: "Fridge repair Vanier",
+    description: "Keep your perishables fresh.",
+    href: "/fridge-repair/vanier",
   },
   {
-    name: "Freezer repair Mississippi Mills",
-    description: "Reliable preservation of food.",
-    href: "/freezer-repair/mississippi-mills",
+    name: "Freezer repair Vanier",
+    description: "Reliable freezing for long storage.",
+    href: "/freezer-repair/vanier",
   },
   {
-    name: "Oven repair Mississippi Mills",
-    description: "Even heat for baking and roasting.",
-    href: "/oven-repair/mississippi-mills",
+    name: "Oven repair Vanier",
+    description: "Even, dependable cooking.",
+    href: "/oven-repair/vanier",
   },
   {
-    name: "Cooktop repair Mississippi Mills",
-    description: "Smooth heating, precise control.",
-    href: "/cooktop-repair/mississippi-mills",
+    name: "Cooktop repair Vanier",
+    description: "Balanced heat on every burner.",
+    href: "/cooktop-repair/vanier",
   },
   {
-    name: "Microwave repair Mississippi Mills",
-    description: "Quick reheating done right.",
-    href: "/microwave-repair/mississippi-mills",
+    name: "Microwave repair Vanier",
+    description: "Fast and safe warming.",
+    href: "/microwave-repair/vanier",
   },
 ];
 
@@ -64,65 +64,40 @@ const brands = [
 ];
 
 const attractions = [
-  "Almonte Riverwalk – picturesque riverside strolls.",
-  "Mill of Kintail Conservation Area – trails and a charming museum.",
-  "Downtown Almonte – local cafés, shops, and heritage sites.",
+  "Beechwood Avenue – Great cafés, bakeries, and local shops.",
+  "Richelieu Park – Year-round walking trails and green space.",
+  "Vanier Museopark – A unique museum celebrating Franco-Ontarian culture.",
 ];
 
 const faqs = [
   {
-    question:
-      "Do you service Almonte, Pakenham and surrounding rural roads?",
+    question: "Do you offer same day service in Vanier?",
     answer:
-      "Yes — we regularly visit homes across Mississippi Mills, including rural properties.",
+      "Often yes. Many Vanier addresses qualify for same day or next day visits—call to check today's schedule.",
   },
   {
-    question: "Can you come the same or next day?",
-    answer: "Frequently, yes. Call early for the best availability.",
-  },
-  {
-    question: "What appliances are most common here?",
+    question: "Which appliances do you handle most in Vanier?",
     answer:
-      "Fridges losing temperature, washers leaking, and ovens with uneven heat — plus the full list of major units.",
+      "Washers, dryers, dishwashers, fridges/freezers, ovens, cooktops, and microwaves — condo units included.",
   },
   {
-    question: "Which brands can you fix?",
+    question: "Do you cover nearby neighbourhoods?",
     answer:
-      "Most major brands and many premium lines such as Bosch, LG, Samsung, Whirlpool, GE, and Maytag.",
+      "Yes, we also serve Overbrook, Beechwood, New Edinburgh and surrounding Ottawa East areas.",
   },
   {
-    question: "What about guarantees?",
-    answer: "Repairs include a 90 day labour warranty.",
+    question: "What brands can you repair?",
+    answer:
+      "Most major and premium brands (LG, Samsung, Whirlpool, GE, Bosch, Maytag, Kenmore, Panasonic and more).",
+  },
+  {
+    question: "Is there a warranty?",
+    answer:
+      "Yes—90 day labour warranty on the work we perform.",
   },
 ];
 
-const neighbourhoods = [
-  {
-    name: "Almonte Appliance Repair",
-    href: "/service-areas/mississippi-mills/almonte",
-  },
-  {
-    name: "Appleton Appliance Repair",
-    href: "/service-areas/mississippi-mills/appleton",
-  },
-  {
-    name: "Blakeney Appliance Repair",
-    href: "/service-areas/mississippi-mills/blakeney",
-  },
-];
-
-const additionalAreas = [
-  "Pakenham",
-  "Ramsay",
-  "Clayton",
-  "Galbraith",
-  "Rosetta",
-  "Blakeney Rapids",
-  "Cedar Hill",
-  "Bennie’s Corners",
-];
-
-export default function MississippiMillsServiceAreaPage() {
+export default function VanierServiceAreaPage() {
   return (
     <>
       {/* Hero Section */}
@@ -130,26 +105,10 @@ export default function MississippiMillsServiceAreaPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">
-              Appliance Service in Mississippi Mills
+              Appliance Service in Vanier
             </h1>
             <p className="text-xl text-gray-100 mb-4">
-              Appliance trouble in Mississippi Mills? Fixer Appliance Repair has been
-              keeping local kitchens and laundry rooms in shape for years. From{" "}
-              <Link
-                href="/fridge-repair/mississippi-mills"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                fridge repair in Mississippi Mills
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/oven-repair/mississippi-mills"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                oven repair in Mississippi Mills
-              </Link>
-              , we've got you covered with clear pricing, a 90-day warranty, and
-              same-day appointments in many areas.
+              Need a trusted appliance repair service in Vanier? From <Link href="/washer-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">washer repair in Vanier</Link> to <Link href="/fridge-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">fridge repair in Vanier</Link>, our Ottawa-based, family-run team keeps local kitchens and laundry rooms working smoothly. We provide clear pricing, a 90-day workmanship guarantee, and same-day service in many parts of Vanier.
             </p>
           </div>
         </div>
@@ -162,9 +121,9 @@ export default function MississippiMillsServiceAreaPage() {
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
-            Our Services in the Mississippi Mills Area
+            What We Work On
           </h2>
-          <p className="text-gray-700">We’re experienced with:</p>
+          <p className="text-gray-700">We service a wide range of household appliances:</p>
           <div className="grid gap-4 md:grid-cols-2">
             {services.map((service) => (
               <Link
@@ -213,7 +172,7 @@ export default function MississippiMillsServiceAreaPage() {
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
-            <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Work With
+            <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Handle
           </h2>
           <p className="text-gray-700">
             We repair all major household brands, including:
@@ -230,18 +189,14 @@ export default function MississippiMillsServiceAreaPage() {
             ))}
           </div>
           <p className="text-gray-700">
-            Not sure about your brand or model? Give us a call — chances are,
-            we’ve repaired it before.
+            Not sure about your brand or model? Give us a call — chances are, we've repaired it before.
           </p>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
-            Explore the Area While We Work
+            Explore Vanier While We Work
           </h2>
-          <p className="text-gray-700">
-            While we get your appliance back in shape, enjoy:
-          </p>
           <ul className="space-y-3 text-sm text-gray-700">
             {attractions.map((item) => (
               <li key={item} className="flex items-start gap-2">
@@ -251,58 +206,26 @@ export default function MississippiMillsServiceAreaPage() {
             ))}
           </ul>
           <p className="text-gray-700">
-            We proudly serve Almonte, Pakenham, and nearby rural roads — plus
-            surrounding areas like{" "}
-            <Link
-              href="/service-areas/carleton-place"
+            We also serve neighbouring communities like <Link
+              href="/service-areas/overbrook"
               className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
             >
-              Carleton Place appliance repair
-            </Link>
-            .
+              Overbrook appliance repair
+            </Link> and New Edinburgh.
           </p>
           <div className="rounded-xl border border-accent-500 bg-accent-50 p-6 text-gray-800">
-            <p className="text-lg font-semibold">🎉 See more events nearby</p>
-            <p className="mt-2 text-sm">
-              Visit the{" "}
-              <a
-                href="https://www.mississippimills.ca/en/explore-and-play/events.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-600 underline hover:text-accent-700"
-              >
-                Mississippi Mills community page
-              </a>
-              .
-            </p>
+            <p className="text-lg font-semibold">👉 Check <Link
+              href="/service-areas/vanier/events"
+              className="text-accent-600 underline hover:text-accent-700"
+            >
+              Vanier events
+            </Link> here.</p>
           </div>
         </section>
 
         <section className="space-y-6">
           <h2 className="text-3xl font-semibold text-gray-900">
-            Neighbourhoods We Serve in Mississippi Mills
-          </h2>
-          <p className="text-gray-700">
-            Explore detailed service pages for these Mississippi Mills communities:
-          </p>
-          <ul className="grid gap-3 md:grid-cols-2">
-            {neighbourhoods.map((area) => (
-              <li key={area.name}>
-                <Link
-                  href={area.href}
-                  className="block rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-700"
-                >
-                  {area.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-700">{additionalAreas.join(" • ")}</p>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            FAQ – Local Appliance Help
+            FAQ – Appliance Service in Vanier
           </h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
@@ -326,11 +249,9 @@ export default function MississippiMillsServiceAreaPage() {
       {/* CTA */}
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">
-            Book Your Local Service Today
-          </h2>
+          <h2 className="heading-lg mb-4 text-white">Call Us Today</h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Friendly. Local. Guaranteed.
+            Fast, friendly help from your local team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -1,5 +1,7 @@
+import BenefitsSection from "@/components/BenefitsSection";
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair Ottawa – Fast Electric Cooktop Service | Fixer",
@@ -99,28 +101,29 @@ const whyChooseUs = [
 ];
 
 const brands = [
-  "Whirlpool",
-  "GE",
-  "Samsung",
-  "Frigidaire",
-  "LG",
-  "Bosch",
-  "KitchenAid",
-  "Maytag",
-  "Kenmore",
+  { name: "Bosch", href: "/brands/bosch" },
+  { name: "Frigidaire", href: "/brands/frigidaire" },
+  { name: "GE", href: "/brands/ge" },
+  { name: "Kenmore", href: "/brands/kenmore" },
+  { name: "LG", href: "/brands/lg" },
+  { name: "Maytag", href: "/brands/maytag" },
+  { name: "Panasonic", href: "/brands/panasonic" },
+  { name: "Samsung", href: "/brands/samsung" },
+  { name: "Whirlpool", href: "/brands/whirlpool" },
+  { name: "Electrolux", href: "?" },
 ];
 
 const serviceAreas = [
-  { name: "Cooktop repair Kanata", href: "/cooktop-repair/kanata" },
-  { name: "Cooktop repair Carp", href: "/cooktop-repair/carp" },
-  { name: "Cooktop repair Stittsville", href: "/cooktop-repair/stittsville" },
-  { name: "Cooktop repair Nepean", href: "/cooktop-repair/nepean" },
-  { name: "Cooktop repair Orleans", href: "/cooktop-repair/orleans" },
-  { name: "Cooktop repair Barrhaven", href: "/cooktop-repair/barrhaven" },
-  { name: "Cooktop repair Vanier", href: "/cooktop-repair/vanier" },
-  { name: "Cooktop repair Arnprior", href: "/cooktop-repair/arnprior" },
-  { name: "Cooktop repair Carleton Place", href: "/cooktop-repair/carleton-place" },
-  { name: "Cooktop repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
+  "Kanata",
+  "Stittsville",
+  "Nepean",
+  "Orleans",
+  "Vanier",
+  "Barrhaven",
+  "Carp",
+  "Arnprior",
+  "Carleton Place",
+  "Mississippi Mills",
 ];
 
 const faqs = [
@@ -199,11 +202,13 @@ const otherServices = [
 export default function CooktopRepairPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
+      {/* Hero Section */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Cooktop Repair in Ottawa - Smooth Heating Starts Here
+            <h1 className="heading-lg mb-6 text-white">
+              Cooktop Repair in Ottawa
+              <br /> Smooth Heating Starts Here
             </h1>
             <p className="text-xl text-gray-100 mb-4">
               When your cooktop won't heat or certain burners stop working, we are here to help. Fixer
@@ -213,14 +218,14 @@ export default function CooktopRepairPage() {
               We work with LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, and others.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Cooktop Repair
+              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Book Online
               </Link>
               <a
-                href="tel:+16135550199"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-700"
+                href="tel:613-413-6969"
+                className="btn-outline border-white text-white hover:bg-white hover:text-primary-500"
               >
-                Call (613) 555-0199
+                Call us
               </a>
             </div>
           </div>
@@ -246,96 +251,105 @@ export default function CooktopRepairPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Why choose us</h2>
-            <ul className="space-y-3 text-lg text-gray-700 inline-block text-left">
-              {whyChooseUs.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-primary-600" aria-hidden="true" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
 
+      <BenefitsSection applianceName="Cooktop" benefits={whyChooseUs} />
+
+      {/* Repair or Replace */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto space-y-6 text-gray-700 text-lg text-center">
-            <div>
-              <h2 className="heading-md mb-4">Repair or Replace?</h2>
-              <p>
-                Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you
-                decide if it is worth saving.
-              </p>
-            </div>
-            <div>
-              <h2 className="heading-md mb-4">Installation Services</h2>
-              <p>
-                We safely install electric cooktops in Ottawa kitchens, including drop-in models and custom
-                countertop cuts.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="heading-md mb-6">Repair or Replace?</h2>
+            <p className="text-lg text-gray-700 mb-8">
+              Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you
+              decide if it is worth saving.
+            </p>
+            <Link href="/repair-vs-replace" className="btn-primary">
+              Read Our Repair vs. Replace Guide
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
+      {/* Cooktop Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">Installation Services</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            We safely install electric cooktops in Ottawa kitchens, including drop-in models and custom
+            countertop cuts.
+          </p>
+          <Link href="/cooktop-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Cooktop Installation
+          </Link>
+        </div>
+      </section>
+
+      {/* Brands We Repair */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Brands We Repair</h2>
-            <p className="text-lg text-gray-700 mb-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands We Repair</Link></h2>
+            <p className="text-center text-gray-700 mb-8">
               We repair cooktops from these well-known brands:
             </p>
-            <div className="grid gap-4 grid-cols-2 sm:grid-cols-3">
-              {brands.map((brand) => (
-                <div key={brand} className="p-4 bg-white rounded-lg shadow text-center text-primary-700 font-semibold">
-                  {brand}
-                </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+              {brands.map((brand, index) => (
+                <Link
+                  key={index}
+                  href={brand.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                >
+                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                </Link>
               ))}
             </div>
-            <p className="text-lg text-gray-700 mt-6">
+            <p className="text-center text-gray-700">
               Do not see your cooktop brand here? Just give us a call - we are happy to help.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+
+      {/* Service Areas */}
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">We Serve These Areas</h2>
-            <p className="text-lg text-gray-700 mb-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">We Serve These Areas</h2>
+            <p className="text-center text-gray-700 mb-8">
               Need electric cooktop repair in Ottawa? We serve the following communities:
             </p>
-            <ul className="grid gap-3 sm:grid-cols-2 text-lg text-primary-700 text-left md:px-12">
-              {serviceAreas.map((area) => (
-                <li key={area.name}>
-                  <Link href={area.href} className="hover:underline">
-                    {area.name}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+              {serviceAreas.map((area, index) => {
+                const slug = area.toLowerCase().replace(/\s+/g, '-');
+                return (
+                  <Link
+                    key={index}
+                    href={`/cooktop-repair/${slug}`}
+                    className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
+                  >
+                    <p className="text-gray-900 font-medium hover:text-primary-700">{area}</p>
                   </Link>
-                </li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Need service outside this list? Just ask - we may be in your area already.
+                );
+              })}
+            </div>
+            <p className="text-center text-gray-700">
+              If you don't see your area listed — feel free to ask. Chances are, we're already nearby.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">FAQ - Cooktop Repair in Ottawa</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="bg-white rounded-xl shadow p-6 text-left">
-                  <h3 className="text-lg font-semibold text-primary-700 mb-2">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -343,74 +357,97 @@ export default function CooktopRepairPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
+      {/* Things to Do */}
+      <section className="section-padding bg-gray-100">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Things to Do in Ottawa While We Repair Your Cooktop</h2>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Cooktop</h2>
             <p className="text-lg text-gray-700 mb-6">
               While your cooktop is being handled, you can enjoy some of Ottawa's best casual escapes:
             </p>
-            <ul className="space-y-4 text-lg text-gray-700 inline-block text-left">
-              {thingsToDo.map((item) => (
-                <li key={item.title}>
-                  <span className="font-semibold text-primary-700">{item.title}</span> - {item.description}
-                </li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              <span role="img" aria-hidden="true">
-                🔍
-              </span>{" "}
-              Want to catch a live event or exhibit? Check what is happening this week:{" "}
+            <div className="grid md:grid-cols-2 gap-4">
+              {thingsToDo.map((item, index) => {
+                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
+                const Icon = icons[index % icons.length];
+                return (
+                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
+                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                      <p className="text-gray-600 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
+              <p className="text-lg font-semibold text-gray-900 mb-2">
+                Want to catch a live event or exhibit?
+              </p>
+              <p className="text-gray-700 mb-3">
+                Check what's happening this week:
+              </p>
               <a
                 href="https://ottawatourism.ca/en/see-and-do/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-700 hover:underline"
+                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
               >
-                https://ottawatourism.ca/en/see-and-do/events
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h2 className="heading-md text-white">Book Your Cooktop Repair in Ottawa</h2>
-            <p className="text-lg text-gray-100">
-              Need your cooktop working again ASAP? Let Fixer handle it. Contact us by phone, text, or book online -
-              Ottawa's friendly appliance pros are here for you.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-lg">
-              <a href="tel:+16135550199" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-                Call or Text (613) 555-0199
-              </a>
-              <a
-                href="mailto:service@fixerappliancerepair.ca"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-700"
-              >
-                Email service@fixerappliancerepair.ca
+                Ottawa Tourism Events
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* CTA */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-lg mb-4 text-white">Book Your Cooktop Repair in Ottawa</h2>
+          <p className="text-xl mb-8 max-w-3xl mx-auto">
+            Need your cooktop working again ASAP? Let Fixer handle it. Contact us by phone, text, or book online -
+            Ottawa's friendly appliance pros are here for you.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+16135550199"
+              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
+            >
+              Call or Text (613) 555-0199
+            </a>
+            <Link
+              href="/contact"
+              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
+            >
+              Book Online Now
+            </Link>
+          </div>
+          <p className="text-lg text-white/90 mt-6">
+            Email:{" "}
+            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
+              service@fixerappliancerepair.ca
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* Related Services */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">We Also Offer</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              We offer a full range of appliance services in Ottawa, including:
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
+            <p className="text-center text-gray-700 mb-8">
+              We do more than just cooktop repair — check out our other Ottawa services:
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {otherServices.map((service) => (
+            <div className="grid md:grid-cols-4 gap-4">
+              {otherServices.map((service, index) => (
                 <Link
-                  key={service.name}
+                  key={index}
                   href={service.href}
-                  className="px-4 py-2 rounded-full bg-gray-100 text-primary-700 hover:bg-primary-700 hover:text-white transition"
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
                 >
                   {service.name}
                 </Link>

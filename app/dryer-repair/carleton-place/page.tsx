@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Carleton Place Dryer Repair – Friendly, Trusted Technicians | Fixer",
@@ -95,12 +96,12 @@ const faqs = [
 
 const relatedServices = [
   { name: "Washer Repair Carleton Place", href: "/washer-repair/carleton-place" },
-  { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair" },
-  { name: "Fridge Repair Carleton Place", href: "/fridge-repair" },
-  { name: "Freezer Repair Carleton Place", href: "/freezer-repair" },
-  { name: "Oven Repair Carleton Place", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Carleton Place", href: "/cooktop-repair" },
-  { name: "Microwave Repair Carleton Place", href: "/microwave-repair" },
+  { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair/carleton-place" },
+  { name: "Fridge Repair Carleton Place", href: "/fridge-repair/carleton-place" },
+  { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
+  { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
+  { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
+  { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
   { name: "Dryer Installation Carleton Place", href: "/dryer-installation" },
 ];
 
@@ -111,7 +112,7 @@ export default function DryerRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Dryer Repair in Carleton Place, ON</h1>
+            <h1 className="heading-lg mb-6 text-white">Trusted Dryer Repair in Carleton Place</h1>
             <p className="text-xl leading-relaxed mb-8">
               If your Carleton Place dryer is overheating, refusing to start, or shutting down mid-cycle, Fixer Appliance Repair is here to help. Our skilled technicians provide fast, dependable repairs, backed by transparent pricing and a 90-day workmanship warranty. We handle leading models from GE, Samsung, Whirlpool, LG, and Maytag.
             </p>
@@ -143,51 +144,20 @@ export default function DryerRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* Dryer Installation Services */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-6">Dryer Installation Services</h2>
-            <div className="bg-white p-8 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700 mb-6">
-                <strong>Replacing your dryer in Carleton Place?</strong> Check out our{" "}
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  repair vs. replace guide
-                </Link>
-                {" "}— it breaks down common repairs, lifespan, and replacement costs.
-              </p>
-              <p className="text-lg text-gray-700 mb-4">
-                If you've bought a new one, we provide dryer installation in Carleton Place. We'll hook it up and test it using existing hookups.
-              </p>
-              <p className="text-gray-700 mb-6">
-                👉 We don't install new power lines or ductwork.
-              </p>
-              <div className="text-center">
-                <Link href="/dryer-installation" className="btn-primary">
-                  Learn more about Installation
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Dryer Installation CTA */}
+      <section className="section-padding bg-[#DD4F06] text-white">
+        <div className="container-custom text-center">
+          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Got a new dryer? We also provide dryer installation in Carleton Place with same-day service available in most areas.
+          </p>
+          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+            Learn About Dryer Installation
+          </Link>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us for Dryer Repair</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -274,16 +244,16 @@ export default function DryerRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dryer Repair in Carleton Place</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

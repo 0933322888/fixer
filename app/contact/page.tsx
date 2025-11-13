@@ -82,7 +82,7 @@ export default function ContactPage() {
       </section>
 
       {/* Get in Touch & Contact Form Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Get in Touch */}
@@ -90,37 +90,37 @@ export default function ContactPage() {
               <h2 className="heading-md mb-8">Get in Touch</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
-                    <FaPhone className="text-primary-600 text-xl" />
+                  <div className="bg-light-100 p-3 rounded-lg flex-shrink-0">
+                    <FaPhone className="text-primary-500 text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
-                    <a href="tel:613-413-6969" className="text-primary-600 hover:text-primary-700 text-lg">
+                    <h3 className="font-semibold text-primary-500 mb-2">Phone</h3>
+                    <a href="tel:613-413-6969" className="text-primary-500 hover:text-primary-600 text-lg">
                       613-413-6969
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
-                    <FaEnvelope className="text-primary-600 text-xl" />
+                  <div className="bg-light-100 p-3 rounded-lg flex-shrink-0">
+                    <FaEnvelope className="text-primary-500 text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                    <a href="mailto:service@fixerappliancerepair.ca" className="text-primary-600 hover:text-primary-700 text-lg break-all">
+                    <h3 className="font-semibold text-primary-500 mb-2">Email</h3>
+                    <a href="mailto:service@fixerappliancerepair.ca" className="text-primary-500 hover:text-primary-600 text-lg break-all">
                       service@fixerappliancerepair.ca
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary-100 p-3 rounded-lg flex-shrink-0">
-                    <FaClock className="text-primary-600 text-xl" />
+                  <div className="bg-light-100 p-3 rounded-lg flex-shrink-0">
+                    <FaClock className="text-primary-500 text-xl" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
-                    <p className="text-gray-700 text-lg">Monday–Saturday</p>
-                    <p className="text-gray-700 text-lg">8:00 AM – 8:00 PM</p>
+                    <h3 className="font-semibold text-primary-500 mb-2">Business Hours</h3>
+                    <p className="text-neutral-600 text-lg">Monday–Saturday</p>
+                    <p className="text-neutral-600 text-lg">8:00 AM – 8:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-neutral-700 mb-2">
                     Name *
                   </label>
                   <input
@@ -157,12 +157,12 @@ export default function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-light-100 disabled:cursor-not-allowed"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 mb-2">
                     Email *
                   </label>
                   <input
@@ -173,12 +173,12 @@ export default function ContactPage() {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-light-100 disabled:cursor-not-allowed"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-neutral-700 mb-2">
                     Phone *
                   </label>
                   <input
@@ -189,12 +189,12 @@ export default function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-light-100 disabled:cursor-not-allowed"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 mb-2">
                     Message
                   </label>
                   <textarea
@@ -205,7 +205,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     disabled={loading}
                     placeholder="Tell us about your appliance issue..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent disabled:bg-light-100 disabled:cursor-not-allowed"
                   ></textarea>
                 </div>
 
@@ -223,25 +223,25 @@ export default function ContactPage() {
       </section>
 
       {/* Quick Links Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-light-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-8">Quick Links to Our Most Requested Services</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/fridge-repair" className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-primary-50 transition-all text-center">
-                <h3 className="font-semibold text-gray-900">Fridge Repair Ottawa</h3>
+              <Link href="/fridge-repair" className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-light-200 transition-all text-center border border-light-200">
+                <h3 className="font-semibold text-primary-500">Fridge Repair Ottawa</h3>
               </Link>
-              <Link href="/washer-repair" className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-primary-50 transition-all text-center">
-                <h3 className="font-semibold text-gray-900">Washer Repair Ottawa</h3>
+              <Link href="/washer-repair" className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-light-200 transition-all text-center border border-light-200">
+                <h3 className="font-semibold text-primary-500">Washer Repair Ottawa</h3>
               </Link>
-              <Link href="/dryer-repair" className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-primary-50 transition-all text-center">
-                <h3 className="font-semibold text-gray-900">Dryer Repair Ottawa</h3>
+              <Link href="/dryer-repair" className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-light-200 transition-all text-center border border-light-200">
+                <h3 className="font-semibold text-primary-500">Dryer Repair Ottawa</h3>
               </Link>
-              <Link href="/oven-repair" className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-primary-50 transition-all text-center">
-                <h3 className="font-semibold text-gray-900">Oven Repair Ottawa</h3>
+              <Link href="/oven-repair" className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-light-200 transition-all text-center border border-light-200">
+                <h3 className="font-semibold text-primary-500">Oven Repair Ottawa</h3>
               </Link>
-              <Link href="/dishwasher-repair" className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-primary-50 transition-all text-center">
-                <h3 className="font-semibold text-gray-900">Dishwasher Repair Ottawa</h3>
+              <Link href="/dishwasher-repair" className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md hover:bg-light-200 transition-all text-center border border-light-200">
+                <h3 className="font-semibold text-primary-500">Dishwasher Repair Ottawa</h3>
               </Link>
             </div>
           </div>

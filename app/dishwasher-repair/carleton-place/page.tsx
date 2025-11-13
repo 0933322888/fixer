@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Carleton Place – Fast, Local Service | Fixer",
@@ -91,11 +92,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Carleton Place", href: "/washer-repair/carleton-place" },
   { name: "Dryer Repair Carleton Place", href: "/dryer-repair/carleton-place" },
-  { name: "Fridge Repair Carleton Place", href: "/fridge-repair" },
-  { name: "Freezer Repair Carleton Place", href: "/freezer-repair" },
-  { name: "Oven Repair Carleton Place", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Carleton Place", href: "/cooktop-repair" },
-  { name: "Microwave Repair Carleton Place", href: "/microwave-repair" },
+  { name: "Fridge Repair Carleton Place", href: "/fridge-repair/carleton-place" },
+  { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
+  { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
+  { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
+  { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
   { name: "Dishwasher Installation Carleton Place", href: "/dishwasher-installation" },
 ];
 
@@ -106,7 +107,8 @@ export default function DishwasherRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Carleton Place – Fast, Local Service</h1>
+            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Carleton Place 
+              <br /> Fast, Local Service</h1>
             <p className="text-xl leading-relaxed mb-8">
               Tired of handwashing dishes because the dishwasher won't cooperate? Fixer Appliance Repair serves Carleton Place with professional, local service. We handle drainage issues, control failures, and more — always with upfront pricing and a 90-day warranty.
             </p>
@@ -170,22 +172,7 @@ export default function DishwasherRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
@@ -272,16 +259,16 @@ export default function DishwasherRepairCarletonPlacePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding bg-gray-50">
+      {/* FAQs */}
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQ – Dishwasher Repair in Carleton Place</h2>
+            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
+                <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
+                  <p className="text-gray-700">A: {faq.answer}</p>
                 </div>
               ))}
             </div>

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaTools } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Brands We Repair – Appliance Repair Experts in Ottawa | Fixer",
@@ -18,22 +17,22 @@ const brands = [
   { name: "Bosch Appliance Repair", href: "/brands/bosch", logo: "BOSCH", color: "bg-red-600" },
   { name: "Kenmore Appliance Repair", href: "/brands/kenmore", logo: "Kenmore", color: "bg-blue-600" },
   { name: "Panasonic Appliance Repair", href: "/brands/panasonic", logo: "Panasonic", color: "bg-blue-700" },
-  { name: "Electrolux Appliance Repair", href: "/brands/electrolux", logo: "electrolux", color: "bg-gray-700" },
-  { name: "Amana Appliance Repair", href: "/brands/amana", logo: "AMANA", color: "bg-orange-600" },
-  { name: "Hotpoint Appliance Repair", href: "/brands/hotpoint", logo: "Hotpoint", color: "bg-red-600" },
-  { name: "KitchenAid Appliance Repair", href: "/brands/kitchenaid", logo: "KitchenAid", color: "bg-red-700" },
-  { name: "JennAir Appliance Repair", href: "/brands/jennair", logo: "JennAir", color: "bg-gray-800" },
-  { name: "Sub-Zero Appliance Repair", href: "/brands/sub-zero", logo: "SUB-ZERO", color: "bg-gray-900" },
-  { name: "Wolf Appliance Repair", href: "/brands/wolf", logo: "WOLF", color: "bg-red-800" },
-  { name: "Viking Appliance Repair", href: "/brands/viking", logo: "VIKING", color: "bg-blue-900" },
-  { name: "Miele Appliance Repair", href: "/brands/miele", logo: "Miele", color: "bg-red-600" },
-  { name: "Haier Appliance Repair", href: "/brands/haier", logo: "Haier", color: "bg-blue-600" },
-  { name: "Magic Chef Appliance Repair", href: "/brands/magic-chef", logo: "Magic Chef", color: "bg-purple-600" },
-  { name: "Inglis Appliance Repair", href: "/brands/inglis", logo: "INGLIS", color: "bg-blue-700" },
-  { name: "Admiral Appliance Repair", href: "/brands/admiral", logo: "Admiral", color: "bg-blue-800" },
-  { name: "Roper Appliance Repair", href: "/brands/roper", logo: "ROPER", color: "bg-green-700" },
-  { name: "Blomberg Appliance Repair", href: "/brands/blomberg", logo: "blomberg", color: "bg-teal-600" },
-  { name: "Danby Appliance Repair", href: "/brands/danby", logo: "Danby", color: "bg-blue-600" },
+  { name: "Electrolux Appliance Repair", href: "#", logo: "electrolux", color: "bg-gray-700" },
+  { name: "Amana Appliance Repair", href: "#", logo: "AMANA", color: "bg-orange-600" },
+  { name: "Hotpoint Appliance Repair", href: "#", logo: "Hotpoint", color: "bg-red-600" },
+  { name: "KitchenAid Appliance Repair", href: "#", logo: "KitchenAid", color: "bg-red-700" },
+  { name: "JennAir Appliance Repair", href: "#", logo: "JennAir", color: "bg-gray-800" },
+  { name: "Sub-Zero Appliance Repair", href: "#", logo: "SUB-ZERO", color: "bg-gray-900" },
+  { name: "Wolf Appliance Repair", href: "#", logo: "WOLF", color: "bg-red-800" },
+  { name: "Viking Appliance Repair", href: "#", logo: "VIKING", color: "bg-blue-900" },
+  { name: "Miele Appliance Repair", href: "#", logo: "Miele", color: "bg-red-600" },
+  { name: "Haier Appliance Repair", href: "#", logo: "Haier", color: "bg-blue-600" },
+  { name: "Magic Chef Appliance Repair", href: "#", logo: "Magic Chef", color: "bg-purple-600" },
+  { name: "Inglis Appliance Repair", href: "#", logo: "INGLIS", color: "bg-blue-700" },
+  { name: "Admiral Appliance Repair", href: "#", logo: "Admiral", color: "bg-blue-800" },
+  { name: "Roper Appliance Repair", href: "#", logo: "ROPER", color: "bg-green-700" },
+  { name: "Blomberg Appliance Repair", href: "#", logo: "blomberg", color: "bg-teal-600" },
+  { name: "Danby Appliance Repair", href: "#", logo: "Danby", color: "bg-blue-600" },
 ];
 
 const benefits = [
@@ -51,17 +50,22 @@ export default function BrandsPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <FaTools className="text-6xl" />
-            </div>
-            <h1 className="heading-lg mb-6">Brands We Repair</h1>
+            <h1 className="heading-lg mb-6 text-white">Brands We Repair</h1>
             <p className="text-xl leading-relaxed mb-4">
               Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges 
               to classic washers, our technicians repair the top appliance brands you know and trust.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               👉 Select your brand below to learn more about our repair services.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                Book Online
+              </Link>
+              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                Call us
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -99,7 +103,7 @@ export default function BrandsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
+                  <span className="text-primary-500 text-xl flex-shrink-0 mt-1">•</span>
                   <p className="text-lg text-gray-700">{benefit}</p>
                 </div>
               ))}

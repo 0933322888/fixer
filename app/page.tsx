@@ -17,7 +17,7 @@ const services = [
   { name: "Oven Repair Ottawa", href: "/oven-repair", description: "Perfect bakes, every time." },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair", description: "From uneven heat to total shutdowns." },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair", description: "Fast heating without sparks." },
-  { name: "Appliance Installation Ottawa", href: "/installation", description: "Professional, safe, and precise setup." },
+  { name: "Appliance Installation Ottawa", href: "/appliance-installation/ottawa", description: "Professional, safe, and precise setup." },
 ];
 
 const brands = [
@@ -29,6 +29,8 @@ const brands = [
   { name: "Maytag Appliance Repair", href: "/brands/maytag", description: "Built tough, but not unbreakable." },
   { name: "Bosch Appliance Repair", href: "/brands/bosch", description: "Precision engineering requires precise repairs." },
   { name: "Kenmore Appliance Repair", href: "/brands/kenmore", description: "Common in many Ottawa homes, and we know them inside out." },
+  { name: "Panasonic Appliance Repair", href: "/brands/panasonic", description: "Specialists in high-end appliances and electronics." },
+  { name: "KitchenAid Appliance Repair", href: "#", description: "Popular brand in many homes, but we fix them all." },
 ];
 
 const serviceAreas = [
@@ -145,7 +147,7 @@ export default function Home() {
             src="/gallery/output2.jpg"
             alt="Professional appliance repair service in Ottawa"
             fill
-            style={{ objectFit: 'cover' }}
+            style={{ objectFit: 'cover', objectPosition: 'center -110px' }}
             priority
             quality={85}
           />
@@ -153,7 +155,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="container-custom section-padding relative z-10">
+        <div className="container-custom section-padding relative z-10" style={{ paddingTop: '30px' }}>
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Same Day Appliance Repair in Ottawa – Fast, Reliable & Local
@@ -190,11 +192,11 @@ export default function Home() {
       </section>
 
       {/* Welcome Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-8">Welcome to Fixer – Your Local Appliance Repair Experts</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <div className="prose prose-lg max-w-none text-neutral-600 space-y-4">
               <p>
                 Looking for fast, dependable appliance repair in Ottawa? At <strong>Fixer Appliance Repair Inc.</strong>, we fix it fast and fix it right — so you don't have to see us again. (Unless it's for a different appliance.)
               </p>
@@ -210,11 +212,11 @@ export default function Home() {
       </section>
 
       {/* Our Repair Services */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-light-100">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <h2 className="heading-md text-center mb-4">Our Repair Services</h2>
-            <p className="text-center text-gray-700 mb-12 text-lg">
+            <p className="text-center text-neutral-600 mb-12 text-lg">
               We handle all major home appliances — whether it's a small hiccup or a major breakdown:
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -222,21 +224,21 @@ export default function Home() {
                 <Link
                   key={index}
                   href={service.href}
-                  className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+                  className="bg-background p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:-translate-y-1 border border-light-200"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{service.name}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+                  <h3 className="text-lg font-semibold text-primary-500 mb-2">{service.name}</h3>
+                  <p className="text-neutral-600">{service.description}</p>
                 </Link>
               ))}
             </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-lg text-gray-900 mb-4">
+            <div className="text-center bg-light-100 p-6 rounded-lg border border-light-200">
+              <p className="text-lg text-neutral-700 mb-4">
                 📞 Need your appliance fixed today? Call{" "}
-                <a href="tel:613-413-6969" className="text-primary-600 hover:text-primary-700 font-semibold">
+                <a href="tel:613-413-6969" className="text-primary-500 hover:text-primary-600 font-semibold">
                   (613) 413-6969
                 </a>
                 {" "}or email{" "}
-                <a href="mailto:service@fixerappliancerepair.ca" className="text-primary-600 hover:text-primary-700 font-semibold">
+                <a href="mailto:service@fixerappliancerepair.ca" className="text-primary-500 hover:text-primary-600 font-semibold">
                   service@fixerappliancerepair.ca
                 </a>
                 {" "}— fast, friendly, and local.
@@ -247,11 +249,11 @@ export default function Home() {
       </section>
 
       {/* Brands We Service */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-4">Brands We Service</h2>
-            <p className="text-center text-gray-700 mb-12 text-lg">
+            <h2 className="heading-md text-center mb-4"> <Link href="/brands" className="text-primary-600 hover:text-primary-700 font-semibold">Brands</Link> We Service</h2>
+            <p className="text-center text-neutral-600 mb-12 text-lg">
               We repair all major brands and models — from the latest smart appliances to reliable classics:
             </p>
             <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -259,15 +261,15 @@ export default function Home() {
                 <Link
                   key={index}
                   href={brand.href}
-                  className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-primary-50"
+                  className="bg-light-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-light-200 border border-light-200"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{brand.name}</h3>
-                  <p className="text-gray-600">{brand.description}</p>
+                  <h3 className="text-lg font-semibold text-primary-500 mb-2">{brand.name}</h3>
+                  <p className="text-neutral-600">{brand.description}</p>
                 </Link>
               ))}
             </div>
-            <p className="text-center text-gray-700">
-              Panasonic, and more — just ask!
+            <p className="text-center text-neutral-600">
+              and more — just ask!
             </p>
           </div>
         </div>
@@ -285,8 +287,8 @@ export default function Home() {
               {serviceAreas.map((area, index) => (
                 <Link
                   key={index}
-                  href={`/${area.slug}`}
-                  className="bg-primary-600 p-4 rounded-lg text-center hover:bg-primary-500 transition-colors"
+                  href={`/service-areas/${area.slug}`}
+                  className="bg-primary-500 p-4 rounded-lg text-center hover:bg-primary-600 transition-colors"
                 >
                   <p className="font-medium">{area.name}</p>
                 </Link>
@@ -303,36 +305,36 @@ export default function Home() {
       </section>
 
       {/* Common Problems We Fix */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-light-100">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-4">🔧 Common Problems We Fix</h2>
-            <p className="text-center text-gray-700 mb-8 text-lg">
+            <p className="text-center text-neutral-600 mb-8 text-lg">
               Appliance acting up? Here are some of the most common issues we handle every day:
             </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm space-y-4">
+            <div className="bg-background p-8 rounded-lg shadow-sm space-y-4 border border-light-200">
               {commonProblems.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-primary-600 text-xl flex-shrink-0">•</span>
-                  <Link href={item.link} className="text-gray-700 hover:text-primary-600 text-lg">
+                  <span className="text-accent-500 text-xl flex-shrink-0">•</span>
+                  <Link href={item.link} className="text-neutral-700 hover:text-primary-500 text-lg">
                     {item.problem}
                   </Link>
                 </div>
               ))}
               <div className="flex items-start gap-3">
-                <span className="text-primary-600 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-700 text-lg">Appliance won't power on at all</p>
+                <span className="text-accent-500 text-xl flex-shrink-0">•</span>
+                <p className="text-neutral-700 text-lg">Appliance won't power on at all</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-primary-600 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-700 text-lg">Broken door seals or handles</p>
+                <span className="text-accent-500 text-xl flex-shrink-0">•</span>
+                <p className="text-neutral-700 text-lg">Broken door seals or handles</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-primary-600 text-xl flex-shrink-0">•</span>
-                <p className="text-gray-700 text-lg">Weird smells, unusual noises, or something feels "off"</p>
+                <span className="text-accent-500 text-xl flex-shrink-0">•</span>
+                <p className="text-neutral-700 text-lg">Weird smells, unusual noises, or something feels "off"</p>
               </div>
             </div>
-            <p className="text-center text-gray-700 mt-8 text-lg italic">
+            <p className="text-center text-neutral-600 mt-8 text-lg italic">
               If you've said, "This thing used to work just fine…" — we're the team to call.
             </p>
           </div>
@@ -340,19 +342,18 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-background">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-12">FAQ – Appliance Repair in Ottawa</h2>
 
             {/* General FAQs */}
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">General</h3>
               <div className="space-y-6">
                 {generalFAQs.map((faq, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h4>
-                    <p className="text-gray-700">{faq.answer}</p>
+                  <div key={index} className="bg-light-100 p-6 rounded-lg shadow-sm border border-light-200">
+                    <h4 className="text-lg font-semibold text-primary-500 mb-3">{faq.question}</h4>
+                    <p className="text-neutral-600">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -360,17 +361,16 @@ export default function Home() {
 
             {/* How-To Questions */}
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">How-To Questions</h3>
               <div className="space-y-6">
                 {howToFAQs.map((faq, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h4>
-                    <p className="text-gray-700">
+                  <div key={index} className="bg-light-100 p-6 rounded-lg shadow-sm border border-light-200">
+                    <h4 className="text-lg font-semibold text-primary-500 mb-3">{faq.question}</h4>
+                    <p className="text-neutral-600">
                       {faq.answer}
                       {faq.link && (
                         <>
                           {" "}→{" "}
-                          <Link href={faq.link} className="text-primary-600 hover:text-primary-700 font-semibold">
+                          <Link href={faq.link} className="text-primary-500 hover:text-primary-600 font-semibold">
                             Learn more
                           </Link>
                         </>
@@ -383,17 +383,16 @@ export default function Home() {
 
             {/* Why Questions */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Questions</h3>
               <div className="space-y-6">
                 {whyFAQs.map((faq, index) => (
-                  <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h4>
-                    <p className="text-gray-700">
+                  <div key={index} className="bg-light-100 p-6 rounded-lg shadow-sm border border-light-200">
+                    <h4 className="text-lg font-semibold text-primary-500 mb-3">{faq.question}</h4>
+                    <p className="text-neutral-600">
                       {faq.answer}
                       {faq.link && (
                         <>
                           {" "}→{" "}
-                          <Link href={faq.link} className="text-primary-600 hover:text-primary-700 font-semibold">
+                          <Link href={faq.link} className="text-primary-500 hover:text-primary-600 font-semibold">
                             Learn more
                           </Link>
                         </>
@@ -408,7 +407,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-700 to-primary-600 text-white">
+      <section className="section-padding bg-gradient-to-r from-primary-500 to-primary-600 text-white">
         <div className="container-custom text-center">
           <h2 className="heading-md mb-6 text-white">Book Your Repair Today</h2>
           <div className="space-y-4 mb-8">

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaCheckCircle, FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Nepean – Fast, Reliable Local Service | Fixer",
@@ -111,11 +112,11 @@ const faqs = [
 const relatedServices = [
   { name: "Washer Repair Nepean", href: "/washer-repair/nepean" },
   { name: "Dryer Repair Nepean", href: "/dryer-repair/nepean" },
-  { name: "Fridge Repair Nepean", href: "/fridge-repair" },
-  { name: "Freezer Repair Nepean", href: "/freezer-repair" },
-  { name: "Oven Repair Nepean", href: "/oven-repair" },
-  { name: "Electric Cooktop Repair Nepean", href: "/cooktop-repair" },
-  { name: "Microwave Repair Nepean", href: "/microwave-repair" },
+  { name: "Fridge Repair Nepean", href: "/fridge-repair/nepean" },
+  { name: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
+  { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
+  { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
+  { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
   { name: "Dishwasher Installation Nepean", href: "/dishwasher-installation" },
 ];
 
@@ -190,22 +191,7 @@ export default function DishwasherRepairNepeanPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Us</h2>
-            <div className="space-y-4">
-              {whyChooseUs.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <FaCheckCircle className="text-primary-600 text-2xl flex-shrink-0 mt-1" />
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
       <section className="section-padding bg-gray-50">
