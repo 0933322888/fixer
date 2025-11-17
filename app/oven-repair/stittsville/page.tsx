@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Stittsville – Fast Electric Oven Service | Fixer",
@@ -22,43 +23,43 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't maintain temperature",
+    title: "Oven won't maintain temperature",
     description: "Sensor or control board may be misreading heat levels.",
   },
   {
-    issue: "Broil works, bake doesn't",
+    title: "Broil works, bake doesn't",
     description: "The bake element or relay needs service.",
   },
   {
-    issue: "Oven light won't shut off",
+    title: "Oven light won't shut off",
     description: "Likely a faulty door switch — we replace it.",
   },
   {
-    issue: "Takes too long to cook",
+    title: "Takes too long to cook",
     description: "Calibration or airflow problems can reduce heat.",
   },
   {
-    issue: "Door hinges broken",
+    title: "Door hinges broken",
     description: "We replace spring assemblies and realign the door.",
   },
   {
-    issue: "Smoke when turning on",
+    title: "Smoke when turning on",
     description: "Spill residue or failing wiring may be at fault.",
   },
   {
-    issue: "Buttons not responding",
+    title: "Buttons not responding",
     description: "Touchpad or control board could be worn.",
   },
   {
-    issue: "Timer not setting",
+    title: "Timer not setting",
     description: "We repair or replace UI boards.",
   },
   {
-    issue: "Convection fan noisy",
+    title: "Convection fan noisy",
     description: "Worn bearings — we install new parts.",
   },
   {
-    issue: "Error code flashing",
+    title: "Error code flashing",
     description: "We read and clear system diagnostics.",
   },
 ];
@@ -104,22 +105,7 @@ export default function OvenRepairStittsvillePage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -297,7 +283,7 @@ export default function OvenRepairStittsvillePage() {
                 Freezer Repair Stittsville
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Stittsville
+                Cooktop Repair Stittsville
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Stittsville

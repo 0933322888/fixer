@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
-  title: "Cooktop Repair Kanata - Fast, Reliable Electric Cooktop Service | Fixer",
+  title: "Cooktop Repair Kanata - Fast, Reliable Cooktop Service | Fixer",
   description:
     "Fixer Appliance Repair provides trusted cooktop repair in Kanata. From cracked glass and faulty burners to wiring issues and touch control failures, we service Whirlpool, Samsung, LG, GE & more. Same-day appointments, clear pricing, 90-day warranty.",
 };
@@ -128,9 +129,9 @@ export default function CooktopRepairKanataPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Electric Cooktop Repair Services in Kanata</h1>
+            <h1 className="heading-lg mb-4 text-white">Cooktop Repair Services in Kanata</h1>
             <p className="text-xl leading-relaxed text-gray-100">
-              Electric cooktop not turning on? Based in Kanata, Fixer Appliance Repair offers professional
+              Cooktop not turning on? Based in Kanata, Fixer Appliance Repair offers professional
               troubleshooting and repair to get you cooking again without stress or delays. We repair all
               major electric cooktop brands, including LG, Samsung, Whirlpool, GE, and Maytag.
             </p>
@@ -145,24 +146,7 @@ export default function CooktopRepairKanataPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {commonIssues.map((issue) => (
-                <div
-                  key={issue.title}
-                  className="rounded-lg border border-gray-200 p-6 transition-colors hover:border-primary-500"
-                >
-                  <h3 className="mb-2 text-lg font-semibold text-gray-900">{issue.title}</h3>
-                  <p className="text-sm text-gray-600">{issue.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <section className="section-padding bg-gray-50">
         <div className="container-custom">

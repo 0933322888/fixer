@@ -1,107 +1,84 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
+import BrandsSection from "@/components/BrandsSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
 
 export const metadata: Metadata = {
   title:
-    "Morgan’s Grant Appliance Repair – Call 613-413-6969 | Fixer – Washer, Dryer, Fridge, Oven",
+    "Morgan's Grant Appliance Repair – Call 613-413-6969 | Fixer – Washer, Dryer, Fridge, Oven",
   description:
-    "Appliance repair in Morgan’s Grant. Washers, dryers, fridges & ovens fixed fast. Call 613-413-6969 today – insured service with 90-day warranty.",
+    "Appliance repair in Morgan's Grant. Washers, dryers, fridges & ovens fixed fast. Call 613-413-6969 today – insured service with 90-day warranty.",
 };
 
 const services = [
   {
-    name: "Washer Repair Ottawa",
+    name: "Washer repair Morgan's Grant",
     description: "Keep laundry day running smoothly.",
-    href: "/washer-repair",
+    href: "/washer-repair/kanata",
   },
   {
-    name: "Dryer Repair Ottawa",
+    name: "Dryer repair Morgan's Grant",
     description: "Restore fast, efficient drying.",
-    href: "/dryer-repair",
+    href: "/dryer-repair/kanata",
   },
   {
-    name: "Dishwasher Repair Ottawa",
+    name: "Dishwasher repair Morgan's Grant",
     description: "Spotless dishes without the rewash.",
-    href: "/dishwasher-repair",
+    href: "/dishwasher-repair/kanata",
   },
   {
-    name: "Oven Repair Ottawa",
+    name: "Oven repair Morgan's Grant",
     description: "Even heat for every meal.",
-    href: "/oven-repair",
+    href: "/oven-repair/kanata",
   },
   {
-    name: "Cooktop Repair Ottawa",
+    name: "Cooktop repair Morgan's Grant",
     description: "Consistent heat across every burner.",
-    href: "/cooktop-repair",
+    href: "/cooktop-repair/kanata",
   },
   {
-    name: "Microwave Repair Ottawa",
+    name: "Microwave repair Morgan's Grant",
     description: "Safe, reliable reheating.",
-    href: "/microwave-repair",
+    href: "/microwave-repair/kanata",
   },
   {
-    name: "Fridge Repair Ottawa",
+    name: "Fridge repair Morgan's Grant",
     description: "Keep groceries fresh and safe.",
-    href: "/fridge-repair",
+    href: "/fridge-repair/kanata",
   },
   {
-    name: "Freezer Repair Ottawa",
+    name: "Freezer repair Morgan's Grant",
     description: "Dependable deep-freeze performance.",
-    href: "/freezer-repair",
+    href: "/freezer-repair/kanata",
   },
-];
-
-const reasons = [
-  "Every repair comes with a 90-day warranty.",
-  "Our insured, approachable team makes service stress-free.",
-  "Local Kanata technicians who know your neighbourhood.",
-  "Same-day appointments often available.",
 ];
 
 const attractions = [
   "Richcraft Recreation Complex — pool, gym, and community programs.",
-  "Shirley’s Brook Park — walking trails and playgrounds.",
+  "Shirley's Brook Park — walking trails and playgrounds.",
   "Shops and cafés along March Road.",
 ];
 
 const faqs = [
   {
-    question: "Can you come out the same day in Morgan’s Grant?",
-    answer: (
-      <span>
-        Often yes — give us a call in the morning to confirm availability.
-      </span>
-    ),
+    question: "Can you come out the same day in Morgan's Grant?",
+    answer: "Often yes — give us a call in the morning to confirm availability.",
   },
   {
     question: "Do you handle high-end brands like Bosch and LG?",
-    answer: (
-      <span>
-        Yes, our technicians repair all major brands, from GE to Samsung and
-        beyond.
-      </span>
-    ),
+    answer: "Yes, our technicians repair all major brands, from GE to Samsung and beyond.",
   },
   {
-    question:
-      "If I move across town, can I still book washer repair in Ottawa?",
-    answer: (
-      <span>
-        Of course — our team covers all of Kanata and the wider Ottawa area. Book
-        <Link
-          href="/washer-repair"
-          className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-        >
-          {" "}
-          washer repair in Ottawa
-        </Link>{" "}
-        any time you need us.
-      </span>
-    ),
+    question: "If I move across town, can I still book washer repair in Ottawa?",
+    answer: "Of course — our team covers all of Kanata and the wider Ottawa area. Book washer repair in Ottawa any time you need us.",
   },
   {
     question: "Do you offer a warranty?",
-    answer: <span>Yes, every repair includes a 90-day guarantee.</span>,
+    answer: "Yes, every repair includes a 90-day guarantee.",
   },
 ];
 
@@ -129,7 +106,7 @@ const otherNeighbourhoods = [
 ];
 
 const additionalAreas = [
-  "Shirley’s Brook Appliance Repair",
+  "Shirley's Brook Appliance Repair",
   "South March",
   "Emerald Meadows",
   "Kanata West",
@@ -138,180 +115,97 @@ const additionalAreas = [
 
 export default function MorgansGrantServiceAreaPage() {
   return (
-    <div className="bg-gray-50">
-      <div className="container-custom py-16 text-gray-800 space-y-16">
-        <header className="space-y-6">
-          <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-            Morgan’s Grant Appliance Repair You Can Trust
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Looking for appliance repair in Morgan’s Grant? Our insured local team offers
-            fast, reliable service with a 90-day warranty. Part of our{" "}
-            <Link
-              href="/service-areas/kanata"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Kanata appliance repair
-            </Link>{" "}
-            network, also serving Beaverbrook and Katimavik-Hazeldean.
-          </p>
-        </header>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Appliances We Repair in Morgan’s Grant
-          </h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {services.map((service) => (
+    <>
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="heading-xl text-white mb-6">
+              Morgan's Grant Appliance Repair You Can Trust
+            </h1>
+            <p className="text-xl text-gray-100 mb-4">
+              Looking for appliance repair in Morgan's Grant? Our insured local team offers
+              fast, reliable service with a 90-day warranty. Part of our{" "}
               <Link
-                key={service.name}
-                href={service.href}
-                className="group flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300"
+                href="/service-areas/kanata"
+                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
               >
-                <span className="text-base font-semibold text-gray-900 group-hover:text-accent-700">
-                  {service.name}
-                </span>
-                <span className="text-sm text-gray-700">
-                  {service.description}
-                </span>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent-600 group-hover:text-accent-700">
-                  Explore service
-                  <svg
-                    className="h-4 w-4 transition group-hover:translate-x-0.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 12h14M13 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            ))}
+                Kanata appliance repair
+              </Link>{" "}
+              network, also serving Beaverbrook and Katimavik-Hazeldean.
+            </p>
+            <p className="text-lg text-gray-100">
+              Every repair comes with a 90-day warranty. Our insured, approachable team makes service stress-free. Local Kanata technicians who know your neighbourhood. Same-day appointments often available.
+            </p>
           </div>
-          <p className="text-gray-700">
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="space-y-16">
+            <ServiceAreaServicesSection
+              title="Appliances We Repair in Morgan's Grant"
+              description="We provide expert repair services for:"
+              services={services}
+              installationNote={{
+                label: "appliance installation in Kanata",
+                href: "/appliance-installation/kanata",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <BrandsSection
+        header="Brands We Service in Morgan's Grant"
+        premessage="We repair all major household brands, including:"
+        postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before."
+      />
+
+      <ThingsToDoSection
+        attractions={attractions}
+        heading="Explore Morgan's Grant While We Fix"
+        description="While we handle your repair, enjoy Morgan's Grant:"
+        link="https://ottawatourism.ca/en/see-and-do/events"
+        linkText="See what's happening this week: Ottawa Tourism Events"
+      />
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <p className="text-center text-gray-700">
+            We also cover{" "}
             <Link
-              href="/appliance-installation/kanata"
+              href="/washer-repair"
               className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
             >
-              Appliance Installation Kanata
+              washer repair in Ottawa
             </Link>{" "}
-            – ready whenever you upgrade appliances. 👉 Learn more about all our work in{" "}
-            <Link
-              href="/service-areas/kanata"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Kanata appliance repair
-            </Link>
-            .
+            and surrounding areas.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Why Choose Us in Morgan’s Grant
-          </h2>
-          <ul className="space-y-3 text-sm text-gray-700">
-            {reasons.map((reason) => (
-              <li key={reason} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                <span>{reason}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Neighbourhoods Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <ServiceAreaNeighborhoodsSection
+            title="Other Kanata Neighbourhoods We Serve"
+            description="Looking for appliance repair in other parts of Kanata? Explore these dedicated service pages:"
+            neighbourhoods={otherNeighbourhoods}
+            additionalAreas={additionalAreas}
+          />
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Explore Morgan’s Grant While We Fix
-          </h2>
-          <p className="text-gray-700">
-            While we handle your repair, enjoy Morgan’s Grant:
-          </p>
-          <ul className="space-y-3 text-sm text-gray-700">
-            {attractions.map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-700">
-            See what’s happening this week:{" "}
-            <a
-              href="https://ottawatourism.ca/en/see-and-do/events"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-accent-600 underline hover:text-accent-700"
-            >
-              Ottawa Tourism Events
-            </a>
-            .
-          </p>
-        </section>
+      {/* FAQ Section */}
+      <FAQSection applianceName="Morgan's Grant" faqs={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            FAQs for Morgan’s Grant Appliance Repair
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {faq.question}
-                </h3>
-                <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Other Kanata Neighbourhoods We Serve
-          </h2>
-          <div className="grid gap-3 md:grid-cols-2">
-            {otherNeighbourhoods.map((neighbourhood) => (
-              <Link
-                key={neighbourhood.name}
-                href={neighbourhood.href}
-                className="rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-700"
-              >
-                {neighbourhood.name}
-              </Link>
-            ))}
-          </div>
-          <p className="text-sm text-gray-700">
-            {additionalAreas.join(" • ")}
-          </p>
-        </section>
-
-        <section className="rounded-2xl bg-gray-900 p-8 text-white">
-          <h2 className="text-3xl font-semibold">
-            Book Your Morgan’s Grant Appliance Repair Today
-          </h2>
-          <p className="mt-4 text-sm text-gray-200">
-            Call 613-413-6969 or email{" "}
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="font-semibold text-white underline decoration-2 underline-offset-4"
-            >
-              service@fixerappliancerepair.ca
-            </a>{" "}
-            to get started.
-          </p>
-        </section>
-      </div>
-    </div>
+      <CTASection
+        heading="Book Your Morgan's Grant Appliance Repair Today"
+        description="Fast, friendly help from your local team."
+      />
+    </>
   );
 }
-
-

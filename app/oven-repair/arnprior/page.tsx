@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Arnprior – Trusted Local Electric Oven Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't heat at all",
+    title: "Oven won't heat at all",
     description: "In Arnprior homes, failed elements or relays are common. We'll get it cooking again.",
   },
   {
-    issue: "Uneven baking",
+    title: "Uneven baking",
     description: "Food burning on one side? Likely a faulty convection motor. We'll restore even heat.",
   },
   {
-    issue: "Oven light stays on",
+    title: "Oven light stays on",
     description: "A stuck door switch is usually the issue. We'll replace it.",
   },
   {
-    issue: "Display not lighting up",
+    title: "Display not lighting up",
     description: "Dead boards or wiring failures are common. We'll repair or swap parts.",
   },
   {
-    issue: "Random beeping",
+    title: "Random beeping",
     description: "Short circuits or failing sensors often cause beeps. We'll reset or replace them.",
   },
   {
-    issue: "Oven shuts off mid-cycle",
+    title: "Oven shuts off mid-cycle",
     description: "Overheating safety sensors sometimes cut power. We'll repair the root cause.",
   },
 ];
@@ -86,22 +87,7 @@ export default function OvenRepairArnpriorPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Arnprior</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Arnprior" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -278,7 +264,7 @@ export default function OvenRepairArnpriorPage() {
                 Freezer Repair Arnprior
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Arnprior
+                Cooktop Repair Arnprior
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Arnprior

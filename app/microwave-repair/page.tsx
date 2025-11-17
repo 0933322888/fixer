@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import BenefitsSection from "@/components/BenefitsSection";
-import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
+import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Ottawa – Fast Fixes for All Brands | Fixer",
@@ -165,7 +171,7 @@ const services = [
   { label: "Fridge Repair Ottawa", href: "/fridge-repair" },
   { label: "Freezer Repair Ottawa", href: "/freezer-repair" },
   { label: "Oven Repair Ottawa", href: "/oven-repair" },
-  { label: "Electric Cooktop Repair Ottawa", href: "/cooktop-repair" },
+  { label: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
   { label: "Microwave Installation Ottawa", href: "/oven-installation" },
 ];
 
@@ -177,7 +183,7 @@ export default function MicrowaveRepairPage() {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-lg mb-6 text-white">
-              Microwave Repair in Ottawa 
+              Microwave Repair in Ottawa
               <br /> Fast Fixes, No Sparks
             </h1>
             <p className="text-xl text-gray-100 mb-6">
@@ -201,60 +207,17 @@ export default function MicrowaveRepairPage() {
         </div>
       </section>
 
-      {/* Common Issues */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-6">Common Problems We Fix</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              No matter the brand or model, we find the fault quickly and repair it safely.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {commonIssues.map((issue) => (
-                <div key={issue.title} className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm">
-                  <div className="flex items-start gap-4">
-                    <div>
-                      <h3 className="text-lg font-semibold text-primary-800">{issue.title}</h3>
-                      <p className="text-gray-600 mt-2">{issue.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
 
-      {/* Repair or Replace */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Repair or Replace?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Microwaves often fail due to a single component like the magnetron or door switch. We'll help you
-              decide when it's smarter to repair than replace — and give you an honest estimate either way.
-            </p>
-            <Link href="/repair-vs-replace" className="btn-primary">
-              Read Our Repair vs. Replace Guide
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
 
-      {/* Microwave Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Microwave? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new microwave? We also provide microwave installation in Ottawa with same-day service available in most areas.
-          </p>
-          <Link href="/microwave-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Microwave Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Microwave"
+        description="Got a new microwave? We also provide microwave installation in Ottawa with same-day service available in most areas."
+        href="/microwave-installation"
+      />
 
       {/* Brands We Repair */}
       <section className="section-padding bg-white">
@@ -294,8 +257,8 @@ export default function MicrowaveRepairPage() {
               {serviceAreas.map((area, index) => {
                 const slug = area.toLowerCase().replace(/\s+/g, '-');
                 return (
-                  <Link 
-                    key={index} 
+                  <Link
+                    key={index}
                     href={`/microwave-repair/${slug}`}
                     className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
                   >
@@ -311,136 +274,25 @@ export default function MicrowaveRepairPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Microwave" faqs={faqs} />
 
-      {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Microwave</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Microwave repairs don’t take long — but you still deserve a little break.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                <FaMapMarkerAlt className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Westboro Village</h3>
-                  <p className="text-gray-600 text-sm">Browse local shops, bakeries, and wellness spots</p>
-                </div>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                <FaTree className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Remic Rapids Park</h3>
-                  <p className="text-gray-600 text-sm">Riverside art installations and bike paths</p>
-                </div>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                <FaUtensils className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Stella Luna Gelato Café</h3>
-                  <p className="text-gray-600 text-sm">Award-winning and worth it</p>
-                </div>
-              </div>
-              <div className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                <FaBook className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Ottawa Tool Library</h3>
-                  <p className="text-gray-600 text-sm">Rent tools or explore creative workshops</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Want to catch a live event or exhibit?
-              </p>
-              <p className="text-gray-700 mb-3">
-                Check what's happening this week:
-              </p>
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
-              >
-                Ottawa Tourism Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Westboro Village", description: "Browse local shops, bakeries, and wellness spots" },
+          { name: "Remic Rapids Park", description: "Riverside art installations and bike paths" },
+          { name: "Stella Luna Gelato Café", description: "Award-winning and worth it" },
+          { name: "Ottawa Tool Library", description: "Rent tools or explore creative workshops" },
+        ]}
+        heading="Things to Do in Ottawa While We Repair Your Microwave"
+        description="Microwave repairs don't take long — but you still deserve a little break."
+      />
 
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">Book Your Microwave Repair in Ottawa</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            No more cold leftovers! Book your microwave repair with Fixer today — fast, affordable, and done right across Ottawa.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+16135550199"
-              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
-            >
-              Call or Text (613) 555-0199
-            </a>
-            <Link
-              href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Book Online Now
-            </Link>
-          </div>
-          <p className="text-lg text-white/90 mt-6">
-            Email:{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
-              service@fixerappliancerepair.ca
-            </a>
-          </p>
-        </div>
-      </section>
+      <CTASection
+        heading="Book Your Microwave Repair in Ottawa"
+        description="No more cold leftovers! Book your microwave repair with Fixer today — fast, affordable, and done right across Ottawa."
+      />
 
-      {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We do more than just microwave repair — check out our other Ottawa services:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {services.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection services={services} applianceName="microwave" />
     </>
   );
 }

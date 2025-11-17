@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import BrandAppliancesSection from "@/components/BrandAppliancesSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Samsung Appliance Repair Ottawa – Fast, Reliable Service | Fixer",
@@ -88,19 +92,37 @@ const miniCases = [
 ];
 
 const commonProblems = [
-  "Washer error codes (4E, 5E, UE, etc.)",
-  "Dryer not heating or shutting off mid-cycle",
-  "Refrigerator ice maker leaking or not working",
-  "Dishwasher not draining properly",
-  "Oven not heating evenly",
-  "Microwave sparking or shutting off",
+  {
+    title: "Washer error codes (4E, 5E, UE, etc.)",
+    description: "We diagnose and fix error codes by checking sensors, pumps, and control boards.",
+  },
+  {
+    title: "Dryer not heating or shutting off mid-cycle",
+    description: "We inspect the heating element, thermostat, and sensors to restore proper operation.",
+  },
+  {
+    title: "Refrigerator ice maker leaking or not working",
+    description: "We check the water inlet valve, ice maker assembly, and water lines.",
+  },
+  {
+    title: "Dishwasher not draining properly",
+    description: "We inspect the drain pump, filters, and hoses to restore drainage.",
+  },
+  {
+    title: "Oven not heating evenly",
+    description: "We check the heating element, thermostat, and sensors for even heating.",
+  },
+  {
+    title: "Microwave sparking or shutting off",
+    description: "We inspect the magnetron, control panel, and door switches for safe operation.",
+  },
 ];
 
 export default function SamsungBrandPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
+      <section className="bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">Samsung Appliance Repair in Ottawa</h1>
@@ -113,67 +135,20 @@ export default function SamsungBrandPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-4">Why Choose Fixer for Samsung Repairs</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              From dishwashers that don’t drain to dryers that leave clothes damp, Samsung quirks are no match for our Ottawa technicians. We carry parts, experience, and we back every job with a 90-day warranty. Same-day appointments available in many areas — call us to check today’s availability.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {whyChooseUs.map((reason) => (
-                <div key={reason} className="bg-gray-50 border border-gray-100 rounded-lg p-5">
-                  <p className="text-gray-700">{reason}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-          <p className="text-lg text-gray-700 text-center mt-6">
-            Have more than one brand at home? Fixer services many appliance <Link href="/brands" className="text-primary-600 font-semibold hover:underline">brands</Link>, not just Samsung. 
-          </p>
-      </section>
+      <BenefitsSection 
+        heading="Why Choose Fixer for Samsung Repairs" 
+        message="From dishwashers that don't drain to dryers that leave clothes damp, Samsung quirks are no match for our Ottawa technicians. We carry parts, experience, and we back every job with a 90-day warranty. Same-day appointments available in many areas — call us to check today's availability."
+        benefits={whyChooseUs} 
+      />
 
       {/* Appliances Grid */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="heading-md mb-10 text-center">Samsung Appliances We Repair</h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              {samsungAppliances.map((item) => (
-                <div key={item.title} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-semibold text-primary-800 flex items-center gap-2">
-                      {item.title}
-                    </h3>
-                    {item.media}
-                    <p className="text-gray-700">{item.description}</p>
-                    <div className="flex flex-wrap gap-3 text-sm font-semibold text-accent-600">
-                      {item.link && (
-                        <Link href={item.link.href} className="hover:underline">
-                          → {item.link.label}
-                        </Link>
-                      )}
-                      {item.links &&
-                        item.links.map((link) => (
-                          <Link key={link.href} href={link.href} className="hover:underline">
-                            → {link.label}
-                          </Link>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BrandAppliancesSection brandName="Samsung" appliances={samsungAppliances} />
 
       {/* Mini Cases */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-6">Recent Samsung Fixes Around Ottawa</h2>
+            <h2 className="heading-md mb-6 text-center">Recent Samsung Fixes Around Ottawa</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {miniCases.map((item) => (
                 <div key={item.title} className="border border-gray-200 rounded-lg p-6 bg-gray-50">
@@ -187,34 +162,13 @@ export default function SamsungBrandPage() {
       </section>
 
       {/* Common Problems */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Common Samsung Problems We Fix</h2>
-            <ul className="grid md:grid-cols-2 gap-4 text-left">
-              {commonProblems.map((problem) => (
-                <li key={problem} className="bg-white border border-gray-200 rounded-lg p-4 text-gray-700">
-                  {problem}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonProblems} heading="Common Samsung Problems We Fix" />
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Samsung Appliance Repair</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            📞 Call <a href="tel:+16134136969" className="underline font-semibold text-white">613-413-6969</a> or email {" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline font-semibold text-white">service@fixerappliancerepair.ca</a> to book your Samsung appliance repair today.
-          </p>
-          <p className="text-lg text-white/90">
-            We fix it fast, and we fix it right — so you don’t have to see us twice (unless you miss us 😉).
-          </p>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Samsung Appliance Repair" 
+        description="We fix it fast, and we fix it right — so you don't have to see us twice (unless you miss us 😉)." 
+      />
     </>
   );
 }

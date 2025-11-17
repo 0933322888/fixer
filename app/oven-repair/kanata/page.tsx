@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Kanata – Fast Local Service for Electric Ovens | Fixer",
@@ -22,43 +23,43 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't turn on",
+    title: "Oven won't turn on",
     description: "We check incoming power, fuse, and main controls.",
   },
   {
-    issue: "Burner works but oven doesn't",
+    title: "Burner works but oven doesn't",
     description: "Element or thermostat failure likely — we replace the part.",
   },
   {
-    issue: "Bakes unevenly",
+    title: "Bakes unevenly",
     description: "A failed convection fan or element might be the cause.",
   },
   {
-    issue: "Oven door won't lock",
+    title: "Oven door won't lock",
     description: "We repair door switches and hinges.",
   },
   {
-    issue: "No heat in broil mode",
+    title: "No heat in broil mode",
     description: "The top element or relay could be faulty.",
   },
   {
-    issue: "Display not lighting up",
+    title: "Display not lighting up",
     description: "We troubleshoot and replace control boards.",
   },
   {
-    issue: "Oven light stays on",
+    title: "Oven light stays on",
     description: "A door switch might be jammed.",
   },
   {
-    issue: "Flickering numbers",
+    title: "Flickering numbers",
     description: "Wiring or control board failure.",
   },
   {
-    issue: "Takes long to cook",
+    title: "Takes long to cook",
     description: "Sensor miscalibration can drop temperatures.",
   },
   {
-    issue: "Beeping randomly",
+    title: "Beeping randomly",
     description: "We reset sensors and repair short circuits.",
   },
 ];
@@ -105,22 +106,7 @@ export default function OvenRepairKanataPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -299,7 +285,7 @@ export default function OvenRepairKanataPage() {
                 Freezer Repair Kanata
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Kanata
+                Cooktop Repair Kanata
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Kanata

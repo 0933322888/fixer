@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Vanier – Fast, Reliable Electric Oven Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven not powering on",
+    title: "Oven not powering on",
     description: "In older Vanier homes, tripped breakers or failed boards are frequent causes. We'll repair or replace what's needed.",
   },
   {
-    issue: "Takes forever to preheat",
+    title: "Takes forever to preheat",
     description: "Weak elements or faulty sensors slow things down. We'll restore fast preheating.",
   },
   {
-    issue: "Oven door jammed shut",
+    title: "Oven door jammed shut",
     description: "Self-clean cycles sometimes trap the lock. We'll release it and repair the latch.",
   },
   {
-    issue: "Display flickering or blank",
+    title: "Display flickering or blank",
     description: "Worn wiring or bad boards often cause this. We'll fix it.",
   },
   {
-    issue: "Oven light won't turn off",
+    title: "Oven light won't turn off",
     description: "A door switch out of alignment usually causes this. We'll replace it.",
   },
   {
-    issue: "Strange smells during use",
+    title: "Strange smells during use",
     description: "Burning wires or old spills are common. We'll clean and repair for safe cooking.",
   },
 ];
@@ -85,22 +86,7 @@ export default function OvenRepairVanierPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Vanier</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Vanier" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -277,7 +263,7 @@ export default function OvenRepairVanierPage() {
                 Freezer Repair Vanier
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Vanier
+                Cooktop Repair Vanier
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Vanier

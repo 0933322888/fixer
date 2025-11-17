@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Kanata – Trusted Local Service | Fixer",
@@ -146,22 +147,7 @@ export default function DishwasherRepairKanataPage() {
         </div>
       </section>
 
-      {/* Common Problems We Fix */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {commonIssues.map((issue, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{issue.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{issue.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       {/* Installation Services */}
       <section className="section-padding bg-gray-50">

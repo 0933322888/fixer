@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
-  title: "Cooktop Repair Carp - Reliable Electric Cooktop Service | Fixer",
+  title: "Cooktop Repair Carp - Reliable Cooktop Service | Fixer",
   description:
     "Fixer Appliance Repair provides expert cooktop repair in Carp. From cracked glass and faulty switches to wiring issues and error codes, we service Whirlpool, Samsung, LG, GE & more. Clear pricing, rural-friendly service, 90-day warranty.",
 };
@@ -137,24 +138,7 @@ export default function CooktopRepairCarpPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {commonIssues.map((issue) => (
-                <div
-                  key={issue.title}
-                  className="rounded-lg border border-gray-200 p-6 transition-colors hover:border-primary-500"
-                >
-                  <h3 className="mb-2 text-lg font-semibold text-gray-900">{issue.title}</h3>
-                  <p className="text-sm text-gray-600">{issue.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <section className="section-padding bg-gray-50">
         <div className="container-custom">

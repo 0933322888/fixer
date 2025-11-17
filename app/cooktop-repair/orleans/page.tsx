@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 export const metadata: Metadata = {
-  title: "Cooktop Repair Orleans - Fast & Reliable Electric Cooktop Service | Fixer",
+  title: "Cooktop Repair Orleans - Fast & Reliable Cooktop Service | Fixer",
   description:
     "Fixer Appliance Repair provides expert cooktop repair in Orleans. From cracked glass and faulty burners to wiring issues and touch panel failures, we service Whirlpool, Samsung, LG, GE & more. Same-day service, upfront pricing, 90-day warranty.",
 };

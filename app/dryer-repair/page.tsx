@@ -1,7 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import BenefitsSection from "@/components/BenefitsSection";
-import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
+import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Ottawa – Fast & Reliable Service | Fixer",
@@ -193,52 +199,17 @@ export default function DryerRepairPage() {
         </div>
       </section>
 
-      {/* Common Dryer Problems */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-12">🔧 Common Dryer Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {commonIssues.map((issue, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{issue.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{issue.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Dryer Problems We Fix" />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
-      {/* Repair or Replace */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Repair or Replace?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one.
-            </p>
-            <Link href="/repair-vs-replace" className="btn-primary">
-              Read Our Repair vs. Replace Guide
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
-      {/* Dryer Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new dryer? We also provide dryer installation in Ottawa with same-day service available in most areas.
-          </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Dryer Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Dryer"
+        description="Got a new dryer? We also provide dryer installation in Ottawa with same-day service available in most areas."
+        href="/dryer-installation"
+      />
 
       {/* Brands We Repair */}
       <section className="section-padding bg-white">
@@ -295,124 +266,20 @@ export default function DryerRepairPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Dryer" faqs={faqs} />
 
-      {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Dryer</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Waiting for your dryer to get fixed? It's a great excuse to step out and enjoy the city. Whether you're into art, nature, or relaxing with a good book, Ottawa has something nearby:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {ottawaAttractions.map((attraction, index) => {
-                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
-                const Icon = icons[index % icons.length];
-                const parts = attraction.split(" – ");
-                const name = parts[0];
-                const description = parts[1] || "";
-                return (
-                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
-                      <p className="text-gray-600 text-sm">{description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Want to catch a live event or exhibit?
-              </p>
-              <p className="text-gray-700 mb-3">
-                Check what's happening this week:
-              </p>
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
-              >
-                Ottawa Tourism Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={ottawaAttractions}
+        heading="Things to Do in Ottawa While We Repair Your Dryer"
+        description="Waiting for your dryer to get fixed? It's a great excuse to step out and enjoy the city. Whether you're into art, nature, or relaxing with a good book, Ottawa has something nearby:"
+      />
 
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">Book Your Dryer Repair in Ottawa</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Don't wait for the laundry to pile up — schedule your dryer repair today. Call, text, or book online and let Fixer bring the heat back to your laundry routine.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:613-413-6969"
-              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
-            >
-              Call or Text (613) 413-6969
-            </a>
-            <Link
-              href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Book Online Now
-            </Link>
-          </div>
-          <p className="text-lg text-white/90 mt-6">
-            Email:{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
-              service@fixerappliancerepair.ca
-            </a>
-          </p>
-        </div>
-      </section>
+      <CTASection
+        heading="Book Your Dryer Repair in Ottawa"
+        description="Don't wait for the laundry to pile up — schedule your dryer repair today. Call, text, or book online and let Fixer bring the heat back to your laundry routine."
+      />
 
-      {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We do more than just dryer repair — check out our other Ottawa services:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection services={relatedServices} applianceName="dryer" />
     </>
   );
 }

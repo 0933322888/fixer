@@ -1,5 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/CTASection";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export const metadata: Metadata = {
   title: "Brands We Repair – Appliance Repair Experts in Ottawa | Fixer",
@@ -47,22 +49,22 @@ export default function BrandsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Brands We Repair</h1>
-            <p className="text-xl leading-relaxed mb-4">
+            <h1 className="heading-xl text-white mb-6">Brands We Repair</h1>
+            <p className="text-xl text-gray-100 mb-4">
               Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges 
               to classic washers, our technicians repair the top appliance brands you know and trust.
             </p>
-            <p className="text-lg mb-8">
+            <p className="text-lg text-gray-100 mb-8">
               👉 Select your brand below to learn more about our repair services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+              <Link href="/contact" className="bg-white text-accent-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
                 Book Online
               </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
                 Call us
               </a>
             </div>
@@ -96,42 +98,14 @@ export default function BrandsPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Why Choose Fixer for Brand Repairs</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <span className="text-primary-500 text-xl flex-shrink-0 mt-1">•</span>
-                  <p className="text-lg text-gray-700">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection heading="Why Choose Fixer for Brand Repairs" benefits={benefits} />
 
       {/* CTA Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Ready to Get Your Appliance Fixed?</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Whether it's LG, Samsung, Whirlpool, or any brand in your kitchen or laundry room — Fixer has you covered.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl">
-              📞 Call or text <a href="tel:613-413-6969" className="font-semibold hover:underline">(613) 413-6969</a>
-            </p>
-            <p className="text-xl">
-              ✉️ Email <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Your Repair
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        heading="Ready to Get Your Appliance Fixed?"
+        description="Whether it's LG, Samsung, Whirlpool, or any brand in your kitchen or laundry room — Fixer has you covered."
+        buttonText="Book Your Repair"
+      />
     </>
   );
 }

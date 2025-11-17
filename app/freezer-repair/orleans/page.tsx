@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Orleans – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -105,7 +106,7 @@ export default function FreezerRepairOrleansPage() {
             Reliable Freezer Repair in Orleans
           </h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Freezer frosting up, leaking water, or not keeping food cold? Fixer Appliance Repair provides fast, local service in Orleans with clear pricing and a 90-day guarantee.
+            Freezer frosting up, leaking water, or not keeping food cold? Fixer Appliance Repair provides fast, local service in Orleans with clear pricing and a 90-day guarantee. We repair all major freezer brands, including Samsung, Whirlpool, LG, GE, and Maytag.
           </p>
           <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Book Service Now
@@ -113,31 +114,7 @@ export default function FreezerRepairOrleansPage() {
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We repair all major freezer brands, including Samsung, Whirlpool, LG, GE, and Maytag.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Common Issues */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Common Freezer Issues We Fix in Orleans</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {commonIssues.map((issue, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{issue.title}</h3>
-                <p className="text-gray-600">{issue.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Orleans" />
 
       {/* Installation Services */}
       <section className="section-padding bg-white">

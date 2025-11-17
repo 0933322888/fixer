@@ -1,5 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
+import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
+import BrandsSection from "@/components/BrandsSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
 
 export const metadata: Metadata = {
   title: "Nepean Appliance Service – Experienced Care for Your Home",
@@ -48,19 +54,6 @@ const services = [
     description: "Fast, efficient heating.",
     href: "/microwave-repair/nepean",
   },
-];
-
-const brands = [
-  { name: "Bosch", href: "/brands/bosch" },
-  { name: "Frigidaire", href: "/brands/frigidaire" },
-  { name: "GE", href: "/brands/ge" },
-  { name: "Kenmore", href: "/brands/kenmore" },
-  { name: "LG", href: "/brands/lg" },
-  { name: "Maytag", href: "/brands/maytag" },
-  { name: "Panasonic", href: "/brands/panasonic" },
-  { name: "Samsung", href: "/brands/samsung" },
-  { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
 ];
 
 const attractions = [
@@ -160,112 +153,50 @@ export default function NepeanServiceAreaPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="space-y-16">
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            What We Fix in Nepean
-          </h2>
-          <p className="text-gray-700">
-            We handle all your appliance needs, including:
-          </p>
-          <div className="grid gap-4 md:grid-cols-2">
-            {services.map((service) => (
-              <Link
-                key={service.name}
-                href={service.href}
-                className="group flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300"
-              >
-                <span className="text-base font-semibold text-gray-900 group-hover:text-accent-700">
-                  {service.name}
-                </span>
-                <span className="text-sm text-gray-700">
-                  {service.description}
-                </span>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent-600 group-hover:text-accent-700">
-                  Explore service
-                  <svg
-                    className="h-4 w-4 transition group-hover:translate-x-0.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 12h14M13 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            ))}
+            <ServiceAreaServicesSection
+              title="What We Fix in Nepean"
+              description="We handle all your appliance needs, including:"
+              services={services}
+              installationNote={{
+                label: "appliance installation in Nepean",
+                href: "/appliance-installation/nepean",
+              }}
+            />
           </div>
-          <p className="text-gray-700">
-            👉 We also provide{" "}
-            <Link
-              href="/appliance-installation/nepean"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              appliance installation in Nepean
-            </Link>
-            .
-          </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Work With
-          </h2>
-          <p className="text-gray-700">
-            We repair all major household brands, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {brands.map((brand, index) => (
-              <Link
-                key={index}
-                href={brand.href}
-                className="text-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:bg-accent-50 hover:border-accent-300 hover:text-accent-700 transition-colors"
-              >
-                <p className="text-sm font-medium text-gray-900 hover:text-accent-700">{brand.name}</p>
-              </Link>
-            ))}
-          </div>
-          <p className="text-gray-700">
-            Not sure about your brand or model? Give us a call — chances are,
-            we’ve repaired it before.
-          </p>
-          <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-sm">
+      <BrandsSection
+        header="Brands We Work With"
+        premessage="We repair all major household brands, including:"
+        postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before."
+      />
+
+      <section className="bg-gray-50 pb-10">
+        <div className="container-custom">
+          <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-md max-w-3xl mx-auto">
             <p className="text-lg italic">
-              “Our fridge stopped working right before a long weekend. Fixer
+              "Our fridge stopped working right before a long weekend. Fixer
               arrived the same day and had it running within an hour. Excellent
-              local service!”{" "}
+              local service!"{" "}
               <span className="not-italic font-semibold text-gray-900">
                 – Sarah M.
               </span>
             </p>
           </blockquote>
-        </section>
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Things to Do While We Work
-          </h2>
-          <p className="text-gray-700">
-            While we work on your appliance, you can:
-          </p>
-          <ul className="space-y-3 text-sm text-gray-700">
-            {attractions.map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-gray-700">
-            Serving local neighbourhoods from Centrepointe to Barrhaven, and we
-            also provide{" "}
+      <ThingsToDoSection
+        attractions={attractions}
+        heading="Things to Do While We Work"
+        description="While we work on your appliance, you can:"
+      />
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <p className="text-center text-gray-700">
+            Serving local neighbourhoods from Centrepointe to Barrhaven, and we also provide{" "}
             <Link
               href="/service-areas/stittsville"
               className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
@@ -274,97 +205,27 @@ export default function NepeanServiceAreaPage() {
             </Link>
             .
           </p>
-          <div className="rounded-xl border border-accent-500 bg-accent-50 p-6 text-gray-800">
-            <p className="text-lg font-semibold">
-              👉 See more events on{" "}
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-600 underline hover:text-accent-700"
-              >
-                Ottawa Tourism
-              </a>
-              .
-            </p>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Neighbourhoods We Serve in Nepean
-          </h2>
-          <p className="text-gray-700">
-            Looking for appliance repair in a specific Nepean neighbourhood? Explore
-            these dedicated service pages:
-          </p>
-          <ul className="grid gap-3 md:grid-cols-2">
-            {neighbourhoods.map((area) => (
-              <li key={area.name}>
-                <Link
-                  href={area.href}
-                  className="block rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-700"
-                >
-                  {area.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-700">{additionalAreas.join(" • ")}</p>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            FAQ – Nepean Appliance Help
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {faq.question}
-                </h3>
-                <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">Ready to book service?</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Fast, friendly help from your local team.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:613-413-6969"
-              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
-            >
-              Call or Text (613) 413-6969
-            </a>
-            <Link
-              href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Book Online Now
-            </Link>
-          </div>
-          <p className="text-lg text-white/90 mt-6">
-            Email:{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
-              service@fixerappliancerepair.ca
-            </a>
-          </p>
+      {/* Neighbourhoods Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <ServiceAreaNeighborhoodsSection
+            title="Neighbourhoods We Serve in Nepean"
+            description="Looking for appliance repair in a specific Nepean neighbourhood? Explore these dedicated service pages:"
+            neighbourhoods={neighbourhoods}
+            additionalAreas={additionalAreas}
+          />
         </div>
       </section>
+
+      <FAQSection applianceName="Nepean" faqs={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
+
+      <CTASection
+        heading="Ready to book service?"
+        description="Fast, friendly help from your local team."
+      />
     </>
   );
 }

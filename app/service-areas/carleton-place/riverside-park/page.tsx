@@ -1,5 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
+import BrandsSection from "@/components/BrandsSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
 
 export const metadata: Metadata = {
   title: "Riverside Park Appliance Repair – Call 613-413-6969 | Fixer",
@@ -9,52 +15,45 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    name: "Washer Repair Ottawa",
+    name: "Washer repair Riverside Park",
     description: "Smooth cycles without stalls.",
-    href: "/washer-repair",
+    href: "/washer-repair/carleton-place",
   },
   {
-    name: "Dryer Repair Ottawa",
+    name: "Dryer repair Riverside Park",
     description: "Efficient drying with steady heat.",
-    href: "/dryer-repair",
+    href: "/dryer-repair/carleton-place",
   },
   {
-    name: "Dishwasher Repair Ottawa",
+    name: "Dishwasher repair Riverside Park",
     description: "Spotless dishes every cycle.",
-    href: "/dishwasher-repair",
+    href: "/dishwasher-repair/carleton-place",
   },
   {
-    name: "Oven Repair Ottawa",
+    name: "Oven repair Riverside Park",
     description: "Even heat for perfect meals.",
-    href: "/oven-repair",
+    href: "/oven-repair/carleton-place",
   },
   {
-    name: "Cooktop Repair Ottawa",
+    name: "Cooktop repair Riverside Park",
     description: "Responsive burners with consistent control.",
-    href: "/cooktop-repair",
+    href: "/cooktop-repair/carleton-place",
   },
   {
-    name: "Microwave Repair Ottawa",
+    name: "Microwave repair Riverside Park",
     description: "Safe, reliable reheating.",
-    href: "/microwave-repair",
+    href: "/microwave-repair/carleton-place",
   },
   {
-    name: "Fridge Repair Ottawa",
+    name: "Fridge repair Riverside Park",
     description: "Keep groceries fresh and cool.",
-    href: "/fridge-repair",
+    href: "/fridge-repair/carleton-place",
   },
   {
-    name: "Freezer Repair Ottawa",
+    name: "Freezer repair Riverside Park",
     description: "Dependable cold storage.",
-    href: "/freezer-repair",
+    href: "/freezer-repair/carleton-place",
   },
-];
-
-const reasons = [
-  "90-day warranty for peace of mind.",
-  "Professional, insured staff.",
-  "Carleton Place-based technicians.",
-  "Same-day availability most days.",
 ];
 
 const attractions = [
@@ -66,35 +65,19 @@ const attractions = [
 const faqs = [
   {
     question: "Do you work weekends in Riverside Park?",
-    answer: (
-      <span>
-        Sometimes, depending on availability — call early and we’ll do our best to
-        fit you in.
-      </span>
-    ),
+    answer: "Sometimes, depending on availability — call early and we'll do our best to fit you in.",
   },
   {
-    question: "Do you repair washers that won’t drain?",
-    answer: <span>Yes, drainage issues are common and fully repairable.</span>,
+    question: "Do you repair washers that won't drain?",
+    answer: "Yes, drainage issues are common and fully repairable.",
   },
   {
     question: "Are your technicians insured?",
-    answer: <span>Yes, all of them are fully insured.</span>,
+    answer: "Yes, all of them are fully insured.",
   },
   {
     question: "Can you also do oven repair in Ottawa?",
-    answer: (
-      <span>
-        Absolutely — our coverage includes Ottawa. Book{" "}
-        <Link
-          href="/oven-repair"
-          className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-        >
-          oven repair in Ottawa
-        </Link>{" "}
-        whenever you need it.
-      </span>
-    ),
+    answer: "Absolutely — our coverage includes Ottawa. Book oven repair in Ottawa whenever you need it.",
   },
 ];
 
@@ -122,171 +105,97 @@ const additionalAreas = [
 
 export default function RiversideParkServiceAreaPage() {
   return (
-    <div className="bg-gray-50">
-      <div className="container-custom py-16 text-gray-800 space-y-16">
-        <header className="space-y-6">
-          <h1 className="text-4xl font-bold text-gray-900 leading-tight">
-            Riverside Park Appliance Repair – Fast, Friendly Service
-          </h1>
-          <p className="text-lg leading-relaxed text-gray-700">
-            Appliance repair in Riverside Park made simple. Same-day service often available.
-            Learn more through our{" "}
-            <Link
-              href="/service-areas/carleton-place"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Carleton Place appliance repair
-            </Link>{" "}
-            page, also serving East and West.
-          </p>
-        </header>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Appliances We Repair in Riverside Park
-          </h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {services.map((service) => (
+    <>
+      {/* Hero Section */}
+      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="heading-xl text-white mb-6">
+              Riverside Park Appliance Repair – Fast, Friendly Service
+            </h1>
+            <p className="text-xl text-gray-100 mb-4">
+              Appliance repair in Riverside Park made simple. Same-day service often available.
+              Learn more through our{" "}
               <Link
-                key={service.name}
-                href={service.href}
-                className="group flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300"
+                href="/service-areas/carleton-place"
+                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
               >
-                <span className="text-base font-semibold text-gray-900 group-hover:text-accent-700">
-                  {service.name}
-                </span>
-                <span className="text-sm text-gray-700">{service.description}</span>
-                <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent-600 group-hover:text-accent-700">
-                  Explore service
-                  <svg
-                    className="h-4 w-4 transition group-hover:translate-x-0.5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5 12h14M13 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </Link>
-            ))}
+                Carleton Place appliance repair
+              </Link>{" "}
+              page, also serving East and West.
+            </p>
+            <p className="text-lg text-gray-100">
+              90-day warranty for peace of mind. Professional, insured staff. Carleton Place-based technicians. Same-day availability most days.
+            </p>
           </div>
-          <p className="text-gray-700">
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="space-y-16">
+            <ServiceAreaServicesSection
+              title="Appliances We Repair in Riverside Park"
+              description="We provide expert repair services for:"
+              services={services}
+              installationNote={{
+                label: "appliance installation across Ottawa",
+                href: "/appliance-installation/ottawa",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <BrandsSection
+        header="Brands We Service in Riverside Park"
+        premessage="We repair all major household brands, including:"
+        postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before."
+      />
+
+      <ThingsToDoSection
+        attractions={attractions}
+        heading="Explore Riverside Park While We Fix"
+        description="While we handle your repair, discover Riverside Park:"
+        link="https://ottawatourism.ca/en/see-and-do/events"
+        linkText="See nearby events: Ottawa Tourism Events"
+      />
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <p className="text-center text-gray-700">
+            We also cover{" "}
             <Link
-              href="/appliance-installation/ottawa"
+              href="/oven-repair"
               className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
             >
-              Appliance Installation Ottawa
+              oven repair in Ottawa
             </Link>{" "}
-            keeps new appliances running perfectly. See everything we provide via{" "}
-            <Link
-              href="/service-areas/carleton-place"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Carleton Place appliance repair
-            </Link>
-            .
+            and surrounding areas.
           </p>
-        </section>
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Why Call Us in Riverside Park
-          </h2>
-          <ul className="space-y-3 text-sm text-gray-700">
-            {reasons.map((reason) => (
-              <li key={reason} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                <span>{reason}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Neighbourhoods Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <ServiceAreaNeighborhoodsSection
+            title="Other Carleton Place Neighbourhoods We Serve"
+            description="Looking for appliance repair in other parts of Carleton Place? Explore these dedicated service pages:"
+            neighbourhoods={otherNeighbourhoods}
+            additionalAreas={additionalAreas}
+          />
+        </div>
+      </section>
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Explore Riverside Park While We Fix
-          </h2>
-          <p className="text-gray-700">
-            While we handle your repair, discover Riverside Park:
-          </p>
-          <ul className="space-y-3 text-sm text-gray-700">
-            {attractions.map((item) => (
-              <li key={item} className="flex items-start gap-2">
-                <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-700">
-            See nearby events:{" "}
-            <a
-              href="https://ottawatourism.ca/en/see-and-do/events"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-accent-600 underline hover:text-accent-700"
-            >
-              Ottawa Tourism Events
-            </a>
-            .
-          </p>
-        </section>
+      {/* FAQ Section */}
+      <FAQSection applianceName="Riverside Park" faqs={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
 
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            FAQs for Riverside Park Appliance Repair
-          </h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {faq.question}
-                </h3>
-                <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-3xl font-semibold text-gray-900">
-            Other Carleton Place Neighbourhoods We Serve
-          </h2>
-          <div className="grid gap-3 md:grid-cols-2">
-            {otherNeighbourhoods.map((neighbourhood) => (
-              <Link
-                key={neighbourhood.name}
-                href={neighbourhood.href}
-                className="rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-700"
-              >
-                {neighbourhood.name}
-              </Link>
-            ))}
-          </div>
-          <p className="text-sm text-gray-700">{additionalAreas.join(" • ")}</p>
-        </section>
-
-        <section className="rounded-2xl bg-gray-900 p-8 text-white">
-          <h2 className="text-3xl font-semibold">
-            Reliable Riverside Park repair is one call away — dial 613-413-6969 or email{" "}
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="font-semibold text-white underline decoration-2 underline-offset-4"
-            >
-              service@fixerappliancerepair.ca
-            </a>
-            .
-          </h2>
-        </section>
-      </div>
-    </div>
+      <CTASection
+        heading="Reliable Riverside Park repair is one call away — Contact Us Today"
+        description="Fast, friendly help from your local team."
+      />
+    </>
   );
 }

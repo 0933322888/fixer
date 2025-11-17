@@ -1,30 +1,32 @@
-import { FaTools } from "react-icons/fa";
-
-interface CommonIssuesSectionProps {
-  applianceName: string;
-  issues: string[];
+interface Issue {
+  title: string;
+  description: string;
 }
 
-export default function CommonIssuesSection({ applianceName, issues }: CommonIssuesSectionProps) {
+interface CommonIssuesSectionProps {
+  issues: Issue[];
+  heading?: string;
+}
+
+export default function CommonIssuesSection({ 
+  issues, 
+  heading = "Common Problems We Fix" 
+}: CommonIssuesSectionProps) {
   return (
-    <section className="section-padding bg-gray-100">
+    <section className="section-padding bg-white">
       <div className="container-custom">
-        <h2 className="heading-md text-center mb-4">
-          Common {applianceName} Issues We Fix
-        </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          Our experienced technicians can diagnose and repair any {applianceName.toLowerCase()} problem quickly and efficiently.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {issues.map((issue, index) => (
-            <div key={index} className="flex items-start gap-4 bg-white p-6 rounded-lg shadow-md">
-              <FaTools className="text-primary-600 text-xl flex-shrink-0 mt-1" />
-              <p className="text-gray-700 font-medium">{issue}</p>
-            </div>
-          ))}
+        <div className="max-w-5xl mx-auto">
+          <h2 className="heading-md text-center mb-12">{heading}</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {issues.map((issue, index) => (
+              <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{issue.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{issue.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-

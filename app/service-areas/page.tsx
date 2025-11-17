@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Appliance Repair Service Areas in Ottawa | Fixer Appliance Repair",
@@ -153,79 +156,20 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      {/* Attractions Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">
-            Explore Ottawa While We Fix Your Appliance
-          </h2>
-          <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-            While we take care of your appliance, why not enjoy some of Ottawa's top spots?
-          </p>
-          <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto mb-8">
-            {attractions.map((attraction) => (
-              <div key={attraction.name} className="rounded-xl border border-gray-200 bg-white p-6 shadow-md">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{attraction.name}</h3>
-                <p className="text-sm text-gray-700">{attraction.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="rounded-xl border border-accent-500 bg-accent-50 p-6 text-gray-800 max-w-3xl mx-auto">
-            <p className="text-lg font-semibold text-center">
-              🎉 Looking for something fun this month?
-            </p>
-            <p className="mt-2 text-sm text-center">
-              Check out{" "}
-              <a
-                href="https://ottawa.ca/en/arts-heritage-and-events/events"
-                className="text-accent-600 underline hover:text-accent-700"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ottawa events here
-              </a>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={attractions}
+        heading="Explore Ottawa While We Fix Your Appliance"
+        description="While we take care of your appliance, why not enjoy some of Ottawa's top spots?"
+      />
 
-      {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">FAQ</h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.question} className="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-sm text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <FAQSection applianceName="Appliance" faqs={faqs} />
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">Ready to Book Your Repair?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our Ottawa technicians are standing by and fully stocked with the tools and common parts needed
-            to get your appliances back up and running fast.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:613-413-6969" className="btn-primary bg-white text-accent-600 hover:bg-gray-100">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <a href="mailto:service@fixerappliancerepair.ca" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
-              📧 Email: service@fixerappliancerepair.ca
-            </a>
-            <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
-              Book Online
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        heading="Ready to Book Your Repair?"
+        description="Our Ottawa technicians are standing by and fully stocked with the tools and common parts needed to get your appliances back up and running fast."
+        phoneText="📞 Call/Text: 613-413-6969"
+        buttonText="Book Online"
+      />
     </>
   );
 }

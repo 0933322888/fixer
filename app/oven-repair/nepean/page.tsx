@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Nepean – Fast, Reliable Electric Oven Service | Fixer",
@@ -22,43 +23,43 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't heat past 200°F",
+    title: "Oven won't heat past 200°F",
     description: "Failed sensor or broken lower element — we fix both.",
   },
   {
-    issue: "Turns on, then shuts off",
+    title: "Turns on, then shuts off",
     description: "Control board, relay, or thermal issue.",
   },
   {
-    issue: "Digital display flickers",
+    title: "Digital display flickers",
     description: "We test power supply and panel.",
   },
   {
-    issue: "Burns everything on one rack",
+    title: "Burns everything on one rack",
     description: "Uneven element heat — we calibrate or replace.",
   },
   {
-    issue: "Smells metallic",
+    title: "Smells metallic",
     description: "Can signal electrical overheating — we inspect wiring.",
   },
   {
-    issue: "Fan won't turn off",
+    title: "Fan won't turn off",
     description: "Stuck relay or damaged thermostat.",
   },
   {
-    issue: "Oven cycles on/off rapidly",
+    title: "Oven cycles on/off rapidly",
     description: "Bad temperature control or faulty wiring.",
   },
   {
-    issue: "Oven won't unlock after cleaning",
+    title: "Oven won't unlock after cleaning",
     description: "We reset lock mechanism and clear codes.",
   },
   {
-    issue: "Light keeps burning out",
+    title: "Light keeps burning out",
     description: "We replace with correct voltage and fix socket.",
   },
   {
-    issue: "Control knob turns but doesn't adjust",
+    title: "Control knob turns but doesn't adjust",
     description: "We replace stripped or faulty knobs or switches.",
   },
 ];
@@ -104,22 +105,7 @@ export default function OvenRepairNepeanPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -301,7 +287,7 @@ export default function OvenRepairNepeanPage() {
                 Freezer Repair Nepean
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Nepean
+                Cooktop Repair Nepean
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Nepean

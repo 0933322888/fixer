@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Mississippi Mills – Reliable Appliance Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven not heating enough",
+    title: "Oven not heating enough",
     description: "In rural homes, worn elements or miscalibrated thermostats often leave food undercooked. We'll restore the right temperature.",
   },
   {
-    issue: "Self-clean cycle stuck",
+    title: "Self-clean cycle stuck",
     description: "When the door won't unlock, the latch or control board is usually to blame. We'll release it safely.",
   },
   {
-    issue: "Oven bakes unevenly",
+    title: "Oven bakes unevenly",
     description: "A weak convection fan often causes hot and cold spots. We'll replace it.",
   },
   {
-    issue: "Strange burning smell",
+    title: "Strange burning smell",
     description: "Wiring issues or food spills can cause odors. We'll check and clean it.",
   },
   {
-    issue: "Oven light won't turn off",
+    title: "Oven light won't turn off",
     description: "This usually means a jammed or faulty door switch. We'll repair it.",
   },
   {
-    issue: "Random beeping or error codes",
+    title: "Random beeping or error codes",
     description: "We'll reset sensors, interpret codes, and repair the source.",
   },
 ];
@@ -86,22 +87,7 @@ export default function OvenRepairMississippiMillsPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Mississippi Mills</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Mississippi Mills" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -278,7 +264,7 @@ export default function OvenRepairMississippiMillsPage() {
                 Freezer Repair Mississippi Mills
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Mississippi Mills
+                Cooktop Repair Mississippi Mills
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Mississippi Mills

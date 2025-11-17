@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/CTASection";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -10,6 +11,8 @@ import {
   FaBook,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Barrhaven – Fast, Local Experts | Fixer",
@@ -124,7 +127,7 @@ const services = [
   { label: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
   { label: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
   { label: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
-  { label: "Electric Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
+  { label: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
   { label: "Microwave Installation Barrhaven", href: "/microwave-installation" },
 ];
 
@@ -167,30 +170,7 @@ export default function MicrowaveRepairBarrhavenPage() {
         </div>
       </section>
 
-      {/* Common Issues */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Common Microwave Issues We Fix in Barrhaven</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {commonIssues.map((issue) => (
-                <div
-                  key={issue.title}
-                  className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-accent-500 text-2xl mt-1" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{issue.title}</h3>
-                      <p className="text-gray-600 mt-2">{issue.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Barrhaven" />
 
       {/* Microwave Installation CTA */}
       <section className="section-padding bg-[#DD4F06] text-white">
@@ -292,46 +272,13 @@ export default function MicrowaveRepairBarrhavenPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Microwave" faqs={faqs} />
 
-      {/* Booking CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Microwave Repair in Barrhaven</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            We’re ready to assist — book your microwave repair with Fixer Appliance Repair today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <a href="tel:+16134136969" className="btn-primary bg-white text-accent-600 hover:bg-gray-100">
-              Call/Text: 613-413-6969
-            </a>
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Email Us
-            </a>
-          </div>
-          <Link href="/contact" className="underline text-white hover:text-gray-100 font-semibold">
-            Prefer to book online? Send a request now.
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        heading="Schedule Your Microwave Repair in Barrhaven"
+        description="We're ready to assist — book your microwave repair with Fixer Appliance Repair today."
+        buttonText="Book Online Now"
+      />
 
       {/* Other Services */}
       <section className="section-padding bg-white">

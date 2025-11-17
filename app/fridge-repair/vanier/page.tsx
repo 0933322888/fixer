@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Vanier – Local, Reliable Refrigerator Service | Fixer",
@@ -110,20 +111,7 @@ export default function FridgeRepairVanierPage() {
         </div>
       </section>
 
-      {/* Common Issues */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Common Fridge Issues We Fix in Vanier</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {commonIssues.map((issue, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{issue.title}</h3>
-                <p className="text-gray-600">{issue.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Fridge Issues We Fix in Vanier" />
 
       {/* Installation Services */}
       <section className="section-padding bg-white">

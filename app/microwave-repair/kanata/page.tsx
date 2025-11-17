@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/CTASection";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -10,6 +11,8 @@ import {
   FaBook,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Kanata – Fast, Affordable Service | Fixer",
@@ -141,7 +144,7 @@ const services = [
   { label: "Fridge Repair Kanata", href: "/fridge-repair/kanata" },
   { label: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
   { label: "Oven Repair Kanata", href: "/oven-repair/kanata" },
-  { label: "Electric Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
+  { label: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
   { label: "Microwave Installation Kanata", href: "/microwave-installation" },
 ];
 
@@ -184,30 +187,7 @@ export default function MicrowaveRepairKanataPage() {
         </div>
       </section>
 
-      {/* Common Issues */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {commonIssues.map((issue) => (
-                <div
-                  key={issue.title}
-                  className="bg-gray-50 border border-gray-100 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3">
-                    <FaCheckCircle className="text-accent-500 text-2xl mt-1" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{issue.title}</h3>
-                      <p className="text-gray-600 mt-2">{issue.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       {/* Microwave Installation CTA */}
       <section className="section-padding bg-[#DD4F06] text-white">
@@ -311,46 +291,13 @@ export default function MicrowaveRepairKanataPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Microwave" faqs={faqs} />
 
-      {/* Booking CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Microwave Repair in Kanata</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            Need your microwave up and running again? Let’s book your service.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <a href="tel:+16135550199" className="btn-primary bg-white text-accent-600 hover:bg-gray-100">
-              Call: (613) 555-0199
-            </a>
-            <a
-              href="mailto:service@fixerappliancerepair.ca"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Email Us
-            </a>
-          </div>
-          <Link href="/contact" className="underline text-white hover:text-gray-100 font-semibold">
-            Prefer to book online? Send a service request.
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        heading="Book Your Microwave Repair in Kanata"
+        description="Need your microwave up and running again? Let's book your service."
+        buttonText="Book Online Now"
+      />
 
       {/* Other Services */}
       <section className="section-padding bg-white">

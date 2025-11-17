@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Barrhaven – Fast, Reliable Electric Oven Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't start",
+    title: "Oven won't start",
     description: "In Barrhaven townhomes, this can be a bad switch, fuse, or control panel. We'll fix it fast.",
   },
   {
-    issue: "Food cooks unevenly",
+    title: "Food cooks unevenly",
     description: "If dishes don't bake evenly, the fan or heating element may need replacement.",
   },
   {
-    issue: "Door won't stay shut",
+    title: "Door won't stay shut",
     description: "Loose hinges or worn gaskets often let heat escape. We'll repair both.",
   },
   {
-    issue: "Beeping or flashing codes",
+    title: "Beeping or flashing codes",
     description: "Modern ovens show errors when sensors fail. We'll decode and fix them.",
   },
   {
-    issue: "No heat in broil mode",
+    title: "No heat in broil mode",
     description: "A broken relay or top element is usually the culprit. We'll replace it.",
   },
   {
-    issue: "Numbers flickering on display",
+    title: "Numbers flickering on display",
     description: "Control board or wiring issues cause this. We'll stabilize it.",
   },
 ];
@@ -86,22 +87,7 @@ export default function OvenRepairBarrhavenPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Barrhaven</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Barrhaven" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -278,7 +264,7 @@ export default function OvenRepairBarrhavenPage() {
                 Freezer Repair Barrhaven
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Barrhaven
+                Cooktop Repair Barrhaven
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Barrhaven

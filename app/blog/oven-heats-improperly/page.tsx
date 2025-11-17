@@ -1,17 +1,38 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaClock, FaUser, FaArrowLeft } from "react-icons/fa";
+import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Oven Heats, But Not Properly? Here's What Might Be Wrong | Fixer Blog",
   description: "Troubleshooting uneven or insufficient oven heating. Expert tips for fixing temperature issues, calibration problems, and heat distribution from Ottawa's appliance repair pros.",
 };
 
+const faqs = [
+  {
+    question: "Why is my oven heating unevenly?",
+    answer: "Most often it's a faulty sensor, calibration issue, or weak heating element.",
+  },
+  {
+    question: "Is it normal for an oven to have hot spots?",
+    answer: "Slight variations are normal, but big differences mean something's wrong.",
+  },
+  {
+    question: "Can a convection oven cook unevenly?",
+    answer: "Yes — if the convection element or fan isn't working properly.",
+  },
+  {
+    question: "What's the easiest fix I can try myself?",
+    answer: "Try recalibrating and checking the door seal. These are safe DIY steps.",
+  },
+];
+
 export default function OvenHeatsImproperlyPost() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#DD4F06] text-white py-12">
+      <section className="bg-gradient-to-r from-accent-500 to-accent-600 text-white py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <Link href="/blog" className="inline-flex items-center gap-2 text-gray-200 hover:text-white mb-6 transition-colors">
@@ -158,45 +179,7 @@ export default function OvenHeatsImproperlyPost() {
 
             {/* FAQs */}
             <div className="my-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions (FAQs)</h2>
-              
-              <div className="space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Why is my oven heating unevenly?
-                  </h3>
-                  <p className="text-gray-700">
-                    Most often it's a faulty sensor, calibration issue, or weak heating element.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Is it normal for an oven to have hot spots?
-                  </h3>
-                  <p className="text-gray-700">
-                    Slight variations are normal, but big differences mean something's wrong.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Can a convection oven cook unevenly?
-                  </h3>
-                  <p className="text-gray-700">
-                    Yes — if the convection element or fan isn't working properly.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    What's the easiest fix I can try myself?
-                  </h3>
-                  <p className="text-gray-700">
-                    Try recalibrating and checking the door seal. These are safe DIY steps.
-                  </p>
-                </div>
-              </div>
+              <FAQSection faqs={faqs} />
             </div>
 
             {/* Real Case Study */}
@@ -219,22 +202,11 @@ export default function OvenHeatsImproperlyPost() {
       </article>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Tired of Uneven Baking?</h2>
-          <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-            Let our expert technicians diagnose and fix your oven's heating issues. We'll get your oven baking perfectly again.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:613-413-6969" className="btn-primary bg-accent-500 hover:bg-accent-600">
-              Call 613-413-6969
-            </a>
-            <Link href="/oven-repair" className="btn-outline border-white text-white hover:bg-white hover:text-primary-700">
-              Learn About Our Oven Repair Service
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Tired of Uneven Baking?"
+        description="Let our expert technicians diagnose and fix your oven's heating issues. We'll get your oven baking perfectly again."
+        buttonText="Learn About Our Oven Repair Service"
+      />
 
       {/* Related Posts */}
       <section className="section-padding bg-gray-50">

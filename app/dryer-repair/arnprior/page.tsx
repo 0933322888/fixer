@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Arnprior Dryer Service – Local, Prompt Repairs | Fixer",
@@ -245,22 +246,7 @@ export default function DryerRepairArnpriorPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Dryer" faqs={faqs} />
 
       {/* Contact CTA */}
       <section className="section-padding bg-[#DD4F06] text-white">

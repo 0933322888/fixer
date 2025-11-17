@@ -2,7 +2,13 @@ import { Metadata } from "next";
 import Link from "next/link";
 import BrandsSection from "@/components/BrandsSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
+import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Ottawa – Fast, Reliable Local Service | Fixer",
@@ -183,34 +189,9 @@ export default function FridgeRepairPage() {
         </div>
       </section>
 
-      {/* Service Description */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We service all major brands including LG, Samsung, Whirlpool, GE, Frigidaire, and Maytag.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Common Problems We Fix */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Common Problems We Fix</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {commonIssues.map((issue, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{issue.title}</h3>
-                <p className="text-gray-600">{issue.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
-
 
       {/* Repair or Replace */}
       <section className="section-padding bg-white">
@@ -228,18 +209,11 @@ export default function FridgeRepairPage() {
         </div>
       </section>
 
-      {/* Fridge Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Fridge? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new fridge? We also provide fridge installation in Ottawa with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Fridge Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Fridge"
+        description="Got a new fridge? We also provide fridge installation in Ottawa with same-day service available in most areas."
+        href="/appliance-installation"
+      />
 
       {/* Brands We Repair */}
       <section className="section-padding bg-white">
@@ -296,127 +270,25 @@ export default function FridgeRepairPage() {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">Frequently Asked Questions (FAQs)</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Q: {faq.question}</h3>
-                  <p className="text-gray-700">A: {faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
-      {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Things to Do in Ottawa While We Repair Your Fridge</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Take a cool break while we fix your fridge. Here are some great ways to spend the time:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                { name: "Sparks Street", description: "pedestrian-friendly with patios and street performers" },
-                { name: "Little Italy (Preston St.)", description: "home to gelato, pizza, and espresso bars" },
-                { name: "Lansdowne Park", description: "a mix of shops, cinema, and green space" },
-                { name: "Ottawa Art Gallery", description: "modern and always refreshing" },
-              ].map((attraction, index) => {
-                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
-                const Icon = icons[index % icons.length];
-                return (
-                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{attraction.name}</h3>
-                      <p className="text-gray-600 text-sm">{attraction.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Want to catch a live event or exhibit?
-              </p>
-              <p className="text-gray-700 mb-3">
-                Check what's happening this week:
-              </p>
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
-              >
-                Ottawa Tourism Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Sparks Street", description: "pedestrian-friendly with patios and street performers" },
+          { name: "Little Italy (Preston St.)", description: "home to gelato, pizza, and espresso bars" },
+          { name: "Lansdowne Park", description: "a mix of shops, cinema, and green space" },
+          { name: "Ottawa Art Gallery", description: "modern and always refreshing" },
+        ]}
+        heading="Things to Do in Ottawa While We Repair Your Fridge"
+        description="Take a cool break while we fix your fridge. Here are some great ways to spend the time:"
+      />
 
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">Book Your Fridge Repair in Ottawa</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Fridge not cooling? Don't let your food go to waste. Reach out now — we offer quick, 
-            expert service throughout Ottawa. Call, text or book online today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+16135550199"
-              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
-            >
-              Call or Text (613) 555-0199
-            </a>
-            <Link
-              href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
-            >
-              Book Online Now
-            </Link>
-          </div>
-          <p className="text-lg text-white/90 mt-6">
-            Email:{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
-              service@fixerappliancerepair.ca
-            </a>
-          </p>
-        </div>
-      </section>
+      <CTASection
+        heading="Book Your Fridge Repair in Ottawa"
+        description="Fridge not cooling? Don't let your food go to waste. Reach out now — we offer quick, expert service throughout Ottawa. Call, text or book online today."
+      />
 
-      {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We do more than just fridge repair — check out our other Ottawa services:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection services={relatedServices} applianceName="fridge" />
     </>
   );
 }

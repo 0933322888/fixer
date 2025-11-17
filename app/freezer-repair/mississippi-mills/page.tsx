@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Mississippi Mills – Fast Upright & Chest Freezer Service | Fixer",
@@ -124,20 +125,7 @@ export default function FreezerRepairMississippiMillsPage() {
         </div>
       </section>
 
-      {/* Common Issues */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">Common Freezer Issues We Fix in Mississippi Mills</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {commonIssues.map((issue, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{issue.title}</h3>
-                <p className="text-gray-600">{issue.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Mississippi Mills" />
 
       {/* Installation Services */}
       <section className="section-padding bg-white">

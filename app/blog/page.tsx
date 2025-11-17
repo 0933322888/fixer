@@ -4,29 +4,41 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaClock, FaUser, FaArrowRight } from "react-icons/fa";
+import CTASection from "@/components/CTASection";
 
 // Placeholder blog posts - replace with actual content from CMS or database
 const blogPosts = [
   {
     id: 1,
+    title: "Repair vs Replacement: How to Make the Right Choice for Your Appliance",
+    slug: "repair-vs-replace-appliance",
+    excerpt: "Not sure whether to repair or replace your appliance? See lifespan guides, cost rules, and expert advice from a technician with 15+ years of experience in Ottawa.",
+    image: "/gallery/oven_blog2.jpg",
+    category: "Buying Guide",
+    author: "Michael R",
+    date: "December 1, 2024",
+    readTime: "10 min read",
+  },
+  {
+    id: 2,
     title: "Oven Heats, But Not Properly? Here's What Might Be Wrong",
     slug: "oven-heats-improperly",
     excerpt: "Troubleshooting uneven or insufficient oven heating. Expert tips for fixing temperature issues, calibration problems, and heat distribution.",
     image: "/gallery/oven_blog2.jpg",
     category: "Oven Repair",
-    author: "Michael Russky",
+    author: "Michael R",
     date: "November 22, 2024",
     readTime: "7 min read",
   },
   {
-    id: 2,
+    id: 3,
     title: "Oven Not Heating at All? Here's What Might Be Going Wrong",
     slug: "oven-not-heating",
     excerpt: "Common reasons why your electric oven won't heat and how to fix them. Expert troubleshooting tips from Ottawa's trusted appliance repair professionals.",
     image: "/gallery/oven_blog.jpg",
     category: "Oven Repair",
-    author: "Michael Russky",
-    date: "November 20, 2024",
+    author: "Michael R",
+    date: "November 20, 2025",
     readTime: "8 min read",
   },
 //   {
@@ -119,7 +131,7 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
+      <section className="bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">Appliance Repair Blog</h1>
@@ -256,29 +268,11 @@ export default function BlogPage() {
       </section> */}
 
       {/* Need Help CTA */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Need Professional Help?
-            </h2>
-            <p className="text-xl text-gray-700 mb-8">
-              Our expert technicians are ready to help with all your appliance repair needs in Ottawa
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:613-413-6969"
-                className="btn-primary inline-flex items-center justify-center"
-              >
-                Call 613-413-6969
-              </a>
-              <Link href="/contact" className="btn-outline inline-flex items-center justify-center">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Need Professional Help?"
+        description="Our expert technicians are ready to help with all your appliance repair needs in Ottawa"
+        buttonText="Contact Us"
+      />
     </>
   );
 }

@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import BrandAppliancesSection from "@/components/BrandAppliancesSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Maytag Appliance Repair Ottawa – Local Experts You Can Trust | Fixer",
@@ -88,19 +92,37 @@ const miniCases = [
 ];
 
 const commonProblems = [
-  "Washer not draining or leaking",
-  "Dryer not heating or shutting off",
-  "Refrigerator ice maker leaking",
-  "Dishwasher leaving dishes dirty",
-  "Oven not heating evenly",
-  "Microwave not starting",
+  {
+    title: "Washer not draining or leaking",
+    description: "We check the drain pump, hoses, and connections to restore proper operation.",
+  },
+  {
+    title: "Dryer not heating or shutting off",
+    description: "We inspect the heating element, thermostat, and sensors to restore heat.",
+  },
+  {
+    title: "Refrigerator ice maker leaking",
+    description: "We check the water inlet valve, ice maker assembly, and water lines.",
+  },
+  {
+    title: "Dishwasher leaving dishes dirty",
+    description: "We inspect the pump, filters, spray arms, and sensors for proper cleaning.",
+  },
+  {
+    title: "Oven not heating evenly",
+    description: "We check the heating element, thermostat, and sensors for even heating.",
+  },
+  {
+    title: "Microwave not starting",
+    description: "We inspect the control panel, fuses, door switches, and sensors.",
+  },
 ];
 
 export default function MaytagBrandPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
+      <section className="bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">Maytag Appliance Repair in Ottawa</h1>
@@ -119,64 +141,20 @@ export default function MaytagBrandPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-4">Why Choose Fixer for Maytag Repairs</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Our Ottawa technicians handle everything from washers that won’t spin to ovens that won’t bake. We bring the right tools, years of experience, and every repair comes with a 90-day warranty. Same-day appointments available in many areas — call us to check today’s availability.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {whyChooseUs.map((reason) => (
-                <div key={reason} className="bg-gray-50 border border-gray-100 rounded-lg p-5">
-                  <p className="text-gray-700">{reason}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection 
+        heading="Why Choose Fixer for Maytag Repairs" 
+        message="Our Ottawa technicians handle everything from washers that won't spin to ovens that won't bake. We bring the right tools, years of experience, and every repair comes with a 90-day warranty. Same-day appointments available in many areas — call us to check today's availability."
+        benefits={whyChooseUs} 
+      />
 
       {/* Appliances Grid */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="heading-md mb-10 text-center">Maytag Appliances We Repair</h2>
-            <div className="grid gap-8 md:grid-cols-2">
-              {maytagAppliances.map((item) => (
-                <div key={item.title} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                  <div className="p-6 space-y-4">
-                    <h3 className="text-xl font-semibold text-primary-800 flex items-center gap-2">
-                      {item.title}
-                    </h3>
-                    {item.media}
-                    <p className="text-gray-700">{item.description}</p>
-                    <div className="flex flex-wrap gap-3 text-sm font-semibold text-accent-600">
-                      {item.link && (
-                        <Link href={item.link.href} className="hover:underline">
-                          → {item.link.label}
-                        </Link>
-                      )}
-                      {item.links &&
-                        item.links.map((link) => (
-                          <Link key={link.href} href={link.href} className="hover:underline">
-                            → {link.label}
-                          </Link>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <BrandAppliancesSection brandName="Maytag" appliances={maytagAppliances} />
 
       {/* Mini Cases */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-6">Recent Maytag Fixes Around Ottawa</h2>
+            <h2 className="heading-md mb-6 text-center">Recent Maytag Fixes Around Ottawa</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {miniCases.map((item) => (
                 <div key={item.title} className="border border-gray-200 rounded-lg p-6 bg-gray-50">
@@ -190,34 +168,13 @@ export default function MaytagBrandPage() {
       </section>
 
       {/* Common Problems */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Common Maytag Problems We Fix</h2>
-            <ul className="grid md:grid-cols-2 gap-4 text-left">
-              {commonProblems.map((problem) => (
-                <li key={problem} className="bg-white border border-gray-200 rounded-lg p-4 text-gray-700">
-                  {problem}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonProblems} heading="Common Maytag Problems We Fix" />
 
       {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Maytag Appliance Repair</h2>
-          <p className="text-lg mb-6 max-w-3xl mx-auto">
-            📞 Call <a href="tel:+16134136969" className="underline font-semibold text-white">613-413-6969</a> or email{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline font-semibold text-white">service@fixerappliancerepair.ca</a> to book your Maytag appliance repair today.
-          </p>
-          <p className="text-lg text-white/90">
-            We fix it fast, and we fix it right — so you don’t have to see us twice (unless you miss us 😉).
-          </p>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Maytag Appliance Repair" 
+        description="We fix it fast, and we fix it right — so you don't have to see us twice (unless you miss us 😉)." 
+      />
     </>
   );
 }

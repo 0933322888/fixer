@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Carp – Reliable Local Service for Electric Ovens | Fixer",
@@ -22,43 +23,43 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven gets too hot",
+    title: "Oven gets too hot",
     description: "Faulty thermostat or stuck relay could be the cause.",
   },
   {
-    issue: "Cooks only on one side",
+    title: "Cooks only on one side",
     description: "Defective element or poor airflow — we fix both.",
   },
   {
-    issue: "No power at all",
+    title: "No power at all",
     description: "We check the breaker, wiring, and fuse.",
   },
   {
-    issue: "Smells like burning plastic",
+    title: "Smells like burning plastic",
     description: "Often from electrical short or insulation damage.",
   },
   {
-    issue: "Oven turns off by itself",
+    title: "Oven turns off by itself",
     description: "Overheat protection or damaged main board.",
   },
   {
-    issue: "Control panel cracked or dead",
+    title: "Control panel cracked or dead",
     description: "We replace digital interfaces.",
   },
   {
-    issue: "Oven door glass cracked",
+    title: "Oven door glass cracked",
     description: "We replace the glass for safe operation.",
   },
   {
-    issue: "Bake setting doesn't work",
+    title: "Bake setting doesn't work",
     description: "Faulty lower element — we swap it out.",
   },
   {
-    issue: "Rattling noise inside",
+    title: "Rattling noise inside",
     description: "Loose mounts or worn fan blades.",
   },
   {
-    issue: "Timer not responding",
+    title: "Timer not responding",
     description: "Button or logic board may be failing.",
   },
 ];
@@ -102,22 +103,7 @@ export default function OvenRepairCarpPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Problems We Fix</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -299,7 +285,7 @@ export default function OvenRepairCarpPage() {
                 Freezer Repair Carp
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Carp
+                Cooktop Repair Carp
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Carp

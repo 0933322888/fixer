@@ -1,5 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
+import BrandsSection from "@/components/BrandsSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
 
 export const metadata: Metadata = {
   title: "Appliance Repair in Carp – Local Service for Homes & Farms | Fixer",
@@ -148,224 +154,82 @@ export default function CarpServiceAreaPage() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="space-y-16">
-
-            <section className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-900">
-                Our Services in Carp
-              </h2>
-              <p className="text-gray-700">
-                We provide repair and maintenance for:
-              </p>
-              <div className="grid gap-4 md:grid-cols-2">
-                {services.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="group flex flex-col gap-1 rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300"
-                  >
-                    <span className="text-base font-semibold text-gray-900 group-hover:text-accent-700">
-                      {service.name}
-                    </span>
-                    <span className="text-sm text-gray-700">
-                      {service.description}
-                    </span>
-                    <span className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-accent-600 group-hover:text-accent-700">
-                      Explore service
-                      <svg
-                        className="h-4 w-4 transition group-hover:translate-x-0.5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M5 12h14M13 5l7 7-7 7"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </Link>
-                ))}
-              </div>
-              <p className="text-gray-700">
-                👉 We also provide{" "}
-                <Link
-                  href="/appliance-installation/ottawa"
-                  className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-                >
-                  appliance installation across Ottawa
-                </Link>
-                .
-              </p>
-            </section>
-
-            <section className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-900">
-                <Link href="/brands" className="text-accent-600 hover:text-accent-700 font-semibold">Brands</Link> We Service
-              </h2>
-              <p className="text-gray-700">
-                We repair all major household brands, including:
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {brands.map((brand, index) => (
-                  <Link
-                    key={index}
-                    href={brand.href}
-                    className="text-center p-4 bg-white rounded-xl border border-gray-200 shadow-sm hover:bg-accent-50 hover:border-accent-300 hover:text-accent-700 transition-colors"
-                  >
-                    <p className="text-sm font-medium text-gray-900 hover:text-accent-700">{brand.name}</p>
-                  </Link>
-                ))}
-              </div>
-              <p className="text-gray-700">
-                Not sure about your brand or model? Give us a call — chances are,
-                we've repaired it before.
-              </p>
-              <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-sm">
-                <p className="text-lg italic">
-                  "Our oven stopped working just before a family gathering. Fixer's
-                  technician arrived the same day and had it baking perfectly again
-                  within hours. Professional and friendly!"{" "}
-                  <span className="not-italic font-semibold text-gray-900">
-                    – James P.
-                  </span>
-                </p>
-              </blockquote>
-            </section>
-
-            <section className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-900">
-                Explore Carp While We Fix
-              </h2>
-              <p className="text-gray-700">
-                Make the most of your time while we work:
-              </p>
-              <ul className="space-y-3 text-sm text-gray-700">
-                {attractions.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 inline-flex h-2 w-2 rounded-full bg-accent-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-gray-700">
-                Live nearby? We also offer{" "}
-                <Link
-                  href="/service-areas/kanata"
-                  className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-                >
-                  appliance repair in Kanata
-                </Link>{" "}
-                and{" "}
-                <Link
-                  href="/service-areas/stittsville"
-                  className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-                >
-                  Stittsville
-                </Link>
-                .
-              </p>
-              <div className="rounded-xl border border-accent-500 bg-accent-50 p-6 text-gray-800">
-                <p className="text-lg font-semibold">
-                  🎉 More events in Ottawa?
-                </p>
-                <p className="mt-2 text-sm">
-                  Head to{" "}
-                  <a
-                    href="https://ottawatourism.ca/en/see-and-do/events"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent-600 underline hover:text-accent-700"
-                  >
-                    Ottawa Tourism's event calendar
-                  </a>
-                  .
-                </p>
-              </div>
-            </section>
-
-            <section className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-900">
-                Neighbourhoods We Serve Near Carp
-              </h2>
-              <p className="text-gray-700">
-                Looking for appliance help in a specific part of Carp? Explore these
-                dedicated pages:
-              </p>
-              <ul className="grid gap-3 md:grid-cols-2">
-                {neighbourhoods.map((area) => (
-                  <li key={area.name}>
-                    <Link
-                      href={area.href}
-                      className="block rounded-xl border border-gray-200 bg-white p-4 text-sm font-semibold text-gray-900 shadow-sm transition hover:-translate-y-0.5 hover:border-accent-300 hover:text-accent-700"
-                    >
-                      {area.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm text-gray-700">
-                {additionalAreas.join(" • ")}
-              </p>
-            </section>
-
-            <section className="space-y-6">
-              <h2 className="text-3xl font-semibold text-gray-900">
-                FAQ – Appliance Repair in Carp
-              </h2>
-              <div className="space-y-4">
-                {faqs.map((faq) => (
-                  <div
-                    key={faq.question}
-                    className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
-                  >
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {faq.question}
-                    </h3>
-                    <p className="mt-2 text-sm text-gray-700">{faq.answer}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
+            <ServiceAreaServicesSection
+              title="Our Services in Carp"
+              description="We provide repair and maintenance for:"
+              services={services}
+              installationNote={{
+                label: "appliance installation across Ottawa",
+                href: "/appliance-installation/ottawa",
+              }}
+            />
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-lg mb-4 text-white">
-            Book Your Appliance Repair Today
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Your local repair experts — here to help when you need us most.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:613-413-6969"
-              className="btn-primary bg-white text-accent-600 hover:bg-gray-100"
-            >
-              Call or Text (613) 413-6969
-            </a>
+      <BrandsSection header=" Brands We Repair" premessage="We repair all major household brands, including:"
+        postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before." />
+
+      <section className="bg-gray-50 pb-10">
+        <div className="container-custom">
+          <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-md max-w-3xl mx-auto">
+            <p className="text-lg italic">
+              "Our oven stopped working just before a family gathering. Fixer's
+              technician arrived the same day and had it baking perfectly again
+              within hours. Professional and friendly!"{" "}
+              <span className="not-italic font-semibold text-gray-900">
+                – James P.
+              </span>
+            </p>
+          </blockquote>
+        </div>
+      </section>
+
+      <ThingsToDoSection attractions={attractions}
+        heading="Explore Carp While We Fix"
+        description="Make the most of your time while we work:"
+      />
+
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <p className="text-center text-gray-700">
+            Live nearby? We also offer{" "}
             <Link
-              href="/contact"
-              className="btn-outline border-white text-white hover:bg-white hover:text-accent-600"
+              href="/service-areas/kanata"
+              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
             >
-              Book Online Now
+              appliance repair in Kanata
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/service-areas/stittsville"
+              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
+            >
+              Stittsville
             </Link>
-          </div>
-          <p className="text-lg text-white/90 mt-6">
-            Email:{" "}
-            <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">
-              service@fixerappliancerepair.ca
-            </a>
+            .
           </p>
         </div>
       </section>
+
+      {/* Neighbourhoods Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <ServiceAreaNeighborhoodsSection
+            title="Neighbourhoods We Serve Near Carp"
+            description="Looking for appliance help in a specific part of Carp? Explore these dedicated pages:"
+            neighbourhoods={neighbourhoods}
+            additionalAreas={additionalAreas}
+          />
+        </div>
+      </section>
+
+      <FAQSection applianceName="Carp" faqs={faqs.map(f => ({ question: f.question, answer: f.answer }))} />
+
+      <CTASection
+        heading="Book Your Appliance Repair Today"
+        description="Your local repair experts — here to help when you need us most."
+      />
     </>
   );
 }

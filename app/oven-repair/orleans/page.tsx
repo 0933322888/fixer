@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Orleans – Fast, Reliable Electric Oven Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Oven won't turn on",
+    title: "Oven won't turn on",
     description: "We check power supply, fuses, and control boards to restore function.",
   },
   {
-    issue: "Burner works but oven doesn't",
+    title: "Burner works but oven doesn't",
     description: "This often points to a failed bake element or thermostat. We'll replace it quickly.",
   },
   {
-    issue: "Uneven baking results",
+    title: "Uneven baking results",
     description: "If one tray cooks faster, the convection fan or sensor may be faulty. We'll fix the airflow.",
   },
   {
-    issue: "Oven door won't close properly",
+    title: "Oven door won't close properly",
     description: "Loose hinges or worn gaskets leak heat. We'll replace them.",
   },
   {
-    issue: "No heat in broil mode",
+    title: "No heat in broil mode",
     description: "The top element or relay may be bad. We'll restore full heating.",
   },
   {
-    issue: "Display not responding",
+    title: "Display not responding",
     description: "Control panels or wiring often fail with age. We'll repair or replace them.",
   },
 ];
@@ -86,22 +87,7 @@ export default function OvenRepairOrleansPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Orleans</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Orleans" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
@@ -278,7 +264,7 @@ export default function OvenRepairOrleansPage() {
                 Freezer Repair Orleans
               </Link>
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Electric Cooktop Repair Orleans
+                Cooktop Repair Orleans
               </Link>
               <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Orleans

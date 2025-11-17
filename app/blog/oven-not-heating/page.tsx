@@ -1,17 +1,42 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaClock, FaUser, FaArrowLeft, FaExternalLinkAlt } from "react-icons/fa";
+import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = {
   title: "Oven Not Heating at All? Here's What Might Be Going Wrong | Fixer Blog",
   description: "Common reasons why your electric oven won't heat and how to fix them. Expert troubleshooting tips from Ottawa's trusted appliance repair professionals.",
 };
 
+const faqs = [
+  {
+    question: "Why is my oven turning on but not getting hot?",
+    answer: "Usually it's a faulty heating element, sensor, or blown thermal fuse.",
+  },
+  {
+    question: "Can I replace a heating element myself?",
+    answer: "Yes, if you're confident. But always unplug the oven and double-check compatibility.",
+  },
+  {
+    question: "Is it worth repairing an old oven?",
+    answer: "If the repair is under $300 and the oven is under 10–15 years old — usually yes.",
+  },
+  {
+    question: "Can a blown fuse cause an oven not to heat?",
+    answer: "Yes. Especially if the oven suddenly lost power after running for a while.",
+  },
+  {
+    question: "What should I check first?",
+    answer: "Start with the heating element and breaker. Then move to sensor and fuse.",
+  },
+];
+
 export default function OvenNotHeatingPost() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#DD4F06] text-white py-12">
+      <section className="bg-gradient-to-r from-accent-500 to-accent-600 text-white py-12">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <Link href="/blog" className="inline-flex items-center gap-2 text-gray-200 hover:text-white mb-6 transition-colors">
@@ -32,7 +57,7 @@ export default function OvenNotHeatingPost() {
             <div className="flex flex-wrap items-center gap-6 text-gray-200">
               <div className="flex items-center gap-2">
                 <FaUser />
-                <span>Michael Russky</span>
+                <span>Michael R</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaClock />
@@ -166,54 +191,7 @@ export default function OvenNotHeatingPost() {
 
             {/* FAQs */}
             <div className="my-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions (FAQs)</h2>
-              
-              <div className="space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Why is my oven turning on but not getting hot?
-                  </h3>
-                  <p className="text-gray-700">
-                    Usually it's a faulty heating element, sensor, or blown thermal fuse.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Can I replace a heating element myself?
-                  </h3>
-                  <p className="text-gray-700">
-                    Yes, if you're confident. But always unplug the oven and double-check compatibility.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Is it worth repairing an old oven?
-                  </h3>
-                  <p className="text-gray-700">
-                    If the repair is under $300 and the oven is under 10–15 years old — usually yes.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    Can a blown fuse cause an oven not to heat?
-                  </h3>
-                  <p className="text-gray-700">
-                    Yes. Especially if the oven suddenly lost power after running for a while.
-                  </p>
-                </div>
-
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    What should I check first?
-                  </h3>
-                  <p className="text-gray-700">
-                    Start with the heating element and breaker. Then move to sensor and fuse.
-                  </p>
-                </div>
-              </div>
+              <FAQSection faqs={faqs} />
             </div>
 
             {/* Author Bio */}
@@ -228,22 +206,11 @@ export default function OvenNotHeatingPost() {
       </article>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Need Professional Oven Repair?</h2>
-          <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
-            Don't let a broken oven ruin your meal plans. Our expert technicians can diagnose and fix your oven fast.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:613-413-6969" className="btn-primary bg-accent-500 hover:bg-accent-600">
-              Call 613-413-6969
-            </a>
-            <Link href="/oven-repair" className="btn-outline border-white text-white hover:bg-white hover:text-primary-700">
-              Learn About Our Oven Repair Service
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Need Professional Oven Repair?"
+        description="Don't let a broken oven ruin your meal plans. Our expert technicians can diagnose and fix your oven fast."
+        buttonText="Learn About Our Oven Repair Service"
+      />
 
       {/* Related Posts */}
       <section className="section-padding bg-gray-50">
@@ -251,7 +218,7 @@ export default function OvenNotHeatingPost() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/blog" className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <Link href="/blog/repair-vs-replace-appliance" className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   When to Repair vs. Replace Your Appliance
                 </h3>
@@ -259,12 +226,12 @@ export default function OvenNotHeatingPost() {
                   Making the right decision between repairing and replacing can save you hundreds.
                 </p>
               </Link>
-              <Link href="/blog" className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <Link href="/blog/oven-heats-improperly" className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Essential Appliance Maintenance Checklist
+                  Oven Heats, But Not Properly? Here's What Might Be Wrong
                 </h3>
                 <p className="text-gray-600">
-                  Keep your appliances running smoothly with this comprehensive guide.
+                  Troubleshooting uneven or insufficient oven heating.
                 </p>
               </Link>
             </div>

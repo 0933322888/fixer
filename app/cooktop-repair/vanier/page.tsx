@@ -5,6 +5,7 @@ import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair in Vanier – Local, Reliable Service | Fixer",
@@ -21,27 +22,27 @@ const benefits = [
 
 const commonIssues = [
   {
-    issue: "Cooktop not starting",
+    title: "Cooktop not starting",
     description: "In older Vanier homes, worn wiring or tripped breakers often cut power. We’ll restore connection.",
   },
   {
-    issue: "Burner shuts off mid-cook",
+    title: "Burner shuts off mid-cook",
     description: "Infinite switches or sensors may fail, cycling the burner too soon. We’ll replace the faulty part.",
   },
   {
-    issue: "Cooktop won’t shut down",
+    title: "Cooktop won’t shut down",
     description: "A stuck relay or switch can leave burners hot. We’ll fix it quickly for safety.",
   },
   {
-    issue: "Touchpad not working",
+    title: "Touchpad not working",
     description: "Control boards wear out over time. We’ll repair or swap the board.",
   },
   {
-    issue: "Glass top cracked",
+    title: "Glass top cracked",
     description: "We’ll install a replacement surface to restore both safety and appearance.",
   },
   {
-    issue: "Unusual buzzing or humming",
+    title: "Unusual buzzing or humming",
     description: "Often caused by faulty relays or worn components. We’ll quiet it down.",
   },
 ];
@@ -85,22 +86,7 @@ export default function OvenRepairVanierPage() {
         icon={<FaFire className="text-6xl text-white" />}
       />
 
-      {/* Common Issues Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md mb-12 text-center">Common Oven Issues We Fix in Vanier</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {commonIssues.map((item, index) => (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-primary-500 transition-colors">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.issue}</h3>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <CommonIssuesSection issues={commonIssues} heading="Common Cooktop Issues We Fix in Vanier" />
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
