@@ -176,7 +176,7 @@ const relatedServices = [
   { name: "Oven Repair Ottawa", href: "/oven-repair" },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair" },
-  { name: "Dryer Installation Ottawa", href: "/dryer-installation" },
+  { name: "Dryer Installation Ottawa", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairPage() {
@@ -211,7 +211,7 @@ export default function DryerRepairPage() {
       <InstallationCTASection
         applianceName="Dryer"
         description="Got a new dryer? We also provide dryer installation in Ottawa with same-day service available in most areas."
-        href="/dryer-installation"
+        href="/appliance-installation/dryer"
       />
 
       {/* Brands We Repair */}

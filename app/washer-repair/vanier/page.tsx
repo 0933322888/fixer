@@ -90,7 +90,7 @@ const relatedServices = [
   { name: "Oven Repair Vanier", href: "/oven-repair/vanier" },
   { name: "Cooktop Repair Vanier", href: "/cooktop-repair/vanier" },
   { name: "Microwave Repair Vanier", href: "/microwave-repair/vanier" },
-  { name: "Washer Installation Vanier", href: "/washer-installation" },
+  { name: "Washer Installation Vanier", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairVanierPage() {
@@ -139,7 +139,7 @@ export default function WasherRepairVanierPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Vanier with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

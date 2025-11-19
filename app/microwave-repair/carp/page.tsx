@@ -138,7 +138,7 @@ const services = [
   { label: "Freezer Repair Carp", href: "/freezer-repair/carp" },
   { label: "Oven Repair Carp", href: "/oven-repair/carp" },
   { label: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
-  { label: "Microwave Installation Carp", href: "/microwave-installation" },
+  { label: "Microwave Installation Carp", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairCarpPage() {
@@ -200,7 +200,7 @@ export default function MicrowaveRepairCarpPage() {
             <p className="text-gray-700 mb-6">
               👉 We don’t add new wiring or structural changes.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

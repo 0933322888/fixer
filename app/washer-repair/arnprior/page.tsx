@@ -91,7 +91,7 @@ const relatedServices = [
   { name: "Oven Repair Arnprior", href: "/oven-repair" },
   { name: "Cooktop Repair Arnprior", href: "/cooktop-repair" },
   { name: "Microwave Repair Arnprior", href: "/microwave-repair" },
-  { name: "Washer Installation Arnprior", href: "/washer-installation" },
+  { name: "Washer Installation Arnprior", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairArnpriorPage() {
@@ -140,7 +140,7 @@ export default function WasherRepairArnpriorPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Arnprior with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

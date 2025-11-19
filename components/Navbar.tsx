@@ -29,7 +29,7 @@ const navLinks: NavLink[] = [
     children: [{ href: "/cooktop-repair", label: "Cooktop Repair" }],
   },
   { href: "/microwave-repair", label: "MICROWAVE REPAIR" },
-  { href: "/appliance-installation/ottawa", label: "INSTALLATION SERVICE" },
+  { href: "/appliance-installation/locations/ottawa", label: "INSTALLATION SERVICE" },
 ];
 
 function isLinkActive(pathname: string, link: NavLink) {

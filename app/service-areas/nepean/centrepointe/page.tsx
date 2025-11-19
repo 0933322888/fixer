@@ -141,7 +141,7 @@ export default function CentrepointeServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation across Nepean",
-                href: "/appliance-installation/nepean",
+                href: "/appliance-installation/locations/nepean",
               }}
             />
           </div>

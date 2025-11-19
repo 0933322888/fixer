@@ -128,7 +128,7 @@ const services = [
   { label: "Freezer Repair Mississippi Mills", href: "/freezer-repair/mississippi-mills" },
   { label: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
   { label: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
-  { label: "Microwave Installation Mississippi Mills", href: "/microwave-installation" },
+  { label: "Microwave Installation Mississippi Mills", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairMississippiMillsPage() {
@@ -190,7 +190,7 @@ export default function MicrowaveRepairMississippiMillsPage() {
             <p className="text-gray-700 mb-6">
               👉 We don’t install new wiring or modify cabinets.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

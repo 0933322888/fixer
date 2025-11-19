@@ -99,7 +99,7 @@ const relatedServices = [
   { name: "Oven Repair Orleans", href: "/oven-repair/orleans" },
   { name: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
   { name: "Microwave Repair Orleans", href: "/microwave-repair/orleans" },
-  { name: "Dishwasher Installation Orleans", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Orleans", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairOrleansPage() {
@@ -164,7 +164,7 @@ export default function DishwasherRepairOrleansPage() {
                 👉 We don't provide new plumbing or wiring services.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

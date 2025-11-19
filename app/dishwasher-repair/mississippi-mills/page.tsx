@@ -99,7 +99,7 @@ const relatedServices = [
   { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
   { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
   { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
-  { name: "Dishwasher Installation Mississippi Mills", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Mississippi Mills", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairMississippiMillsPage() {
@@ -164,7 +164,7 @@ export default function DishwasherRepairMississippiMillsPage() {
                 👉 We don't add new plumbing lines or high-voltage wiring.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

@@ -103,7 +103,7 @@ const relatedServices = [
   { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
   { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
   { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
-  { name: "Dryer Installation Carleton Place", href: "/dryer-installation" },
+  { name: "Dryer Installation Carleton Place", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairCarletonPlacePage() {
@@ -152,7 +152,7 @@ export default function DryerRepairCarletonPlacePage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dryer? We also provide dryer installation in Carleton Place with same-day service available in most areas.
           </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dryer Installation
           </Link>
         </div>

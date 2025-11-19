@@ -98,7 +98,7 @@ const relatedServices = [
   { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
   { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
   { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
-  { name: "Dishwasher Installation Carleton Place", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Carleton Place", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairCarletonPlacePage() {
@@ -164,7 +164,7 @@ export default function DishwasherRepairCarletonPlacePage() {
                 👉 No new plumbing or wiring is included.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

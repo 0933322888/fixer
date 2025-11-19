@@ -144,7 +144,7 @@ const services = [
   { label: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
   { label: "Oven Repair Nepean", href: "/oven-repair/nepean" },
   { label: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
-  { label: "Microwave Installation Nepean", href: "/microwave-installation" },
+  { label: "Microwave Installation Nepean", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairNepeanPage() {
@@ -206,7 +206,7 @@ export default function MicrowaveRepairNepeanPage() {
             <p className="text-gray-700 mb-6">
               👉 We don’t run new wiring or modify cabinetry.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

@@ -174,7 +174,7 @@ const services = [
   { label: "Freezer Repair Ottawa", href: "/freezer-repair" },
   { label: "Oven Repair Ottawa", href: "/oven-repair" },
   { label: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
-  { label: "Microwave Installation Ottawa", href: "/oven-installation" },
+  { label: "Microwave Installation Ottawa", href: "/appliance-installation/oven" },
 ];
 
 export default function MicrowaveRepairPage() {
@@ -216,7 +216,7 @@ export default function MicrowaveRepairPage() {
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Ottawa with same-day service available in most areas."
-        href="/microwave-installation"
+        href="/appliance-installation/microvawe"
       />
 
       {/* Brands We Repair */}

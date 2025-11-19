@@ -42,13 +42,16 @@ export default function ThingsToDoSection({
     };
   });
 
+  // Determine grid columns: 2 columns for even number of attractions, 3 columns for odd
+  const gridCols = normalizedAttractions.length % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-3";
+
   return (
     <section className="section-padding bg-gray-100">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-md text-center mb-4">{heading || defaultHeading}</h2>
           {description && <p className="text-lg text-gray-700 text-center mb-6">{description}</p>}
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className={`grid ${gridCols} gap-4`}>
             {normalizedAttractions.map((attraction, index) => (
               <div
                 key={index}

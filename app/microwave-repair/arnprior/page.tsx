@@ -128,7 +128,7 @@ const services = [
   { label: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
   { label: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
   { label: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
-  { label: "Microwave Installation Arnprior", href: "/microwave-installation" },
+  { label: "Microwave Installation Arnprior", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairArnpriorPage() {
@@ -179,7 +179,7 @@ export default function MicrowaveRepairArnpriorPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new microwave? We also provide microwave installation in Arnprior with same-day service available in most areas.
           </p>
-          <Link href="/microwave-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/microvawe" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Microwave Installation
           </Link>
         </div>

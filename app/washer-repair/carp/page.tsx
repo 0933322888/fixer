@@ -105,7 +105,7 @@ const relatedServices = [
   { name: "Oven Repair Carp", href: "/oven-repair/carp" },
   { name: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
   { name: "Microwave Repair Carp", href: "/microwave-repair/carp" },
-  { name: "Washer Installation", href: "/washer-installation" },
+  { name: "Washer Installation", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairCarpPage() {
@@ -167,7 +167,7 @@ export default function WasherRepairCarpPage() {
                 👉 We don't create new water lines or high-voltage wiring.
               </p>
               <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
+                <Link href="/appliance-installation/washer" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

@@ -145,7 +145,7 @@ const services = [
   { label: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
   { label: "Oven Repair Kanata", href: "/oven-repair/kanata" },
   { label: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
-  { label: "Microwave Installation Kanata", href: "/microwave-installation" },
+  { label: "Microwave Installation Kanata", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairKanataPage() {
@@ -193,7 +193,7 @@ export default function MicrowaveRepairKanataPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new microwave? We also provide microwave installation in Kanata with same-day service available in most areas.
           </p>
-          <Link href="/microwave-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/microvawe" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Microwave Installation
           </Link>
         </div>

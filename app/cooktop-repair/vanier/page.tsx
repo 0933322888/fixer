@@ -114,7 +114,7 @@ export default function OvenRepairVanierPage() {
                 </p>
               </div>
               <div className="text-center mt-8">
-                <Link href="/cooktop-installation" className="btn-primary">
+                <Link href="/appliance-installation/cooktop" className="btn-primary">
                   Learn More
                 </Link>
               </div>
@@ -276,7 +276,7 @@ export default function OvenRepairVanierPage() {
               <Link href="/microwave-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Microwave Repair Vanier
               </Link>
-              <Link href="/cooktop-installation/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
+              <Link href="/appliance-installation/cooktop/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Cooktop Installation Vanier
               </Link>
             </div>

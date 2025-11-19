@@ -102,7 +102,7 @@ const relatedServices = [
   { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
   { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
   { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
-  { name: "Washer Installation Stittsville", href: "/washer-installation" },
+  { name: "Washer Installation Stittsville", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairStittsvillePage() {
@@ -164,7 +164,7 @@ export default function WasherRepairStittsvillePage() {
                 👉 Please note: plumbing or new wiring isn't included.
               </p>
               <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
+                <Link href="/appliance-installation/washer" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

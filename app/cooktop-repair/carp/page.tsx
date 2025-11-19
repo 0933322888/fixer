@@ -111,7 +111,7 @@ const otherServices = [
   { name: "Freezer Repair Carp", href: "/freezer-repair/carp" },
   { name: "Oven Repair Carp", href: "/oven-repair/carp" },
   { name: "Microwave Repair Carp", href: "/microwave-repair/carp" },
-  { name: "Cooktop Installation Carp", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Carp", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairCarpPage() {
@@ -161,7 +161,7 @@ export default function CooktopRepairCarpPage() {
                 👉 We don't provide new electrical circuits or gas hookups.
               </p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

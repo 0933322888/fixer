@@ -17,7 +17,7 @@ const services = [
   { name: "Oven Repair Ottawa", href: "/oven-repair", description: "Perfect bakes, every time." },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair", description: "From uneven heat to total shutdowns." },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair", description: "Fast heating without sparks." },
-  { name: "Appliance Installation Ottawa", href: "/appliance-installation/ottawa", description: "Professional, safe, and precise setup." },
+  { name: "Appliance Installation Ottawa", href: "/appliance-installation/locations/ottawa", description: "Professional, safe, and precise setup." },
 ];
 
 const brands = [

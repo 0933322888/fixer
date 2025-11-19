@@ -98,7 +98,7 @@ const relatedServices = [
   { name: "Oven Repair Vanier", href: "/oven-repair/vanier" },
   { name: "Cooktop Repair Vanier", href: "/cooktop-repair/vanier" },
   { name: "Microwave Repair Vanier", href: "/microwave-repair/vanier" },
-  { name: "Dishwasher Installation Vanier", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Vanier", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairVanierPage() {
@@ -164,7 +164,7 @@ export default function DishwasherRepairVanierPage() {
                 👉 We don't run new plumbing or high-voltage lines.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

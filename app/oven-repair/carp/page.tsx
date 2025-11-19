@@ -125,7 +125,7 @@ export default function OvenRepairCarpPage() {
                 ⚠️ We don't install new wiring or gas lines.
               </p>
               <div className="text-center mt-8">
-                <Link href="/oven-installation" className="btn-primary">
+                <Link href="/appliance-installation/oven" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -287,7 +287,7 @@ export default function OvenRepairCarpPage() {
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Cooktop Repair Carp
               </Link>
-              <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
+              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Carp
               </Link>
             </div>

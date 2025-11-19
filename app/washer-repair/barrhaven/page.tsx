@@ -91,7 +91,7 @@ const relatedServices = [
   { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
   { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
-  { name: "Washer Installation Barrhaven", href: "/washer-installation" },
+  { name: "Washer Installation Barrhaven", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairBarrhavenPage() {
@@ -140,7 +140,7 @@ export default function WasherRepairBarrhavenPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Barrhaven with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

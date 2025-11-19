@@ -101,7 +101,7 @@ const relatedServices = [
   { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
   { name: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
   { name: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
-  { name: "Washer Installation Kanata", href: "/washer-installation" },
+  { name: "Washer Installation Kanata", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairKanataPage() {
@@ -150,7 +150,7 @@ export default function WasherRepairKanataPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Kanata with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

@@ -117,7 +117,7 @@ const relatedServices = [
   { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
   { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
   { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
-  { name: "Dishwasher Installation Stittsville", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Stittsville", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairStittsvillePage() {
@@ -167,7 +167,7 @@ export default function DishwasherRepairStittsvillePage() {
                 👉 We don't add plumbing or high-voltage wiring.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

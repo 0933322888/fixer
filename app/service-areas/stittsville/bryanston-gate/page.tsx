@@ -141,7 +141,7 @@ export default function BryanstonGateServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Stittsville",
-                href: "/appliance-installation/stittsville",
+                href: "/appliance-installation/locations/stittsville",
               }}
             />
           </div>

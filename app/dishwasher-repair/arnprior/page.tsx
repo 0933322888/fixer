@@ -100,7 +100,7 @@ const relatedServices = [
   { name: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
   { name: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
   { name: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
-  { name: "Dishwasher Installation Arnprior", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Arnprior", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairArnpriorPage() {
@@ -153,7 +153,7 @@ export default function DishwasherRepairArnpriorPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dishwasher? We also provide dishwasher installation in Arnprior with same-day service available in most areas.
           </p>
-          <Link href="/dishwasher-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dishwasher" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dishwasher Installation
           </Link>
         </div>

@@ -161,7 +161,7 @@ export default function BarrhavenServiceAreaPage() {
               installationNote={{
                 prefix: "👉 We also provide",
                 label: "appliance installation across Ottawa",
-                href: "/appliance-installation/ottawa",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

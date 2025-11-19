@@ -128,7 +128,7 @@ const services = [
   { label: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
   { label: "Oven Repair Orleans", href: "/oven-repair/orleans" },
   { label: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
-  { label: "Microwave Installation Orleans", href: "/microwave-installation" },
+  { label: "Microwave Installation Orleans", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairOrleansPage() {
@@ -190,7 +190,7 @@ export default function MicrowaveRepairOrleansPage() {
             <p className="text-gray-700 mb-6">
               👉 No new electrical circuits or cabinetry modifications are included.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

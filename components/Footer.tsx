@@ -104,7 +104,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/appliance-installation/ottawa" className="text-sm text-light-200 hover:text-accent-500 transition-colors">
+                <Link href="/appliance-installation/locations/ottawa" className="text-sm text-light-200 hover:text-accent-500 transition-colors">
                   Installation Services
                 </Link>
               </li>

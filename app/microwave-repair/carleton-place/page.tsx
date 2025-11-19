@@ -127,7 +127,7 @@ const services = [
   { label: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
   { label: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
   { label: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
-  { label: "Microwave Installation Carleton Place", href: "/microwave-installation" },
+  { label: "Microwave Installation Carleton Place", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairCarletonPlacePage() {
@@ -189,7 +189,7 @@ export default function MicrowaveRepairCarletonPlacePage() {
             <p className="text-gray-700 mb-6">
               👉 We don’t add new wiring or structural modifications.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

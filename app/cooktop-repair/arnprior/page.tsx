@@ -93,7 +93,7 @@ const otherServices = [
   { name: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
   { name: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
   { name: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
-  { name: "Cooktop Installation Arnprior", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Arnprior", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairArnpriorPage() {
@@ -161,7 +161,7 @@ export default function CooktopRepairArnpriorPage() {
               </p>
               <p className="text-center text-sm text-gray-600">(!) No new wiring or gas installations included.</p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   Learn more →
                 </Link>
               </p>

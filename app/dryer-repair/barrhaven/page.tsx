@@ -104,7 +104,7 @@ const relatedServices = [
   { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
   { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
-  { name: "Dryer Installation Barrhaven", href: "/dryer-installation" },
+  { name: "Dryer Installation Barrhaven", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairBarrhavenPage() {
@@ -153,7 +153,7 @@ export default function DryerRepairBarrhavenPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dryer? We also provide dryer installation in Barrhaven with same-day service available in most areas.
           </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dryer Installation
           </Link>
         </div>

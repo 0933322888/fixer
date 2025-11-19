@@ -173,7 +173,7 @@ const relatedServices = [
   { name: "Oven Repair Ottawa", href: "/oven-repair" },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair" },
-  { name: "Washer Installation Ottawa", href: "/washer-installation" },
+  { name: "Washer Installation Ottawa", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairPage() {
@@ -210,7 +210,7 @@ export default function WasherRepairPage() {
       <InstallationCTASection
         applianceName="Washer"
         description="Upgrading to a new unit? We also offer washer installation in Ottawa — fast, safe, and fully insured."
-        href="/washer-installation"
+        href="/appliance-installation/washer"
       />
 
       {/* Brands We Repair */}

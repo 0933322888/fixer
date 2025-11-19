@@ -116,7 +116,7 @@ const otherServices = [
   { name: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
   { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
   { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
-  { name: "Cooktop Installation Stittsville", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Stittsville", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairStittsvillePage() {
@@ -170,7 +170,7 @@ export default function CooktopRepairStittsvillePage() {
                 👉 New wiring or gas line installation is not included.
               </p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

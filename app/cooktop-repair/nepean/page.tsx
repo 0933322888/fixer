@@ -117,7 +117,7 @@ const otherServices = [
   { name: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
   { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
   { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
-  { name: "Cooktop Installation Nepean", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Nepean", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairNepeanPage() {
@@ -167,7 +167,7 @@ export default function CooktopRepairNepeanPage() {
                 👉 We don't create new high-voltage wiring or gas lines.
               </p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

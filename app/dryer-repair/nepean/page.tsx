@@ -118,7 +118,7 @@ const relatedServices = [
   { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
   { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
   { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
-  { name: "Dryer Installation Nepean", href: "/dryer-installation" },
+  { name: "Dryer Installation Nepean", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairNepeanPage() {
@@ -152,7 +152,7 @@ export default function DryerRepairNepeanPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dryer? We also provide dryer installation in Nepean with same-day service available in most areas.
           </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dryer Installation
           </Link>
         </div>

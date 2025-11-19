@@ -103,7 +103,7 @@ const relatedServices = [
   { name: "Oven Repair Nepean", href: "/oven-repair/nepean" },
   { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
   { name: "Microwave Repair Nepean", href: "/microwave-repair/nepean" },
-  { name: "Washer Installation Nepean", href: "/washer-installation" },
+  { name: "Washer Installation Nepean", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairNepeanPage() {
@@ -166,7 +166,7 @@ export default function WasherRepairNepeanPage() {
                 👉 We don't run new plumbing lines or high-voltage circuits.
               </p>
               <div className="text-center">
-                <Link href="/washer-installation" className="btn-primary">
+                <Link href="/appliance-installation/washer" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

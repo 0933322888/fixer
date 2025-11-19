@@ -104,7 +104,7 @@ const relatedServices = [
   { name: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
   { name: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
   { name: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
-  { name: "Dryer Installation Arnprior", href: "/dryer-installation" },
+  { name: "Dryer Installation Arnprior", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairArnpriorPage() {
@@ -153,7 +153,7 @@ export default function DryerRepairArnpriorPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dryer? We also provide dryer installation in Arnprior with same-day service available in most areas.
           </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dryer Installation
           </Link>
         </div>

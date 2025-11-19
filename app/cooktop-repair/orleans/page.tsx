@@ -94,7 +94,7 @@ const otherServices = [
   { name: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
   { name: "Oven Repair Orleans", href: "/oven-repair/orleans" },
   { name: "Microwave Repair Orleans", href: "/microwave-repair/orleans" },
-  { name: "Cooktop Installation Orleans", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Orleans", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairOrleansPage() {
@@ -160,7 +160,7 @@ export default function CooktopRepairOrleansPage() {
               </p>
               <p className="text-center text-sm text-gray-600">👉 We don't run new wiring or install gas connections.</p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

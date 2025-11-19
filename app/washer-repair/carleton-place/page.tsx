@@ -90,7 +90,7 @@ const relatedServices = [
   { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
   { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
   { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
-  { name: "Washer Installation Carleton Place", href: "/washer-installation" },
+  { name: "Washer Installation Carleton Place", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairCarletonPlacePage() {
@@ -139,7 +139,7 @@ export default function WasherRepairCarletonPlacePage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Carleton Place with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

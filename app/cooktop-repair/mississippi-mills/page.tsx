@@ -93,7 +93,7 @@ const otherServices = [
   { name: "Freezer Repair Mississippi Mills", href: "/freezer-repair/mississippi-mills" },
   { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
   { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
-  { name: "Cooktop Installation Mississippi Mills", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Mississippi Mills", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairMississippiMillsPage() {
@@ -163,7 +163,7 @@ export default function CooktopRepairMississippiMillsPage() {
               </p>
               <p className="text-center text-sm text-gray-600">👉 No new circuits or gas hookups are provided.</p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

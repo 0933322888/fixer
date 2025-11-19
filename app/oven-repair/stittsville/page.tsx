@@ -127,7 +127,7 @@ export default function OvenRepairStittsvillePage() {
                 ⚠️ New high-voltage wiring or gas hookups are not included.
               </p>
               <div className="text-center mt-8">
-                <Link href="/oven-installation" className="btn-primary">
+                <Link href="/appliance-installation/oven" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -285,7 +285,7 @@ export default function OvenRepairStittsvillePage() {
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Cooktop Repair Stittsville
               </Link>
-              <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
+              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Stittsville
               </Link>
             </div>

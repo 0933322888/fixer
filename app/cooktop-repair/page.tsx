@@ -203,7 +203,7 @@ const otherServices = [
   { name: "Freezer Repair Ottawa", href: "/freezer-repair" },
   { name: "Oven Repair Ottawa", href: "/oven-repair" },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair" },
-  { name: "Cooktop Installation Ottawa", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Ottawa", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairPage() {
@@ -247,7 +247,7 @@ export default function CooktopRepairPage() {
       <InstallationCTASection
         applianceName="Cooktop"
         description="We safely install electric cooktops in Ottawa kitchens, including drop-in models and custom countertop cuts."
-        href="/cooktop-installation"
+        href="/appliance-installation/cooktop"
         heading="Installation Services"
       />
 

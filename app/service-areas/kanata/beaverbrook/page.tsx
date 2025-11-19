@@ -152,7 +152,7 @@ export default function BeaverbrookServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Kanata",
-                href: "/appliance-installation/kanata",
+                href: "/appliance-installation/locations/kanata",
               }}
             />
           </div>

@@ -104,7 +104,7 @@ const relatedServices = [
   { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
   { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
   { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
-  { name: "Dryer Installation Mississippi Mills", href: "/dryer-installation" },
+  { name: "Dryer Installation Mississippi Mills", href: "/appliance-installation/dryer" },
 ];
 
 export default function DryerRepairMississippiMillsPage() {
@@ -153,7 +153,7 @@ export default function DryerRepairMississippiMillsPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dryer? We also provide dryer installation in Mississippi Mills with same-day service available in most areas.
           </p>
-          <Link href="/dryer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dryer Installation
           </Link>
         </div>

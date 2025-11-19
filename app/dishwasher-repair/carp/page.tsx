@@ -116,7 +116,7 @@ const relatedServices = [
   { name: "Oven Repair Carp", href: "/oven-repair/carp" },
   { name: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
   { name: "Microwave Repair Carp", href: "/microwave-repair/carp" },
-  { name: "Dishwasher Installation Carp", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Carp", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairCarpPage() {
@@ -166,7 +166,7 @@ export default function DishwasherRepairCarpPage() {
                 👉 New plumbing or electrical lines are not included.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

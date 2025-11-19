@@ -159,7 +159,7 @@ export default function NepeanServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Nepean",
-                href: "/appliance-installation/nepean",
+                href: "/appliance-installation/locations/nepean",
               }}
             />
           </div>

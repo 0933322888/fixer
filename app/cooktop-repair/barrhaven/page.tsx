@@ -96,7 +96,7 @@ const otherServices = [
   { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
   { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
-  { name: "Cooktop Installation Barrhaven", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Barrhaven", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairBarrhavenPage() {
@@ -166,7 +166,7 @@ export default function CooktopRepairBarrhavenPage() {
               </p>
               <p className="text-center text-sm text-gray-600">👉 We don't provide new wiring or gas hookups.</p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   Learn more →
                 </Link>
               </p>

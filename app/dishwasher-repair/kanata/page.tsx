@@ -119,7 +119,7 @@ const relatedServices = [
   { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
   { name: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
   { name: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
-  { name: "Dishwasher Installation Kanata", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Kanata", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairKanataPage() {
@@ -169,7 +169,7 @@ export default function DishwasherRepairKanataPage() {
                 👉 Note: we don't install new plumbing or high-voltage wiring.
               </p>
               <div className="text-center">
-                <Link href="/dishwasher-installation" className="btn-primary">
+                <Link href="/appliance-installation/dishwasher" className="btn-primary">
                   Learn more about Installation
                 </Link>
               </div>

@@ -158,7 +158,7 @@ export default function CarletonPlaceServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation across Ottawa",
-                href: "/appliance-installation/ottawa",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

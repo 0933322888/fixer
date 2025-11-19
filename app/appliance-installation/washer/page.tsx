@@ -1,5 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaTshirt } from "react-icons/fa";
+import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationNotesSection from "@/components/InstallationNotesSection";
+import WhenNeededSection from "@/components/WhenNeededSection";
+import InstallationProcessSection from "@/components/InstallationProcessSection";
 
 export const metadata: Metadata = {
   title: "Washer Installation Ottawa – Safe, Reliable Service | Fixer",
@@ -33,13 +42,17 @@ const reasons = [
 const relatedServices = [
   { label: "Dryer Installation Ottawa", href: "/appliance-installation/dryer" },
   { label: "Dishwasher Installation Ottawa", href: "/appliance-installation/dishwasher" },
-  { label: "Appliance Installation Ottawa hub page", href: "/appliance-installation/ottawa" },
+  { label: "Appliance Installation Ottawa", href: "/appliance-installation/locations/ottawa" },
+  { label: "Fridge Installation Ottawa", href: null },
+  { label: "Freezer Installation Ottawa", href: null },
+  { label: "Oven Installation Ottawa", href: "/appliance-installation/oven" },
+  { label: "Microwave Installation Ottawa", href: "/appliance-installation/microwave" },
 ];
 
 const importantNotes = [
-  "No plumbing work: our technicians connect appliances to pre-installed water lines only.",
-  "No electrical rewiring: installation is done on existing outlets.",
-  "No hardwiring: we do not perform hardwire connections; appliances must plug into an existing outlet.",
+  { title: "No plumbing work", description: "Our technicians connect appliances to pre-installed water lines only." },
+  { title: "No electrical rewiring", description: "Installation is done on existing outlets." },
+  { title: "No hardwiring", description: "We do not perform hardwire connections; appliances must plug into an existing outlet." },
 ];
 
 const faqItems = [
@@ -70,9 +83,9 @@ export default function WasherInstallationOttawaPage() {
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">Washer Installation Ottawa</h1>
+            <h1 className="heading-xl text-white mb-6"><FaTshirt className="text-[30px] mb-2 inline-block" /> Washer Installation Ottawa</h1>
             <p className="text-lg text-gray-100 leading-relaxed">
-              Need help setting up your new washer? At Fixer, we provide safe, professional <Link href="/appliance-installation/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> so you can start using it right away. Whether it’s a replacement or your first machine, our technicians ensure correct hookups and testing. For ongoing issues, see our{" "}
+              Need help setting up your new washer? At Fixer, we provide safe, professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> so you can start using it right away. Whether it’s a replacement or your first machine, our technicians ensure correct hookups and testing. For ongoing issues, see our{" "}
               <Link href="/washer-repair" className="text-white underline font-semibold hover:text-gray-100">
                 Washer Repair Ottawa service
               </Link>
@@ -82,162 +95,53 @@ export default function WasherInstallationOttawaPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">When Do You Need Washer Installation?</h2>
-            <ul className="space-y-3 text-lg text-gray-700">
-              {whenNeeded.map((item) => (
-                <li key={item}>
-                  <span className="text-primary-600 mr-2">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Still deciding between repair and replacement? See our{" "}
-              <Link href="/blog/repair-vs-replace-appliance" className="text-primary-600 font-semibold hover:underline">
-                Repair vs New Appliance Installation guide
-              </Link>
-              . If you’d rather fix your current unit, check our{" "}
-              <Link href="/appliance-repair" className="text-primary-600 font-semibold hover:underline">
-                Appliance Repair Ottawa services
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <WhenNeededSection
+        items={whenNeeded}
+        applianceName="Washer"
+        footerText={
+          <>
+            Still deciding between repair and replacement? See our{" "}
+            <Link href="/blog/repair-vs-replace-appliance" className="text-primary-600 font-semibold hover:underline">
+              Repair vs New Appliance Installation guide
+            </Link>
+            . If you'd rather fix your current unit, check our{" "}
+            <Link href="/service-areas" className="text-primary-600 font-semibold hover:underline">
+              Appliance Repair Ottawa services
+            </Link>
+            .
+          </>
+        }
+      />
 
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">Our Installation Process</h2>
-            <ul className="space-y-3 text-lg text-gray-700">
-              {processSteps.map((step) => (
-                <li key={step}>
-                  <span className="text-primary-600 mr-2">•</span>
-                  {step}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <InstallationProcessSection steps={processSteps} />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">Why Choose Fixer for Installation?</h2>
-            <ul className="space-y-3 text-lg text-gray-700">
-              {reasons.map((reason) => (
-                <li key={reason}>
-                  <span className="text-primary-600 mr-2">•</span>
-                  {reason}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection
+        benefits={reasons}
+        heading="Why Choose Fixer for Installation?"
+      />
 
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">Related Installation Services</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {relatedServices.map((service) => (
-                <Link
-                  key={service.label}
-                  href={service.href}
-                  className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-primary-600 font-semibold hover:border-primary-400 hover:text-primary-700 transition"
-                >
-                  {service.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Related Installation Services"
+      />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">Important Installation Notes</h2>
-            <p className="text-lg text-gray-700 mb-4">We install appliances only on existing connections:</p>
-            <ul className="space-y-3 text-lg text-gray-700">
-              {importantNotes.map((note) => (
-                <li key={note}>
-                  <span className="text-primary-600 mr-2">•</span>
-                  {note}
-                </li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-4">
-              This way, you know exactly what’s included in our service — clear, safe, and reliable.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationNotesSection notes={importantNotes} />
 
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">FAQ</h2>
-            <div className="space-y-6">
-              {faqItems.map((faq) => (
-                <div key={faq.question} className="bg-white border border-gray-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-primary-800">{faq.question}</h3>
-                  <p className="text-gray-700 mt-2">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={faqItems} />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6">Explore Ottawa While We Work</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While we handle the installation, why not enjoy some of Ottawa’s highlights?
-            </p>
-            <ul className="space-y-3 text-gray-700">
-              {exploreItems.map((item) => (
-                <li key={item}>
-                  <span className="text-primary-600 mr-2">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Looking for something fun this month?
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 font-semibold hover:underline ml-1"
-              >
-                Check out the Ottawa events calendar.
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={exploreItems}
+        heading="Explore Ottawa While We Work"
+        description="While we handle the installation, why not enjoy some of Ottawa's highlights?"
+        link="https://ottawatourism.ca/en/see-and-do/events"
+        linkText="Ottawa events calendar"
+      />
 
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Ready to Book Your Washer Installation?</h2>
-          <p className="text-xl mb-4">Call/Text: 613-413-6969</p>
-          <p className="text-xl mb-6">
-            📧 <a href="mailto:service@fixerappliancerepair.ca" className="underline text-white">service@fixerappliancerepair.ca</a>
-          </p>
-          <p className="text-lg text-white/90">
-            We’ll get your new washer hooked up quickly and correctly — so laundry day won’t have to wait.
-          </p>
-        </div>
-      </section>
+      <CTASection
+        heading="Ready to Book Your Washer Installation?"
+        description="We'll get your new washer hooked up quickly and correctly — so laundry day won't have to wait."
+        phoneText="Call/Text: 613-413-6969"
+      />
     </>
   );
 }

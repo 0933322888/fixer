@@ -93,7 +93,7 @@ const otherServices = [
   { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
   { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
   { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
-  { name: "Cooktop Installation Carleton Place", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Carleton Place", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairCarletonPlacePage() {
@@ -165,7 +165,7 @@ export default function CooktopRepairCarletonPlacePage() {
                 (!) We don't add new high-voltage wiring or gas lines.
               </p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

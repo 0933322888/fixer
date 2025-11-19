@@ -91,7 +91,7 @@ const relatedServices = [
   { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
   { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
   { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
-  { name: "Washer Installation Mississippi Mills", href: "/washer-installation" },
+  { name: "Washer Installation Mississippi Mills", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairMississippiMillsPage() {
@@ -140,7 +140,7 @@ export default function WasherRepairMississippiMillsPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Mississippi Mills with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

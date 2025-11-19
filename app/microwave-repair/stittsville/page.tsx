@@ -139,7 +139,7 @@ const services = [
   { label: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
   { label: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
   { label: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
-  { label: "Microwave Installation Stittsville", href: "/microwave-installation" },
+  { label: "Microwave Installation Stittsville", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairStittsvillePage() {
@@ -201,7 +201,7 @@ export default function MicrowaveRepairStittsvillePage() {
             <p className="text-gray-700 mb-6">
               👉 No new wiring or cabinetry work included.
             </p>
-            <Link href="/microwave-installation" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

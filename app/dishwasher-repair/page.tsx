@@ -170,7 +170,7 @@ const relatedServices = [
   { name: "Oven Repair Ottawa", href: "/oven-repair" },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair" },
-  { name: "Dishwasher Installation Ottawa", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Ottawa", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairPage() {
@@ -209,7 +209,7 @@ export default function DishwasherRepairPage() {
       <InstallationCTASection
         applianceName="Dishwasher"
         description="Got a new dishwasher? We also provide dishwasher installation in Ottawa with same-day service available in most areas."
-        href="/dishwasher-installation"
+        href="/appliance-installation/dishwasher"
       />
 
       {/* Brands We Repair */}

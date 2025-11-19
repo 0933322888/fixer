@@ -128,7 +128,7 @@ const services = [
   { label: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
   { label: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { label: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
-  { label: "Microwave Installation Barrhaven", href: "/microwave-installation" },
+  { label: "Microwave Installation Barrhaven", href: "/appliance-installation/microvawe" },
 ];
 
 export default function MicrowaveRepairBarrhavenPage() {
@@ -176,7 +176,7 @@ export default function MicrowaveRepairBarrhavenPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new microwave? We also provide microwave installation in Barrhaven with same-day service available in most areas.
           </p>
-          <Link href="/microwave-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/microvawe" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Microwave Installation
           </Link>
         </div>

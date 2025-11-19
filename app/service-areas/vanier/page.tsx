@@ -131,7 +131,7 @@ export default function VanierServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation across Ottawa",
-                href: "/appliance-installation/ottawa",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

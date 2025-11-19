@@ -119,7 +119,7 @@ const otherServices = [
   { name: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
   { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
   { name: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
-  { name: "Cooktop Installation Kanata", href: "/cooktop-installation" },
+  { name: "Cooktop Installation Kanata", href: "/appliance-installation/cooktop" },
 ];
 
 export default function CooktopRepairKanataPage() {
@@ -170,7 +170,7 @@ export default function CooktopRepairKanataPage() {
                 👉 Note: we don't run new high-voltage wiring or gas lines.
               </p>
               <p className="text-center">
-                <Link href="/cooktop-installation" className="btn-primary inline-block">
+                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
                   {"Learn more ->"}
                 </Link>
               </p>

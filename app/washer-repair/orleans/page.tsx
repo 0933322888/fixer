@@ -91,7 +91,7 @@ const relatedServices = [
   { name: "Oven Repair Orleans", href: "/oven-repair/orleans" },
   { name: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
   { name: "Microwave Repair Orleans", href: "/microwave-repair/orleans" },
-  { name: "Washer Installation", href: "/washer-installation" },
+  { name: "Washer Installation", href: "/appliance-installation/washer" },
 ];
 
 export default function WasherRepairOrleansPage() {
@@ -140,7 +140,7 @@ export default function WasherRepairOrleansPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new washer? We also provide washer installation in Orleans with same-day service available in most areas.
           </p>
-          <Link href="/washer-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Washer Installation
           </Link>
         </div>

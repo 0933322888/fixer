@@ -109,7 +109,7 @@ export default function OvenRepairOrleansPage() {
                 ⚠️ We don't install new high-voltage wiring or gas connections.
               </p>
               <div className="text-center mt-8">
-                <Link href="/oven-installation" className="btn-primary">
+                <Link href="/appliance-installation/oven" className="btn-primary">
                   Learn More About Installation
                 </Link>
               </div>
@@ -266,7 +266,7 @@ export default function OvenRepairOrleansPage() {
               <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Cooktop Repair Orleans
               </Link>
-              <Link href="/oven-installation" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
+              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
                 Oven Installation Orleans
               </Link>
             </div>

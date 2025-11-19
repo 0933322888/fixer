@@ -99,7 +99,7 @@ const relatedServices = [
   { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
   { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
-  { name: "Dishwasher Installation Barrhaven", href: "/dishwasher-installation" },
+  { name: "Dishwasher Installation Barrhaven", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DishwasherRepairbarrhavenPage() {
@@ -151,7 +151,7 @@ export default function DishwasherRepairbarrhavenPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Got a new dishwasher? We also provide dishwasher installation in Barrhaven with same-day service available in most areas.
           </p>
-          <Link href="/dishwasher-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
+          <Link href="/appliance-installation/dishwasher" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
             Learn About Dishwasher Installation
           </Link>
         </div>
