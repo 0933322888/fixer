@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaUtensils } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
@@ -94,7 +95,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const serviceAreas = [
@@ -145,6 +146,7 @@ const faqs = [
   {
     question: "Is it worth repairing an older dishwasher?",
     answer: "We help you decide based on age, model, and part costs. In many cases — yes.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Do you carry parts or need to order them?",
@@ -178,7 +180,7 @@ export default function DishwasherRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Ottawa 
+            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Ottawa 
               <br /> Get Your Dishes Clean Again</h1>
             <p className="text-xl leading-relaxed mb-8">
               A broken dishwasher means more than dirty dishes — it eats up your time. Fixer Appliance Repair delivers professional, affordable dishwasher repair across Ottawa. Whether it's leaking, not draining, or not turning on, we'll get it back in action fast.

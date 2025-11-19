@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -101,7 +101,7 @@ export default function WasherRepairOrleansPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Reliable Washer Repair in Orleans</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Reliable Washer Repair in Orleans</h1>
             <p className="text-xl leading-relaxed mb-8">
               When laundry day grinds to a halt because your washer won't start or complete a cycle, Fixer Appliance Repair is here to help. Our Orleans technicians provide quick, effective washer repairs so you can get back to your routine without long delays. We serve all neighbourhoods in Orleans with upfront pricing, friendly service, and a 90-day workmanship guarantee.
             </p>

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -129,7 +129,7 @@ export default function DryerRepairKanataPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dryer Repair Services in Kanata You Can Trust</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Dryer Repair Services in Kanata You Can Trust</h1>
             <p className="text-xl leading-relaxed mb-8">
               Clothes coming out damp even after a full cycle? Or maybe your dryer just won't turn on? Fixer Appliance Repair provides expert dryer service in Kanata, with quick diagnostics and dependable repairs. We handle Whirlpool, Samsung, LG, GE, Maytag, Frigidaire, and more.
             </p>

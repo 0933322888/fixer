@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import BrandsSection from "@/components/BrandsSection";
@@ -66,7 +67,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const attractions = [
@@ -135,9 +136,7 @@ export default function CarpServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Trusted Appliance Repair in Carp
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Trusted Appliance Repair in Carp</h1>
             <p className="text-xl text-gray-100 mb-4">
               When appliances break down in Carp, Fixer Appliance Repair is just a
               call away. Our experienced technicians handle both home and farm

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -109,7 +109,7 @@ export default function DishwasherRepairMississippiMillsPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Mississippi Mills – Trusted Local Service</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Mississippi Mills – Trusted Local Service</h1>
             <p className="text-xl leading-relaxed mb-8">
               In Mississippi Mills, a broken dishwasher means extra hours at the sink. Whether it's leaking, leaving residue, or making odd noises, Fixer Appliance Repair delivers dependable service across Almonte, Pakenham, and rural kitchens.
             </p>

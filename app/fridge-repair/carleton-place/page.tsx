@@ -80,10 +80,7 @@ export default function FridgeRepairCarletonPlacePage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair in Carleton Place
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Carleton Place</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Fast, reliable fridge repair services in Carleton Place. Our experienced technicians provide same-day service with honest quotes and quality workmanship.
           </p>

@@ -8,6 +8,7 @@ import {
   FaUtensils,
   FaTree,
   FaBook,
+  FaWaveSquare,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
@@ -140,7 +141,7 @@ export default function MicrowaveRepairMississippiMillsPage() {
             <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
               <FaBolt className="text-5xl text-white" />
             </div>
-            <h1 className="heading-xl text-white mb-6">Trusted Microwave Repair in Mississippi Mills</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Trusted Microwave Repair in Mississippi Mills</h1>
             <p className="text-xl text-gray-100 mb-4">
               Living in Almonte, Appleton, or Pakenham and dealing with a broken microwave? Fixer provides safe, dependable repair service across all of Mississippi Mills.
             </p>

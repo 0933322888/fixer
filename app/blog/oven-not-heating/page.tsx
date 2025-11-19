@@ -21,6 +21,7 @@ const faqs = [
   {
     question: "Is it worth repairing an old oven?",
     answer: "If the repair is under $300 and the oven is under 10–15 years old — usually yes.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Can a blown fuse cause an oven not to heat?",

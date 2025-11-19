@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -127,7 +127,7 @@ export default function DryerRepairStittsvillePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Reliable Dryer Repair Experts in Stittsville</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Reliable Dryer Repair Experts in Stittsville</h1>
             <p className="text-xl leading-relaxed mb-8">
               From a drum that won't spin to sensors that won't detect dryness, Fixer Appliance Repair helps Stittsville homeowners keep laundry day stress-free. Our team knows the area and provides fast, honest solutions. We repair LG, Whirlpool, GE, Maytag, Samsung, and Frigidaire dryers.
             </p>

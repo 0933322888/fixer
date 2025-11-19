@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -101,7 +101,7 @@ export default function WasherRepairArnpriorPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Local Washer Repair Specialists in Arnprior</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Local Washer Repair Specialists in Arnprior</h1>
             <p className="text-xl leading-relaxed mb-8">
               From rural properties to downtown homes, Fixer Appliance Repair keeps Arnprior's washers running smoothly. Our technicians handle everything from poor drainage to complete breakdowns, with honest pricing and a 90-day service warranty. In many cases, we can even offer same-day appointments.
             </p>

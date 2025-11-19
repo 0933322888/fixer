@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -85,6 +85,7 @@ const faqs = [
   {
     question: "Should I repair or replace my washer?",
     answer: "It depends on the age and condition. We're happy to provide honest advice after a quick diagnostic. For a deeper comparison, check out our repair vs replace guide.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Do you guarantee your work?",
@@ -110,7 +111,7 @@ export default function WasherRepairKanataPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Local Washer Repair You Can Count On</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Local Washer Repair You Can Count On</h1>
             <p className="text-xl leading-relaxed mb-8">
               Washer leaving clothes soaking wet or flashing error codes? Fixer Appliance Repair is your local Kanata team for quick, dependable washer repairs. From faulty door locks to cycles that won't finish, we'll get your laundry routine back on track. We service leading brands including Whirlpool, LG, Samsung, GE, Maytag, and Frigidaire.
             </p>

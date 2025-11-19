@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -122,9 +123,7 @@ export default function MississippiMillsServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appliance Service in Mississippi Mills
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Mississippi Mills</h1>
             <p className="text-xl text-gray-100 mb-4">
               Appliance trouble in Mississippi Mills? Fixer Appliance Repair has been
               keeping local kitchens and laundry rooms in shape for years. From{" "}

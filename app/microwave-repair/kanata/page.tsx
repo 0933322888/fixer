@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import {
-  FaBolt,
+  FaWaveSquare,
   FaMapMarkerAlt,
   FaCheckCircle,
   FaTools,
@@ -155,10 +155,7 @@ export default function MicrowaveRepairKanataPage() {
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaBolt className="text-5xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6">Reliable Microwave Repair in Kanata</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Reliable Microwave Repair in Kanata</h1>
             <p className="text-xl text-gray-100 mb-4">
               When your microwave stops heating or sparks inside, it’s time to call the experts. We provide trusted microwave repair services throughout Kanata — fast, safe, and affordable.
             </p>

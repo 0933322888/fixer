@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -113,7 +113,7 @@ export default function DryerRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Dryer Repair in Carleton Place</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Trusted Dryer Repair in Carleton Place</h1>
             <p className="text-xl leading-relaxed mb-8">
               If your Carleton Place dryer is overheating, refusing to start, or shutting down mid-cycle, Fixer Appliance Repair is here to help. Our skilled technicians provide fast, dependable repairs, backed by transparent pricing and a 90-day workmanship warranty. We handle leading models from GE, Samsung, Whirlpool, LG, and Maytag.
             </p>

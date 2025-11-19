@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -118,7 +118,7 @@ export default function DryerRepairOrleansPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Expert Dryer Repair in Orleans</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Expert Dryer Repair in Orleans</h1>
             <p className="text-xl leading-relaxed mb-8">
               Dryer taking two cycles to dry a single load? Fixer Appliance Repair serves Orleans with quick, reliable dryer service. From heating element failures to noisy drums, our local team restores your laundry routine with upfront pricing and a 90-day guarantee. We repair all major brands, including LG, Samsung, Whirlpool, GE, and Maytag.
             </p>

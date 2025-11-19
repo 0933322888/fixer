@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaWaveSquare } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
@@ -105,7 +106,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const serviceAreas = [
@@ -156,7 +157,8 @@ const faqs = [
   },
   {
     question: "Is repair worth it or should I buy new?",
-    answer: "We’ll help you decide based on age, cost, and usage.",
+    answer: "We'll help you decide based on age, cost, and usage.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Do you warranty microwave repairs?",
@@ -182,10 +184,8 @@ export default function MicrowaveRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">
-              Microwave Repair in Ottawa
-              <br /> Fast Fixes, No Sparks
-            </h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Microwave Repair in Ottawa
+              <br /> Fast Fixes, No Sparks</h1>
             <p className="text-xl text-gray-100 mb-6">
               Microwave won't start, heat, or spin? Fixer Appliance Repair offers expert microwave repair in Ottawa — built-ins and over-the-range models included.
             </p>

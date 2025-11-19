@@ -101,10 +101,7 @@ export default function FreezerRepairBarrhavenPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fast Freezer Repair for Barrhaven Families
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fast Freezer Repair for Barrhaven Families</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             From faulty seals to units that over-freeze, Fixer Appliance Repair provides quick, professional freezer repair in Barrhaven. Same-day visits are available in many neighbourhoods, backed by a 90-day warranty.
           </p>

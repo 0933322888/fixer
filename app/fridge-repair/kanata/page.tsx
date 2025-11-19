@@ -111,10 +111,7 @@ export default function FridgeRepairKanataPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Kanata's Go-To Technicians for Fridge Repair
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Kanata's Go-To Technicians for Fridge Repair</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Fridge running too warm? Ice maker clogged? Fixer Appliance Repair offers trusted refrigerator repairs in Kanata, from thermostat failures to broken door seals.
           </p>

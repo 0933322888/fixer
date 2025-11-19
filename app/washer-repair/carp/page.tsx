@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -115,7 +115,7 @@ export default function WasherRepairCarpPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Washer Repair for Carp Homes and Farms</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Trusted Washer Repair for Carp Homes and Farms</h1>
             <p className="text-xl leading-relaxed mb-8">
               In Carp, a washer that rattles loudly or leaks mid-cycle is more than an inconvenience — it's a headache. Fixer Appliance Repair provides reliable service for rural homes and hobby farms, fixing issues like broken pumps, electronic failures, and unbalanced spins. We repair all major makes, from Samsung and LG to Whirlpool, GE, and Maytag.
             </p>

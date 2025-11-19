@@ -89,6 +89,7 @@ const faqs = [
   {
     question: "Is it worth repairing an older upright freezer?",
     answer: "Often yes — we'll help you decide based on age and cost.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Do you offer quick freezer repairs in Nepean?",
@@ -119,10 +120,7 @@ export default function FreezerRepairNepeanPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fast Freezer Repair for Nepean Families
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fast Freezer Repair for Nepean Families</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             If your freezer can't hold steady temperatures, makes loud noises, or leaks water, Fixer Appliance Repair is ready to help in Nepean. Many repairs can be handled in a single visit.
           </p>

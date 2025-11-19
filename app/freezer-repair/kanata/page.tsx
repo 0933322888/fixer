@@ -120,10 +120,7 @@ export default function FreezerRepairKanataPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Frozen Goods in Danger? Kanata Freezer Repair
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Frozen Goods in Danger? Kanata Freezer Repair</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Freezer frosting up or not keeping food cold enough? Fixer Appliance Repair offers same-day freezer repairs in Kanata, tackling everything from thermostat issues to compressor failures.
           </p>

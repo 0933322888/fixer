@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -113,7 +113,7 @@ export default function DryerRepairVanierPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Local Dryer Repair Experts in Vanier</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Local Dryer Repair Experts in Vanier</h1>
             <p className="text-xl leading-relaxed mb-8">
               When your Vanier dryer takes forever to finish or produces unusual smells, it's time to call Fixer Appliance Repair. With 15+ years of experience in Ottawa East, we provide trusted dryer repairs for apartments and houses alike — always with honest pricing and a 90-day guarantee. Brands we service include Whirlpool, Maytag, Samsung, LG, and GE.
             </p>

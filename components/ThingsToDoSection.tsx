@@ -66,7 +66,7 @@ export default function ThingsToDoSection({
             <p className="text-lg font-semibold text-gray-900 mb-2">Want to catch a live event or exhibit?</p>
             <p className="text-gray-700 mb-3">Check what's happening this week:</p>
             <a
-              href={link || "https://ottawatourism.ca/en/see-and-do/events"}
+              href={link || "https://ottawatourism.ca/en/see-and-do"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"

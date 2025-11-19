@@ -102,8 +102,7 @@ export default function CooktopRepairMississippiMillsPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Trusted Cooktop Repair in Mississippi Mills</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Trusted Cooktop Repair in Mississippi Mills</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               Whether in Almonte, Appleton, or rural areas, Fixer delivers dependable electric cooktop repair
               for homes across Mississippi Mills. We handle both older models and modern glass tops. We

@@ -8,6 +8,7 @@ import {
   FaUtensils,
   FaTree,
   FaBook,
+  FaWaveSquare,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
@@ -156,7 +157,7 @@ export default function MicrowaveRepairNepeanPage() {
             <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
               <FaBolt className="text-5xl text-white" />
             </div>
-            <h1 className="heading-xl text-white mb-6">Nepean’s Trusted Microwave Repair Technicians</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Nepean's Trusted Microwave Repair Technicians</h1>
             <p className="text-xl text-gray-100 mb-4">
               Nepean residents, don’t let a broken microwave ruin your routine. Whether it’s not heating or sparking inside, Fixer is just a call away with quick, professional service.
             </p>

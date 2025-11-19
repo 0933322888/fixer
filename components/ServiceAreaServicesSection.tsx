@@ -66,24 +66,7 @@ export default function ServiceAreaServicesSection({
               </span>
             </div>
             <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-            <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-accent-600 transition group-hover:text-accent-700">
-              Explore service
-              <svg
-                className="h-4 w-4 transition group-hover:translate-x-0.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 12h14M13 5l7 7-7 7"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            
           </Link>
         ))}
       </div>

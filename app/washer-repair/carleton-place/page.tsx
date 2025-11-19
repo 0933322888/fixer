@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -100,7 +100,7 @@ export default function WasherRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Washer Repair in Carleton Place</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Trusted Washer Repair in Carleton Place</h1>
             <p className="text-xl leading-relaxed mb-8">
               Laundry piling up because your washer won't cooperate? Our skilled Carleton Place team provides reliable repairs for all major washer brands. We offer same-day service in many areas, clear upfront pricing, and a 90-day warranty on all labour — so you can have peace of mind long after the repair is done.
             </p>

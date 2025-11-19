@@ -126,8 +126,7 @@ export default function CooktopRepairNepeanPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Nepean Cooktop Repair – Safe & Professional</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Nepean Cooktop Repair – Safe & Professional</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               Need help with a misbehaving cooktop in Nepean? Whether it's a cracked glass top or burners that
               won't respond, Fixer Appliance Repair is your go-to for expert, safe, and local service. We

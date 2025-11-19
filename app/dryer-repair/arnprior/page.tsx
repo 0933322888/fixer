@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -114,7 +114,7 @@ export default function DryerRepairArnpriorPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Reliable Dryer Repair in Arnprior</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Reliable Dryer Repair in Arnprior</h1>
             <p className="text-xl leading-relaxed mb-8">
               A dryer that won't spin or leaves clothes damp is more than a hassle. Fixer Appliance Repair brings Arnprior residents quick solutions with local technicians who know the area. Many jobs can be completed in a single visit. We work on most major brands, including Frigidaire, Whirlpool, Samsung, GE, and LG.
             </p>

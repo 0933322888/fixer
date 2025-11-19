@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -79,9 +80,10 @@ const faqs = [
       "Broad coverage: LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, Bosch, Kenmore and others.",
   },
   {
-    question: "Will you advise if repair isn’t worth it?",
+    question: "Will you advise if repair isn't worth it?",
     answer:
-      "Absolutely. If replacement makes more sense, we’ll say so and explain why.",
+      "Absolutely. If replacement makes more sense, we'll say so and explain why.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Is there a warranty on your work?",
@@ -122,9 +124,7 @@ export default function NepeanServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appliance Service in Nepean
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Nepean</h1>
             <p className="text-xl text-gray-100 mb-4">
               Looking for dependable appliance service in Nepean? Our friendly,
               Ottawa-based team has been repairing appliances for over 15 years.

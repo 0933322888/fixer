@@ -19,22 +19,22 @@ const brands = [
   { name: "Bosch Appliance Repair", href: "/brands/bosch", logo: "BOSCH", color: "bg-red-600" },
   { name: "Kenmore Appliance Repair", href: "/brands/kenmore", logo: "Kenmore", color: "bg-blue-600" },
   { name: "Panasonic Appliance Repair", href: "/brands/panasonic", logo: "Panasonic", color: "bg-blue-700" },
-  { name: "Electrolux Appliance Repair", href: "#", logo: "electrolux", color: "bg-gray-700" },
-  { name: "Amana Appliance Repair", href: "#", logo: "AMANA", color: "bg-orange-600" },
-  { name: "Hotpoint Appliance Repair", href: "#", logo: "Hotpoint", color: "bg-red-600" },
-  { name: "KitchenAid Appliance Repair", href: "#", logo: "KitchenAid", color: "bg-red-700" },
-  { name: "JennAir Appliance Repair", href: "#", logo: "JennAir", color: "bg-gray-800" },
-  { name: "Sub-Zero Appliance Repair", href: "#", logo: "SUB-ZERO", color: "bg-gray-900" },
-  { name: "Wolf Appliance Repair", href: "#", logo: "WOLF", color: "bg-red-800" },
-  { name: "Viking Appliance Repair", href: "#", logo: "VIKING", color: "bg-blue-900" },
-  { name: "Miele Appliance Repair", href: "#", logo: "Miele", color: "bg-red-600" },
-  { name: "Haier Appliance Repair", href: "#", logo: "Haier", color: "bg-blue-600" },
-  { name: "Magic Chef Appliance Repair", href: "#", logo: "Magic Chef", color: "bg-purple-600" },
-  { name: "Inglis Appliance Repair", href: "#", logo: "INGLIS", color: "bg-blue-700" },
-  { name: "Admiral Appliance Repair", href: "#", logo: "Admiral", color: "bg-blue-800" },
-  { name: "Roper Appliance Repair", href: "#", logo: "ROPER", color: "bg-green-700" },
-  { name: "Blomberg Appliance Repair", href: "#", logo: "blomberg", color: "bg-teal-600" },
-  { name: "Danby Appliance Repair", href: "#", logo: "Danby", color: "bg-blue-600" },
+  { name: "KitchenAid Appliance Repair", href: "/brands/kitchenaid", logo: "KitchenAid", color: "bg-red-700" },
+  { name: "Electrolux Appliance Repair", href: null, logo: "electrolux", color: "bg-gray-700" },
+  { name: "Amana Appliance Repair", href: null, logo: "AMANA", color: "bg-orange-600" },
+  { name: "Hotpoint Appliance Repair", href: null, logo: "Hotpoint", color: "bg-red-600" },
+  { name: "JennAir Appliance Repair", href: null, logo: "JennAir", color: "bg-gray-800" },
+  { name: "Sub-Zero Appliance Repair", href: null, logo: "SUB-ZERO", color: "bg-gray-900" },
+  { name: "Wolf Appliance Repair", href: null, logo: "WOLF", color: "bg-red-800" },
+  { name: "Viking Appliance Repair", href: null, logo: "VIKING", color: "bg-blue-900" },
+  { name: "Miele Appliance Repair", href: null, logo: "Miele", color: "bg-red-600" },
+  { name: "Haier Appliance Repair", href: null, logo: "Haier", color: "bg-blue-600" },
+  { name: "Magic Chef Appliance Repair", href: null, logo: "Magic Chef", color: "bg-purple-600" },
+  { name: "Inglis Appliance Repair", href: null, logo: "INGLIS", color: "bg-blue-700" },
+  { name: "Admiral Appliance Repair", href: null, logo: "Admiral", color: "bg-blue-800" },
+  { name: "Roper Appliance Repair", href: null, logo: "ROPER", color: "bg-green-700" },
+  { name: "Blomberg Appliance Repair", href: null, logo: "blomberg", color: "bg-teal-600" },
+  { name: "Danby Appliance Repair", href: null, logo: "Danby", color: "bg-blue-600" },
 ];
 
 const benefits = [
@@ -54,7 +54,7 @@ export default function BrandsPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl text-white mb-6">Brands We Repair</h1>
             <p className="text-xl text-gray-100 mb-4">
-              Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges 
+              Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges
               to classic washers, our technicians repair the top appliance brands you know and trust.
             </p>
             <p className="text-lg text-gray-100 mb-8">
@@ -79,19 +79,23 @@ export default function BrandsPage() {
             <h2 className="heading-md text-center mb-12">All Major Brands</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {brands.map((brand, index) => (
-                <Link
-                  key={index}
-                  href={brand.href}
-                  className="group bg-white hover:bg-primary-50 p-6 rounded-lg text-center transition-all hover:shadow-lg border-2 border-gray-200 hover:border-primary-400 flex flex-col items-center gap-4"
-                >
-                  <div className={`${brand.color} text-white w-32 h-20 rounded-xl flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-105 transition-transform px-3`}>
-                    {brand.logo.toUpperCase()}
+                brand.href ? (
+                  <Link
+                    key={index}
+                    href={brand.href}
+                    className="group bg-white hover:bg-primary-50 p-6 rounded-lg text-center transition-all hover:shadow-lg border-2 border-gray-200 hover:border-primary-400 flex flex-col items-center gap-4"
+                  >
+                    <div className={`${brand.color} text-white w-32 h-20 rounded-xl flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-105 transition-transform px-3`}>
+                      {brand.logo.toUpperCase()}
+                    </div>
+                  </Link>) : (
+                  <div key={index} className="group bg-white p-6 rounded-lg text-center transition-all border-2 border-gray-200 flex flex-col items-center gap-4">
+                    <div className={`${brand.color} text-white w-32 h-20 rounded-xl flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-105 transition-transform px-3`}>
+                      {brand.logo.toUpperCase()}
+                    </div>
                   </div>
-                  <h3 className="font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
-                    {brand.name}
-                  </h3>
-                </Link>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </div>

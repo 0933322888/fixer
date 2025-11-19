@@ -91,6 +91,7 @@ const faqs = [
   {
     question: "Is it worth fixing a 10-year-old fridge?",
     answer: "Often yes — we'll assess and give you honest advice.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "How quickly can you get to Carp?",
@@ -108,10 +109,7 @@ export default function FridgeRepairCarpPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair Services for Carp Homes & Cottages
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair Services for Carp Homes & Cottages</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             A faulty refrigerator in Carp — whether it's frosting up, leaking, or running non-stop — can ruin more than groceries. Fixer Appliance Repair provides dependable rural fridge service with clear, upfront pricing.
           </p>

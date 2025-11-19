@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaFire } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
@@ -97,7 +98,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const relatedServices = [
@@ -156,6 +157,7 @@ const faqs = [
   {
     question: "Is it worth repairing a 10+ year-old oven?",
     answer: "If the body is solid — often yes. We'll advise after diagnosis.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Do you install new ovens?",
@@ -174,7 +176,7 @@ export default function OvenRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
       <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Oven Repair Ottawa – Precision You Can Taste</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Oven Repair Ottawa – Precision You Can Taste</h1>
             <p className="text-xl text-gray-100 mb-8">
               If your oven won't heat, bake evenly, or keeps shutting off — call Fixer Appliance Repair. We service Ottawa homes with expert electric oven repair, from element issues to control board faults. We fix LG, Samsung, Whirlpool, GE, Frigidaire, Maytag, and more.
             </p>

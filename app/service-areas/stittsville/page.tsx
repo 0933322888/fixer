@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -123,9 +124,7 @@ export default function StittsvilleServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Expert Appliance Repair in Stittsville
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Expert Appliance Repair in Stittsville</h1>
             <p className="text-xl text-gray-100 mb-4">
               When you need appliance repair in Stittsville, Fixer is here to help. From washer repair in Stittsville to fridge repair in Stittsville, our technicians cover the full range of home appliances. With over 15 years of hands-on experience, we deliver same-day service in many areas, transparent pricing, and a 90-day guarantee.
             </p>

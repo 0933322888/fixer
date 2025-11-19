@@ -88,10 +88,7 @@ export default function FridgeRepairOrleansPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair in Orleans
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Orleans</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Fridge running warm or ice maker refusing to work? Fixer Appliance Repair provides Orleans households with fast, reliable refrigerator service. Our local techs fix everything from faulty thermostats to broken seals, always with clear pricing and a 90-day warranty.
           </p>

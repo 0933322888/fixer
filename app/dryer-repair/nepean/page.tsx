@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -128,7 +128,7 @@ export default function DryerRepairNepeanPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Professional Dryer Repair for Nepean Homes</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Professional Dryer Repair for Nepean Homes</h1>
             <p className="text-xl leading-relaxed mb-8">
               Is your dryer taking forever to finish or producing unusual smells? Fixer Appliance Repair is Nepean's choice for skilled dryer repairs, offering same-day appointments in many neighbourhoods. We service Whirlpool, Samsung, LG, Maytag, GE, and Frigidaire.
             </p>

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -91,6 +91,7 @@ const faqs = [
   {
     question: "Should I repair or replace my washer?",
     answer: "Depends on age and condition. We'll give you honest advice — or you can check our repair vs. replace guide.",
+    link: "/blog/repair-vs-replace-appliance",
   },
 ];
 
@@ -112,7 +113,7 @@ export default function WasherRepairNepeanPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Reliable Washer Repair in Nepean</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Reliable Washer Repair in Nepean</h1>
             <p className="text-xl leading-relaxed mb-8">
               When your washer refuses to start, leaves suds behind, or makes unusual grinding noises, Fixer Appliance Repair can help. Our Nepean technicians offer same-day and next-day service, backed by honest estimates. We handle repairs for Samsung, Whirlpool, LG, Maytag, GE, and more.
             </p>

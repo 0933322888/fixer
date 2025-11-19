@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -122,9 +123,7 @@ export default function OrleansServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appliance Repair in Orleans
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair in Orleans</h1>
             <p className="text-xl text-gray-100 mb-4">
               In Orleans, appliance breakdowns don't have to derail your day. Fixer
               Appliance Repair offers expert service for all major kitchen and laundry

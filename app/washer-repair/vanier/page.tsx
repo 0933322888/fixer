@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -100,7 +100,7 @@ export default function WasherRepairVanierPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Experienced Washer Repair in Vanier</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Experienced Washer Repair in Vanier</h1>
             <p className="text-xl leading-relaxed mb-8">
               When your washer gives you trouble, count on Fixer Appliance Repair for fast, friendly service in Vanier. We've been repairing washers in Ottawa East for more than 15 years, providing same-day visits in many areas, transparent pricing, and a 90-day guarantee on our work.
             </p>

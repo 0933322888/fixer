@@ -95,7 +95,7 @@ export default function CooktopInstallationOttawaPage() {
             </ul>
             <p className="text-lg text-gray-700 mt-6">
               💡 Not sure if replacement is necessary? Visit{" "}
-              <Link href="/repair-vs-installation" className="text-primary-600 font-semibold hover:underline">
+              <Link href="/blog/repair-vs-replace-appliance" className="text-primary-600 font-semibold hover:underline">
                 Repair vs New Appliance Installation
               </Link>
               . For repair service, check{" "}

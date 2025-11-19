@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaTshirt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
@@ -89,7 +90,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const serviceAreas = [
@@ -113,6 +114,7 @@ const faqs = [
   {
     question: "Is it worth repairing an old washer or should I replace it?",
     answer: "It depends on the model and issue. If the machine is under 10 years old and the repair is minor, it's usually worth fixing.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "How long does a typical washer repair take?",
@@ -181,9 +183,7 @@ export default function WasherRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">
-              Fast & Reliable Washer Repair Across Ottawa
-            </h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Fast & Reliable Washer Repair Across Ottawa</h1>
             <p className="text-xl leading-relaxed mb-8">
               Is your washing machine not draining, spinning, or starting at all? Don't worry — Fixer Appliance Repair is here to help. We provide professional washer repair services across Ottawa, offering fast diagnostics, same-day service options, and dependable local support in every major neighborhood.
             </p>

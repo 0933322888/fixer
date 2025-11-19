@@ -101,10 +101,7 @@ export default function FreezerRepairOrleansPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Reliable Freezer Repair in Orleans
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Reliable Freezer Repair in Orleans</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Freezer frosting up, leaking water, or not keeping food cold? Fixer Appliance Repair provides fast, local service in Orleans with clear pricing and a 90-day guarantee. We repair all major freezer brands, including Samsung, Whirlpool, LG, GE, and Maytag.
           </p>

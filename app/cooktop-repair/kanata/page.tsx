@@ -128,8 +128,7 @@ export default function CooktopRepairKanataPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Cooktop Repair Services in Kanata</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Cooktop Repair Services in Kanata</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               Cooktop not turning on? Based in Kanata, Fixer Appliance Repair offers professional
               troubleshooting and repair to get you cooking again without stress or delays. We repair all

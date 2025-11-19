@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -122,9 +123,7 @@ export default function CarletonPlaceServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appliance Repair Services in Carleton Place
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair Services in Carleton Place</h1>
             <p className="text-xl text-gray-100 mb-4">
               For fast and dependable appliance repair in Carleton Place, trust the
               team at Fixer. From{" "}

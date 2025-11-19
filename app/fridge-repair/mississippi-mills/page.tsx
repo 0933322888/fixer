@@ -88,10 +88,7 @@ export default function FridgeRepairMississippiMillsPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair in Mississippi Mills
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Mississippi Mills</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             In Mississippi Mills, a broken fridge can quickly turn into wasted groceries. Whether it's uneven cooling, a noisy compressor, or water leaking onto the floor, Fixer Appliance Repair is here to help. Our team offers rural-friendly service across Almonte, Pakenham, and Clayton.
           </p>

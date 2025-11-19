@@ -102,8 +102,7 @@ export default function CooktopRepairArnpriorPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Arnprior's Local Cooktop Repair Team</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Arnprior's Local Cooktop Repair Team</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               From downtown Arnprior to Braeside and White Lake, our team repairs electric cooktops of all
               types — restoring safe, dependable cooking. We service LG, Samsung, Whirlpool, GE, Maytag, and

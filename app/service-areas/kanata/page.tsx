@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
@@ -124,9 +125,7 @@ export default function KanataServiceAreaPage() {
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appliance Repair Services in Kanata
-            </h1>
+            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair Services in Kanata</h1>
             <p className="text-xl text-gray-100 mb-4">
               Need appliance repair in Kanata that's fast, friendly, and reliable?
               With over 15 years of appliance repair experience, our skilled Fixer

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -114,7 +114,7 @@ export default function DryerRepairBarrhavenPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Professional Dryer Repair in Barrhaven</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Professional Dryer Repair in Barrhaven</h1>
             <p className="text-xl leading-relaxed mb-8">
               Laundry piling up because the dryer won't heat properly? Fixer Appliance Repair offers Barrhaven homeowners prompt, professional dryer service. From noisy bearings to electrical issues, our team delivers clear quotes, same-day availability in many areas, and a 90-day warranty on all work. We repair dryers from Samsung, LG, Whirlpool, GE, and Maytag.
             </p>

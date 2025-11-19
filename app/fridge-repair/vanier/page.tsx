@@ -87,10 +87,7 @@ export default function FridgeRepairVanierPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair in Vanier
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Vanier</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             Vanier residents count on Fixer Appliance Repair when refrigerators break down. From inconsistent temperatures to malfunctioning control boards, we offer professional service with same-day appointments in many neighbourhoods.
           </p>

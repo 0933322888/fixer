@@ -8,6 +8,7 @@ import ThingsToDoSection from "@/components/ThingsToDoSection";
 import CTASection from "@/components/CTASection";
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaFire } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair Ottawa – Fast Cooktop Service | Fixer",
@@ -116,7 +117,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const serviceAreas = [
@@ -212,10 +213,8 @@ export default function CooktopRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">
-              Cooktop Repair in Ottawa
-              <br /> Smooth Heating Starts Here
-            </h1>
+            <h1 className="heading-lg mb-6 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Cooktop Repair in Ottawa
+              <br /> Smooth Heating Starts Here</h1>
             <p className="text-xl text-gray-100 mb-4">
               When your cooktop won't heat or certain burners stop working, we are here to help. Fixer
               Appliance Repair handles electric cooktop repairs in Ottawa with same-day availability.

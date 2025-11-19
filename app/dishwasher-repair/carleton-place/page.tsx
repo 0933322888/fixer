@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -108,7 +108,7 @@ export default function DishwasherRepairCarletonPlacePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Dishwasher Repair Carleton Place 
+            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Carleton Place 
               <br /> Fast, Local Service</h1>
             <p className="text-xl leading-relaxed mb-8">
               Tired of handwashing dishes because the dishwasher won't cooperate? Fixer Appliance Repair serves Carleton Place with professional, local service. We handle drainage issues, control failures, and more — always with upfront pricing and a 90-day warranty.

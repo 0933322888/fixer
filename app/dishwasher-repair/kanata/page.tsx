@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -129,7 +129,7 @@ export default function DishwasherRepairKanataPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Trusted Dishwasher Repair Technicians in Kanata</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Trusted Dishwasher Repair Technicians in Kanata</h1>
             <p className="text-xl leading-relaxed mb-8">
               Dishes coming out cloudy? Strange noises during wash? Fixer Appliance Repair provides Kanata homeowners with trusted dishwasher service that's quick and affordable.
             </p>

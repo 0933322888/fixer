@@ -40,7 +40,7 @@ const brands = [
   "Panasonic",
   "Samsung",
   "Whirlpool",
-  "Electrolux",
+  "KitchenAid",
 ];
 
 export default function AboutPage() {

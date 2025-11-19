@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 
@@ -101,7 +101,7 @@ export default function WasherRepairMississippiMillsPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Professional Washer Service in Mississippi Mills</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Professional Washer Service in Mississippi Mills</h1>
             <p className="text-xl leading-relaxed mb-8">
               Whether you live in Almonte, Pakenham, or Clayton, a broken washer can throw off your whole week. At Fixer Appliance Repair, we've been fixing washers across Mississippi Mills for over 15 years. From leaks and loud spins to machines that simply won't run, we deliver dependable repairs backed by a 90-day guarantee.
             </p>

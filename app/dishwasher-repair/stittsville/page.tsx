@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -127,7 +127,7 @@ export default function DishwasherRepairStittsvillePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Stittsville's Local Dishwasher Repair Specialists</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Stittsville's Local Dishwasher Repair Specialists</h1>
             <p className="text-xl leading-relaxed mb-8">
               If your dishwasher stops mid-cycle, won't drain, or leaves residue, Fixer Appliance Repair has you covered in Stittsville. We pride ourselves on friendly, no-pressure service.
             </p>

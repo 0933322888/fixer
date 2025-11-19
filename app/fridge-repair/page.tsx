@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaSnowflake } from "react-icons/fa";
 import BrandsSection from "@/components/BrandsSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
@@ -110,7 +111,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const relatedServices = [
@@ -172,8 +173,7 @@ export default function FridgeRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
       <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">
-              Fridge Repair in Ottawa – Cold, Quiet, Reliable</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Ottawa – Cold, Quiet, Reliable</h1>
             <p className="text-xl text-gray-100 mb-8">
               Fridge too warm? Freezer frosting over? Fixer Appliance Repair provides fast, effective fridge repair across Ottawa — with honest diagnostics and long-term fixes.
             </p>

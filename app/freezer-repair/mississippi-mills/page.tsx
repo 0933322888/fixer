@@ -101,10 +101,7 @@ export default function FreezerRepairMississippiMillsPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Expert Freezer Service in Mississippi Mills
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Expert Freezer Service in Mississippi Mills</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             From chest freezers on rural properties to uprights in Almonte kitchens, Fixer Appliance Repair keeps your food safe and frozen. We fix thermostat issues, noisy compressors, and frost build-up — often with same-day availability.
           </p>

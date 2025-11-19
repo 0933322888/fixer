@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaSnowflake } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -89,7 +90,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const relatedServices = [
@@ -143,6 +144,7 @@ const faqs = [
   {
     question: "Is repair or replacement more cost-effective?",
     answer: "We give honest advice based on age, parts, and energy use.",
+    link: "/blog/repair-vs-replace-appliance",
   },
 ];
 
@@ -153,7 +155,7 @@ export default function FreezerRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Freezer Repair in Ottawa – Stop the Thaw Today</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Freezer Repair in Ottawa – Stop the Thaw Today</h1>
             <p className="text-xl text-gray-100 mb-8">
               Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice.
             </p>

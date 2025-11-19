@@ -103,8 +103,7 @@ export default function CooktopRepairOrleansPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Orleans Cooktop Repair You Can Count On</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Orleans Cooktop Repair You Can Count On</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               From glass tops to coil burners, Fixer Appliance Repair provides expert cooktop repair in
               Orleans homes and apartments. Fast, local, and reliable service is just a call away. We service

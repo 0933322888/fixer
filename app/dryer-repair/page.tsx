@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { FaWind } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
@@ -91,7 +92,7 @@ const brands = [
   { name: "Panasonic", href: "/brands/panasonic" },
   { name: "Samsung", href: "/brands/samsung" },
   { name: "Whirlpool", href: "/brands/whirlpool" },
-  { name: "Electrolux", href: "?" },
+  { name: "KitchenAid", href: "/brands/kitchenaid" },
 ];
 
 const serviceAreas = [
@@ -119,6 +120,7 @@ const faqs = [
   {
     question: "Is it worth repairing a dryer?",
     answer: "Yes, especially if your dryer is less than 10 years old. Repairs are often far more affordable than replacement. Not sure? Our repair vs replace guide is coming soon.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Are tumble dryers worth repairing?",
@@ -139,6 +141,7 @@ const faqs = [
   {
     question: "Should I repair or replace my dryer?",
     answer: "If your dryer is under 10 years old, repair is almost always the better option. For older units, we'll give you honest advice based on cost and condition. Our comparison guide is coming soon.",
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "Why does my dryer smell like burning?",
@@ -183,7 +186,7 @@ export default function DryerRepairPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white">Fast & Reliable Dryer Repair Across Ottawa</h1>
+            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Fast & Reliable Dryer Repair Across Ottawa</h1>
             <p className="text-xl leading-relaxed mb-8">
               Is your dryer not heating, taking forever to dry clothes, or making unusual noises? Fixer Appliance Repair offers professional dryer repair services throughout Ottawa — from central neighbourhoods to nearby suburbs. We repair all major electric dryers, including many stacked and condo-friendly models. Whether it's Whirlpool, LG, Samsung, or another trusted brand — we've got you covered.
             </p>

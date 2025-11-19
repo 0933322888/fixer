@@ -120,8 +120,7 @@ export default function CooktopRepairCarpPage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Quick Cooktop Fixes for Carp Homes</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Quick Cooktop Fixes for Carp Homes</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               Whether it's an older model or a newer glass top unit, Fixer Appliance Repair delivers expert
               electric cooktop repair to Carp homes — rural and residential alike. We service LG, Samsung,

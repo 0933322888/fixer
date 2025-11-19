@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaFan, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-icons/fa";
+import { FaWind, FaCheckCircle, FaTools, FaClock, FaShieldAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Dryer Installation Ottawa | Professional Dryer Setup Service",
@@ -15,10 +15,7 @@ export default function DryerInstallationPage() {
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaFan className="text-6xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6">Professional Dryer Installation in Ottawa</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWind className="text-[30px] mb-2 inline-block" /> Professional Dryer Installation in Ottawa</h1>
             <p className="text-xl text-gray-100 mb-8">
               Expert dryer installation for gas and electric models. Safe setup with proper venting and testing.
             </p>

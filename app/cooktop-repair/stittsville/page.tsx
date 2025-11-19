@@ -125,8 +125,7 @@ export default function CooktopRepairStittsvillePage() {
       <section className="section-padding bg-[#DD4F06] text-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <FaFire className="mx-auto mb-6 text-6xl" />
-            <h1 className="heading-lg mb-4 text-white">Cooktop Not Heating? Stittsville Experts Can Help</h1>
+            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Cooktop Not Heating? Stittsville Experts Can Help</h1>
             <p className="text-xl leading-relaxed text-gray-100">
               Cooktop acting up in your Stittsville kitchen? From flickering burners to cracked tops, our
               skilled technicians are nearby and ready to help — same-day service available. We service all

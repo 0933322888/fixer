@@ -88,10 +88,7 @@ export default function FridgeRepairArnpriorPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white py-20">
         <div className="container-custom text-center">
-          <FaSnowflake className="text-6xl mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Fridge Repair in Arnprior
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Arnprior</h1>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
             From ice maker problems to fridges that cycle constantly, Fixer Appliance Repair has Arnprior covered. Our technicians bring years of experience, same-day availability in many cases, and honest quotes before the work begins.
           </p>

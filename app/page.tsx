@@ -30,7 +30,7 @@ const brands = [
   { name: "Bosch Appliance Repair", href: "/brands/bosch", description: "Precision engineering requires precise repairs." },
   { name: "Kenmore Appliance Repair", href: "/brands/kenmore", description: "Common in many Ottawa homes, and we know them inside out." },
   { name: "Panasonic Appliance Repair", href: "/brands/panasonic", description: "Specialists in high-end appliances and electronics." },
-  { name: "KitchenAid Appliance Repair", href: "#", description: "Popular brand in many homes, but we fix them all." },
+  { name: "KitchenAid Appliance Repair", href: "/brands/kitchenaid", description: "Popular brand in many homes, but we fix them all." },
 ];
 
 const serviceAreas = [
@@ -99,7 +99,7 @@ const howToFAQs = [
   {
     question: "How to know if my appliance is worth repairing?",
     answer: "As a rule of thumb: if the repair is less than 50% of the cost of a new appliance, it's usually worth it. We'll help you decide honestly — no upselling.",
-    link: null,
+    link: "/blog/repair-vs-replace-appliance",
   },
   {
     question: "How much does it cost to repair a fridge in Ottawa?",
@@ -197,13 +197,13 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-8">Welcome to Fixer – Your Local Appliance Repair Experts</h2>
             <div className="prose prose-lg max-w-none text-neutral-600 space-y-4">
-              <p>
+              <p className="text-center">
                 Looking for fast, dependable appliance repair in Ottawa? At <strong>Fixer Appliance Repair Inc.</strong>, we fix it fast and fix it right — so you don't have to see us again. (Unless it's for a different appliance.)
               </p>
-              <p>
+              <p className="text-center">
                 Your satisfaction isn't just a goal — it's how we measure success. We're a locally owned and operated company, proudly serving Ottawa and nearby communities like Kanata, Nepean, Stittsville, Carp, Arnprior, Orleans, Barrhaven, Vanier, Carleton Place, and Mississippi Mills.
               </p>
-              <p>
+              <p className="text-center">
                 We offer same-day appointments in many areas, clear pricing with no hidden fees, and repairs backed by a 90-day guarantee. Whether it's a noisy washer, a warm fridge, or a stubborn dishwasher, we make the process smooth, respectful, and stress-free.
               </p>
             </div>
