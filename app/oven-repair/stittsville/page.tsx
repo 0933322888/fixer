@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Stittsville – Fast Electric Oven Service | Fixer",
@@ -102,7 +104,7 @@ export default function OvenRepairStittsvillePage() {
       <ServiceHero
         title="Stittsville Oven Repair – Done Right the First Time"
         description="An oven that bakes unevenly or won't preheat is frustrating. Fixer Appliance Repair serves Stittsville with professional-time electric oven repair. We handle all popular brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} />
@@ -200,104 +202,42 @@ export default function OvenRepairStittsvillePage() {
       <CTASection />
 
       {/* Things to Do in Stittsville */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Stittsville During the Repair</h2>
-            <p className="text-lg text-gray-700 mb-6">Make the most of the downtime with a little local exploring:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Amberwood Village Trails</strong> – quiet paths for a stroll</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Quitters Coffee</strong> – grab a snack or coffee break</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Village Square Park</strong> – central, easy, and pleasant</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              See what's scheduled this week:{" "}
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Events in Stittsville
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Amberwood Village Trails", description: "quiet paths for a stroll" },
+          { name: "Quitters Coffee", description: "grab a snack or coffee break" },
+          { name: "Village Square Park", description: "central, easy, and pleasant" },
+        ]}
+        heading="Enjoy Your Time in Stittsville During the Repair"
+        description="Make the most of the downtime with a little local exploring:"
+        
+        linkText="Events in Stittsville"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Oven Repair in Stittsville</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Book now and get back to home cooking.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6135550199" className="text-xl font-semibold hover:underline">
-              📞 Call/text: (613) 555-0199
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Oven Repair in Stittsville"
+        description="Book now and get back to home cooking."
+        buttonText="Book Service Now"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Need more than oven repair? Here's what else we service in Stittsville:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/stittsville" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Stittsville
-              </Link>
-              <Link href="/dryer-repair/stittsville" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Stittsville
-              </Link>
-              <Link href="/dishwasher-repair/stittsville" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Stittsville
-              </Link>
-              <Link href="/fridge-repair/stittsville" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Stittsville
-              </Link>
-              <Link href="/freezer-repair/stittsville" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Stittsville
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Stittsville
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Stittsville
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              From kitchens to laundry rooms, we've got Stittsville covered.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your local oven repair experts in Stittsville.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Stittsville", href: "/washer-repair/stittsville" },
+          { name: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
+          { name: "Dishwasher Repair Stittsville", href: "/dishwasher-repair/stittsville" },
+          { name: "Fridge Repair Stittsville", href: "/fridge-repair/stittsville" },
+          { name: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
+          { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
+          { name: "Oven Installation Stittsville", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Need more than oven repair? Here's what else we service in Stittsville:"
+        applianceName="Oven"
+      />
     </>
   );
 }

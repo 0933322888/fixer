@@ -1,6 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair Services in Mississippi Mills - Fast, Reliable | Fixer",
@@ -190,141 +195,50 @@ export default function CooktopRepairMississippiMillsPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Service Area</h2>
-            <p className="text-lg text-gray-700">
-              We provide appliance repair services across the entire Mississippi Mills area, including:
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {serviceAreas.map((area) => (
-                <div
-                  key={area}
-                  className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm"
-                >
-                  {area}
-                </div>
-              ))}
-              <div className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm">
-                and surrounding rural neighbourhoods
-              </div>
-            </div>
-            <p className="mt-8 text-lg text-gray-700">
-              Along with Mississippi Mills, our cooktop repair experts frequently serve{" "}
-              {nearbyAreas.map((area, index) => (
-                <span key={area.name}>
-                  <Link href={area.href} className="text-primary-600 hover:text-primary-700 underline">
-                    {area.name}
-                  </Link>
-                  {index < nearbyAreas.length - 1 ? ", " : ". "}
-                </span>
-              ))}
-              👉 For wider coverage, visit our{" "}
-              <Link href="/cooktop-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Cooktop Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">
-              Take a Break in Mississippi Mills While We Fix Your Cooktop
-            </h2>
-            <p className="text-lg text-gray-700 mb-6">Why not explore while we handle the repair?</p>
-            <ul className="space-y-4 text-gray-700">
-              {highlights.map((item) => (
-                <li key={item.title} className="flex items-start">
-                  <span className="mr-3 text-primary-600">•</span>
-                  <span>
-                    <strong>{item.title}</strong> - {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-gray-700">
-              <a
-                href="https://www.mississippimills.ca/en/discover-and-enjoy/events-calendar.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                See the local events calendar for Mississippi Mills
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">FAQ - Cooktop Repair in Mississippi Mills</h2>
-            <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="rounded-lg bg-white p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-primary-700">{faq.question}</h3>
-                  <p className="mt-2 text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Cooktop Repair in Mississippi Mills</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-100">
-            Serving Almonte, Appleton, and beyond — book your cooktop repair appointment now:
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Mississippi Mills area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name.replace("Cooktop Repair ", ""),
+          slug: area.href.replace("/cooktop-repair/", "")
+        }))}
+        applianceType="cooktop"
+        nearbyAreasLabel="We also serve:"
+        surroundingLabel="and surrounding rural neighbourhoods"
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 For wider coverage, visit our{" "}
+            <Link href="/cooktop-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Cooktop Repair Ottawa
+            </Link>
+            {" "}page.
           </p>
-          <div className="mb-8 flex flex-col items-center justify-center gap-4 text-xl sm:flex-row">
-            <a href="tel:6134136969" className="font-semibold text-white hover:underline">
-              Call/Text: 613-413-6969
-            </a>
-            <span className="hidden text-white sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold text-white hover:underline">
-              Email: service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With...</h2>
-            <p className="text-center text-lg text-gray-700">
-              Cooktops are just the beginning — here are our other services in Mississippi Mills:
-            </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {otherServices.map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.href}
-                  className="rounded-lg bg-gray-50 p-4 text-center font-semibold text-primary-600 transition-colors hover:bg-primary-50"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="mt-8 text-center text-gray-700">
-              From Almonte to Appleton, we've got you covered.
-            </p>
-            <p className="mt-4 text-center text-gray-800 font-semibold">
-              Fixer Appliance Repair — your trusted cooktop repair team in Mississippi Mills.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={highlights}
+        heading="Take a Break in Mississippi Mills While We Fix Your Cooktop"
+        description="Why not explore while we handle the repair?"
+        linkText="See the local events calendar for Mississippi Mills"
+      />
+
+      <FAQSection applianceName="Cooktop" faqs={faqs} />
+
+      <CTASection 
+        heading="Schedule Your Cooktop Repair in Mississippi Mills"
+        description="Serving Almonte, Appleton, and beyond — book your cooktop repair appointment now:"
+        buttonText="Book Service Now"
+      />
+
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={otherServices}
+        heading="Also Need Help With..."
+        description="Cooktops are just the beginning — here are our other services in Mississippi Mills:"
+        applianceName="Cooktop"
+      />
     </>
   );
 }

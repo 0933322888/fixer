@@ -3,6 +3,10 @@ import Link from "next/link";
 import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Washer Repair Carp – Reliable Service for Homes & Farms | Fixer",
@@ -179,132 +183,48 @@ export default function WasherRepairCarpPage() {
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area: Carp and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Carp area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding rural neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We also repair washers for customers in:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/washer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                👉 Need washer help beyond Carp? Learn more about our{" "}
-                <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  washer repair in Ottawa
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area: Carp and Nearby"
+        description="We provide appliance repair services across the entire Carp area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="washer"
+        nearbyAreasLabel="We also repair washers for customers in:"
+        surroundingLabel="and surrounding rural neighbourhoods"
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 Need washer help beyond Carp? Learn more about our{" "}
+            <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              washer repair in Ottawa
+            </Link>
+            .
+          </p>
+        }
+      />
 
       {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Enjoy Carp While We Handle the Repair</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While we repair your washer, check out what Carp has to offer:
-            </p>
-            <ul className="space-y-3 text-gray-700">
-              {carpAttractions.map((attraction, index) => (
-                <li key={index}>{attraction}</li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Want to catch a live event or exhibit? Check what's happening this week:
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-600 font-medium ml-2 hover:underline"
-              >
-                Ottawa Tourism Events
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={carpAttractions}
+        heading="Enjoy Carp While We Handle the Repair"
+        description="While we repair your washer, check out what Carp has to offer:"
+        linkText="Ottawa Tourism Events"
+      />
 
       <FAQSection applianceName="Washer" faqs={faqs} />
 
       {/* Schedule Your Washer Repair */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Schedule Your Washer Repair in Carp</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            📞 Need a hand with your washer in Carp? We'll make the trip — just call us at{" "}
-            <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-          <p className="text-2xl font-semibold">
-            We're local, we're reliable, and we're happy to come to Carp.
-          </p>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Washer Repair in Carp"
+        description="Need a hand with your washer in Carp? We'll make the trip. We're local, we're reliable, and we're happy to come to Carp."
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We repair more than just washers — check out our other services in Carp:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need service beyond washers? We're here to help across Carp.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your trusted washer repair team in Carp.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="We repair more than just washers — check out our other services in Carp:"
+        applianceName="Washer"
+      />
     </>
   );
 }

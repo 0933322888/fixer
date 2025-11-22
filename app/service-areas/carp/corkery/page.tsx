@@ -158,7 +158,7 @@ export default function CorkeryServiceAreaPage() {
         attractions={attractions}
         heading="Explore Corkery While We Fix"
         description="While we repair your appliance, discover Corkery:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

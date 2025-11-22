@@ -157,7 +157,7 @@ export default function OverbrookServiceAreaPage() {
         attractions={attractions}
         heading="Explore Overbrook While We Fix"
         description="While we repair your appliance, discover Overbrook:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See nearby events: Ottawa Tourism Events"
       />
 

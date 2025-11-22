@@ -158,7 +158,7 @@ export default function AppletonServiceAreaPage() {
         attractions={attractions}
         heading="Explore Appleton While We Fix"
         description="While we handle your repair, enjoy Appleton:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current events: Ottawa Tourism Events"
       />
 

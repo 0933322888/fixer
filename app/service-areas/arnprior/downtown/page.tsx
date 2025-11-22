@@ -158,7 +158,7 @@ export default function DowntownArnpriorServiceAreaPage() {
         attractions={attractions}
         heading="Explore Downtown Arnprior While We Fix"
         description="While we repair your appliance, explore Downtown Arnprior:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

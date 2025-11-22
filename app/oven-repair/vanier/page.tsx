@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Vanier – Fast, Reliable Electric Oven Service | Fixer",
@@ -83,7 +85,7 @@ export default function OvenRepairVanierPage() {
       <ServiceHero
         title="Reliable Oven Repair in Vanier"
         description="Cooking troubles in Vanier? Whether your oven won't start or shuts off mid-bake, our local team provides quick and professional oven repair you can count on. We repair all major electric oven brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Vanier" />
@@ -181,103 +183,41 @@ export default function OvenRepairVanierPage() {
       <CTASection />
 
       {/* Things to Do in Vanier */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Vanier While We Repair the Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Step outside and explore:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Richelieu Park</strong> – tranquil forest walks</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Vanier Museopark</strong> – stories and exhibits</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Beechwood Avenue</strong> – enjoy coffee or shopping</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Explore Vanier's events calendar
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Richelieu Park", description: "tranquil forest walks" },
+          { name: "Vanier Museopark", description: "stories and exhibits" },
+          { name: "Beechwood Avenue", description: "enjoy coffee or shopping" },
+        ]}
+        heading="Enjoy Your Time in Vanier While We Repair the Oven"
+        description="Step outside and explore:"
+        linkText="Explore Vanier's events calendar"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Vanier</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don't let a broken oven spoil your meal — reach out now to schedule repair:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Vanier"
+        description="Don't let a broken oven spoil your meal — reach out now to schedule repair:"
+        buttonText="Book Service Now"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Ovens aren't all we repair — here are our other services in Vanier:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Vanier
-              </Link>
-              <Link href="/dryer-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Vanier
-              </Link>
-              <Link href="/dishwasher-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Vanier
-              </Link>
-              <Link href="/fridge-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Vanier
-              </Link>
-              <Link href="/freezer-repair/vanier" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Vanier
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Vanier
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Vanier
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              From kitchens to laundry rooms, we've got Vanier covered.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly oven repair team in Vanier.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Vanier", href: "/washer-repair/vanier" },
+          { name: "Dryer Repair Vanier", href: "/dryer-repair/vanier" },
+          { name: "Dishwasher Repair Vanier", href: "/dishwasher-repair/vanier" },
+          { name: "Fridge Repair Vanier", href: "/fridge-repair/vanier" },
+          { name: "Freezer Repair Vanier", href: "/freezer-repair/vanier" },
+          { name: "Cooktop Repair Vanier", href: "/cooktop-repair/vanier" },
+          { name: "Oven Installation Vanier", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Ovens aren't all we repair — here are our other services in Vanier:"
+        applianceName="Oven"
+      />
     </>
   );
 }

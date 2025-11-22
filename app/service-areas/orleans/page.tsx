@@ -190,24 +190,6 @@ export default function OrleansServiceAreaPage() {
         description="While our team gets your appliance back in shape, you could:"
       />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <p className="text-center text-gray-700">
-            We proudly serve Avalon, Fallingbrook, Chapel Hill, and even nearby Cumberland. Want more local
-            happenings? Visit{" "}
-            <a
-              href="https://ottawatourism.ca/en/see-and-do/events"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Ottawa Tourism
-            </a>
-            .
-          </p>
-        </div>
-      </section>
-
       {/* Neighbourhoods Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">

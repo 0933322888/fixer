@@ -158,7 +158,7 @@ export default function LongfieldsServiceAreaPage() {
         attractions={attractions}
         heading="Explore Longfields While We Fix"
         description="While your appliance is being repaired, check out Longfields:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See events in the area: Ottawa Tourism Events"
       />
 

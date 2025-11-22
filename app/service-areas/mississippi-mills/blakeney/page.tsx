@@ -158,7 +158,7 @@ export default function BlakeneyServiceAreaPage() {
         attractions={attractions}
         heading="Explore Blakeney While We Fix"
         description="While we fix your appliance, discover Blakeney:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See nearby events: Ottawa Tourism Events"
       />
 

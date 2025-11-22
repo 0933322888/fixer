@@ -158,7 +158,7 @@ export default function HuntleyServiceAreaPage() {
         attractions={attractions}
         heading="Explore Huntley While We Fix"
         description="While your appliance is being fixed, discover Huntley:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="Check what's on nearby: Ottawa Tourism Events"
       />
 

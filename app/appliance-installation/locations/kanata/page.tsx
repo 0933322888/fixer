@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaWrench } from "react-icons/fa";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
@@ -61,7 +61,7 @@ export default function ApplianceInstallationKanataPage() {
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Installation Kanata</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Kanata</h1>
             <p className="text-lg text-gray-100 leading-relaxed">
               Need help setting up a new appliance in Kanata? Fixer provides safe, reliable <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link>, now available right here in Kanata. Whether it’s a washer, dryer, dishwasher, or oven, we’ll connect it properly and back the job with a 90-day labour warranty.
             </p>
@@ -91,7 +91,7 @@ export default function ApplianceInstallationKanataPage() {
         attractions={highlights}
         heading="Explore Kanata While We Work"
         description="While we handle the installation, you can enjoy Kanata's highlights:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="Ottawa events calendar"
       />
 

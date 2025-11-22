@@ -169,7 +169,7 @@ export default function BeaverbrookServiceAreaPage() {
         attractions={attractions}
         heading="Explore Beaverbrook While We Fix"
         description="While we fix your appliance, check out Beaverbrook:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See more events here: Ottawa Tourism Events"
       />
 

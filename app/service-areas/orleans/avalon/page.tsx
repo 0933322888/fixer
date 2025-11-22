@@ -158,7 +158,7 @@ export default function AvalonServiceAreaPage() {
         attractions={attractions}
         heading="Explore Avalon While We Fix"
         description="While your appliance is being repaired, enjoy Avalon:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current activities: Ottawa Tourism Events"
       />
 

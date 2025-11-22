@@ -167,8 +167,7 @@ export default function ServiceAreasPage() {
         heading="Ready to Book Your Repair?"
         description="Our Ottawa technicians are standing by and fully stocked with the tools and common parts needed to get your appliances back up and running fast."
         phoneText="📞 Call/Text: 613-413-6969"
-        buttonText="Book Online"
-      />
+        />
     </>
   );
 }

@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Orleans – Fast, Reliable Electric Oven Service | Fixer",
@@ -84,7 +86,7 @@ export default function OvenRepairOrleansPage() {
       <ServiceHero
         title="Orleans Oven Repair You Can Rely On"
         description="Dinner plans on hold because your oven won't heat up? Our team delivers fast, local help to get you cooking again. Fixer provides professional service for all major electric ovens. We repair top brands like LG, Samsung, Whirlpool, GE, Maytag, and more."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Orleans" />
@@ -182,103 +184,41 @@ export default function OvenRepairOrleansPage() {
       <CTASection />
 
       {/* Things to Do in Orleans */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Orleans While We Repair the Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Why not take a short break?</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span>Visit <strong>Petrie Island</strong> for fresh air and nature</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span>Experience arts and culture at <strong>Shenkman Arts Centre</strong></span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span>Drop by <strong>Place d'Orleans</strong> for dining and shops</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                See what's happening around Orleans this month
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Petrie Island", description: "for fresh air and nature" },
+          { name: "Shenkman Arts Centre", description: "arts and culture" },
+          { name: "Place d'Orleans", description: "dining and shops" },
+        ]}
+        heading="Enjoy Your Time in Orleans While We Repair the Oven"
+        description="Why not take a short break?"
+        linkText="See what's happening around Orleans this month"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Orleans</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Oven not heating properly? Call Fixer Appliance Repair today to book fast service:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Orleans"
+        description="Oven not heating properly? Call Fixer Appliance Repair today to book fast service:"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Our team handles more than ovens — here's what else we do in Orleans:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/orleans" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Orleans
-              </Link>
-              <Link href="/dryer-repair/orleans" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Orleans
-              </Link>
-              <Link href="/dishwasher-repair/orleans" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Orleans
-              </Link>
-              <Link href="/fridge-repair/orleans" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Orleans
-              </Link>
-              <Link href="/freezer-repair/orleans" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Orleans
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Orleans
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Orleans
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Looking for another service? We've got Orleans covered.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly oven repair team in Orleans.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Orleans", href: "/washer-repair/orleans" },
+          { name: "Dryer Repair Orleans", href: "/dryer-repair/orleans" },
+          { name: "Dishwasher Repair Orleans", href: "/dishwasher-repair/orleans" },
+          { name: "Fridge Repair Orleans", href: "/fridge-repair/orleans" },
+          { name: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
+          { name: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
+          { name: "Oven Installation Orleans", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Our team handles more than ovens — here's what else we do in Orleans:"
+        applianceName="Oven"
+      />
     </>
   );
 }

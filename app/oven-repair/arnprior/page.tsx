@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Arnprior – Trusted Local Electric Oven Service | Fixer",
@@ -84,7 +86,7 @@ export default function OvenRepairArnpriorPage() {
       <ServiceHero
         title="Arnprior's Trusted Oven Repair Team"
         description="From downtown Arnprior to White Lake, our technicians fix ovens that won't heat, bake unevenly, or spark electrical smells. Local, experienced service is just a call away. We service electric ovens from LG, Samsung, Whirlpool, GE, Maytag, and more."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Arnprior" />
@@ -182,103 +184,41 @@ export default function OvenRepairArnpriorPage() {
       <CTASection />
 
       {/* Things to Do in Arnprior */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Arnprior While We Repair the Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Step out for a bit and explore:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Robert Simpson Park</strong> – waterfront trails and views</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Gillies Grove</strong> – a nature escape in town</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Downtown Arnprior</strong> – small-town charm</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://arnprior.ca/en/explore-and-play/events-calendar.aspx" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Find upcoming events in Arnprior
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Robert Simpson Park", description: "waterfront trails and views" },
+          { name: "Gillies Grove", description: "a nature escape in town" },
+          { name: "Downtown Arnprior", description: "small-town charm" },
+        ]}
+        heading="Enjoy Your Time in Arnprior While We Repair the Oven"
+        description="Step out for a bit and explore:"
+        linkText="Find upcoming events in Arnprior"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Arnprior</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Oven troubles? Contact Fixer Appliance Repair today for quick, reliable help:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Arnprior"
+        description="Oven troubles? Contact Fixer Appliance Repair today for quick, reliable help:"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              We service more than just ovens — here are our other options in Arnprior:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/arnprior" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Arnprior
-              </Link>
-              <Link href="/dryer-repair/arnprior" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Arnprior
-              </Link>
-              <Link href="/dishwasher-repair/arnprior" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Arnprior
-              </Link>
-              <Link href="/fridge-repair/arnprior" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Arnprior
-              </Link>
-              <Link href="/freezer-repair/arnprior" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Arnprior
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Arnprior
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Arnprior
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Looking for another appliance repaired? We're here for Arnprior homes.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your oven repair experts in Arnprior.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Arnprior", href: "/washer-repair/arnprior" },
+          { name: "Dryer Repair Arnprior", href: "/dryer-repair/arnprior" },
+          { name: "Dishwasher Repair Arnprior", href: "/dishwasher-repair/arnprior" },
+          { name: "Fridge Repair Arnprior", href: "/fridge-repair/arnprior" },
+          { name: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
+          { name: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
+          { name: "Oven Installation Arnprior", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="We service more than just ovens — here are our other options in Arnprior:"
+        applianceName="Oven"
+      />
     </>
   );
 }

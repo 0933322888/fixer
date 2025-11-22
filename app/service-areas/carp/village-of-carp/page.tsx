@@ -158,7 +158,7 @@ export default function VillageOfCarpServiceAreaPage() {
         attractions={attractions}
         heading="Explore Carp While We Fix"
         description="While we repair your appliance, enjoy the Village of Carp:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

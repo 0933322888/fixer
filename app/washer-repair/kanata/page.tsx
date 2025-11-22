@@ -3,6 +3,11 @@ import Link from "next/link";
 import { FaTshirt, FaMapMarkerAlt, FaUtensils, FaTree, FaBook } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Washer Repair Kanata – Fast, Local Service | Fixer",
@@ -144,167 +149,57 @@ export default function WasherRepairKanataPage() {
       </section>
 
       {/* Washer Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new washer? We also provide washer installation in Kanata with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Washer Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Washer"
+        description="Got a new washer? We also provide washer installation in Kanata with same-day service available in most areas."
+        href="/appliance-installation/washer"
+      />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area: Kanata and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Kanata area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We also help customers in nearby areas such as:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/washer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                👉 Need help outside Kanata? Learn more about our{" "}
-                <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  washer repair in Ottawa
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area: Kanata and Nearby"
+        description="We provide appliance repair services across the entire Kanata area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="washer"
+        nearbyAreasLabel="We also help customers in nearby areas such as:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 Need help outside Kanata? Learn more about our{" "}
+            <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              washer repair in Ottawa
+            </Link>
+            .
+          </p>
+        }
+      />
 
       {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While we handle your washer repair, why not take a break and enjoy some of the best places in Kanata? Whether you're into nature, food, or family fun, there's always something to explore:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {kanataAttractions.map((attraction, index) => {
-                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
-                const Icon = icons[index % icons.length];
-                const parts = attraction.split(" – ");
-                const name = parts[0];
-                const description = parts[1] || "";
-                return (
-                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
-                      <p className="text-gray-600 text-sm">{description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Want to catch a live event or exhibit?
-              </p>
-              <p className="text-gray-700 mb-3">
-                Check what's happening this week:
-              </p>
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
-              >
-                Ottawa Tourism Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={kanataAttractions}
+        heading="Explore Kanata While We Fix Your Washer"
+        description="While we handle your washer repair, why not take a break and enjoy some of the best places in Kanata? Whether you're into nature, food, or family fun, there's always something to explore:"
+        
+        linkText="Ottawa Tourism Events"
+      />
 
       <FAQSection applianceName="Washer" faqs={faqs} />
 
       {/* Schedule Your Washer Repair */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Schedule Your Washer Repair in Kanata</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Washer acting up? We're here to help. Contact Fixer Appliance Repair today:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Washer Repair in Kanata"
+        description="Washer acting up? We're here to help. Contact Fixer Appliance Repair today:"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We fix more than just washers — here are our other services in Kanata:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Looking for help with another appliance? We've got you covered across Kanata.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly washer repair team in Kanata.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="We fix more than just washers — here are our other services in Kanata:"
+        applianceName="Washer"
+      />
     </>
   );
 }

@@ -158,7 +158,7 @@ export default function MerivaleGardensServiceAreaPage() {
         attractions={attractions}
         heading="Explore Merivale Gardens While We Fix"
         description="While we handle your repair, discover Merivale Gardens:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="Check current events: Ottawa Tourism Events"
       />
 

@@ -158,7 +158,7 @@ export default function BarrhavenEastServiceAreaPage() {
         attractions={attractions}
         heading="Explore Barrhaven East While We Fix"
         description="While your appliance is being repaired, explore Barrhaven East:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's on nearby: Ottawa Tourism Events"
       />
 

@@ -158,7 +158,7 @@ export default function CrossingBridgeServiceAreaPage() {
         attractions={attractions}
         heading="Explore Crossing Bridge While We Fix"
         description="While we handle your repair, enjoy Crossing Bridge:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

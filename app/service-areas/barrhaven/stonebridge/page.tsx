@@ -158,7 +158,7 @@ export default function StonebridgeServiceAreaPage() {
         attractions={attractions}
         heading="Explore Stonebridge While We Fix"
         description="While we repair your appliance, enjoy Stonebridge:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current activities: Ottawa Tourism Events"
       />
 

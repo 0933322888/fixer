@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -12,7 +13,10 @@ import {
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Carp – Trusted Rural Service | Fixer",
@@ -210,91 +214,35 @@ export default function MicrowaveRepairCarpPage() {
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-6">
-              <FaMapMarkerAlt className="text-accent-500 text-3xl" />
-              <h2 className="heading-md mb-0">Service Area: Carp and Nearby</h2>
-            </div>
-            <p className="text-lg text-gray-700 mb-6">
-              We provide appliance repair services across the entire Carp area, including:
-            </p>
-            <div className="flex flex-wrap gap-3 mb-6">
-              {serviceAreas.map((area) => (
-                <span
-                  key={area}
-                  className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-gray-800 shadow-sm"
-                >
-                  {area}
-                </span>
-              ))}
-            </div>
-            <p className="text-gray-700 mb-6">
-              Homeowners in Carp, as well as those in{" "}
-              {nearbyAreas.map((area, index) => (
-                <span key={area.name}>
-                  <Link href={area.href} className="text-primary-600 hover:text-primary-700 underline">
-                    {area.name}
-                  </Link>
-                  {index < nearbyAreas.length - 1 ? ", " : ". "}
-                </span>
-              ))}
-              trust us with their microwave repairs. 👉 For complete coverage across the city, see our{" "}
-              <Link href="/microwave-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Microwave Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area: Carp and Nearby"
+        description="We provide appliance repair services across the entire Carp area, including:"
+        neighborhoods={serviceAreas.filter(area => area !== "Surrounding rural neighbourhoods")}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name.replace("Microwave Repair ", ""),
+          slug: area.href.replace("/microwave-repair/", "")
+        }))}
+        applianceType="microwave"
+        nearbyAreasLabel="We also serve:"
+        surroundingLabel={serviceAreas.includes("Surrounding rural neighbourhoods") ? "Surrounding rural neighbourhoods" : "and surrounding neighbourhoods"}
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 For complete coverage across the city, see our{" "}
+            <Link href="/microwave-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Microwave Repair Ottawa
+            </Link>
+            {" "}page.
+          </p>
+        }
+      />
 
       {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Explore Carp While We Fix Your Microwave</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Your microwave repair is underway — why not enjoy Carp in the meantime?
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {highlights.map((item, index) => {
-                const icons = [FaMapMarkerAlt, FaTree, FaUtensils, FaBook];
-                const Icon = icons[index % icons.length];
-                return (
-                  <div key={index} className="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all border-l-4 border-accent-500 flex items-start gap-4">
-                    <Icon className="text-accent-500 text-xl flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-8 bg-gradient-to-r from-accent-50 to-primary-50 border border-accent-200 rounded-lg p-6 text-center">
-              <p className="text-lg font-semibold text-gray-900 mb-2">
-                Want to catch a live event or exhibit?
-              </p>
-              <p className="text-gray-700 mb-3">
-                Check what's happening this week:
-              </p>
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 hover:underline transition-colors"
-              >
-                Ottawa Tourism Events
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={highlights}
+        heading="Explore Carp While We Fix Your Microwave"
+        description="Your microwave repair is underway — why not enjoy Carp in the meantime?"
+        linkText="Ottawa Tourism Events"
+      />
 
       <FAQSection applianceName="Microwave" faqs={faqs} />
 
@@ -304,32 +252,13 @@ export default function MicrowaveRepairCarpPage() {
         buttonText="Book Online Now"
       />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              Microwave repair is only one part of what we do — here are other services in Carp:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {services.map((service) => (
-                <Link
-                  key={service.label}
-                  href={service.href}
-                  className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-lg px-4 py-3 text-gray-700 hover:border-accent-500 hover:text-accent-600 transition"
-                >
-                  <FaTools className="text-accent-500" />
-                  <span>{service.label}</span>
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-800 font-semibold mt-8">
-              Fixer Appliance Repair — your trusted microwave repair team in Carp.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={services}
+        heading="Also Need Help With…"
+        description="Microwave repair is only one part of what we do — here are other services in Carp:"
+        applianceName="Microwave"
+      />
     </>
   );
 }

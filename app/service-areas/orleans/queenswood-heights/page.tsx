@@ -158,7 +158,7 @@ export default function QueenswoodHeightsServiceAreaPage() {
         attractions={attractions}
         heading="Explore Queenswood Heights While We Fix"
         description="While we handle your repair, discover Queenswood Heights:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's on nearby: Ottawa Tourism Events"
       />
 

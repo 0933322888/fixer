@@ -158,7 +158,7 @@ export default function CentrepointeServiceAreaPage() {
         attractions={attractions}
         heading="Explore Centrepointe While We Fix"
         description="While we fix your appliance, enjoy Centrepointe:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

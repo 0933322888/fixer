@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Mississippi Mills – Reliable Appliance Service | Fixer",
@@ -84,7 +86,7 @@ export default function OvenRepairMississippiMillsPage() {
       <ServiceHero
         title="Trusted Oven Repair in Mississippi Mills"
         description="From Almonte to Pakenham, our oven repair experts are ready to help when your oven stops baking evenly or won't start at all. Fixer offers reliable repairs tailored for rural homes. We service all major electric oven brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Mississippi Mills" />
@@ -182,103 +184,41 @@ export default function OvenRepairMississippiMillsPage() {
       <CTASection />
 
       {/* Things to Do in Mississippi Mills */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Mississippi Mills While We Repair the Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Take advantage of the break with some local highlights:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>The Almonte Riverwalk</strong> – a peaceful riverside trail</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Mill of Kintail</strong> – history and outdoor fun in one place</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Downtown Almonte</strong> – cozy cafés and unique shops</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://www.mississippimills.ca/en/discover-and-enjoy/events-calendar.aspx" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Explore upcoming events in Mississippi Mills
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "The Almonte Riverwalk", description: "a peaceful riverside trail" },
+          { name: "Mill of Kintail", description: "history and outdoor fun in one place" },
+          { name: "Downtown Almonte", description: "cozy cafés and unique shops" },
+        ]}
+        heading="Enjoy Your Time in Mississippi Mills While We Repair the Oven"
+        description="Take advantage of the break with some local highlights:"
+        linkText="Explore upcoming events in Mississippi Mills"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Mississippi Mills</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Serving Almonte, Appleton, and nearby areas — schedule your oven repair now:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Mississippi Mills"
+        description="Serving Almonte, Appleton, and nearby areas — schedule your oven repair now:"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Ovens are just the beginning — here are our other services in Mississippi Mills:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/mississippi-mills" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Mississippi Mills
-              </Link>
-              <Link href="/dryer-repair/mississippi-mills" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Mississippi Mills
-              </Link>
-              <Link href="/dishwasher-repair/mississippi-mills" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Mississippi Mills
-              </Link>
-              <Link href="/fridge-repair/mississippi-mills" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Mississippi Mills
-              </Link>
-              <Link href="/freezer-repair/mississippi-mills" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Mississippi Mills
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Mississippi Mills
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Mississippi Mills
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              From Almonte to Appleton, we've got you covered.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your trusted oven repair team in Mississippi Mills.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Mississippi Mills", href: "/washer-repair/mississippi-mills" },
+          { name: "Dryer Repair Mississippi Mills", href: "/dryer-repair/mississippi-mills" },
+          { name: "Dishwasher Repair Mississippi Mills", href: "/dishwasher-repair/mississippi-mills" },
+          { name: "Fridge Repair Mississippi Mills", href: "/fridge-repair/mississippi-mills" },
+          { name: "Freezer Repair Mississippi Mills", href: "/freezer-repair/mississippi-mills" },
+          { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
+          { name: "Oven Installation Mississippi Mills", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Ovens are just the beginning — here are our other services in Mississippi Mills:"
+        applianceName="Oven"
+      />
     </>
   );
 }

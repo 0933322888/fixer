@@ -158,7 +158,7 @@ export default function BryanstonGateServiceAreaPage() {
         attractions={attractions}
         heading="Explore Bryanston Gate While We Fix"
         description="While we fix your appliance, discover Bryanston Gate:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's on nearby: Ottawa Tourism Events"
       />
 

@@ -158,7 +158,7 @@ export default function ChapmanMillsServiceAreaPage() {
         attractions={attractions}
         heading="Explore Chapman Mills While We Fix"
         description="While we fix your appliance, explore Chapman Mills:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening nearby: Ottawa Tourism Events"
       />
 

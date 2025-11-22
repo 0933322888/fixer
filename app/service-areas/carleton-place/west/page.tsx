@@ -158,7 +158,7 @@ export default function CarletonPlaceWestServiceAreaPage() {
         attractions={attractions}
         heading="Explore Carleton Place West While We Fix"
         description="While we repair your appliance, explore Carleton Place West:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

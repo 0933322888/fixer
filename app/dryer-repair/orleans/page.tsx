@@ -3,6 +3,11 @@ import Link from "next/link";
 import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Orleans Dryer Repair – Fast, Local Service | Fixer",
@@ -151,153 +156,47 @@ export default function DryerRepairOrleansPage() {
       </section>
 
       {/* Dryer Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new dryer? We also provide dryer installation in Orleans with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Dryer Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Dryer"
+        description="Got a new dryer? We also provide dryer installation in Orleans with same-day service available in most areas."
+        href="/appliance-installation/dryer"
+      />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Orleans area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We proudly serve nearby locations such as:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/dryer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                👉 Need dryer help across Ottawa? Learn more about our{" "}
-                <Link href="/dryer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  Dryer Repair Ottawa
-                </Link>
-                {" "}page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Orleans area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="dryer"
+        nearbyAreasLabel="We proudly serve nearby locations such as:"
+      />
 
       {/* Enjoy Orleans While We Service Your Dryer */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Enjoy Orleans While We Service Your Dryer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Take some time to explore the neighborhood:
-            </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {orleansAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                👉 Find events in Orleans this month:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
-              >
-                Ottawa Events Calendar
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={orleansAttractions}
+        heading="Enjoy Orleans While We Service Your Dryer"
+        description="Take some time to explore the neighborhood:"
+        linkText="Ottawa Events Calendar"
+      />
 
       <FAQSection applianceName="Dryer" faqs={faqs} />
 
       {/* Contact CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Schedule Your Dryer Repair in Orleans</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Dryer giving you trouble? We're ready to help. Contact Fixer Appliance Repair today:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Dryer Repair in Orleans"
+        description="Dryer giving you trouble? We're ready to help. Contact Fixer Appliance Repair today:"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              Our expertise goes beyond dryers — here's what else we do in Orleans:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need a different appliance fixed? We've got you covered in Orleans.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly dryer repair team in Orleans.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="Our expertise goes beyond dryers — here's what else we do in Orleans:"
+        applianceName="Dryer"
+      />
     </>
   );
 }

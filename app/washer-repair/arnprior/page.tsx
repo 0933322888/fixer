@@ -3,6 +3,11 @@ import Link from "next/link";
 import { FaTshirt, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Arnprior Washer Service – Local, Friendly Technicians | Fixer",
@@ -134,140 +139,57 @@ export default function WasherRepairArnpriorPage() {
       </section>
 
       {/* Washer Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Washer? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new washer? We also provide washer installation in Arnprior with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation/washer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Washer Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Washer"
+        description="Got a new washer? We also provide washer installation in Arnprior with same-day service available in most areas."
+        href="/appliance-installation/washer"
+      />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Arnprior area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding rural neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We also offer:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/washer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                👉 Need washer help across the city? Learn more about our{" "}
-                <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  washer repair in Ottawa
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Arnprior area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="washer"
+        nearbyAreasLabel="We also offer:"
+        surroundingLabel="and surrounding rural neighbourhoods"
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 Need washer help across the city? Learn more about our{" "}
+            <Link href="/washer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              washer repair in Ottawa
+            </Link>
+            .
+          </p>
+        }
+      />
 
       {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Explore Arnprior While We Fix Your Washer</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While we handle the repair, discover the area:
-            </p>
-            <ul className="space-y-3 text-gray-700">
-              {arnpriorAttractions.map((attraction, index) => (
-                <li key={index}>{attraction}</li>
-              ))}
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Want to catch a live event or exhibit? Check what's happening this week:
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-600 font-medium ml-2 hover:underline"
-              >
-                Ottawa Tourism Events
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={arnpriorAttractions}
+        heading="Explore Arnprior While We Fix Your Washer"
+        description="While we handle the repair, discover the area:"
+        linkText="Ottawa Tourism Events"
+      />
 
       <FAQSection applianceName="Washer" faqs={faqs} />
 
       {/* Contact CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Ready to Book Your Washer Repair in Arnprior?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Don't let a broken washer slow you down. Our Arnprior team offers quick, reliable repairs — book now!
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Ready to Book Your Washer Repair in Arnprior?"
+        description="Don't let a broken washer slow you down. Our Arnprior team offers quick, reliable repairs — book now!"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We do more than just washer repair — check out our other Ottawa services:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With..."
+        description="We do more than just washer repair — check out our other Ottawa services:"
+        applianceName="Washer"
+      />
     </>
   );
 }

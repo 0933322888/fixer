@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaWrench } from "react-icons/fa";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
@@ -62,7 +62,7 @@ export default function ApplianceInstallationStittsvillePage() {
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Installation Stittsville</h1>
+            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Stittsville</h1>
             <p className="text-lg text-gray-100 leading-relaxed">
               From washers and dryers to dishwashers and ovens, Fixer offers professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> with full coverage in Stittsville. Our technicians ensure correct hookups and safe connections, all supported by a 90-day labour warranty.
             </p>
@@ -92,7 +92,7 @@ export default function ApplianceInstallationStittsvillePage() {
         attractions={highlights}
         heading="Explore Stittsville While We Work"
         description="Make the most of your time in Stittsville while we install your appliance:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="Ottawa events calendar"
       />
 

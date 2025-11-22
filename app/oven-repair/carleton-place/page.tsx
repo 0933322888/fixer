@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Carleton Place – Fast, Reliable Electric Oven Service | Fixer",
@@ -83,7 +85,7 @@ export default function OvenRepairCarletonPlacePage() {
       <ServiceHero
         title="Carleton Place Oven Repair Specialists"
         description="Weekend dinner plans ruined by a broken oven? Our repair experts respond quickly with honest, reliable service for homes across the town. We repair all major electric oven brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Carleton Place" />
@@ -181,103 +183,41 @@ export default function OvenRepairCarletonPlacePage() {
       <CTASection />
 
       {/* Things to Do in Carleton Place */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Carleton Place While We Repair Your Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Take a short break and explore:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Riverside Park</strong> – calm scenery by the water</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Downtown Carleton Place</strong> – grab a bite or shop around</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Heritage Museum</strong> – learn about the community's history</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://www.carletonplace.ca/en/explore-and-play/events-calendar.aspx" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Explore upcoming events in Carleton Place
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Riverside Park", description: "calm scenery by the water" },
+          { name: "Downtown Carleton Place", description: "grab a bite or shop around" },
+          { name: "Heritage Museum", description: "learn about the community's history" },
+        ]}
+        heading="Enjoy Carleton Place While We Repair Your Oven"
+        description="Take a short break and explore:"
+        linkText="Explore upcoming events in Carleton Place"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Carleton Place</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Dinner plans on hold? Don't wait — text or call Fixer Appliance Repair to book service:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Carleton Place"
+        description="Dinner plans on hold? Don't wait — text or call Fixer Appliance Repair to book service:"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Oven issues aren't the only thing we handle — here are more services in Carleton Place:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/carleton-place" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Carleton Place
-              </Link>
-              <Link href="/dryer-repair/carleton-place" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Carleton Place
-              </Link>
-              <Link href="/dishwasher-repair/carleton-place" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Carleton Place
-              </Link>
-              <Link href="/fridge-repair/carleton-place" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Carleton Place
-              </Link>
-              <Link href="/freezer-repair/carleton-place" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Carleton Place
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Carleton Place
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Carleton Place
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need another appliance serviced? We're ready in Carleton Place.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your oven repair pros in Carleton Place.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Carleton Place", href: "/washer-repair/carleton-place" },
+          { name: "Dryer Repair Carleton Place", href: "/dryer-repair/carleton-place" },
+          { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair/carleton-place" },
+          { name: "Fridge Repair Carleton Place", href: "/fridge-repair/carleton-place" },
+          { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
+          { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
+          { name: "Oven Installation Carleton Place", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Oven issues aren't the only thing we handle — here are more services in Carleton Place:"
+        applianceName="Oven"
+      />
     </>
   );
 }

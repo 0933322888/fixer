@@ -168,7 +168,7 @@ export default function KatimavikHazeldeanServiceAreaPage() {
         attractions={attractions}
         heading="Explore Katimavik-Hazeldean While We Fix"
         description="While your appliance is in good hands, explore:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current activities: Ottawa Tourism Events"
       />
 

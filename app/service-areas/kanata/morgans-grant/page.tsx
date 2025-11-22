@@ -168,7 +168,7 @@ export default function MorgansGrantServiceAreaPage() {
         attractions={attractions}
         heading="Explore Morgan's Grant While We Fix"
         description="While we handle your repair, enjoy Morgan's Grant:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

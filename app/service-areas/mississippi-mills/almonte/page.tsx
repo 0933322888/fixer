@@ -158,7 +158,7 @@ export default function AlmonteServiceAreaPage() {
         attractions={attractions}
         heading="Explore Almonte While We Fix"
         description="While your appliance is being repaired, explore Almonte:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

@@ -4,6 +4,10 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Carleton Place – Trusted Local Service | Fixer",
@@ -127,95 +131,49 @@ export default function FridgeRepairCarletonPlacePage() {
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services in Carleton Place and surrounding areas.
-          </p>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also provide fridge repair services in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Fridge Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For full coverage, see our Fridge Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services in Carleton Place and surrounding areas."
+        neighborhoods={[]}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/fridge-repair/", "")
+        }))}
+        applianceType="fridge"
+        nearbyAreasLabel="We also provide fridge repair services in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For full coverage, see our{" "}
+            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Fridge Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQ – Fridge Repair in Carleton Place</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Fridge Repair in Carleton Place</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Contact Fixer Appliance Repair for quick, professional service:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call/Text: 613-413-6969</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Fridge Repair in Carleton Place"
+        description="Contact Fixer Appliance Repair for quick, professional service:"
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            We handle more than just fridges — here are our other services in Carleton Place:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/carleton-place" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Carleton Place
-            </Link>
-            <Link href="/dryer-repair/carleton-place" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Carleton Place
-            </Link>
-            <Link href="/dishwasher-repair/carleton-place" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Carleton Place
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Carleton Place
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Installation Carleton Place
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Carleton Place", href: "/washer-repair/carleton-place" },
+          { name: "Dryer Repair Carleton Place", href: "/dryer-repair/carleton-place" },
+          { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair/carleton-place" },
+          { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
+          { name: "Fridge Installation Carleton Place", href: "/fridge-installation" },
+        ]}
+        heading="Also Need Help With…"
+        description="We handle more than just fridges — here are our other services in Carleton Place:"
+        applianceName="Fridge"
+      />
 
     </>
   );

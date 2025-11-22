@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Nepean – Fast, Reliable Electric Oven Service | Fixer",
@@ -102,7 +104,7 @@ export default function OvenRepairNepeanPage() {
       <ServiceHero
         title="Nepean Oven Repair Specialists You Can Count On"
         description="If your electric oven is unreliable, we'll get it back on track. Fixer Appliance Repair brings experience and clear pricing to every Nepean home. Brands we repair include LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} />
@@ -200,108 +202,43 @@ export default function OvenRepairNepeanPage() {
       <CTASection />
 
       {/* Things to Do in Nepean */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Relax in Nepean While We Repair Your Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Step outside and make the most of your time:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Andrew Haydon Park</strong> – stroll by the water's edge</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Bruce Pit</strong> – open space for walks and dogs to run free</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Merivale Mall</strong> – convenient for errands and meals</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Art Is In Bakery</strong> – artisan food worth tasting</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              Find local fun and events here:{" "}
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Events in Nepean
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Andrew Haydon Park", description: "stroll by the water's edge" },
+          { name: "Bruce Pit", description: "open space for walks and dogs to run free" },
+          { name: "Merivale Mall", description: "convenient for errands and meals" },
+          { name: "Art Is In Bakery", description: "artisan food worth tasting" },
+        ]}
+        heading="Relax in Nepean While We Repair Your Oven"
+        description="Step outside and make the most of your time:"
+        
+        linkText="Events in Nepean"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Oven Repair in Nepean</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Fixer offers expert oven repair throughout Nepean. Let's get started!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6135550199" className="text-xl font-semibold hover:underline">
-              📞 (613) 555-0199
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Oven Repair in Nepean"
+        description="Fixer offers expert oven repair throughout Nepean. Let's get started!"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              We handle more than ovens — here are our other services in Nepean:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/nepean" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Nepean
-              </Link>
-              <Link href="/dryer-repair/nepean" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Nepean
-              </Link>
-              <Link href="/dishwasher-repair/nepean" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Nepean
-              </Link>
-              <Link href="/fridge-repair/nepean" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Nepean
-              </Link>
-              <Link href="/freezer-repair/nepean" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Nepean
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Nepean
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Nepean
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need another appliance repaired? We're here to help across Nepean.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your reliable oven repair team in Nepean.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Nepean", href: "/washer-repair/nepean" },
+          { name: "Dryer Repair Nepean", href: "/dryer-repair/nepean" },
+          { name: "Dishwasher Repair Nepean", href: "/dishwasher-repair/nepean" },
+          { name: "Fridge Repair Nepean", href: "/fridge-repair/nepean" },
+          { name: "Freezer Repair Nepean", href: "/freezer-repair/nepean" },
+          { name: "Cooktop Repair Nepean", href: "/cooktop-repair/nepean" },
+          { name: "Oven Installation Nepean", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="We handle more than ovens — here are our other services in Nepean:"
+        applianceName="Oven"
+      />
     </>
   );
 }

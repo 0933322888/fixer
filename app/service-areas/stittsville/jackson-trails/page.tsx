@@ -158,7 +158,7 @@ export default function JacksonTrailsServiceAreaPage() {
         attractions={attractions}
         heading="Explore Jackson Trails While We Fix"
         description="While your appliance is being repaired, check out Jackson Trails:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current events here: Ottawa Tourism Events"
       />
 

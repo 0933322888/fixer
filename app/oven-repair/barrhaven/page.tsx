@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Barrhaven – Fast, Reliable Electric Oven Service | Fixer",
@@ -84,7 +86,7 @@ export default function OvenRepairBarrhavenPage() {
       <ServiceHero
         title="Barrhaven Oven Repair Experts"
         description="Oven not heating properly or baking unevenly? Our Barrhaven oven repair specialists bring fast, dependable service to townhomes and family kitchens across the area. We service all major electric oven brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Oven Issues We Fix in Barrhaven" />
@@ -182,103 +184,41 @@ export default function OvenRepairBarrhavenPage() {
       <CTASection />
 
       {/* Things to Do in Barrhaven */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Enjoy Your Time in Barrhaven While We Fix the Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">Use the time to explore:</p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Walter Baker Centre</strong> – indoor activities</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Chapman Mills</strong> – trails and fresh air</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Marketplace Barrhaven</strong> – stores and cafés</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Find local happenings in Barrhaven
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Walter Baker Centre", description: "indoor activities" },
+          { name: "Chapman Mills", description: "trails and fresh air" },
+          { name: "Marketplace Barrhaven", description: "stores and cafés" },
+        ]}
+        heading="Enjoy Your Time in Barrhaven While We Fix the Oven"
+        description="Use the time to explore:"
+        linkText="Find local happenings in Barrhaven"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Oven Repair in Barrhaven</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            We're ready when you are — book your oven repair with Fixer Appliance Repair today:
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6134136969" className="text-xl font-semibold hover:underline">
-              📞 Call/Text: 613-413-6969
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Oven Repair in Barrhaven"
+        description="We're ready when you are — book your oven repair with Fixer Appliance Repair today:"
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Beyond oven repair, we also provide these services in Barrhaven:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/barrhaven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Barrhaven
-              </Link>
-              <Link href="/dryer-repair/barrhaven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Barrhaven
-              </Link>
-              <Link href="/dishwasher-repair/barrhaven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Barrhaven
-              </Link>
-              <Link href="/fridge-repair/barrhaven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Barrhaven
-              </Link>
-              <Link href="/freezer-repair/barrhaven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Barrhaven
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Barrhaven
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Barrhaven
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need quick appliance help? We're ready in Barrhaven.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your local oven repair team in Barrhaven.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Barrhaven", href: "/washer-repair/barrhaven" },
+          { name: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
+          { name: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair/barrhaven" },
+          { name: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
+          { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
+          { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
+          { name: "Oven Installation Barrhaven", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="Beyond oven repair, we also provide these services in Barrhaven:"
+        applianceName="Oven"
+      />
     </>
   );
 }

@@ -158,7 +158,7 @@ export default function FallingbrookServiceAreaPage() {
         attractions={attractions}
         heading="Explore Fallingbrook While We Fix"
         description="While we repair your appliance, explore Fallingbrook:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening this week: Ottawa Tourism Events"
       />
 

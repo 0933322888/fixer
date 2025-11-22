@@ -24,8 +24,29 @@ const maytagAppliances = [
   {
     title: "Maytag Washers",
     description:
-      "Front-load washers need regular cleaning to stay fresh and prevent odor. Maytag’s own guide shows how — and if your washer still leaks or throws error codes, Fixer is ready to repair it.",
+    "Front-load washers need regular cleaning to stay fresh and prevent odor. Maytag’s own guide shows how — and if your washer still leaks or throws error codes, Fixer is ready to repair it.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
+    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+  },
+  {
+    title: "Maytag Dryers",
+    description:
+    "When dryers stop heating or shut off mid-cycle, we replace heating elements, thermostats, and fuses quickly.",
+    link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
+    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+  },
+  {
+    title: "Maytag Refrigerators",
+    description:
+    "From cooling failures to noisy fans and ice maker issues, our Ottawa techs repair all common Maytag fridge problems.",
+    link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
+    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+  },
+  {
+    title: "Maytag Dishwashers",
+    description:
+      "If your dishwasher won’t drain or leaves dishes dirty, we clean filters, fix pumps, and restore performance.",
+    link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
     media: (
       <div className="aspect-video w-full overflow-hidden rounded-lg">
         <iframe
@@ -37,27 +58,6 @@ const maytagAppliances = [
         />
       </div>
     ),
-  },
-  {
-    title: "Maytag Dryers",
-    description:
-      "When dryers stop heating or shut off mid-cycle, we replace heating elements, thermostats, and fuses quickly.",
-    link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
-  },
-  {
-    title: "Maytag Refrigerators",
-    description:
-      "From cooling failures to noisy fans and ice maker issues, our Ottawa techs repair all common Maytag fridge problems.",
-    link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
-  },
-  {
-    title: "Maytag Dishwashers",
-    description:
-      "If your dishwasher won’t drain or leaves dishes dirty, we clean filters, fix pumps, and restore performance.",
-    link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
   },
   {
     title: "Maytag Ovens & Cooktops",

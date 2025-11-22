@@ -4,6 +4,11 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Stittsville – Fast, Local Service You Can Trust | Fixer",
@@ -134,154 +139,73 @@ export default function FridgeRepairStittsvillePage() {
       <CommonIssuesSection issues={commonIssues} />
 
       {/* Fridge Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Fridge? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new fridge? We also provide fridge installation in Stittsville with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Fridge Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Fridge"
+        description="Got a new fridge? We also provide fridge installation in Stittsville with same-day service available in most areas."
+        href="/appliance-installation"
+      />
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area: Stittsville and Nearby</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services across the entire Stittsville area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also provide fridge repair services in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Fridge Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For full coverage, visit our Fridge Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area: Stittsville and Nearby"
+        description="We provide appliance repair services across the entire Stittsville area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/fridge-repair/", "")
+        }))}
+        applianceType="fridge"
+        nearbyAreasLabel="We also provide fridge repair services in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For full coverage, visit our{" "}
+            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Fridge Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Discover Stittsville */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Relax in Stittsville While We Handle Your Fridge Repair</h2>
-          <p className="text-center text-gray-700 mb-8">Step outside and enjoy the area while we work:</p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Amberwood Village Trails</h3>
-              <p className="text-gray-600">Peaceful greenery all around</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Quitters Coffee</h3>
-              <p className="text-gray-600">Sip something warm (or cold!)</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Village Square Park</h3>
-              <p className="text-gray-600">Take a seat and unwind</p>
-            </div>
-          </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              Stay updated on local fun: Events in Stittsville
-            </a>
-          </p>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Amberwood Village Trails", description: "Peaceful greenery all around" },
+          { name: "Quitters Coffee", description: "Sip something warm (or cold!)" },
+          { name: "Village Square Park", description: "Take a seat and unwind" },
+        ]}
+        heading="Relax in Stittsville While We Handle Your Fridge Repair"
+        description="Step outside and enjoy the area while we work:"
+        linkText="Stay updated on local fun: Events in Stittsville"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQs</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Fridge Repair in Stittsville</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Fixer provides trusted fridge repair right here in Stittsville — schedule today.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call or text: (613) 555-0199</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Fridge Repair in Stittsville"
+        description="Fixer provides trusted fridge repair right here in Stittsville — schedule today."
+        
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Need more than fridge repair? Here's what else we offer in Stittsville:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Stittsville
-            </Link>
-            <Link href="/dryer-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Stittsville
-            </Link>
-            <Link href="/dishwasher-repair/stittsville" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Stittsville
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Stittsville
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Installation Stittsville
-            </Link>
-          </div>
-          <p className="text-center text-gray-700 mt-8">
-            From laundry rooms to kitchens, we've got Stittsville covered.
-          </p>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Stittsville", href: "/washer-repair/stittsville" },
+          { name: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
+          { name: "Dishwasher Repair Stittsville", href: "/dishwasher-repair/stittsville" },
+          { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
+          { name: "Fridge Installation Stittsville", href: "/fridge-installation" },
+        ]}
+        heading="Also Need Help With…"
+        description="Need more than fridge repair? Here's what else we offer in Stittsville:"
+        applianceName="Fridge"
+      />
 
     </>
   );

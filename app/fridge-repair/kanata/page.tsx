@@ -4,6 +4,10 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Kanata – Fast, Reliable Local Experts | Fixer",
@@ -167,134 +171,64 @@ export default function FridgeRepairKanataPage() {
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area: Kanata and Nearby</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services across the entire Kanata area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-12">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also handle fridge repairs in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Fridge Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For full coverage, see our Fridge Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area: Kanata and Nearby"
+        description="We provide appliance repair services across the entire Kanata area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/fridge-repair/", "")
+        }))}
+        applianceType="fridge"
+        nearbyAreasLabel="We also handle fridge repairs in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For full coverage, see our{" "}
+            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Fridge Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Things to Do */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-4">Explore Kanata While We Fix Your Fridge</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While our technician is taking care of your fridge, you don't need to waste the day — Kanata has plenty to see:
-            </p>
-            <ul className="space-y-3 text-gray-700">
-              <li>South March Highlands – scenic forest trails for walking or biking</li>
-              <li>Walter Baker Park – open green spaces for a family break</li>
-              <li>Kanata Centrum – shopping, coffee, and local dining</li>
-              <li>Canadian Tire Centre – hockey, shows, and live concerts</li>
-            </ul>
-            <p className="text-lg text-gray-700 mt-6">
-              Want to catch a live event or exhibit? Check what's happening this week:
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-accent-600 font-medium ml-2 hover:underline"
-              >
-                Ottawa Tourism Events
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          "South March Highlands – scenic forest trails for walking or biking",
+          "Walter Baker Park – open green spaces for a family break",
+          "Kanata Centrum – shopping, coffee, and local dining",
+          "Canadian Tire Centre – hockey, shows, and live concerts",
+        ]}
+        heading="Explore Kanata While We Fix Your Fridge"
+        description="While our technician is taking care of your fridge, you don't need to waste the day — Kanata has plenty to see:"
+        
+        linkText="Ottawa Tourism Events"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQs</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Fridge Repair in Kanata</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don't let spoiled food ruin your day — we offer fast fridge repair across Kanata.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call or text: (613) 555-0199</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Fridge Repair in Kanata"
+        description="Don't let spoiled food ruin your day — we offer fast fridge repair across Kanata."
+        
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            We repair more than just fridges — here are our other services in Kanata:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Kanata
-            </Link>
-            <Link href="/dryer-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Kanata
-            </Link>
-            <Link href="/dishwasher-repair/kanata" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Kanata
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Kanata
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Installation Kanata
-            </Link>
-          </div>
-          <p className="text-center text-gray-700 mt-8">
-            Need another appliance fixed? We've got you covered across Kanata.
-          </p>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Kanata", href: "/washer-repair/kanata" },
+          { name: "Dryer Repair Kanata", href: "/dryer-repair/kanata" },
+          { name: "Dishwasher Repair Kanata", href: "/dishwasher-repair/kanata" },
+          { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
+          { name: "Fridge Installation Kanata", href: "/fridge-installation" },
+        ]}
+        heading="Also Need Help With…"
+        description="We repair more than just fridges — here are our other services in Kanata:"
+        applianceName="Fridge"
+      />
 
     </>
   );

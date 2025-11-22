@@ -24,7 +24,7 @@ export default function RelatedServicesSection({
     ? `We do more than just ${applianceName.toLowerCase()} repair — check out our other Ottawa services:`
     : "We do more than just appliance repair — check out our other Ottawa services:";
 
-    const gridCols = services.length % 2 === 0 ? "md:grid-cols-4" : "md:grid-cols-3";
+  const gridCols = services.length % 2 === 0 ? "md:grid-cols-4" : "md:grid-cols-3";
 
   return (
     <section className="section-padding bg-white">
@@ -35,14 +35,14 @@ export default function RelatedServicesSection({
           <div className={`grid ${gridCols} gap-4 text-center`}>
             {services.map((service, index) => (
               service.href ? (
-              <Link
-                key={index}
-                href={service.href}
-                className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-              >
-                {service.name || service.label}
-              </Link>) : (
-                <span className="text-center p-4 bg-gray-50 rounded-lg transition-colors font-semibold">{service.name || service.label}</span>
+                <Link
+                  key={index}
+                  href={service.href}
+                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
+                >
+                  {service.name || service.label}
+                </Link>) : (
+                <span key={index} className="text-center p-4 bg-gray-50 rounded-lg transition-colors font-semibold">{service.name || service.label}</span>
               )
             ))}
           </div>

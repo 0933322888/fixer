@@ -158,7 +158,7 @@ export default function RiversideParkServiceAreaPage() {
         attractions={attractions}
         heading="Explore Riverside Park While We Fix"
         description="While we handle your repair, discover Riverside Park:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See nearby events: Ottawa Tourism Events"
       />
 

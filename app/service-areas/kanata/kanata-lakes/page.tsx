@@ -168,7 +168,7 @@ export default function KanataLakesServiceAreaPage() {
         attractions={attractions}
         heading="Explore Kanata Lakes While We Fix"
         description="While your appliance is being repaired, discover Kanata Lakes:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's happening now: Ottawa Tourism Events"
       />
 

@@ -168,7 +168,7 @@ export default function BridlewoodServiceAreaPage() {
         attractions={attractions}
         heading="Explore Bridlewood While We Fix"
         description="While we handle your repair, explore Bridlewood:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See what's on this week: Ottawa Tourism Events"
       />
 

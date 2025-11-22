@@ -3,6 +3,12 @@ import Link from "next/link";
 import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import CTASection from "@/components/CTASection";
+import FAQSection from "@/components/FAQSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Stittsville – Local, Reliable Experts | Fixer",
@@ -145,168 +151,48 @@ export default function DryerRepairStittsvillePage() {
       <CommonIssuesSection issues={commonIssues} />
 
       {/* Dryer Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Dryer? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new dryer? We also provide dryer installation in Stittsville with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation/dryer" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Dryer Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Dryer"
+        description="Got a new dryer? We also provide dryer installation in Stittsville with same-day service available in most areas."
+        href="/appliance-installation/dryer"
+      />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
 
       {/* Service Area: Stittsville and Nearby */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area: Stittsville and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Stittsville area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We also provide dryer repair services for homes in:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/dryer-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
+      <ServiceAreaSection
+        title="Service Area: Stittsville and Nearby"
+        description="We provide appliance repair services across the entire Stittsville area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="dryer"
+        nearbyAreasLabel="We also provide dryer repair services for homes in:"
+      />
 
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                👉 Need dryer help across Ottawa? Learn more about our{" "}
-                <Link href="/dryer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  Dryer Repair Ottawa
-                </Link>
-                {" "}page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enjoy Stittsville as We Service Your Dryer */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Enjoy Stittsville as We Service Your Dryer</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              No need to just wait at home — discover what's nearby:
-            </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {stittsvilleAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                👉 Find what's going on this week:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
-              >
-                Events in Stittsville
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Things To Do */}
+      <ThingsToDoSection
+        attractions={stittsvilleAttractions}
+        heading="Enjoy Stittsville as We Service Your Dryer"
+        description="No need to just wait at home — discover what's nearby:"
+        linkText="Events in Stittsville"
+      />
 
       {/* FAQs */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQs</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Dryer" faqs={faqs} />
 
       {/* Book Your Dryer Repair in Stittsville */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Book Your Dryer Repair in Stittsville</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Let's get that dryer spinning again — reach out today.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call or text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Dryer Repair in Stittsville"
+        description="Let's get that dryer spinning again — reach out today."
+      />
 
-      {/* Also Need Help With… */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              Looking for more than dryer service? Here's what else we offer in Stittsville:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              From dryers to dishwashers, we've got Stittsville covered.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your local dryer repair experts in Stittsville.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="Looking for more than dryer service? Here's what else we offer in Stittsville:"
+        applianceName="Dryer"
+      />
     </>
   );
 }

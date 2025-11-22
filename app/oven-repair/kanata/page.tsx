@@ -6,6 +6,8 @@ import BenefitsSection from "@/components/BenefitsSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Kanata – Fast Local Service for Electric Ovens | Fixer",
@@ -103,7 +105,7 @@ export default function OvenRepairKanataPage() {
       <ServiceHero
         title="Kanata's Expert Oven Repair Team"
         description="Having trouble baking dinner in Kanata? Our oven repair experts are just around the corner. Fixer Appliance Repair offers efficient, local service for all major electric ovens. We service all major electric oven brands, including LG, Samsung, Whirlpool, GE, and Maytag."
-        icon={<FaFire className="text-6xl text-white" />}
+        icon={<FaFire className="inline-block mr-2 text-[30px]" />}
       />
 
       <CommonIssuesSection issues={commonIssues} />
@@ -197,109 +199,43 @@ export default function OvenRepairKanataPage() {
       <CTASection />
 
       {/* Things to Do in Kanata */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Explore Kanata While We Fix Your Oven</h2>
-            <p className="text-lg text-gray-700 mb-6">
-              While we handle your oven repair, you can spend some time exploring Kanata's best spots:
-            </p>
-            <ul className="space-y-3 text-gray-700 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>South March Highlands</strong> – scenic forest trails for walking or mountain biking</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Walter Baker Park</strong> – picnic areas and wide open spaces</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Kanata Centrum</strong> – shopping and plenty of dining choices</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary-600 mr-3">•</span>
-                <span><strong>Canadian Tire Centre</strong> – concerts, hockey, and entertainment</span>
-              </li>
-            </ul>
-            <p className="text-gray-700">
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                See what's happening in Kanata this week
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          "South March Highlands – scenic forest trails for walking or mountain biking",
+          "Walter Baker Park – picnic areas and wide open spaces",
+          "Kanata Centrum – shopping and plenty of dining choices",
+          "Canadian Tire Centre – concerts, hockey, and entertainment",
+        ]}
+        heading="Explore Kanata While We Fix Your Oven"
+        description="While we handle your oven repair, you can spend some time exploring Kanata's best spots:"
+        
+        linkText="See what's happening in Kanata this week"
+      />
 
       <FAQSection applianceName="Oven" faqs={faqs} />
 
       {/* Booking CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Oven Repair in Kanata</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Hungry for help? We'll get your oven back to baking in no time.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="tel:6135550199" className="text-xl font-semibold hover:underline">
-              📞 Call or text: (613) 555-0199
-            </a>
-            <span className="hidden sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="text-xl font-semibold hover:underline">
-              📧 service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Oven Repair in Kanata"
+        description="Hungry for help? We'll get your oven back to baking in no time."
+        buttonText="Book Service Now"
+      />
 
-      {/* Other Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With…</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              We fix more than just ovens — here are our other services in Kanata:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Link href="/washer-repair/kanata" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Washer Repair Kanata
-              </Link>
-              <Link href="/dryer-repair/kanata" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dryer Repair Kanata
-              </Link>
-              <Link href="/dishwasher-repair/kanata" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Dishwasher Repair Kanata
-              </Link>
-              <Link href="/fridge-repair/kanata" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Fridge Repair Kanata
-              </Link>
-              <Link href="/freezer-repair/kanata" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Freezer Repair Kanata
-              </Link>
-              <Link href="/stove-repair" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Cooktop Repair Kanata
-              </Link>
-              <Link href="/appliance-installation/oven" className="p-4 bg-gray-50 rounded-lg hover:bg-primary-50 transition-colors text-center font-semibold text-primary-600">
-                Oven Installation Kanata
-              </Link>
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need another appliance fixed? We've got you covered across Kanata.
-            </p>
-            <p className="text-center text-gray-800 font-semibold mt-4">
-              Fixer Appliance Repair — your friendly oven repair team in Kanata.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Kanata", href: "/washer-repair/kanata" },
+          { name: "Dryer Repair Kanata", href: "/dryer-repair/kanata" },
+          { name: "Dishwasher Repair Kanata", href: "/dishwasher-repair/kanata" },
+          { name: "Fridge Repair Kanata", href: "/fridge-repair/kanata" },
+          { name: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
+          { name: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
+          { name: "Oven Installation Kanata", href: "/appliance-installation/oven" },
+        ]}
+        heading="Also Need Help With…"
+        description="We fix more than just ovens — here are our other services in Kanata:"
+        applianceName="Oven"
+      />
     </>
   );
 }

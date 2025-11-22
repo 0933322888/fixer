@@ -168,7 +168,7 @@ export default function GlenCairnServiceAreaPage() {
         attractions={attractions}
         heading="Explore Glen Cairn While We Fix"
         description="While we repair your appliance, take time to enjoy Glen Cairn:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See nearby events: Ottawa Tourism Events"
       />
 

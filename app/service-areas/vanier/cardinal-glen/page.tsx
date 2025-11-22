@@ -157,7 +157,7 @@ export default function CardinalGlenServiceAreaPage() {
         attractions={attractions}
         heading="Explore Cardinal Glen While We Fix"
         description="While your appliance is being repaired, enjoy Cardinal Glen:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current events: Ottawa Tourism Events"
       />
 

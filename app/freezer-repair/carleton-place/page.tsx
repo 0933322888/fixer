@@ -4,6 +4,10 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Carleton Place – Upright & Chest Freezer Service | Fixer",
@@ -156,130 +160,56 @@ export default function FreezerRepairCarletonPlacePage() {
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services across the entire Carleton Place area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also provide freezer repair services in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Freezer Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/freezer-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For full coverage, see our Freezer Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Carleton Place area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/freezer-repair/", "")
+        }))}
+        applianceType="freezer"
+        nearbyAreasLabel="We also provide freezer repair services in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For full coverage, see our{" "}
+            <Link href="/freezer-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Freezer Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Discover Carleton Place */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Explore the Town While We Repair Your Freezer</h2>
-          <p className="text-center text-gray-700 mb-8">Turn repair time into an outing:</p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Riverside Park</h3>
-              <p className="text-gray-600">Stroll along the Mississippi River.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Downtown Carleton Place</h3>
-              <p className="text-gray-600">Shops and dining in the heart of town.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Heritage Museum</h3>
-              <p className="text-gray-600">Local heritage on display.</p>
-            </div>
-          </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              See what's going on in Carleton Place
-            </a>
-          </p>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Riverside Park", description: "Stroll along the Mississippi River" },
+          { name: "Downtown Carleton Place", description: "Shops and dining in the heart of town" },
+          { name: "Heritage Museum", description: "Local heritage on display" },
+        ]}
+        heading="Explore the Town While We Repair Your Freezer"
+        description="Turn repair time into an outing:"
+        
+        linkText="See what's going on in Carleton Place"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQ – Freezer Repair in Carleton Place</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Freezer" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Freezer Repair in Carleton Place</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don't let your food thaw — text or call Fixer Appliance Repair to arrange service:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call/Text: 613-413-6969</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Freezer Repair in Carleton Place"
+        description="Don't let your food thaw — text or call Fixer Appliance Repair to arrange service:"
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With...</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We do more than just freezer repair — check out our other Ottawa services:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With..."
+        description="We do more than just freezer repair — check out our other Ottawa services:"
+        applianceName="Freezer"
+      />
     </>
   );
 }

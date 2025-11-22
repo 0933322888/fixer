@@ -134,7 +134,7 @@ export default function DryerInstallationOttawaPage() {
         attractions={exploreItems}
         heading="Explore Ottawa While We Work"
         description="While we handle the installation, why not enjoy some of Ottawa's highlights?"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="Ottawa events calendar"
       />
 

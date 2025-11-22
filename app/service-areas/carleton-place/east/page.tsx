@@ -158,7 +158,7 @@ export default function CarletonPlaceEastServiceAreaPage() {
         attractions={attractions}
         heading="Explore Carleton Place East While We Fix"
         description="While your appliance is being fixed, enjoy Carleton Place East:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current activities: Ottawa Tourism Events"
       />
 

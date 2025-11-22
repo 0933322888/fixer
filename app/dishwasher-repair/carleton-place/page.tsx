@@ -3,6 +3,10 @@ import Link from "next/link";
 import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Carleton Place – Fast, Local Service | Fixer",
@@ -176,138 +180,48 @@ export default function DishwasherRepairCarletonPlacePage() {
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Carleton Place area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We also service:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/dishwasher-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                For Ottawa-wide coverage, visit our{" "}
-                <Link href="/dishwasher-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  Dishwasher Repair Ottawa
-                </Link>
-                {" "}page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Carleton Place area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="dishwasher"
+        nearbyAreasLabel="We also service:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For Ottawa-wide coverage, visit our{" "}
+            <Link href="/dishwasher-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Dishwasher Repair Ottawa
+            </Link>
+            {" "}page.
+          </p>
+        }
+      />
 
       {/* Things to Do in Carleton Place */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Things to Do in Carleton Place While We Repair Your Dishwasher</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Spend the time exploring the area:
-            </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {carletonPlaceAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                🔍 Discover what's happening in Carleton Place:
-              </p>
-              <a 
-                href="https://www.carletonplace.ca/en/discover-carleton-place/events.aspx" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
-              >
-                Carleton Place Events
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={carletonPlaceAttractions}
+        heading="Things to Do in Carleton Place While We Repair Your Dishwasher"
+        description="Spend the time exploring the area:"
+        link="https://www.carletonplace.ca/en/discover-carleton-place/events.aspx"
+        linkText="Carleton Place Events"
+      />
 
       <FAQSection applianceName="Dishwasher" faqs={faqs} />
 
       {/* Contact CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Schedule Your Dishwasher Repair in Carleton Place</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Don't wait until dishes pile up — schedule your dishwasher service now:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Dishwasher Repair in Carleton Place"
+        description="Don't wait until dishes pile up — schedule your dishwasher service now:"
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              Dishwasher issues aren't all we handle — here are more services in Carleton Place:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Looking for another service? We've got Carleton Place covered.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your dishwasher repair pros in Carleton Place.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="Dishwasher issues aren't all we handle — here are more services in Carleton Place:"
+        applianceName="Dishwasher"
+      />
     </>
   );
 }

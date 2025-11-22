@@ -2,6 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 export const metadata: Metadata = {
   title: "Cooktop Repair Stittsville - Fast, Reliable Cooktop Service | Fixer",
   description:
@@ -197,142 +202,50 @@ export default function CooktopRepairStittsvillePage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Service Area: Stittsville and Nearby</h2>
-            <p className="text-lg text-gray-700">
-              We provide appliance repair services across the entire Stittsville area, including:
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {serviceAreas.map((area) => (
-                <div
-                  key={area}
-                  className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm"
-                >
-                  {area}
-                </div>
-              ))}
-              <div className="rounded-full bg-white px-6 py-2 text-sm font-semibold text-gray-800 shadow-sm">
-                and surrounding neighbourhoods
-              </div>
-            </div>
-            <p className="mt-8 text-lg text-gray-700">
-              👉 For full coverage of the Ottawa region, visit our{" "}
-              <Link href="/cooktop-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Cooktop Repair Ottawa
-              </Link>{" "}
-              page. We also help nearby residents in{" "}
-              {nearbyAreas.map((area, index) => (
-                <span key={area.name}>
-                  <Link href={area.href} className="text-primary-600 hover:text-primary-700 underline">
-                    {area.name}
-                  </Link>
-                  {index < nearbyAreas.length - 1 ? ", " : ". "}
-                </span>
-              ))}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">
-              Explore the Community While We Fix Your Cooktop
-            </h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Step away for a bit and enjoy Stittsville's charm:
-            </p>
-            <ul className="space-y-4 text-gray-700">
-              {highlights.map((item) => (
-                <li key={item.title} className="flex items-start">
-                  <span className="mr-3 text-primary-600">•</span>
-                  <span>
-                    <strong>{item.title}</strong> - {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-gray-700">
-              <a
-                href="https://ottawatourism.ca/en/see-and-do/events"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 underline"
-              >
-                Events in Stittsville
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">FAQs</h2>
-            <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.question} className="rounded-lg bg-white p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-primary-700">{faq.question}</h3>
-                  <p className="mt-2 text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Cooktop Repair in Stittsville</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-100">
-            Let's get your cooktop working again — book now:
+      <ServiceAreaSection
+        title="Service Area: Stittsville and Nearby"
+        description="We provide appliance repair services across the entire Stittsville area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name.replace("Cooktop Repair ", ""),
+          slug: area.href.replace("/cooktop-repair/", "")
+        }))}
+        applianceType="cooktop"
+        nearbyAreasLabel="We also help nearby residents in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            👉 For full coverage of the Ottawa region, visit our{" "}
+            <Link href="/cooktop-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Cooktop Repair Ottawa
+            </Link>
+            {" "}page.
           </p>
-          <div className="mb-8 flex flex-col items-center justify-center gap-4 text-xl sm:flex-row">
-            <a href="tel:6135550199" className="font-semibold text-white hover:underline">
-              (613) 555-0199
-            </a>
-            <span className="hidden text-white sm:inline">|</span>
-            <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold text-white hover:underline">
-              service@fixerappliancerepair.ca
-            </a>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Also Need Help With...</h2>
-            <p className="text-center text-lg text-gray-700">
-              Need more than cooktop repair? Here's what else we service in Stittsville:
-            </p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {otherServices.map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.href}
-                  className="rounded-lg bg-gray-50 p-4 text-center font-semibold text-primary-600 transition-colors hover:bg-primary-50"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="mt-8 text-center text-gray-700">
-              From laundry rooms to kitchens, we've got Stittsville covered.
-            </p>
-            <p className="mt-4 text-center text-gray-800 font-semibold">
-              Fixer Appliance Repair — your local cooktop repair experts in Stittsville.
-            </p>
-          </div>
-        </div>
-      </section>
+
+      {/* Things To Do */}
+      <ThingsToDoSection
+        attractions={highlights}
+        heading="Explore the Community While We Fix Your Cooktop"
+        description="Step away for a bit and enjoy Stittsville's charm:"
+        linkText="Events in Stittsville"
+      />
+
+      <FAQSection applianceName="Cooktop" faqs={faqs} />
+
+      <CTASection 
+        heading="Book Your Cooktop Repair in Stittsville"
+        description="Let's get your cooktop working again — book now:"
+        />
+
+      {/* Related Services */}
+      <RelatedServicesSection
+        services={otherServices}
+        heading="Also Need Help With..."
+        description="Need more than cooktop repair? Here's what else we service in Stittsville:"
+        applianceName="Cooktop"
+      />
     </>
   );
 }

@@ -158,7 +158,7 @@ export default function BraesideServiceAreaPage() {
         attractions={attractions}
         heading="Explore Braeside While We Fix"
         description="While your appliance is being repaired, discover Braeside:"
-        link="https://ottawatourism.ca/en/see-and-do/events"
+        
         linkText="See current events: Ottawa Tourism Events"
       />
 

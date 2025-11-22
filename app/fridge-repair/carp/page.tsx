@@ -4,6 +4,11 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Carp – Reliable Service for Homes & Cottages | Fixer",
@@ -133,160 +138,75 @@ export default function FridgeRepairCarpPage() {
       <CommonIssuesSection issues={commonIssues} />
 
       {/* Fridge Installation CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">New Fridge? We Can Install It</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Got a new fridge? We also provide fridge installation in Carp with same-day service available in most areas.
-          </p>
-          <Link href="/appliance-installation" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Learn About Fridge Installation
-          </Link>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Fridge"
+        description="Got a new fridge? We also provide fridge installation in Carp with same-day service available in most areas."
+        href="/appliance-installation"
+      />
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area: Carp and Nearby</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services across the entire Carp area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also provide fridge repair services in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Fridge Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For complete coverage, see our Fridge Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area: Carp and Nearby"
+        description="We provide appliance repair services across the entire Carp area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/fridge-repair/", "")
+        }))}
+        applianceType="fridge"
+        nearbyAreasLabel="We also provide fridge repair services in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For complete coverage, see our{" "}
+            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Fridge Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Discover Carp */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Explore Carp While We Fix...</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Carp has a warm small-town charm perfect for a quiet outing. While we fix your fridge, check out:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Carp Farmers' Market</h3>
-              <p className="text-gray-600">One of the best in Ontario</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Diefenbunker Museum</h3>
-              <p className="text-gray-600">Unique and fascinating</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Rural Art Studios</h3>
-              <p className="text-gray-600">Seasonal markets</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Carp Ridge Centre</h3>
-              <p className="text-gray-600">Nature walks and spa</p>
-            </div>
-          </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              Check out what's happening now: Events in Carp
-            </a>
-          </p>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Carp Farmers' Market", description: "One of the best in Ontario" },
+          { name: "Diefenbunker Museum", description: "Unique and fascinating" },
+          { name: "Rural Art Studios", description: "Seasonal markets" },
+          { name: "Carp Ridge Centre", description: "Nature walks and spa" },
+        ]}
+        heading="Explore Carp While We Fix Your Fridge"
+        description="Carp has a warm small-town charm perfect for a quiet outing. While we fix your fridge, check out:"
+        
+        linkText="Check out what's happening now: Events in Carp"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQs</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Book Your Fridge Repair in Carp</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            We service all of Carp and surrounding farms — book now and keep your fridge cool.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call or text: (613) 555-0199</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Fridge Repair in Carp"
+        description="We service all of Carp and surrounding farms — book now and keep your fridge cool."
+        
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Fridge repair is only part of what we do — here are our other services in Carp:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/carp" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Carp
-            </Link>
-            <Link href="/dryer-repair/carp" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Carp
-            </Link>
-            <Link href="/dishwasher-repair/carp" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Carp
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Carp
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Installation Carp
-            </Link>
-          </div>
-          <p className="text-center text-gray-700 mt-8">
-            Looking for help beyond fridges? We're here for you in Carp.
-          </p>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Carp", href: "/washer-repair/carp" },
+          { name: "Dryer Repair Carp", href: "/dryer-repair/carp" },
+          { name: "Dishwasher Repair Carp", href: "/dishwasher-repair/carp" },
+          { name: "Oven Repair Carp", href: "/oven-repair/carp" },
+          { name: "Fridge Installation Carp", href: "/fridge-installation" },
+        ]}
+        heading="Also Need Help With…"
+        description="Fridge repair is only part of what we do — here are our other services in Carp:"
+        applianceName="Fridge"
+      />
 
     </>
   );

@@ -4,6 +4,10 @@ import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Vanier – Local, Reliable Refrigerator Service | Fixer",
@@ -143,137 +147,62 @@ export default function FridgeRepairVanierPage() {
       <CTASection />
 
       {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Service Area</h2>
-          <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto">
-            We provide appliance repair services across the entire Vanier area, including:
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                <span className="text-gray-800">{area}</span>
-              </div>
-            ))}
-          </div>
-          
-          <p className="text-center text-gray-700 mb-6">
-            We also provide fridge repair services in:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            {nearbyAreas.map((area, index) => (
-              <Link
-                key={index}
-                href={area.slug}
-                className="flex items-center justify-center space-x-2 p-3 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm"
-              >
-                <FaMapMarkerAlt className="text-primary-600 flex-shrink-0" />
-                <span>Fridge Repair {area.name}</span>
-              </Link>
-            ))}
-          </div>
-          
-          <p className="text-center">
-            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 underline">
-              For complete coverage, see our Fridge Repair Ottawa page
+      <ServiceAreaSection
+        title="Service Area"
+        description="We provide appliance repair services across the entire Vanier area, including:"
+        neighborhoods={serviceAreas}
+        nearbyAreas={nearbyAreas.map(area => ({
+          name: area.name,
+          slug: area.slug.replace("/fridge-repair/", "")
+        }))}
+        applianceType="fridge"
+        nearbyAreasLabel="We also provide fridge repair services in:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For complete coverage, see our{" "}
+            <Link href="/fridge-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Fridge Repair Ottawa
             </Link>
+            {" "}page.
           </p>
-        </div>
-      </section>
+        }
+      />
 
       {/* Discover Vanier */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Discover Vanier While We Repair Your Fridge</h2>
-          <p className="text-center text-gray-700 mb-8">Instead of waiting, enjoy:</p>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Richelieu Park</h3>
-              <p className="text-gray-600">Peaceful city escape.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Museopark</h3>
-              <p className="text-gray-600">Local francophone history.</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="font-bold text-gray-900 mb-2">Beechwood Avenue</h3>
-              <p className="text-gray-600">Cafés and restaurants.</p>
-            </div>
-          </div>
-          <p className="text-center mt-8">
-            <a 
-              href="https://ottawatourism.ca/en/see-and-do/events" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:text-primary-700 underline"
-            >
-              See what's happening in Vanier
-            </a>
-          </p>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={[
+          { name: "Richelieu Park", description: "Peaceful city escape" },
+          { name: "Museopark", description: "Local francophone history" },
+          { name: "Beechwood Avenue", description: "Cafés and restaurants" },
+        ]}
+        heading="Discover Vanier While We Repair Your Fridge"
+        description="Instead of waiting, enjoy:"
+        
+        linkText="See what's happening in Vanier"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-12">FAQ – Fridge Repair in Vanier</h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Fridge" faqs={faqs} />
 
       {/* Schedule Service */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-4 text-white">Schedule Your Fridge Repair in Vanier</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Don't let food spoil — reach out now and get your fridge repair scheduled:
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-xl font-semibold">Call/Text: 613-413-6969</p>
-            <p className="text-xl">Email: service@fixerappliancerepair.ca</p>
-          </div>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Online
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        heading="Schedule Your Fridge Repair in Vanier"
+        description="Don't let food spoil — reach out now and get your fridge repair scheduled:"
+        />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-          <p className="text-center text-gray-700 mb-8">
-            Fridges aren't all we repair — here are our other services in Vanier:
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            <Link href="/washer-repair/vanier" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Washer Repair Vanier
-            </Link>
-            <Link href="/dryer-repair/vanier" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dryer Repair Vanier
-            </Link>
-            <Link href="/dishwasher-repair/vanier" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Dishwasher Repair Vanier
-            </Link>
-            <Link href="/oven-repair" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Oven Repair Vanier
-            </Link>
-            <Link href="/fridge-installation" className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors">
-              Fridge Installation Vanier
-            </Link>
-          </div>
-          <p className="text-center text-gray-700 mt-8">
-            From kitchens to laundry rooms, we've got Vanier covered.
-          </p>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={[
+          { name: "Washer Repair Vanier", href: "/washer-repair/vanier" },
+          { name: "Dryer Repair Vanier", href: "/dryer-repair/vanier" },
+          { name: "Dishwasher Repair Vanier", href: "/dishwasher-repair/vanier" },
+          { name: "Oven Repair Vanier", href: "/oven-repair/vanier" },
+          { name: "Fridge Installation Vanier", href: "/fridge-installation" },
+        ]}
+        heading="Also Need Help With…"
+        description="Fridges aren't all we repair — here are our other services in Vanier:"
+        applianceName="Fridge"
+      />
 
     </>
   );

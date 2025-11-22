@@ -3,6 +3,11 @@ import Link from "next/link";
 import { FaUtensils, FaMapMarkerAlt } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
+import CTASection from "@/components/CTASection";
+import ThingsToDoSection from "@/components/ThingsToDoSection";
+import FAQSection from "@/components/FAQSection";
+import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Nepean – Fast, Reliable Local Service | Fixer",
@@ -180,153 +185,49 @@ export default function DishwasherRepairNepeanPage() {
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
 
       {/* Service Area */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Service Area: Nepean and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Nepean area, including:
-            </p>
-            <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                {neighborhoods.map((neighborhood, index) => (
-                  <span key={index} className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                    {neighborhood}
-                  </span>
-                ))}
-                <span className="px-4 py-2 bg-primary-50 text-gray-900 rounded-lg">
-                  and surrounding neighbourhoods
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              Our reach extends to:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {nearbyAreas.map((area, index) => (
-                <Link 
-                  key={index} 
-                  href={`/dishwasher-repair/${area.slug}`}
-                  className="flex items-center gap-3 p-4 bg-white rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
-                >
-                  <FaMapMarkerAlt className="text-primary-600 text-lg flex-shrink-0" />
-                  <p className="text-gray-700 hover:text-primary-700 font-medium">{area.name}</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center bg-white p-6 rounded-lg shadow-sm">
-              <p className="text-lg text-gray-700">
-                For Ottawa-wide service, check our{" "}
-                <Link href="/dishwasher-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  Dishwasher Repair Ottawa
-                </Link>
-                {" "}page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaSection
+        title="Service Area: Nepean and Nearby"
+        description="We provide appliance repair services across the entire Nepean area, including:"
+        neighborhoods={neighborhoods}
+        nearbyAreas={nearbyAreas}
+        applianceType="dishwasher"
+        nearbyAreasLabel="Our reach extends to:"
+        footerText={
+          <p className="text-lg text-gray-700">
+            For Ottawa-wide service, check our{" "}
+            <Link href="/dishwasher-repair" className="text-primary-600 hover:text-primary-700 font-semibold">
+              Dishwasher Repair Ottawa
+            </Link>
+            {" "}page.
+          </p>
+        }
+      />
 
       {/* Things to Do in Nepean */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Take a Break in Nepean While We Service Your Dishwasher</h2>
-            <p className="text-lg text-gray-700 mb-8 text-center">
-              Use the repair time to enjoy the neighborhood:
-            </p>
-            <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-6">
-              <ul className="space-y-4">
-                {nepeanAttractions.map((attraction, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary-600 text-xl">•</span>
-                    <p className="text-gray-700 text-lg">{attraction}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="text-center bg-primary-50 p-6 rounded-lg">
-              <p className="text-gray-700 mb-2">
-                🔍 Want to check out a local festival? Browse events here:
-              </p>
-              <a 
-                href="https://ottawatourism.ca/en/see-and-do/events" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary-600 hover:text-primary-700 font-semibold"
-              >
-                Events in Nepean
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ThingsToDoSection
+        attractions={nepeanAttractions}
+        heading="Take a Break in Nepean While We Service Your Dishwasher"
+        description="Use the repair time to enjoy the neighborhood:"
+        
+        linkText="Events in Nepean"
+      />
 
       {/* FAQ */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-12">FAQs</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                  <p className="text-gray-700">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection applianceName="Dishwasher" faqs={faqs} />
 
       {/* Contact CTA */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Book Your Dishwasher Repair in Nepean</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Live in Nepean? We've got you covered. Reach out now to schedule fast dishwasher repair with a local pro.
-          </p>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call/Text: <a href="tel:613-413-6969" className="font-semibold hover:underline">613-413-6969</a>
-            </p>
-            <p className="text-xl">
-              📧 Email: <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">service@fixerappliancerepair.ca</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        heading="Book Your Dishwasher Repair in Nepean"
+        description="Live in Nepean? We've got you covered. Reach out now to schedule fast dishwasher repair with a local pro."
+      />
 
       {/* Related Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Also Need Help With…</h2>
-            <p className="text-center text-gray-700 mb-8">
-              We handle more than dishwashers — here are our other services in Nepean:
-            </p>
-            <div className="grid md:grid-cols-4 gap-4">
-              {relatedServices.map((service, index) => (
-                <Link 
-                  key={index}
-                  href={service.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors font-semibold"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-            <p className="text-center text-gray-700 mt-8">
-              Need help with another appliance? We're ready to assist in Nepean.
-            </p>
-            <p className="text-center text-gray-900 font-semibold mt-4">
-              Fixer Appliance Repair — your reliable dishwasher repair team in Nepean.
-            </p>
-          </div>
-        </div>
-      </section>
+      <RelatedServicesSection
+        services={relatedServices}
+        heading="Also Need Help With…"
+        description="We handle more than dishwashers — here are our other services in Nepean:"
+        applianceName="Dishwasher"
+      />
     </>
   );
 }

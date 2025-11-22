@@ -150,21 +150,6 @@ export default function VanierServiceAreaPage() {
         description="Take a break while we handle your appliance repair:"
       />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <p className="text-center text-gray-700">
-            We also serve neighbouring communities like{" "}
-            <Link
-              href="/service-areas/overbrook"
-              className="font-semibold text-accent-600 underline decoration-2 underline-offset-4 hover:text-accent-700"
-            >
-              Overbrook appliance repair
-            </Link>{" "}
-            and New Edinburgh.
-          </p>
-        </div>
-      </section>
-
 
       {/* Neighbourhoods Section */}
       <section className="section-padding bg-gray-50">
