@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Appliance Repair in Arnprior – Reliable, Local Help | Fixer",
@@ -119,34 +120,32 @@ const additionalAreas = [
 export default function ArnpriorServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Arnprior</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Need appliance repair in Arnprior you can rely on? From{" "}
-              <Link
-                href="/washer-repair/arnprior"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                washer repair in Arnprior
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/fridge-repair/arnprior"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                fridge repair in Arnprior
-              </Link>
-              , Fixer Appliance Repair has been helping households across the Ottawa
-              Valley keep their kitchens and laundry rooms running smoothly. We fix it
-              fast — and back every job with a 90-day workmanship warranty. Local,
-              friendly, and ready to help the same day in many neighbourhoods.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Service in Arnprior"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Need appliance repair in Arnprior you can rely on? From{" "}
+            <Link
+              href="/washer-repair/arnprior"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              washer repair in Arnprior
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/fridge-repair/arnprior"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              fridge repair in Arnprior
+            </Link>
+            , Fixer Appliance Repair has been helping households across the Ottawa
+            Valley keep their kitchens and laundry rooms running smoothly. We fix it
+            fast — and back every job with a 90-day workmanship warranty. Local,
+            friendly, and ready to help the same day in many neighbourhoods.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

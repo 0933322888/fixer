@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -12,8 +13,9 @@ import {
   FaWaveSquare,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import FAQSection from "@/components/FAQSection";
-import ServiceAreaSection from "@/components/ServiceAreaSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
@@ -137,28 +139,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Carp", href: "/washer-repair/carp" },
   { label: "Dryer Repair Carp", href: "/dryer-repair/carp" },
-  { label: "Dishwasher Repair Carp", href: "/dishwasher-repair/carp" },
   { label: "Fridge Repair Carp", href: "/fridge-repair/carp" },
   { label: "Freezer Repair Carp", href: "/freezer-repair/carp" },
   { label: "Oven Repair Carp", href: "/oven-repair/carp" },
   { label: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
-  { label: "Microwave Installation Carp", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Carp", href: "/microwave-repair/carp" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairCarpPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaBolt className="text-5xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Microwave on the Fritz? Carp Repair Pros Are Here</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Living in Carp and stuck with a broken microwave? We’ll get it back in action quickly. Fixer Appliance Repair is known for dependable service in rural areas — no job is too far!
-            </p>
+      <ServiceHero
+        title="Microwave on the Fritz? Carp Repair Pros Are Here"
+        description="Living in Carp and stuck with a broken microwave? We'll get it back in action quickly. Fixer Appliance Repair is known for dependable service in rural areas — no job is too far!"
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               Brands we service include LG, Samsung, Whirlpool, GE, and Maytag.
             </p>
@@ -169,20 +167,12 @@ export default function MicrowaveRepairCarpPage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16135550199"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 555-0199
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -204,7 +194,7 @@ export default function MicrowaveRepairCarpPage() {
             <p className="text-gray-700 mb-6">
               👉 We don’t add new wiring or structural changes.
             </p>
-            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microwave" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>

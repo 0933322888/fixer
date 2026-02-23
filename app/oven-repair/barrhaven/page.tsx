@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Barrhaven – Fast, Reliable Electric Oven Service | Fixer",
@@ -93,93 +96,18 @@ export default function OvenRepairBarrhavenPage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Oven Installation in Barrhaven</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Replacing your oven in Barrhaven? Before you decide, review our repair vs. replace guide 
-                — it outlines costs, repair frequency, and replacement timing.
-              </p>
-              <p className="text-center">
-                For new purchases, we provide oven installation in Barrhaven. Our team installs and tests 
-                the unit using existing power hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't add new wiring or gas lines.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Barrhaven area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              For full coverage, see our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page. We also service customers in{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/stittsville" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Stittsville
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/vanier" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Vanier
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/mississippi-mills" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Mississippi Mills
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/arnprior" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Arnprior
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/carleton-place" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Carleton Place
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Barrhaven — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Barrhaven"
+      />
 
       <CTASection />
 
@@ -209,11 +137,12 @@ export default function OvenRepairBarrhavenPage() {
         services={[
           { name: "Washer Repair Barrhaven", href: "/washer-repair/barrhaven" },
           { name: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
-          { name: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair/barrhaven" },
           { name: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
           { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
+          { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
           { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
-          { name: "Oven Installation Barrhaven", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="Beyond oven repair, we also provide these services in Barrhaven:"

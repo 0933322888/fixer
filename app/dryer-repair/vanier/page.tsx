@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Vanier Dryer Repair – Expert Local Service | Fixer",
@@ -114,24 +116,21 @@ const relatedServices = [
 export default function DryerRepairVanierPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Local Dryer Repair Experts in Vanier</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              When your Vanier dryer takes forever to finish or produces unusual smells, it's time to call Fixer Appliance Repair. With 15+ years of experience in Ottawa East, we provide trusted dryer repairs for apartments and houses alike — always with honest pricing and a 90-day guarantee. Brands we service include Whirlpool, Maytag, Samsung, LG, and GE.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your community, see our{" "}
-              <Link href="/vanier" className="font-semibold hover:underline">
-                Vanier appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Local Dryer Repair Experts in Vanier"
+        description="When your Vanier dryer takes forever to finish or produces unusual smells, it's time to call Fixer Appliance Repair. With 15+ years of experience in Ottawa East, we provide trusted dryer repairs for apartments and houses alike — always with honest pricing and a 90-day guarantee. Brands we service include Whirlpool, Maytag, Samsung, LG, and GE."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your community, see our{" "}
+            <Link href="/vanier" className="font-semibold hover:underline">
+              Vanier appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dryer Problems */}
       <section className="section-padding bg-white">
@@ -158,6 +157,8 @@ export default function DryerRepairVanierPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area */}
       <ServiceAreaSection

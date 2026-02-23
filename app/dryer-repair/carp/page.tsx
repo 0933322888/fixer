@@ -8,7 +8,9 @@ import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Carp – Fast, Reliable Service for Homes & Farms | Fixer",
@@ -129,24 +131,21 @@ const relatedServices = [
 export default function DryerRepairCarpPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Fast & Friendly Dryer Repair in Carp</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Dryer overheating, shutting off early, or making a grinding noise? In Carp, Fixer Appliance Repair delivers tailored service for rural homes and farmhouses. No fuss, just reliable local repairs. We work with leading brands such as GE, Whirlpool, Samsung, Maytag, and LG.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/carp" className="font-semibold hover:underline">
-                Carp appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Fast & Friendly Dryer Repair in Carp"
+        description="Dryer overheating, shutting off early, or making a grinding noise? In Carp, Fixer Appliance Repair delivers tailored service for rural homes and farmhouses. No fuss, just reliable local repairs. We work with leading brands such as GE, Whirlpool, Samsung, Maytag, and LG."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/carp" className="font-semibold hover:underline">
+              Carp appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -158,6 +157,8 @@ export default function DryerRepairCarpPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area: Carp and Nearby */}
       <ServiceAreaSection

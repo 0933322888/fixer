@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Crossing Bridge Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function CrossingBridgeServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Crossing Bridge Appliance Repair You Can Count On
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Trusted appliance repair in Crossing Bridge. We provide quick, insured
-              service for all major appliances with a 90-day warranty. Learn more via our{" "}
-              <Link
-                href="/service-areas/stittsville"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Stittsville appliance repair
-              </Link>{" "}
-              page, covering Jackson Trails and Bryanston Gate.
-            </p>
-            <p className="text-lg text-gray-100">
-              90-day warranty on every appliance fix. Insured, friendly technicians you can count on. Local techs serving Stittsville daily. Same-day bookings available in many cases.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Crossing Bridge Appliance Repair You Can Count On"
+        description={
+          <>
+            Trusted appliance repair in Crossing Bridge. We provide quick, insured
+            service for all major appliances with a 90-day warranty. Learn more via our{" "}
+            <Link
+              href="/service-areas/stittsville"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Stittsville appliance repair
+            </Link>{" "}
+            page, covering Jackson Trails and Bryanston Gate.
+          </>
+        }
+        additionalContent={
+          <p>
+            90-day warranty on every appliance fix. Insured, friendly technicians you can count on. Local techs serving Stittsville daily. Same-day bookings available in many cases.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

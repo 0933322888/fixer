@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Oven Installation Ottawa – Safe, Expert Hookups | Fixer",
@@ -81,24 +82,25 @@ const exploreItems = [
 export default function OvenInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaFire className="text-[30px] mb-2 inline-block" /> Built-in Oven Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Built-in ovens require precise fitting and safe electrical connections. Our technicians specialize in{" "}
-              <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">
-                appliance installation in Ottawa
-              </Link>
-              , making sure your oven is set securely into place. If your oven isn’t heating properly, see our{" "}
-              <Link href="/oven-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Oven Repair Ottawa page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Built-in Oven Installation Ottawa"
+        description={
+          <>
+            Built-in ovens require precise fitting and safe electrical connections. Our technicians specialize in{" "}
+            <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">
+              appliance installation in Ottawa
+            </Link>
+            , making sure your oven is set securely into place. If your oven isn't heating properly, see our{" "}
+            <Link href="/oven-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Oven Repair Ottawa page
+            </Link>
+            .
+          </>
+        }
+        icon={<FaFire className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

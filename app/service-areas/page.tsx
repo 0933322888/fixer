@@ -4,6 +4,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Appliance Repair Service Areas in Ottawa | Fixer Appliance Repair",
@@ -90,25 +91,25 @@ const faqs = [
 export default function ServiceAreasPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair Service Areas in Ottawa</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              At Fixer Appliance Repair, we're proud to provide friendly, professional, and
-              reliable service across Ottawa and the surrounding towns. Whether you're
-              in the heart of the city or in a nearby community, we have local technicians
-              ready to help with your washer, dryer, dishwasher, fridge, freezer, oven,
-              cooktop, and microwave repairs.
-            </p>
-            <p className="text-lg text-gray-100">
-              We back all our work with a 90-day labour warranty and bring the tools and
-              common parts needed for most repairs on the first visit.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Repair Service Areas in Ottawa"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            At Fixer Appliance Repair, we're proud to provide friendly, professional, and
+            reliable service across Ottawa and the surrounding towns. Whether you're
+            in the heart of the city or in a nearby community, we have local technicians
+            ready to help with your washer, dryer, dishwasher, fridge, freezer, oven,
+            cooktop, and microwave repairs.
+          </>
+        }
+        additionalContent={
+          <p>
+            We back all our work with a 90-day labour warranty and bring the tools and
+            common parts needed for most repairs on the first visit.
+          </p>
+        }
+      />
 
       {/* Service Areas Section */}
       <section className="section-padding bg-white">

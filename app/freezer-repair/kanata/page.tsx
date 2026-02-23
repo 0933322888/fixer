@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Kanata – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -121,61 +124,30 @@ const relatedServices = [
 export default function FreezerRepairKanataPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Frozen Goods in Danger? Kanata Freezer Repair</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Freezer frosting up or not keeping food cold enough? Fixer Appliance Repair offers same-day freezer repairs in Kanata, tackling everything from thermostat issues to compressor failures.
+      <ServiceHero
+        title="Frozen Goods in Danger? Kanata Freezer Repair"
+        description="Freezer frosting up or not keeping food cold enough? Fixer Appliance Repair offers same-day freezer repairs in Kanata, tackling everything from thermostat issues to compressor failures."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We repair Whirlpool, Samsung, LG, GE, and Maytag.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We repair Whirlpool, Samsung, LG, GE, and Maytag.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Thinking about replacing your freezer in Kanata?
-              </p>
-              <p className="text-center">
-                Before you decide, read our repair vs. replace guide — it explains lifespan, repair costs, and when it makes sense to upgrade.
-              </p>
-              <p className="text-center">
-                Already bought a new unit? We provide freezer installation in Kanata. We'll connect and level it using your existing electrical hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ Note: we don't add new wiring or plumbing lines.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/appliance-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
+
+      <InstallationCTASection
+        applianceName="Freezer"
+        description="Upgrading to a new unit? We also offer freezer installation in Kanata — fast, safe, and fully insured."
+        href="/appliance-installation/locations/ottawa"
+      />
 
       <CTASection />
 

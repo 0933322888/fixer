@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Kanata Appliance Repair – Expert Technicians You Can Trust",
@@ -121,24 +122,24 @@ const neighbourhoods = [
 export default function KanataServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair Services in Kanata</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Need appliance repair in Kanata that's fast, friendly, and reliable?
-              With over 15 years of appliance repair experience, our skilled Fixer
-              technicians provide trusted service to Kanata households. From washer
-              repair in Kanata to fridge repair in Kanata, we handle it all — often
-              with same-day availability.
-            </p>
-            <p className="text-lg text-gray-100">
-              You'll always get upfront pricing and a 90-day guarantee on the work we do.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Repair Services in Kanata"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Need appliance repair in Kanata that's fast, friendly, and reliable?
+            With over 15 years of appliance repair experience, our skilled Fixer
+            technicians provide trusted service to Kanata households. From washer
+            repair in Kanata to fridge repair in Kanata, we handle it all — often
+            with same-day availability.
+          </>
+        }
+        additionalContent={
+          <p>
+            You'll always get upfront pricing and a 90-day guarantee on the work we do.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

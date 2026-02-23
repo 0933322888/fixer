@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title:
@@ -116,30 +117,27 @@ const additionalAreas = [
 export default function KatimavikHazeldeanServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Katimavik-Hazeldean Appliance Repair That Lasts
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Katimavik-Hazeldean made simple. Our friendly, insured
-              team provides dependable service with a 90-day warranty. Explore our{" "}
-              <Link
-                href="/service-areas/kanata"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Kanata appliance repair
-              </Link>{" "}
-              hub, also serving Bridlewood and Morgan's Grant.
-            </p>
-            <p className="text-lg text-gray-100">
-              Reliable 90-day coverage on all repairs. Courteous, insured professionals. Local Kanata technicians who live nearby. Fast response — same-day visits possible.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Katimavik-Hazeldean Appliance Repair That Lasts"
+        description={
+          <>
+            Appliance repair in Katimavik-Hazeldean made simple. Our friendly, insured
+            team provides dependable service with a 90-day warranty. Explore our{" "}
+            <Link
+              href="/service-areas/kanata"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Kanata appliance repair
+            </Link>{" "}
+            hub, also serving Bridlewood and Morgan's Grant.
+          </>
+        }
+        additionalContent={
+          <p>
+            Reliable 90-day coverage on all repairs. Courteous, insured professionals. Local Kanata technicians who live nearby. Fast response — same-day visits possible.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Carp – Reliable Local Service for Electric Ovens | Fixer",
@@ -109,93 +112,20 @@ export default function OvenRepairCarpPage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Need a new oven in Carp? Check our repair vs. replace guide first — it helps you compare 
-                repair costs and replacement value.
-              </p>
-              <p className="text-center">
-                For new units, we handle oven installation in Carp. We'll set it up and test it using your 
-                current electrical hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't install new wiring or gas lines.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area: Carp and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Carp area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding rural neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              We also provide oven repair in{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/stittsville" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Stittsville
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/barrhaven" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Barrhaven
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/mississippi-mills" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Mississippi Mills
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/arnprior" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Arnprior
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/carleton-place" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Carleton Place
-              </Link>
-              . For the full service map, check our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Carp — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Carp"
+        heading="Service Area: Carp and Nearby"
+        surroundingLabel="and surrounding rural neighbourhoods"
+      />
 
       <CTASection />
 
@@ -227,11 +157,12 @@ export default function OvenRepairCarpPage() {
         services={[
           { name: "Washer Repair Carp", href: "/washer-repair/carp" },
           { name: "Dryer Repair Carp", href: "/dryer-repair/carp" },
-          { name: "Dishwasher Repair Carp", href: "/dishwasher-repair/carp" },
           { name: "Fridge Repair Carp", href: "/fridge-repair/carp" },
           { name: "Freezer Repair Carp", href: "/freezer-repair/carp" },
+          { name: "Oven Repair Carp", href: "/oven-repair/carp" },
           { name: "Cooktop Repair Carp", href: "/cooktop-repair/carp" },
-          { name: "Oven Installation Carp", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Carp", href: "/microwave-repair/carp" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="Oven repair is just one part of what we do — here are our other services in Carp:"

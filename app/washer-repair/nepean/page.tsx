@@ -6,7 +6,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Repair Nepean – Reliable Local Service | Fixer",
@@ -113,24 +116,21 @@ const relatedServices = [
 export default function WasherRepairNepeanPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Reliable Washer Repair in Nepean</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              When your washer refuses to start, leaves suds behind, or makes unusual grinding noises, Fixer Appliance Repair can help. Our Nepean technicians offer same-day and next-day service, backed by honest estimates. We handle repairs for Samsung, Whirlpool, LG, Maytag, GE, and more.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, visit our{" "}
-              <Link href="/nepean" className="font-semibold hover:underline">
-                Nepean appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Reliable Washer Repair in Nepean"
+        description="When your washer refuses to start, leaves suds behind, or makes unusual grinding noises, Fixer Appliance Repair can help. Our Nepean technicians offer same-day and next-day service, backed by honest estimates. We handle repairs for Samsung, Whirlpool, LG, Maytag, GE, and more."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, visit our{" "}
+            <Link href="/nepean" className="font-semibold hover:underline">
+              Nepean appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Problems */}
       <section className="section-padding bg-white">
@@ -180,6 +180,14 @@ export default function WasherRepairNepeanPage() {
       </section>
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
+
+      <InstallationCTASection
+        applianceName="Washer"
+        description="Upgrading to a new unit? We also offer washer installation in Nepean — fast, safe, and fully insured."
+        href="/appliance-installation/washer"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

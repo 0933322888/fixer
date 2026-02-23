@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Carleton Place Dryer Repair – Friendly, Trusted Technicians | Fixer",
@@ -114,24 +116,21 @@ const relatedServices = [
 export default function DryerRepairCarletonPlacePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Trusted Dryer Repair in Carleton Place</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              If your Carleton Place dryer is overheating, refusing to start, or shutting down mid-cycle, Fixer Appliance Repair is here to help. Our skilled technicians provide fast, dependable repairs, backed by transparent pricing and a 90-day workmanship warranty. We handle leading models from GE, Samsung, Whirlpool, LG, and Maytag.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/carleton-place" className="font-semibold hover:underline">
-                Carleton Place appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Trusted Dryer Repair in Carleton Place"
+        description="If your Carleton Place dryer is overheating, refusing to start, or shutting down mid-cycle, Fixer Appliance Repair is here to help. Our skilled technicians provide fast, dependable repairs, backed by transparent pricing and a 90-day workmanship warranty. We handle leading models from GE, Samsung, Whirlpool, LG, and Maytag."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/carleton-place" className="font-semibold hover:underline">
+              Carleton Place appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dryer Problems */}
       <section className="section-padding bg-white">
@@ -158,6 +157,8 @@ export default function DryerRepairCarletonPlacePage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area */}
       <ServiceAreaSection

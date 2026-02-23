@@ -6,7 +6,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Repair Carp – Reliable Service for Homes & Farms | Fixer",
@@ -115,24 +118,21 @@ const relatedServices = [
 export default function WasherRepairCarpPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Trusted Washer Repair for Carp Homes and Farms</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              In Carp, a washer that rattles loudly or leaks mid-cycle is more than an inconvenience — it's a headache. Fixer Appliance Repair provides reliable service for rural homes and hobby farms, fixing issues like broken pumps, electronic failures, and unbalanced spins. We repair all major makes, from Samsung and LG to Whirlpool, GE, and Maytag.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, visit our{" "}
-              <Link href="/service-areas/carp" className="font-semibold hover:underline">
-                Carp appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Trusted Washer Repair for Carp Homes and Farms"
+        description="In Carp, a washer that rattles loudly or leaks mid-cycle is more than an inconvenience — it's a headache. Fixer Appliance Repair provides reliable service for rural homes and hobby farms, fixing issues like broken pumps, electronic failures, and unbalanced spins. We repair all major makes, from Samsung and LG to Whirlpool, GE, and Maytag."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, visit our{" "}
+            <Link href="/service-areas/carp" className="font-semibold hover:underline">
+              Carp appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Problems */}
       <section className="section-padding bg-white">
@@ -181,6 +181,14 @@ export default function WasherRepairCarpPage() {
       </section>
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
+
+      <InstallationCTASection
+        applianceName="Washer"
+        description="Upgrading to a new unit? We also offer washer installation in Carp — fast, safe, and fully insured."
+        href="/appliance-installation/washer"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

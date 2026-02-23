@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Repair in Barrhaven – Local Technicians You Can Trust | Fixer",
@@ -103,36 +105,33 @@ const faqs = [
 
 const relatedServices = [
   { name: "Washer Repair Barrhaven", href: "/washer-repair/barrhaven" },
-  { name: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair/barrhaven" },
+  { name: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
   { name: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
   { name: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
   { name: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { name: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
   { name: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
-  { name: "Dryer Installation Barrhaven", href: "/appliance-installation/dryer" },
+  { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function DryerRepairBarrhavenPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Professional Dryer Repair in Barrhaven</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Laundry piling up because the dryer won't heat properly? Fixer Appliance Repair offers Barrhaven homeowners prompt, professional dryer service. From noisy bearings to electrical issues, our team delivers clear quotes, same-day availability in many areas, and a 90-day warranty on all work. We repair dryers from Samsung, LG, Whirlpool, GE, and Maytag.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance help in your area, check our{" "}
-              <Link href="/barrhaven" className="font-semibold hover:underline">
-                Barrhaven appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Professional Dryer Repair in Barrhaven"
+        description="Laundry piling up because the dryer won't heat properly? Fixer Appliance Repair offers Barrhaven homeowners prompt, professional dryer service. From noisy bearings to electrical issues, our team delivers clear quotes, same-day availability in many areas, and a 90-day warranty on all work. We repair dryers from Samsung, LG, Whirlpool, GE, and Maytag."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance help in your area, check our{" "}
+            <Link href="/barrhaven" className="font-semibold hover:underline">
+              Barrhaven appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dryer Problems */}
       <section className="section-padding bg-white">
@@ -159,6 +158,8 @@ export default function DryerRepairBarrhavenPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area */}
       <ServiceAreaSection

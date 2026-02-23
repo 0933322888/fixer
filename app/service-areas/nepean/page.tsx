@@ -7,6 +7,8 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Nepean Appliance Service – Experienced Care for Your Home",
@@ -120,34 +122,32 @@ const additionalAreas = [
 export default function NepeanServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Nepean</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Looking for dependable appliance service in Nepean? Our friendly,
-              Ottawa-based team has been repairing appliances for over 15 years.
-              From{" "}
-              <Link
-                href="/washer-repair/nepean"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                washer repair in Nepean
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/fridge-repair/nepean"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                fridge repair in Nepean
-              </Link>
-              , we provide honest guidance, same-day bookings in many neighbourhoods,
-              and a 90-day service guarantee.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Service in Nepean"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Looking for dependable appliance service in Nepean? Our friendly,
+            Ottawa-based team has been repairing appliances for over 15 years.
+            From{" "}
+            <Link
+              href="/washer-repair/nepean"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              washer repair in Nepean
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/fridge-repair/nepean"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              fridge repair in Nepean
+            </Link>
+            , we provide honest guidance, same-day bookings in many neighbourhoods,
+            and a 90-day service guarantee.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">
@@ -172,20 +172,12 @@ export default function NepeanServiceAreaPage() {
         postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before."
       />
 
-      <section className="bg-gray-50 pb-10">
-        <div className="container-custom">
-          <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-md max-w-3xl mx-auto">
-            <p className="text-lg italic">
-              "Our fridge stopped working right before a long weekend. Fixer
+      <TestimonialSection
+        quote="Our fridge stopped working right before a long weekend. Fixer
               arrived the same day and had it running within an hour. Excellent
-              local service!"{" "}
-              <span className="not-italic font-semibold text-gray-900">
-                – Sarah M.
-              </span>
-            </p>
-          </blockquote>
-        </div>
-      </section>
+              local service!"
+        author="Sarah M."
+      />
 
       <ThingsToDoSection
         attractions={attractions}

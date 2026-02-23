@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
 import BrandsSection from "@/components/BrandsSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "McNab Appliance Repair – Reliable Local Experts | Fixer",
@@ -99,30 +100,27 @@ const additionalAreas = [
 export default function McNabServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              McNab Appliance Repair – Fast & Reliable
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Looking for appliance repair in McNab? Our insured team fixes it right the
-              first time. Visit our{" "}
-              <Link
-                href="/service-areas/arnprior"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Arnprior appliance repair
-              </Link>{" "}
-              page, also serving Downtown and Braeside.
-            </p>
-            <p className="text-lg text-gray-100">
-              Solid 90-day warranty. Friendly, insured professionals. Local Arnprior technicians serving McNab. Same-day help when we can.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="McNab Appliance Repair – Fast & Reliable"
+        description={
+          <>
+            Looking for appliance repair in McNab? Our insured team fixes it right the
+            first time. Visit our{" "}
+            <Link
+              href="/service-areas/arnprior"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Arnprior appliance repair
+            </Link>{" "}
+            page, also serving Downtown and Braeside.
+          </>
+        }
+        additionalContent={
+          <p>
+            Solid 90-day warranty. Friendly, insured professionals. Local Arnprior technicians serving McNab. Same-day help when we can.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

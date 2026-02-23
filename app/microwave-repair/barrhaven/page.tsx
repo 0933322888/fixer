@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaWaveSquare,
   FaMapMarkerAlt,
@@ -16,6 +17,8 @@ import FAQSection from "@/components/FAQSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Barrhaven – Fast, Local Experts | Fixer",
@@ -126,25 +129,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Barrhaven", href: "/washer-repair/barrhaven" },
   { label: "Dryer Repair Barrhaven", href: "/dryer-repair/barrhaven" },
-  { label: "Dishwasher Repair Barrhaven", href: "/dishwasher-repair/barrhaven" },
   { label: "Fridge Repair Barrhaven", href: "/fridge-repair/barrhaven" },
   { label: "Freezer Repair Barrhaven", href: "/freezer-repair/barrhaven" },
   { label: "Oven Repair Barrhaven", href: "/oven-repair/barrhaven" },
   { label: "Cooktop Repair Barrhaven", href: "/cooktop-repair/barrhaven" },
-  { label: "Microwave Installation Barrhaven", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Barrhaven", href: "/microwave-repair/barrhaven" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairBarrhavenPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Barrhaven Microwave Repair You Can Trust</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Microwave not heating or giving off a burning smell? Our Barrhaven specialists provide quick, reliable repair across all neighbourhoods.
-            </p>
+      <ServiceHero
+        title="Barrhaven Microwave Repair You Can Trust"
+        description="Microwave not heating or giving off a burning smell? Our Barrhaven specialists provide quick, reliable repair across all neighbourhoods."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves. Upfront pricing, 90-day warranty.
             </p>
@@ -155,20 +157,12 @@ export default function MicrowaveRepairBarrhavenPage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16134136969"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 413-6969
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Barrhaven" />
 
@@ -176,10 +170,12 @@ export default function MicrowaveRepairBarrhavenPage() {
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Barrhaven with same-day service available in most areas."
-        href="/appliance-installation/microvawe"
+        href="/appliance-installation/microwave"
       />
 
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
 
       {/* Service Area */}
       <ServiceAreaSection

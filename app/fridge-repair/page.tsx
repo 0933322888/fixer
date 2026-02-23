@@ -10,6 +10,7 @@ import InstallationCTASection from "@/components/InstallationCTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import CTASection from "@/components/CTASection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Ottawa – Fast, Reliable Local Service | Fixer",
@@ -169,51 +170,25 @@ const faqs = [
 export default function FridgeRepairPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-      <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Ottawa – Cold, Quiet, Reliable</h1>
-            <p className="text-xl text-gray-100 mb-8">
-              Fridge too warm? Freezer frosting over? Fixer Appliance Repair provides fast, effective fridge repair across Ottawa — with honest diagnostics and long-term fixes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
-                Call us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Fridge Repair in Ottawa – Cold, Quiet, Reliable"
+        description="Fridge too warm? Freezer frosting over? Fixer Appliance Repair provides fast, effective fridge repair across Ottawa — with honest diagnostics and long-term fixes."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
 
-      {/* Repair or Replace */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Repair or Replace?</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Refrigerators are expensive to replace — and many common issues are easy to fix. 
-              If your fridge is less than 12 years old, check our repair vs replace comparison.
-            </p>
-            <Link href="/repair-vs-replace" className="btn-primary">
-              Read Our Repair vs. Replace Guide
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Refrigerators are expensive to replace — and many common issues are easy to fix. If your fridge is less than 12 years old, check our repair vs replace comparison to make a smart decision based on cost, age, and reliability." />
 
       <InstallationCTASection
         applianceName="Fridge"
-        description="Got a new fridge? We also provide fridge installation in Ottawa with same-day service available in most areas."
-        href="/appliance-installation"
+        description="Upgrading to a new unit? We also offer fridge installation in Ottawa — fast, safe, and fully insured."
+        href="/appliance-installation/fridge"
       />
+
 
       {/* Brands We Repair */}
       <section className="section-padding bg-white">

@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Bryanston Gate Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function BryanstonGateServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Bryanston Gate Appliance Repair – Fast & Friendly
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Need appliance repair in Bryanston Gate? Our insured team fixes it right the
-              first time with a 90-day guarantee. Check our{" "}
-              <Link
-                href="/service-areas/stittsville"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Stittsville appliance repair
-              </Link>{" "}
-              hub, also serving Jackson Trails and Crossing Bridge.
-            </p>
-            <p className="text-lg text-gray-100">
-              Reliable 90-day warranty included. Friendly, fully insured team. Local Stittsville technicians who know the area. Fast response with same-day availability.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Bryanston Gate Appliance Repair – Fast & Friendly"
+        description={
+          <>
+            Need appliance repair in Bryanston Gate? Our insured team fixes it right the
+            first time with a 90-day guarantee. Check our{" "}
+            <Link
+              href="/service-areas/stittsville"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Stittsville appliance repair
+            </Link>{" "}
+            hub, also serving Jackson Trails and Crossing Bridge.
+          </>
+        }
+        additionalContent={
+          <p>
+            Reliable 90-day warranty included. Friendly, fully insured team. Local Stittsville technicians who know the area. Fast response with same-day availability.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

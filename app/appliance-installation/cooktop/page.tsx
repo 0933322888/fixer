@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Cooktop Installation Ottawa – Reliable Appliance Setup | Fixer",
@@ -80,19 +81,20 @@ const exploreItems = [
 export default function CooktopInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaFire className="text-[30px] mb-2 inline-block" /> Cooktop Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Cooktops demand careful installation for safety and performance. Fixer provides reliable <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link>, ensuring proper alignment and hookups. If your cooktop isn’t working right, our{" "}
-              <Link href="/cooktop-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Cooktop Repair Ottawa
-              </Link> service can help.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Cooktop Installation Ottawa"
+        description={
+          <>
+            Cooktops demand careful installation for safety and performance. Fixer provides reliable <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link>, ensuring proper alignment and hookups. If your cooktop isn't working right, our{" "}
+            <Link href="/cooktop-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Cooktop Repair Ottawa
+            </Link> service can help.
+          </>
+        }
+        icon={<FaFire className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

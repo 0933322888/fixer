@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Service in Mississippi Mills – Reliable Local Experts | Fixer",
@@ -115,24 +117,21 @@ const relatedServices = [
 export default function DryerRepairMississippiMillsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Local Dryer Repair Specialists in Mississippi Mills</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              In Mississippi Mills, a broken dryer can mean more than inconvenience — especially in rural homes where line-drying isn't an option. Fixer Appliance Repair fixes everything from faulty thermostats to worn belts, with same-day appointments often available in Almonte, Pakenham, and nearby communities. Our technicians service popular brands such as Whirlpool, Maytag, Samsung, LG, and GE.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/mississippi-mills" className="font-semibold hover:underline">
-                Mississippi Mills appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Local Dryer Repair Specialists in Mississippi Mills"
+        description="In Mississippi Mills, a broken dryer can mean more than inconvenience — especially in rural homes where line-drying isn't an option. Fixer Appliance Repair fixes everything from faulty thermostats to worn belts, with same-day appointments often available in Almonte, Pakenham, and nearby communities. Our technicians service popular brands such as Whirlpool, Maytag, Samsung, LG, and GE."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/mississippi-mills" className="font-semibold hover:underline">
+              Mississippi Mills appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dryer Issues */}
       <section className="section-padding bg-white">
@@ -159,6 +158,8 @@ export default function DryerRepairMississippiMillsPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area */}
       <ServiceAreaSection

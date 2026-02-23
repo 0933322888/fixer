@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Carleton Place West Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function CarletonPlaceWestServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Carleton Place West Appliance Repair – Trusted Local Service
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Carleton Place West with insured technicians. We fix all
-              major appliances quickly, backed by a 90-day warranty. See our{" "}
-              <Link
-                href="/service-areas/carleton-place"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Carleton Place appliance repair
-              </Link>{" "}
-              page, also serving East and Riverside Park.
-            </p>
-            <p className="text-lg text-gray-100">
-              Reliable 90-day repair coverage. Insured, approachable pros. Local Carleton Place technicians. Same-day scheduling when available.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Carleton Place West Appliance Repair – Trusted Local Service"
+        description={
+          <>
+            Appliance repair in Carleton Place West with insured technicians. We fix all
+            major appliances quickly, backed by a 90-day warranty. See our{" "}
+            <Link
+              href="/service-areas/carleton-place"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Carleton Place appliance repair
+            </Link>{" "}
+            page, also serving East and Riverside Park.
+          </>
+        }
+        additionalContent={
+          <p>
+            Reliable 90-day repair coverage. Insured, approachable pros. Local Carleton Place technicians. Same-day scheduling when available.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

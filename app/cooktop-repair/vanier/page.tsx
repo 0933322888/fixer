@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
@@ -91,40 +93,15 @@ export default function OvenRepairVanierPage() {
 
       <CommonIssuesSection issues={commonIssues} heading="Common Cooktop Issues We Fix in Vanier" />
 
-      <BenefitsSection applianceName="Oven" benefits={benefits} />
+      <BenefitsSection applianceName="Cooktop" benefits={benefits} />
 
-      {/* Cooktop Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Cooktop Installation in Vanier</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Before making a final decision, read our repair vs. replace guide — it helps compare costs and lifespan.
-              </p>
-              <p className="text-center">
-                If you’ve purchased a new cooktop, we’ll install it in Vanier. Our team connects and tests it with your current power supply.
-              </p>
-              <div className="text-center mb-6">
-                <Link href="/blog/repair-vs-replace" className="btn-primary">
-                  Repair or replace?
-                </Link>
-              </div>
-              <br />
-              <div className="text-center mb-6 mt-6 space-y-4">
-                <p className="text-center text-sm mb-6 text-gray-600">
-                  ⚠️ We don’t install new high-voltage wiring or gas lines.
-                </p>
-              </div>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/cooktop" className="btn-primary">
-                  Learn More
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you decide if it is worth saving." />
+
+      <InstallationCTASection
+        applianceName="Cooktop"
+        description="Upgrading to a new unit? We also offer cooktop installation in Vanier — fast, safe, and fully insured."
+        href="/appliance-installation/cooktop"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

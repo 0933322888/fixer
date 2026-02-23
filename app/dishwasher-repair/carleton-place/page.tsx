@@ -6,7 +6,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Carleton Place – Fast, Local Service | Fixer",
@@ -108,28 +111,31 @@ const relatedServices = [
 export default function DishwasherRepairCarletonPlacePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Carleton Place 
-              <br /> Fast, Local Service</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Tired of handwashing dishes because the dishwasher won't cooperate? Fixer Appliance Repair serves Carleton Place with professional, local service. We handle drainage issues, control failures, and more — always with upfront pricing and a 90-day warranty.
-            </p>
+      <ServiceHero
+        title={
+          <>
+            Dishwasher Repair Carleton Place
+            <br /> Fast, Local Service
+          </>
+        }
+        description="Tired of handwashing dishes because the dishwasher won't cooperate? Fixer Appliance Repair serves Carleton Place with professional, local service. We handle drainage issues, control failures, and more — always with upfront pricing and a 90-day warranty."
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <>
             <p className="text-lg mb-6">
               We repair popular brands including LG, Samsung, Whirlpool, Bosch, and GE.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               👉 For all appliance services in your area, see our{" "}
               <Link href="/carleton-place" className="font-semibold hover:underline">
                 Local Carleton Place page
               </Link>
               .
             </p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dishwasher Issues */}
       <section className="section-padding bg-white">
@@ -178,6 +184,14 @@ export default function DishwasherRepairCarletonPlacePage() {
       </section>
 
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="When your dishwasher breaks down, it's tempting to shop for a new one — but repairs are often quick and cost-effective. See how to tell when it's worth fixing." />
+
+      <InstallationCTASection
+        applianceName="Dishwasher"
+        description="Upgrading to a new unit? We also offer dishwasher installation in Carleton Place — fast, safe, and fully insured."
+        href="/appliance-installation/dishwasher"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

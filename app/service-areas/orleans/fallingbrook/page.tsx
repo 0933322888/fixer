@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Fallingbrook Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function FallingbrookServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Fallingbrook Appliance Repair – Done Right the First Time
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Trusted appliance repair in Fallingbrook, Orleans. We fix washers, dryers,
-              ovens, fridges & more. Backed by a 90-day warranty. See our{" "}
-              <Link
-                href="/service-areas/orleans"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Orleans appliance repair
-              </Link>{" "}
-              page, also covering Avalon and Queenswood Heights.
-            </p>
-            <p className="text-lg text-gray-100">
-              90-day warranty for every repair. Friendly, insured professionals. Orleans-based techs ready to assist. Same-day service available in many cases.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Fallingbrook Appliance Repair – Done Right the First Time"
+        description={
+          <>
+            Trusted appliance repair in Fallingbrook, Orleans. We fix washers, dryers,
+            ovens, fridges & more. Backed by a 90-day warranty. See our{" "}
+            <Link
+              href="/service-areas/orleans"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Orleans appliance repair
+            </Link>{" "}
+            page, also covering Avalon and Queenswood Heights.
+          </>
+        }
+        additionalContent={
+          <p>
+            90-day warranty for every repair. Friendly, insured professionals. Orleans-based techs ready to assist. Same-day service available in many cases.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

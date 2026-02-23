@@ -6,6 +6,8 @@ import FAQSection from "@/components/FAQSection";
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection";
 
 export const metadata: Metadata = {
@@ -132,22 +134,20 @@ const additionalAreas = [
 export default function CarpServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Trusted Appliance Repair in Carp</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              When appliances break down in Carp, Fixer Appliance Repair is just a
-              call away. Our experienced technicians handle both home and farm
-              appliance repairs — from fridges in Carp that won't cool to cooktops
-              in Carp that won't heat evenly. We arrive with the tools and parts
-              needed for most fixes on the first visit, and we back our work with
-              a 90-day warranty.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Trusted Appliance Repair in Carp"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            When appliances break down in Carp, Fixer Appliance Repair is just a
+            call away. Our experienced technicians handle both home and farm
+            appliance repairs — from fridges in Carp that won't cool to cooktops
+            in Carp that won't heat evenly. We arrive with the tools and parts
+            needed for most fixes on the first visit, and we back our work with
+            a 90-day warranty.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">
@@ -169,20 +169,12 @@ export default function CarpServiceAreaPage() {
       <BrandsSection header=" Brands We Repair" premessage="We repair all major household brands, including:"
         postmessage="Not sure about your brand or model? Give us a call — chances are, we've repaired it before." />
 
-      <section className="bg-gray-50 pb-10">
-        <div className="container-custom">
-          <blockquote className="rounded-xl border-l-4 border-accent-500 bg-white p-6 text-gray-800 shadow-md max-w-3xl mx-auto">
-            <p className="text-lg italic">
-              "Our oven stopped working just before a family gathering. Fixer's
+      <TestimonialSection
+        quote="Our oven stopped working just before a family gathering. Fixer's
               technician arrived the same day and had it baking perfectly again
-              within hours. Professional and friendly!"{" "}
-              <span className="not-italic font-semibold text-gray-900">
-                – James P.
-              </span>
-            </p>
-          </blockquote>
-        </div>
-      </section>
+              within hours. Professional and friendly!"
+        author="James P."
+      />
 
       <ThingsToDoSection attractions={attractions}
         heading="Explore Carp While We Fix"

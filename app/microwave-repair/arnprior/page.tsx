@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -15,6 +16,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import FAQSection from "@/components/FAQSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 
@@ -127,28 +129,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Arnprior", href: "/washer-repair/arnprior" },
   { label: "Dryer Repair Arnprior", href: "/dryer-repair/arnprior" },
-  { label: "Dishwasher Repair Arnprior", href: "/dishwasher-repair/arnprior" },
   { label: "Fridge Repair Arnprior", href: "/fridge-repair/arnprior" },
   { label: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
   { label: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
   { label: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
-  { label: "Microwave Installation Arnprior", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairArnpriorPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaBolt className="text-5xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Expert Microwave Repair in Arnprior</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              From downtown Arnprior to White Lake and Braeside, our technicians fix microwaves that won’t heat, spark, or shut off mid-cycle. Local help is just a call away.
-            </p>
+      <ServiceHero
+        title="Expert Microwave Repair in Arnprior"
+        description="From downtown Arnprior to White Lake and Braeside, our technicians fix microwaves that won't heat, spark, or shut off mid-cycle. Local help is just a call away."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves with honest pricing and a 90-day warranty.
             </p>
@@ -159,20 +157,12 @@ export default function MicrowaveRepairArnpriorPage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16134136969"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 413-6969
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Arnprior" />
 
@@ -180,10 +170,12 @@ export default function MicrowaveRepairArnpriorPage() {
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Arnprior with same-day service available in most areas."
-        href="/appliance-installation/microvawe"
+        href="/appliance-installation/microwave"
       />
 
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
 
       {/* Service Area */}
       <ServiceAreaSection

@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Microwave Installation Ottawa – Professional Installation | Fixer",
@@ -81,20 +82,21 @@ const exploreItems = [
 export default function MicrowaveInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Microwave Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Over-the-range microwaves require safe mounting and correct venting. At Fixer, we offer expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> for kitchens across the city. For ongoing issues, see our{" "}
-              <Link href="/microwave-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Microwave Repair Ottawa service
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Microwave Installation Ottawa"
+        description={
+          <>
+            Over-the-range microwaves require safe mounting and correct venting. At Fixer, we offer expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> for kitchens across the city. For ongoing issues, see our{" "}
+            <Link href="/microwave-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Microwave Repair Ottawa service
+            </Link>
+            .
+          </>
+        }
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

@@ -9,6 +9,7 @@ import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Repair Ottawa | Fast & Reliable Washing Machine Repair",
@@ -179,27 +180,16 @@ const relatedServices = [
 export default function WasherRepairPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Fast & Reliable Washer Repair Across Ottawa</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Is your washing machine not draining, spinning, or starting at all? Don't worry — Fixer Appliance Repair is here to help. We provide professional washer repair services across Ottawa, offering fast diagnostics, same-day service options, and dependable local support in every major neighborhood.
-            </p>
-            <p className="mb-8">Our technicians have experience with most popular washer brands and models. From top-loaders and
-              front-loaders to high-efficiency units, we know how to fix them all — quickly and reliably.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
-                Call us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Fast & Reliable Washer Repair Across Ottawa"
+        description="Is your washing machine not draining, spinning, or starting at all? Don't worry — Fixer Appliance Repair is here to help. We provide professional washer repair services across Ottawa, offering fast diagnostics, same-day service options, and dependable local support in every major neighborhood."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="mb-8">Our technicians have experience with most popular washer brands and models. From top-loaders and
+            front-loaders to high-efficiency units, we know how to fix them all — quickly and reliably.</p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={washerProblems} heading="Common Washer Problems We Fix" />
 

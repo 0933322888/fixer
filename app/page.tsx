@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaCheckCircle, FaPhone, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Appliance Repair Ottawa – Same-Day Service & Trusted Techs | Fixer",
@@ -407,28 +408,10 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-primary-500 to-primary-600 text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-md mb-6 text-white">Book Your Repair Today</h2>
-          <div className="space-y-4 mb-8">
-            <p className="text-2xl">
-              📞 Call or text:{" "}
-              <a href="tel:613-413-6969" className="font-semibold hover:underline">
-                (613) 413-6969
-              </a>
-            </p>
-            <p className="text-xl">
-              ✉️ Email:{" "}
-              <a href="mailto:service@fixerappliancerepair.ca" className="font-semibold hover:underline">
-                service@fixerappliancerepair.ca
-              </a>
-            </p>
-          </div>
-          <p className="text-lg max-w-2xl mx-auto">
-            Your local Ottawa technicians are ready to help — fast, friendly, and reliable. That's the Fixer way.
-          </p>
-        </div>
-      </section>
+      <CTASection 
+        heading="Ready to Book Your Repair?"
+        description="Our Ottawa technicians are standing by and fully stocked with the tools and common parts needed to get your appliances back up and running fast."
+      />
     </>
   );
 }

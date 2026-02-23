@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Carleton Place – Upright & Chest Freezer Service | Fixer",
@@ -101,61 +104,30 @@ const relatedServices = [
 export default function FreezerRepairCarletonPlacePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Trusted Freezer Repair in Carleton Place</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            A broken freezer can mean spoiled food and frustration. Fixer Appliance Repair helps Carleton Place residents with fast diagnostics and dependable repairs, covering leaks, electrical faults, and cooling problems.
+      <ServiceHero
+        title="Trusted Freezer Repair in Carleton Place"
+        description="A broken freezer can mean spoiled food and frustration. Fixer Appliance Repair helps Carleton Place residents with fast diagnostics and dependable repairs, covering leaks, electrical faults, and cooling problems."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We work with brands like GE, Maytag, Samsung, Whirlpool, and LG.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We work with brands like GE, Maytag, Samsung, Whirlpool, and LG.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Carleton Place" />
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Freezer Installation in Carleton Place</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Need a freezer upgrade in Carleton Place?
-              </p>
-              <p className="text-center">
-                First, see our repair vs. replace guide — it breaks down costs, lifespan, and common failures.
-              </p>
-              <p className="text-center">
-                For new purchases, we provide freezer installation in Carleton Place. We'll connect and test it with your existing electrical supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ No new wiring or plumbing included.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/appliance-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
+
+      <InstallationCTASection
+        applianceName="Freezer"
+        description="Upgrading to a new unit? We also offer freezer installation in Carleton Place — fast, safe, and fully insured."
+        href="/appliance-installation/locations/ottawa"
+      />
 
       <CTASection />
 

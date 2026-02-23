@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Installation Ottawa – Safe, Reliable Service | Fixer",
@@ -80,20 +81,21 @@ const exploreItems = [
 export default function WasherInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaTshirt className="text-[30px] mb-2 inline-block" /> Washer Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Need help setting up your new washer? At Fixer, we provide safe, professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> so you can start using it right away. Whether it’s a replacement or your first machine, our technicians ensure correct hookups and testing. For ongoing issues, see our{" "}
-              <Link href="/washer-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Washer Repair Ottawa service
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Washer Installation Ottawa"
+        description={
+          <>
+            Need help setting up your new washer? At Fixer, we provide safe, professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> so you can start using it right away. Whether it's a replacement or your first machine, our technicians ensure correct hookups and testing. For ongoing issues, see our{" "}
+            <Link href="/washer-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Washer Repair Ottawa service
+            </Link>
+            .
+          </>
+        }
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

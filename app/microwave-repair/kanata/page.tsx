@@ -5,7 +5,9 @@ import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaWaveSquare,
   FaMapMarkerAlt,
@@ -16,7 +18,6 @@ import {
   FaBook,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
-import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
 export const metadata: Metadata = {
@@ -145,25 +146,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Kanata", href: "/washer-repair/kanata" },
   { label: "Dryer Repair Kanata", href: "/dryer-repair/kanata" },
-  { label: "Dishwasher Repair Kanata", href: "/dishwasher-repair/kanata" },
   { label: "Fridge Repair Kanata", href: "/fridge-repair/kanata" },
   { label: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
   { label: "Oven Repair Kanata", href: "/oven-repair/kanata" },
   { label: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
-  { label: "Microwave Installation Kanata", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairKanataPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Reliable Microwave Repair in Kanata</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              When your microwave stops heating or sparks inside, it’s time to call the experts. We provide trusted microwave repair services throughout Kanata — fast, safe, and affordable.
-            </p>
+      <ServiceHero
+        title="Reliable Microwave Repair in Kanata"
+        description="When your microwave stops heating or sparks inside, it's time to call the experts. We provide trusted microwave repair services throughout Kanata — fast, safe, and affordable."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves.
             </p>
@@ -174,20 +174,12 @@ export default function MicrowaveRepairKanataPage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16135550199"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 555-0199
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -195,10 +187,12 @@ export default function MicrowaveRepairKanataPage() {
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Kanata with same-day service available in most areas."
-        href="/appliance-installation/microvawe"
+        href="/appliance-installation/microwave"
       />
 
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
 
       {/* Service Area */}
       <ServiceAreaSection

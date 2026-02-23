@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Merivale Gardens Appliance Repair – Trusted Service | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function MerivaleGardensServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Merivale Gardens Appliance Repair – Fast & Reliable
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Merivale Gardens made easy. Our insured team fixes all
-              major appliances with a 90-day guarantee. See our{" "}
-              <Link
-                href="/service-areas/nepean"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Nepean appliance repair
-              </Link>{" "}
-              hub, covering Barrhaven East and Centrepointe.
-            </p>
-            <p className="text-lg text-gray-100">
-              Solid 90-day warranty on all services. Insured, customer-friendly team. Local Nepean technicians nearby. Same-day help when scheduling allows.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Merivale Gardens Appliance Repair – Fast & Reliable"
+        description={
+          <>
+            Appliance repair in Merivale Gardens made easy. Our insured team fixes all
+            major appliances with a 90-day guarantee. See our{" "}
+            <Link
+              href="/service-areas/nepean"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Nepean appliance repair
+            </Link>{" "}
+            hub, covering Barrhaven East and Centrepointe.
+          </>
+        }
+        additionalContent={
+          <p>
+            Solid 90-day warranty on all services. Insured, customer-friendly team. Local Nepean technicians nearby. Same-day help when scheduling allows.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

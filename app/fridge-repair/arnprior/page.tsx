@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Arnprior – Trusted Local Technicians | Fixer",
@@ -89,29 +92,18 @@ const faqs = [
 export default function FridgeRepairArnpriorPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Arnprior</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            From ice maker problems to fridges that cycle constantly, Fixer Appliance Repair has Arnprior covered. Our technicians bring years of experience, same-day availability in many cases, and honest quotes before the work begins.
+      <ServiceHero
+        title="Fridge Repair in Arnprior"
+        description="From ice maker problems to fridges that cycle constantly, Fixer Appliance Repair has Arnprior covered. Our technicians bring years of experience, same-day availability in many cases, and honest quotes before the work begins."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We service most brands, including Frigidaire, Whirlpool, Samsung, LG, and GE.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We service most brands, including Frigidaire, Whirlpool, Samsung, LG, and GE.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Fridge Issues We Fix in Arnprior" />
 
@@ -144,6 +136,14 @@ export default function FridgeRepairArnpriorPage() {
       </section>
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
+
+      <RepairOrReplaceSection description="Refrigerators are expensive to replace — and many common issues are easy to fix. If your fridge is less than 12 years old, check our repair vs replace comparison to make a smart decision based on cost, age, and reliability." />
+
+      <InstallationCTASection
+        applianceName="Fridge"
+        description="Upgrading to a new unit? We also offer fridge installation in Arnprior — fast, safe, and fully insured."
+        href="/appliance-installation/fridge"
+      />
 
       <CTASection />
 

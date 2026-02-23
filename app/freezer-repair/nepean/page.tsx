@@ -3,12 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
-import InstallationCTASection from "@/components/InstallationCTASection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Nepean – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -122,29 +124,18 @@ const relatedServices = [
 export default function FreezerRepairNepeanPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fast Freezer Repair for Nepean Families</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            If your freezer can't hold steady temperatures, makes loud noises, or leaks water, Fixer Appliance Repair is ready to help in Nepean. Many repairs can be handled in a single visit.
+      <ServiceHero
+        title="Fast Freezer Repair for Nepean Families"
+        description="If your freezer can't hold steady temperatures, makes loud noises, or leaks water, Fixer Appliance Repair is ready to help in Nepean. Many repairs can be handled in a single visit."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We work with Whirlpool, GE, Samsung, LG, Maytag, and more.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We work with Whirlpool, GE, Samsung, LG, Maytag, and more.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -156,6 +147,8 @@ export default function FreezerRepairNepeanPage() {
       />
 
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
 
       <CTASection />
 

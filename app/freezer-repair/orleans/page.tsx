@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Orleans – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -102,50 +105,25 @@ const relatedServices = [
 export default function FreezerRepairOrleansPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Reliable Freezer Repair in Orleans</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Freezer frosting up, leaking water, or not keeping food cold? Fixer Appliance Repair provides fast, local service in Orleans with clear pricing and a 90-day guarantee. We repair all major freezer brands, including Samsung, Whirlpool, LG, GE, and Maytag.
-          </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
+      <ServiceHero
+        title="Reliable Freezer Repair in Orleans"
+        description="Freezer frosting up, leaking water, or not keeping food cold? Fixer Appliance Repair provides fast, local service in Orleans with clear pricing and a 90-day guarantee. We repair all major freezer brands, including Samsung, Whirlpool, LG, GE, and Maytag."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Orleans" />
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Freezer Installation in Orleans</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Looking for freezer installation in Orleans?
-              </p>
-              <p className="text-center">
-                Before making the purchase, check our repair vs. replace guide — it helps compare costs and long-term value.
-              </p>
-              <p className="text-center">
-                With your new unit ready, we provide freezer installation in Orleans. We'll set it up, balance it, and test it using your existing hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't create new wiring or plumbing lines.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/appliance-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
+
+      <InstallationCTASection
+        applianceName="Freezer"
+        description="Upgrading to a new unit? We also offer freezer installation in Orleans — fast, safe, and fully insured."
+        href="/appliance-installation/locations/ottawa"
+      />
 
       <CTASection />
 

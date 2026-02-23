@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Installation Ottawa – Expert Installation Service | Fixer",
@@ -80,20 +81,21 @@ const exploreItems = [
 export default function DishwasherInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              A dishwasher only works as well as it’s installed. At Fixer, we provide professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> to ensure correct water and electrical hookups. For troubleshooting or leaks, check our{" "}
-              <Link href="/dishwasher-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Dishwasher Repair Ottawa service
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Dishwasher Installation Ottawa"
+        description={
+          <>
+            A dishwasher only works as well as it's installed. At Fixer, we provide professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> to ensure correct water and electrical hookups. For troubleshooting or leaks, check our{" "}
+            <Link href="/dishwasher-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Dishwasher Repair Ottawa service
+            </Link>
+            .
+          </>
+        }
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

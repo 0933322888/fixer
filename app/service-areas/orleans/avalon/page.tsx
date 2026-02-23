@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Avalon Appliance Repair – Reliable Technicians | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function AvalonServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Avalon Appliance Repair – Reliable Local Experts
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Looking for appliance repair in Avalon? Our friendly team provides fast,
-              professional service with a 90-day guarantee. Visit our{" "}
-              <Link
-                href="/service-areas/orleans"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Orleans appliance repair
-              </Link>{" "}
-              page, also serving Fallingbrook and Queenswood Heights.
-            </p>
-            <p className="text-lg text-gray-100">
-              Peace of mind with our 90-day guarantee. Insured, approachable experts. Local Orleans technicians. Same-day appointments when possible.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Avalon Appliance Repair – Reliable Local Experts"
+        description={
+          <>
+            Looking for appliance repair in Avalon? Our friendly team provides fast,
+            professional service with a 90-day guarantee. Visit our{" "}
+            <Link
+              href="/service-areas/orleans"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Orleans appliance repair
+            </Link>{" "}
+            page, also serving Fallingbrook and Queenswood Heights.
+          </>
+        }
+        additionalContent={
+          <p>
+            Peace of mind with our 90-day guarantee. Insured, approachable experts. Local Orleans technicians. Same-day appointments when possible.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

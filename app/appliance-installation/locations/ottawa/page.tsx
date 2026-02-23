@@ -7,6 +7,7 @@ import ThingsToDoSection from "@/components/ThingsToDoSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Appliance Installation Ottawa – Washers, Dryers, Dishwashers, Fridges | Fixer",
@@ -90,42 +91,79 @@ export default function InstallationServicesPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Services in Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              At Fixer Appliance Repair, we don’t just <Link href="/service-areas" className="text-white underline font-semibold hover:text-gray-100">repair appliances in Ottawa</Link> — we also install new ones so you can start using them right away. We provide appliance installation in Ottawa and nearby suburbs, covering both kitchens and laundry rooms. From washers and dryers to dishwashers, fridges, ovens, and more, our technicians handle safe, proper hookups across Ottawa and nearby towns. We bring the right tools, connect everything correctly, and back each installation with a 90-day labour warranty.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Appliance Installation Services in Ottawa"
+        description={
+          <>
+            At Fixer Appliance Repair, we don't just <Link href="/service-areas" className="text-white underline font-semibold hover:text-gray-100">repair appliances in Ottawa</Link> — we also install new ones so you can start using them right away. We provide appliance installation in Ottawa and nearby suburbs, covering both kitchens and laundry rooms. From washers and dryers to dishwashers, fridges, ovens, and more, our technicians handle safe, proper hookups across Ottawa and nearby towns. We bring the right tools, connect everything correctly, and back each installation with a 90-day labour warranty.
+          </>
+        }
+        icon={<FaWrench className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       {/* Service Areas */}
-      <section className="section-padding bg-background">
+      <section className="section-padding bg-gradient-to-b from-background to-gray-50">
         <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="heading-md text-center mb-4">Our Service Areas</h2>
-            <p className="text-center text-lg text-neutral-600 mb-8 max-w-3xl mx-auto">
-              We provide appliance installation and repair services across Ottawa and nearby suburbs, including:
-            </p>
-            <div className={`grid ${gridCols} gap-4`}>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 mb-4">
+                <FaMapMarkerAlt className="text-2xl text-primary-600" />
+              </div>
+              <h2 className="heading-md mb-4">Our Service Areas</h2>
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+                We provide appliance installation and repair services across Ottawa and nearby suburbs, including:
+              </p>
+            </div>
+            <div className={`grid ${gridCols} gap-6`}>
               {serviceAreas.map((area) => (
-                <div key={area.install} className="bg-white border text-center border-light-200 rounded-lg p-5 hover:border-primary-400 hover:shadow-md transition-all group">
-                  <div className="flex flex-col gap-3 text-center">
-                    {area.hrefInstall ? (
-                      <Link href={area.hrefInstall} className="text-primary-600 font-semibold hover:text-primary-700 transition-colors group-hover:text-primary-500">
-                        {area.install} <FaChevronRight className="inline-block" />
-                      </Link>
-                    ) : (
-                      <span className="text-primary-600 font-semibold hover:text-primary-700 transition-colors group-hover:text-primary-500">{area.install}</span>
-                    )}
-                    <span className="text-neutral-400 text-sm">and</span>
-                    <div className="flex items-center justify-center gap-2 text-center">
-                      <Link href={area.hrefRepair} className="text-primary-600 text-center font-semibold hover:text-primary-700 transition-colors group-hover:text-primary-500">
-                        {area.repair} <FaChevronRight className="inline-block" />
-                      </Link>
+                <div 
+                  key={area.install} 
+                  className="group bg-white rounded-xl border border-gray-200 p-6 hover:border-primary-300 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex flex-col gap-4">
+                    {/* Installation Link */}
+                    <div className="flex items-start gap-3 text-center justify-center">
+                      <div className="flex-1 min-w-0 justify-center">
+                        {area.hrefInstall ? (
+                          <Link 
+                            href={area.hrefInstall} 
+                            className="block font-semibold text-gray-900 hover:text-primary-600 transition-colors group/link"
+                          >
+                            <span className="flex items-center gap-2 justify-center">
+                              {area.install}
+                              <FaChevronRight className="text-xs text-gray-400 group-hover/link:text-primary-600 group-hover/link:translate-x-0.5 transition-all" />
+                            </span>
+                          </Link>
+                        ) : (
+                          <span className="block font-semibold text-gray-900 justify-center">
+                            {area.install}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Divider */}
+                    <div className="flex items-center gap-2 py-1">
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                      <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">and</span>
+                      <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent"></div>
+                    </div>
+
+                    {/* Repair Link */}
+                    <div className="flex items-start gap-3 text-center justify-center">
+                      <div className="flex-1 min-w-0">
+                        <Link 
+                          href={area.hrefRepair} 
+                          className="block font-semibold text-gray-900 hover:text-blue-600 transition-colors group/link"
+                        >
+                          <span className="flex items-center gap-2 justify-center">
+                            {area.repair}
+                            <FaChevronRight className="text-xs text-gray-400 group-hover/link:text-blue-600 group-hover/link:translate-x-0.5 transition-all" />
+                          </span>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

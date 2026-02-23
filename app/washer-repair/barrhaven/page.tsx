@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Barrhaven Washer Repair – Trusted Local Experts | Fixer",
@@ -102,24 +104,21 @@ const relatedServices = [
 export default function WasherRepairBarrhavenPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Washer Repair Services in Barrhaven</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              If your washer stops mid-cycle, makes unusual noises, or leaks water, our Barrhaven repair team is ready to help. We service all makes and models, offering clear pricing, same-day availability in many neighbourhoods, and a 90-day workmanship guarantee on every repair.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/service-areas/barrhaven" className="font-semibold hover:underline">
-                Barrhaven appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Washer Repair Services in Barrhaven"
+        description="If your washer stops mid-cycle, makes unusual noises, or leaks water, our Barrhaven repair team is ready to help. We service all makes and models, offering clear pricing, same-day availability in many neighbourhoods, and a 90-day workmanship guarantee on every repair."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/service-areas/barrhaven" className="font-semibold hover:underline">
+              Barrhaven appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Issues */}
       <section className="section-padding bg-white">
@@ -146,6 +145,8 @@ export default function WasherRepairBarrhavenPage() {
       />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
 
       {/* Service Area */}
       <ServiceAreaSection

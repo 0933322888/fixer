@@ -9,6 +9,7 @@ import InstallationCTASection from "@/components/InstallationCTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import CTASection from "@/components/CTASection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Microwave Repair in Ottawa – Fast Fixes for All Brands | Fixer",
@@ -180,32 +181,22 @@ const services = [
 export default function MicrowaveRepairPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Microwave Repair in Ottawa
-              <br /> Fast Fixes, No Sparks</h1>
-            <p className="text-xl text-gray-100 mb-6">
-              Microwave won't start, heat, or spin? Fixer Appliance Repair offers expert microwave repair in Ottawa — built-ins and over-the-range models included.
-            </p>
-            <p className="text-lg text-gray-200 mb-8">
-              We work on LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, and more. Same-day service available with a 90-day warranty.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a
-                href="tel:613-413-6969"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-500"
-              >
-                Call us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title={
+          <>
+            Microwave Repair in Ottawa
+            <br /> Fast Fixes, No Sparks
+          </>
+        }
+        description="Microwave won't start, heat, or spin? Fixer Appliance Repair offers expert microwave repair in Ottawa — built-ins and over-the-range models included."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We work on LG, Samsung, Whirlpool, GE, Maytag, Frigidaire, and more. Same-day service available with a 90-day warranty.
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 

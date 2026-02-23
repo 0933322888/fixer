@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Barrhaven Appliance Repair – Quality Service, Honest Prices",
@@ -119,36 +120,36 @@ const additionalAreas = [
 export default function BarrhavenServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair in Barrhaven</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Looking for appliance service in Barrhaven that's prompt and professional?
-              Our Ottawa-based, family-run team has been helping homes here for years.
-              From{" "}
-              <Link
-                href="/dishwasher-repair/barrhaven"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                dishwasher repair in Barrhaven
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/dryer-repair/barrhaven"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                dryer repair in Barrhaven
-              </Link>
-              , we'll get your appliances back in shape.
-            </p>
-            <p className="text-lg text-gray-100">
-              Expect clear pricing, same-day availability in many areas, and repairs done right the first time.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Repair in Barrhaven"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Looking for appliance service in Barrhaven that's prompt and professional?
+            Our Ottawa-based, family-run team has been helping homes here for years.
+            From{" "}
+            <Link
+              href="/dishwasher-repair/barrhaven"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              dishwasher repair in Barrhaven
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/dryer-repair/barrhaven"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              dryer repair in Barrhaven
+            </Link>
+            , we'll get your appliances back in shape.
+          </>
+        }
+        additionalContent={
+          <p>
+            Expect clear pricing, same-day availability in many areas, and repairs done right the first time.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

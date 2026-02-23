@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Appliance Installation Kanata – Washers, Dryers, Dishwashers, Ovens | Fixer",
@@ -58,23 +59,26 @@ const faqs = [
 export default function ApplianceInstallationKanataPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Kanata</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Need help setting up a new appliance in Kanata? Fixer provides safe, reliable <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link>, now available right here in Kanata. Whether it’s a washer, dryer, dishwasher, or oven, we’ll connect it properly and back the job with a 90-day labour warranty.
-            </p>
-            <p className="text-lg text-gray-100 mt-4">
-              For repairs instead of installation, see our{" "}
-              <Link href="/kanata" className="text-white underline font-semibold hover:text-gray-100">
-                Kanata Appliance Repair service
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Appliance Installation Kanata"
+        description={
+          <>
+            Need help setting up a new appliance in Kanata? Fixer provides safe, reliable <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link>, now available right here in Kanata. Whether it's a washer, dryer, dishwasher, or oven, we'll connect it properly and back the job with a 90-day labour warranty.
+          </>
+        }
+        icon={<FaWrench className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-100 mt-4">
+            For repairs instead of installation, see our{" "}
+            <Link href="/kanata" className="text-white underline font-semibold hover:text-gray-100">
+              Kanata Appliance Repair service
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={false}
+      />
 
       <RelatedServicesSection
         services={appliances}

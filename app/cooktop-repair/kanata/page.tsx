@@ -3,10 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import CTASection from "@/components/CTASection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair Kanata - Fast, Reliable Cooktop Service | Fixer",
@@ -119,88 +123,48 @@ const faqs = [
 const otherServices = [
   { name: "Washer Repair Kanata", href: "/washer-repair/kanata" },
   { name: "Dryer Repair Kanata", href: "/dryer-repair/kanata" },
-  { name: "Dishwasher Repair Kanata", href: "/dishwasher-repair/kanata" },
   { name: "Fridge Repair Kanata", href: "/fridge-repair/kanata" },
   { name: "Freezer Repair Kanata", href: "/freezer-repair/kanata" },
   { name: "Oven Repair Kanata", href: "/oven-repair/kanata" },
+  { name: "Cooktop Repair Kanata", href: "/cooktop-repair/kanata" },
   { name: "Microwave Repair Kanata", href: "/microwave-repair/kanata" },
-  { name: "Cooktop Installation Kanata", href: "/appliance-installation/cooktop" },
+  { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function CooktopRepairKanataPage() {
   return (
     <>
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Cooktop Repair Services in Kanata</h1>
-            <p className="text-xl leading-relaxed text-gray-100">
-              Cooktop not turning on? Based in Kanata, Fixer Appliance Repair offers professional
-              troubleshooting and repair to get you cooking again without stress or delays. We repair all
-              major electric cooktop brands, including LG, Samsung, Whirlpool, GE, and Maytag.
-            </p>
-            <p className="mt-6 text-lg text-gray-100">
-              👉 Learn more about the community on our{" "}
-              <Link href="/kanata" className="font-semibold text-white underline-offset-4 hover:underline">
-                Local Kanata page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Cooktop Repair Services in Kanata"
+        description="Cooktop not turning on? Based in Kanata, Fixer Appliance Repair offers professional troubleshooting and repair to get you cooking again without stress or delays. We repair all major electric cooktop brands, including LG, Samsung, Whirlpool, GE, and Maytag."
+        icon={<FaFire className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg text-gray-100">
+            👉 Learn more about the community on our{" "}
+            <Link href="/kanata" className="font-semibold text-white underline-offset-4 hover:underline">
+              Local Kanata page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="text-center">Thinking about replacing your cooktop in Kanata?</p>
-              <p className="text-center">
-                Before making the switch, check our repair vs. replace guide — it explains repair costs,
-                lifespan, and when replacement makes sense.
-              </p>
-              <p className="text-center">
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700">
-                  {"Repair or replace? ->"}
-                </Link>
-              </p>
-              <p className="text-center">
-                Already bought a new unit? We provide cooktop installation in Kanata. We'll mount and test it
-                using your existing electrical hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                👉 Note: we don't run new high-voltage wiring or gas lines.
-              </p>
-              <p className="text-center">
-                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
-                  {"Learn more ->"}
-                </Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection 
+        heading="Why choose us"
+        benefits={whyChooseUs}
+        applianceName="Cooktop"
+      />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Why choose us</h2>
-            <ul className="mx-auto max-w-2xl space-y-4 text-lg text-gray-700">
-              {whyChooseUs.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-2 inline-block h-6 w-6 text-xl" aria-hidden="true">
-                    ✅
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you decide if it is worth saving." />
+
+      <InstallationCTASection
+        applianceName="Cooktop"
+        description="Upgrading to a new unit? We also offer cooktop installation in Kanata — fast, safe, and fully insured."
+        href="/appliance-installation/cooktop"
+      />
 
       <ServiceAreaSection
         title="Service Area: Kanata and Nearby"

@@ -4,6 +4,7 @@ import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -14,7 +15,8 @@ import {
   FaWaveSquare,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
-import FAQSection from "@/components/FAQSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 
@@ -127,28 +129,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Orleans", href: "/washer-repair/orleans" },
   { label: "Dryer Repair Orleans", href: "/dryer-repair/orleans" },
-  { label: "Dishwasher Repair Orleans", href: "/dishwasher-repair/orleans" },
   { label: "Fridge Repair Orleans", href: "/fridge-repair/orleans" },
   { label: "Freezer Repair Orleans", href: "/freezer-repair/orleans" },
   { label: "Oven Repair Orleans", href: "/oven-repair/orleans" },
   { label: "Cooktop Repair Orleans", href: "/cooktop-repair/orleans" },
-  { label: "Microwave Installation Orleans", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Orleans", href: "/microwave-repair/orleans" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairOrleansPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaBolt className="text-5xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6"><FaWaveSquare className="text-[30px] mb-2 inline-block" /> Dependable Microwave Repair in Orleans</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              From Fallingbrook to Chapel Hill, our Orleans technicians repair microwaves that won’t heat, spark inside, or display error codes. Affordable and local service, done right.
-            </p>
+      <ServiceHero
+        title="Dependable Microwave Repair in Orleans"
+        description="From Fallingbrook to Chapel Hill, our Orleans technicians repair microwaves that won't heat, spark inside, or display error codes. Affordable and local service, done right."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves with same-day or next-day appointments when available.
             </p>
@@ -159,20 +157,12 @@ export default function MicrowaveRepairOrleansPage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16134136969"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 413-6969
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Orleans" />
 
@@ -194,7 +184,7 @@ export default function MicrowaveRepairOrleansPage() {
             <p className="text-gray-700 mb-6">
               👉 No new electrical circuits or cabinetry modifications are included.
             </p>
-            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/appliance-installation/microwave" className="btn-primary inline-flex items-center justify-center">
               Learn more about Installation
             </Link>
           </div>
@@ -202,6 +192,14 @@ export default function MicrowaveRepairOrleansPage() {
       </section>
 
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
+
+      <InstallationCTASection
+        applianceName="Microwave"
+        description="Upgrading to a new unit? We also offer microwave installation in Orleans — fast, safe, and fully insured."
+        href="/appliance-installation/microwave"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

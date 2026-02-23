@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Appliance Service in Mississippi Mills – Dependable Local Technicians",
@@ -119,33 +120,31 @@ const additionalAreas = [
 export default function MississippiMillsServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Mississippi Mills</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance trouble in Mississippi Mills? Fixer Appliance Repair has been
-              keeping local kitchens and laundry rooms in shape for years. From{" "}
-              <Link
-                href="/fridge-repair/mississippi-mills"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                fridge repair in Mississippi Mills
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/oven-repair/mississippi-mills"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                oven repair in Mississippi Mills
-              </Link>
-              , we've got you covered with clear pricing, a 90-day warranty, and
-              same-day appointments in many areas.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Service in Mississippi Mills"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Appliance trouble in Mississippi Mills? Fixer Appliance Repair has been
+            keeping local kitchens and laundry rooms in shape for years. From{" "}
+            <Link
+              href="/fridge-repair/mississippi-mills"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              fridge repair in Mississippi Mills
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/oven-repair/mississippi-mills"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              oven repair in Mississippi Mills
+            </Link>
+            , we've got you covered with clear pricing, a 90-day warranty, and
+            same-day appointments in many areas.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

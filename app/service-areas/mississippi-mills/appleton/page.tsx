@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Appleton Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function AppletonServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Appleton Appliance Repair – Trusted Local Technicians
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Appleton made easy. We fix all major appliances with
-              insured service. Learn more on our{" "}
-              <Link
-                href="/service-areas/mississippi-mills"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Mississippi Mills appliance repair
-              </Link>{" "}
-              page, covering Almonte and Blakeney.
-            </p>
-            <p className="text-lg text-gray-100">
-              Repairs guaranteed with a 90-day warranty. Insured, customer-friendly staff. Local techs covering Appleton homes. Ask about same-day visits.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appleton Appliance Repair – Trusted Local Technicians"
+        description={
+          <>
+            Appliance repair in Appleton made easy. We fix all major appliances with
+            insured service. Learn more on our{" "}
+            <Link
+              href="/service-areas/mississippi-mills"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Mississippi Mills appliance repair
+            </Link>{" "}
+            page, covering Almonte and Blakeney.
+          </>
+        }
+        additionalContent={
+          <p>
+            Repairs guaranteed with a 90-day warranty. Insured, customer-friendly staff. Local techs covering Appleton homes. Ask about same-day visits.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

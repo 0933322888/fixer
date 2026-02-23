@@ -7,6 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Barrhaven – Fast, Local Service | Fixer",
@@ -109,27 +112,26 @@ const relatedServices = [
 export default function DishwasherRepairbarrhavenPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Barrhaven – Fast, Local Service</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              A broken dishwasher in Barrhaven can disrupt family routines. Fixer Appliance Repair offers same-day service in many neighbourhoods, fixing everything from stuck latches to pump failures.
-            </p>
+      <ServiceHero
+        title="Dishwasher Repair Barrhaven – Fast, Local Service"
+        description="A broken dishwasher in Barrhaven can disrupt family routines. Fixer Appliance Repair offers same-day service in many neighbourhoods, fixing everything from stuck latches to pump failures."
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <>
             <p className="text-lg mb-6">
               We service most major models, including Samsung, Bosch, Whirlpool, LG, and Maytag.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               👉 For all appliance services nearby, see our{" "}
               <Link href="/barrhaven" className="font-semibold hover:underline">
                 Local Barrhaven page
               </Link>
               .
             </p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dishwasher Issues */}
       <section className="section-padding bg-white">
@@ -156,6 +158,8 @@ export default function DishwasherRepairbarrhavenPage() {
       />
 
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="When your dishwasher breaks down, it's tempting to shop for a new one — but repairs are often quick and cost-effective. See how to tell when it's worth fixing." />
 
       {/* Service Area */}
       <ServiceAreaSection

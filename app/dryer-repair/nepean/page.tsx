@@ -8,7 +8,9 @@ import FAQSection from "@/components/FAQSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Nepean – Fast, Professional Service | Fixer",
@@ -130,24 +132,21 @@ const relatedServices = [
 export default function DryerRepairNepeanPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Professional Dryer Repair for Nepean Homes</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Is your dryer taking forever to finish or producing unusual smells? Fixer Appliance Repair is Nepean's choice for skilled dryer repairs, offering same-day appointments in many neighbourhoods. We service Whirlpool, Samsung, LG, Maytag, GE, and Frigidaire.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/nepean" className="font-semibold hover:underline">
-                Nepean appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Professional Dryer Repair for Nepean Homes"
+        description="Is your dryer taking forever to finish or producing unusual smells? Fixer Appliance Repair is Nepean's choice for skilled dryer repairs, offering same-day appointments in many neighbourhoods. We service Whirlpool, Samsung, LG, Maytag, GE, and Frigidaire."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/nepean" className="font-semibold hover:underline">
+              Nepean appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -159,6 +158,8 @@ export default function DryerRepairNepeanPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area: Nepean and Nearby */}
       <ServiceAreaSection

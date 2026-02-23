@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Mississippi Mills – Reliable Appliance Service | Fixer",
@@ -93,93 +96,19 @@ export default function OvenRepairMississippiMillsPage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Oven Installation in Mississippi Mills</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Is your oven failing in Mississippi Mills? Before replacing, check our repair vs. replace 
-                guide — it helps weigh repair value against replacement.
-              </p>
-              <p className="text-center">
-                For new units, we provide oven installation in Mississippi Mills. We'll hook it up and test 
-                it using your current hookups.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't run new wiring or gas lines.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Mississippi Mills area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding rural neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              For nearby service, check our{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/stittsville" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Stittsville
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/vanier" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Vanier
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/barrhaven" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Barrhaven
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/arnprior" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Arnprior
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/carleton-place" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Carleton Place
-              </Link>
-              . For full coverage, see our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Mississippi Mills — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Mississippi Mills"
+        surroundingLabel="and surrounding rural neighbourhoods"
+      />
 
       <CTASection />
 
@@ -209,11 +138,12 @@ export default function OvenRepairMississippiMillsPage() {
         services={[
           { name: "Washer Repair Mississippi Mills", href: "/washer-repair/mississippi-mills" },
           { name: "Dryer Repair Mississippi Mills", href: "/dryer-repair/mississippi-mills" },
-          { name: "Dishwasher Repair Mississippi Mills", href: "/dishwasher-repair/mississippi-mills" },
           { name: "Fridge Repair Mississippi Mills", href: "/fridge-repair/mississippi-mills" },
           { name: "Freezer Repair Mississippi Mills", href: "/freezer-repair/mississippi-mills" },
+          { name: "Oven Repair Mississippi Mills", href: "/oven-repair/mississippi-mills" },
           { name: "Cooktop Repair Mississippi Mills", href: "/cooktop-repair/mississippi-mills" },
-          { name: "Oven Installation Mississippi Mills", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Mississippi Mills", href: "/microwave-repair/mississippi-mills" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="Ovens are just the beginning — here are our other services in Mississippi Mills:"

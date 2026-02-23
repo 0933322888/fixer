@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Jackson Trails Appliance Repair – Reliable Service | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function JacksonTrailsServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Jackson Trails Appliance Repair – Reliable Local Service
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Jackson Trails made simple. Our local team delivers
-              dependable service, often same-day. See our{" "}
-              <Link
-                href="/service-areas/stittsville"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Stittsville appliance repair
-              </Link>{" "}
-              page, also serving Crossing Bridge and Bryanston Gate.
-            </p>
-            <p className="text-lg text-gray-100">
-              Guaranteed 90-day coverage for peace of mind. Courteous, insured repair professionals. Stittsville-based techs near your home. Same-day service when possible.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Jackson Trails Appliance Repair – Reliable Local Service"
+        description={
+          <>
+            Appliance repair in Jackson Trails made simple. Our local team delivers
+            dependable service, often same-day. See our{" "}
+            <Link
+              href="/service-areas/stittsville"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Stittsville appliance repair
+            </Link>{" "}
+            page, also serving Crossing Bridge and Bryanston Gate.
+          </>
+        }
+        additionalContent={
+          <p>
+            Guaranteed 90-day coverage for peace of mind. Courteous, insured repair professionals. Stittsville-based techs near your home. Same-day service when possible.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

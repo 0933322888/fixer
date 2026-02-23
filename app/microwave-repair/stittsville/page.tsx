@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 import {
   FaBolt,
   FaMapMarkerAlt,
@@ -9,8 +10,11 @@ import {
   FaUtensils,
   FaTree,
   FaBook,
+  FaWaveSquare,
 } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
@@ -137,28 +141,24 @@ const faqs = [
 const services = [
   { label: "Washer Repair Stittsville", href: "/washer-repair/stittsville" },
   { label: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
-  { label: "Dishwasher Repair Stittsville", href: "/dishwasher-repair/stittsville" },
   { label: "Fridge Repair Stittsville", href: "/fridge-repair/stittsville" },
   { label: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
   { label: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
   { label: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
-  { label: "Microwave Installation Stittsville", href: "/appliance-installation/microvawe" },
+  { label: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
+  { label: "Appliance Installation", href: "/appliance-installation/dishwasher" },
 ];
 
 export default function MicrowaveRepairStittsvillePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-white/10 w-24 h-24 rounded-full flex items-center justify-center mb-6 mx-auto">
-              <FaBolt className="text-5xl text-white" />
-            </div>
-            <h1 className="heading-xl text-white mb-6">Stittsville Microwave Repair – We Get It Working Again</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Microwave won’t start or smells like burning? If you’re in Stittsville, our local techs can bring it back to life in no time. Fixer Appliance Repair handles all brands and models with care.
-            </p>
+      <ServiceHero
+        title="Stittsville Microwave Repair – We Get It Working Again"
+        description="Microwave won't start or smells like burning? If you're in Stittsville, our local techs can bring it back to life in no time. Fixer Appliance Repair handles all brands and models with care."
+        icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <>
             <p className="text-lg text-gray-200 mb-6">
               We handle LG, Samsung, Whirlpool, GE, and Maytag — same-day or next-day visits when available.
             </p>
@@ -169,49 +169,24 @@ export default function MicrowaveRepairStittsvillePage() {
               </Link>
               .
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="btn-primary bg-accent-500 hover:bg-accent-600">
-                Book Online
-              </Link>
-              <a
-                href="tel:+16135550199"
-                className="btn-outline border-white text-white hover:bg-white hover:text-primary-900"
-              >
-                Call/Text (613) 555-0199
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        phoneNumber="613-413-6969"
+        phoneText="Call us"
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      {/* Installation Section */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="heading-md mb-6">Installation Services</h2>
-            <p className="text-lg text-gray-700 mb-4">
-              Upgrading your microwave in Stittsville? First, review our{" "}
-              <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700 font-semibold">
-                repair vs. replace guide
-              </Link>{" "}
-              — it explains when repair is cost-effective and when replacement makes sense.
-            </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Once you’ve got a new unit, we’ll handle microwave installation in Stittsville. We’ll set it up and test it using your existing electrical hookups.
-            </p>
-            <p className="text-gray-700 mb-6">
-              👉 No new wiring or cabinetry work included.
-            </p>
-            <Link href="/appliance-installation/microvawe" className="btn-primary inline-flex items-center justify-center">
-              Learn more about Installation
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
+
+      <InstallationCTASection
+        applianceName="Microwave"
+        description="Upgrading to a new unit? We also offer microwave installation in Stittsville — fast, safe, and fully insured."
+        href="/appliance-installation/microwave"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

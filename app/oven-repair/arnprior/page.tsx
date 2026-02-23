@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Arnprior – Trusted Local Electric Oven Service | Fixer",
@@ -93,93 +96,19 @@ export default function OvenRepairArnpriorPage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Oven Installation in Arnprior</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Thinking of a new oven in Arnprior? Check our repair vs. replace guide — it shows common 
-                repairs, lifespan, and when replacement is cost-effective.
-              </p>
-              <p className="text-center">
-                If you've already purchased one, we provide oven installation in Arnprior. We'll connect 
-                and test it with your current electrical connections.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ No new circuits or gas hookups are included.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Arnprior area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding rural neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              We're also available for{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/stittsville" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Stittsville
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/vanier" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Vanier
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/barrhaven" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Barrhaven
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/mississippi-mills" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Mississippi Mills
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/carleton-place" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Carleton Place
-              </Link>
-              . For full coverage, see our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Arnprior — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Arnprior"
+        surroundingLabel="and surrounding rural neighbourhoods"
+      />
 
       <CTASection />
 
@@ -209,11 +138,12 @@ export default function OvenRepairArnpriorPage() {
         services={[
           { name: "Washer Repair Arnprior", href: "/washer-repair/arnprior" },
           { name: "Dryer Repair Arnprior", href: "/dryer-repair/arnprior" },
-          { name: "Dishwasher Repair Arnprior", href: "/dishwasher-repair/arnprior" },
           { name: "Fridge Repair Arnprior", href: "/fridge-repair/arnprior" },
           { name: "Freezer Repair Arnprior", href: "/freezer-repair/arnprior" },
+          { name: "Oven Repair Arnprior", href: "/oven-repair/arnprior" },
           { name: "Cooktop Repair Arnprior", href: "/cooktop-repair/arnprior" },
-          { name: "Oven Installation Arnprior", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Arnprior", href: "/microwave-repair/arnprior" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="We service more than just ovens — here are our other options in Arnprior:"

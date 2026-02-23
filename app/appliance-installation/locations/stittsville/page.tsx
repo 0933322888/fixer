@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Appliance Installation Stittsville – Reliable Setup for All Appliances | Fixer",
@@ -58,24 +59,26 @@ const faqs = [
 export default function ApplianceInstallationStittsvillePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Stittsville</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              From washers and dryers to dishwashers and ovens, Fixer offers professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> with full coverage in Stittsville. Our technicians ensure correct hookups and safe connections, all supported by a 90-day labour warranty.
-            </p>
-            <p className="text-lg text-gray-100 mt-4">
-              If you're looking for repairs, visit our{ " "}
-              <Link href="/stittsville" className="text-white underline font-semibold hover:text-gray-100">
-                Stittsville Appliance Repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Appliance Installation Stittsville"
+        description={
+          <>
+            From washers and dryers to dishwashers and ovens, Fixer offers professional <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> with full coverage in Stittsville. Our technicians ensure correct hookups and safe connections, all supported by a 90-day labour warranty.
+          </>
+        }
+        icon={<FaWrench className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-100 mt-4">
+            If you're looking for repairs, visit our{" "}
+            <Link href="/stittsville" className="text-white underline font-semibold hover:text-gray-100">
+              Stittsville Appliance Repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={false}
+      />
 
       <RelatedServicesSection
         services={appliances}

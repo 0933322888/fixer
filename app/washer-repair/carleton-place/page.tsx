@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Carleton Place Washer Repair – Dependable, Local Service | Fixer",
@@ -101,24 +103,21 @@ const relatedServices = [
 export default function WasherRepairCarletonPlacePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Trusted Washer Repair in Carleton Place</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Laundry piling up because your washer won't cooperate? Our skilled Carleton Place team provides reliable repairs for all major washer brands. We offer same-day service in many areas, clear upfront pricing, and a 90-day warranty on all labour — so you can have peace of mind long after the repair is done.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/service-areas/carleton-place" className="font-semibold hover:underline">
-                Carleton Place appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Trusted Washer Repair in Carleton Place"
+        description="Laundry piling up because your washer won't cooperate? Our skilled Carleton Place team provides reliable repairs for all major washer brands. We offer same-day service in many areas, clear upfront pricing, and a 90-day warranty on all labour — so you can have peace of mind long after the repair is done."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/service-areas/carleton-place" className="font-semibold hover:underline">
+              Carleton Place appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Issues */}
       <section className="section-padding bg-white">
@@ -145,6 +144,8 @@ export default function WasherRepairCarletonPlacePage() {
       />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
 
       {/* Service Area */}
       <ServiceAreaSection

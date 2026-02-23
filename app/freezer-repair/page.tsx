@@ -9,6 +9,7 @@ import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Ottawa – Fast, Reliable Upright & Chest Freezer Service | Fixer",
@@ -151,25 +152,12 @@ const faqs = [
 export default function FreezerRepairPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Freezer Repair in Ottawa – Stop the Thaw Today</h1>
-            <p className="text-xl text-gray-100 mb-8">
-              Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
-                Call us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Freezer Repair in Ottawa – Stop the Thaw Today"
+        description="Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        useSectionPadding={true}
+      />
 
       {/* Service Description */}
       <section className="section-padding bg-white">
@@ -191,9 +179,10 @@ export default function FreezerRepairPage() {
       <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
 
       <InstallationCTASection
+        heading="Need Help Installing Other Appliances?"
         applianceName="Freezer"
-        description="Got a new freezer? We also provide freezer installation in Ottawa with same-day service available in most areas."
-        href="/appliance-installation"
+        description="We provide installation for dishwashers, washers, dryers and electric ovens."
+        href="/appliance-installation/locations/ottawa"
       />
 
       {/* Brands We Repair */}
@@ -234,8 +223,8 @@ export default function FreezerRepairPage() {
               {serviceAreas.map((area, index) => {
                 const slug = area.toLowerCase().replace(/\s+/g, '-');
                 return (
-                  <Link 
-                    key={index} 
+                  <Link
+                    key={index}
                     href={`/freezer-repair/${slug}`}
                     className="text-center p-3 bg-white rounded-lg shadow-sm hover:bg-primary-50 hover:shadow-md transition-all"
                   >

@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Repair Kanata – Fast, Local Service | Fixer",
@@ -112,24 +114,21 @@ const relatedServices = [
 export default function WasherRepairKanataPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Local Washer Repair You Can Count On</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Washer leaving clothes soaking wet or flashing error codes? Fixer Appliance Repair is your local Kanata team for quick, dependable washer repairs. From faulty door locks to cycles that won't finish, we'll get your laundry routine back on track. We service leading brands including Whirlpool, LG, Samsung, GE, Maytag, and Frigidaire.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, see our full{" "}
-              <Link href="/service-areas/kanata" className="font-semibold hover:underline">
-                Kanata appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Local Washer Repair You Can Count On"
+        description="Washer leaving clothes soaking wet or flashing error codes? Fixer Appliance Repair is your local Kanata team for quick, dependable washer repairs. From faulty door locks to cycles that won't finish, we'll get your laundry routine back on track. We service leading brands including Whirlpool, LG, Samsung, GE, Maytag, and Frigidaire."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, see our full{" "}
+            <Link href="/service-areas/kanata" className="font-semibold hover:underline">
+              Kanata appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Issues */}
       <section className="section-padding bg-white">
@@ -156,6 +155,8 @@ export default function WasherRepairKanataPage() {
       />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
 
       {/* Service Area */}
       <ServiceAreaSection

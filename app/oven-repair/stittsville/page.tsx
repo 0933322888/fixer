@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Stittsville – Fast Electric Oven Service | Fixer",
@@ -111,93 +114,19 @@ export default function OvenRepairStittsvillePage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Installation Services</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Upgrading your oven in Stittsville? Before replacing, read our repair vs. replace guide 
-                — it covers typical repair costs, lifespan, and upgrade timing.
-              </p>
-              <p className="text-center">
-                Once you've bought a new one, we provide oven installation in Stittsville. Our team connects 
-                and tests it with your existing power supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ New high-voltage wiring or gas hookups are not included.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area: Stittsville and Nearby</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Stittsville area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              We also cover{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/vanier" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Vanier
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/barrhaven" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Barrhaven
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/mississippi-mills" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Mississippi Mills
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/arnprior" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Arnprior
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/carleton-place" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Carleton Place
-              </Link>
-              . For full coverage, see our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Stittsville — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Stittsville"
+        heading="Service Area: Stittsville and Nearby"
+      />
 
       <CTASection />
 
@@ -228,11 +157,12 @@ export default function OvenRepairStittsvillePage() {
         services={[
           { name: "Washer Repair Stittsville", href: "/washer-repair/stittsville" },
           { name: "Dryer Repair Stittsville", href: "/dryer-repair/stittsville" },
-          { name: "Dishwasher Repair Stittsville", href: "/dishwasher-repair/stittsville" },
           { name: "Fridge Repair Stittsville", href: "/fridge-repair/stittsville" },
           { name: "Freezer Repair Stittsville", href: "/freezer-repair/stittsville" },
+          { name: "Oven Repair Stittsville", href: "/oven-repair/stittsville" },
           { name: "Cooktop Repair Stittsville", href: "/cooktop-repair/stittsville" },
-          { name: "Oven Installation Stittsville", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Stittsville", href: "/microwave-repair/stittsville" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="Need more than oven repair? Here's what else we service in Stittsville:"

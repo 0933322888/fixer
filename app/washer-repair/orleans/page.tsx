@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Orleans Washer Repair – Local Experts, 90-Day Warranty | Fixer",
@@ -102,24 +104,21 @@ const relatedServices = [
 export default function WasherRepairOrleansPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Reliable Washer Repair in Orleans</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              When laundry day grinds to a halt because your washer won't start or complete a cycle, Fixer Appliance Repair is here to help. Our Orleans technicians provide quick, effective washer repairs so you can get back to your routine without long delays. We serve all neighbourhoods in Orleans with upfront pricing, friendly service, and a 90-day workmanship guarantee.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/service-areas/orleans" className="font-semibold hover:underline">
-                Orleans appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Reliable Washer Repair in Orleans"
+        description="When laundry day grinds to a halt because your washer won't start or complete a cycle, Fixer Appliance Repair is here to help. Our Orleans technicians provide quick, effective washer repairs so you can get back to your routine without long delays. We serve all neighbourhoods in Orleans with upfront pricing, friendly service, and a 90-day workmanship guarantee."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/service-areas/orleans" className="font-semibold hover:underline">
+              Orleans appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Issues */}
       <section className="section-padding bg-white">
@@ -146,6 +145,8 @@ export default function WasherRepairOrleansPage() {
       />
 
       <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
 
       {/* Service Area */}
       <ServiceAreaSection

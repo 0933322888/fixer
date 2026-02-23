@@ -8,7 +8,9 @@ import FAQSection from "@/components/FAQSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Repair Stittsville – Local, Reliable Experts | Fixer",
@@ -129,24 +131,21 @@ const relatedServices = [
 export default function DryerRepairStittsvillePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Reliable Dryer Repair Experts in Stittsville</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              From a drum that won't spin to sensors that won't detect dryness, Fixer Appliance Repair helps Stittsville homeowners keep laundry day stress-free. Our team knows the area and provides fast, honest solutions. We repair LG, Whirlpool, GE, Maytag, Samsung, and Frigidaire dryers.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/stittsville" className="font-semibold hover:underline">
-                Stittsville appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Reliable Dryer Repair Experts in Stittsville"
+        description="From a drum that won't spin to sensors that won't detect dryness, Fixer Appliance Repair helps Stittsville homeowners keep laundry day stress-free. Our team knows the area and provides fast, honest solutions. We repair LG, Whirlpool, GE, Maytag, Samsung, and Frigidaire dryers."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/stittsville" className="font-semibold hover:underline">
+              Stittsville appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -158,6 +157,8 @@ export default function DryerRepairStittsvillePage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area: Stittsville and Nearby */}
       <ServiceAreaSection

@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title:
@@ -116,31 +117,28 @@ const additionalAreas = [
 export default function BeaverbrookServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Beaverbrook Appliance Repair – Reliable Local Service
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Need appliance repair in Beaverbrook, Kanata? We fix all major electric
-              appliances with professional care and a 90-day guarantee. See more options
-              on our{" "}
-              <Link
-                href="/service-areas/kanata"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Kanata appliance repair
-              </Link>{" "}
-              page, covering Morgan's Grant and Glen Cairn.
-            </p>
-            <p className="text-lg text-gray-100">
-              Peace of mind with our 90-day repair guarantee. Friendly, fully insured experts at your door. Kanata-based techs familiar with local homes. Call early for same-day service slots.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Beaverbrook Appliance Repair – Reliable Local Service"
+        description={
+          <>
+            Need appliance repair in Beaverbrook, Kanata? We fix all major electric
+            appliances with professional care and a 90-day guarantee. See more options
+            on our{" "}
+            <Link
+              href="/service-areas/kanata"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Kanata appliance repair
+            </Link>{" "}
+            page, covering Morgan's Grant and Glen Cairn.
+          </>
+        }
+        additionalContent={
+          <p>
+            Peace of mind with our 90-day repair guarantee. Friendly, fully insured experts at your door. Kanata-based techs familiar with local homes. Call early for same-day service slots.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

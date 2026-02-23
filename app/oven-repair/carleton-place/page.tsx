@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import ServiceHero from "@/components/ServiceHero";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import OvenRepairServiceAreaSection from "@/components/OvenRepairServiceAreaSection";
 
 export const metadata: Metadata = {
   title: "Oven Repair Carleton Place – Fast, Reliable Electric Oven Service | Fixer",
@@ -92,93 +95,18 @@ export default function OvenRepairCarletonPlacePage() {
 
       <BenefitsSection applianceName="Oven" benefits={benefits} />
 
-      {/* Oven Installation Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Oven Installation in Carleton Place</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center mb-6">
-                Need oven installation in Carleton Place? Our repair vs. replace guide explains when it's 
-                better to fix and when it's smarter to upgrade.
-              </p>
-              <p className="text-center">
-                Once you have a new oven, we'll handle installation in Carleton Place. We connect, level, 
-                and test it with your existing power supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't provide new wiring or gas hookups.
-              </p>
-              <div className="text-center mt-8">
-                <Link href="/appliance-installation/oven" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 
-      {/* Service Area */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Service Area</h2>
-            <p className="text-lg text-gray-700 mb-6 text-center">
-              We provide appliance repair services across the entire Carleton Place area, including:
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {serviceAreas.map((area, index) => (
-                <div key={index} className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                  {area}
-                </div>
-              ))}
-              <div className="px-6 py-3 bg-gray-50 rounded-lg font-semibold text-gray-800">
-                and surrounding neighbourhoods
-              </div>
-            </div>
-            <p className="text-center text-gray-700 mb-6">
-              For nearby service, check our{" "}
-              <Link href="/oven-repair/kanata" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Kanata
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/stittsville" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Stittsville
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/nepean" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Nepean
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/orleans" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Orleans
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/vanier" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Vanier
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/barrhaven" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Barrhaven
-              </Link>
-              ,{" "}
-              <Link href="/oven-repair/mississippi-mills" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Mississippi Mills
-              </Link>
-              , and{" "}
-              <Link href="/oven-repair/arnprior" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Arnprior
-              </Link>
-              . For full coverage, see our{" "}
-              <Link href="/oven-repair" className="text-primary-600 hover:text-primary-700 underline">
-                Oven Repair Ottawa
-              </Link>{" "}
-              page.
-            </p>
-          </div>
-        </div>
-      </section>
+      <InstallationCTASection
+        applianceName="Oven"
+        description="Upgrading to a new unit? We also offer oven installation in Carleton Place — fast, safe, and fully insured."
+        href="/appliance-installation/oven"
+      />
+
+      <OvenRepairServiceAreaSection
+        serviceAreas={serviceAreas}
+        locationName="Carleton Place"
+      />
 
       <CTASection />
 
@@ -208,11 +136,12 @@ export default function OvenRepairCarletonPlacePage() {
         services={[
           { name: "Washer Repair Carleton Place", href: "/washer-repair/carleton-place" },
           { name: "Dryer Repair Carleton Place", href: "/dryer-repair/carleton-place" },
-          { name: "Dishwasher Repair Carleton Place", href: "/dishwasher-repair/carleton-place" },
           { name: "Fridge Repair Carleton Place", href: "/fridge-repair/carleton-place" },
           { name: "Freezer Repair Carleton Place", href: "/freezer-repair/carleton-place" },
+          { name: "Oven Repair Carleton Place", href: "/oven-repair/carleton-place" },
           { name: "Cooktop Repair Carleton Place", href: "/cooktop-repair/carleton-place" },
-          { name: "Oven Installation Carleton Place", href: "/appliance-installation/oven" },
+          { name: "Microwave Repair Carleton Place", href: "/microwave-repair/carleton-place" },
+          { name: "Appliance Installation", href: "/appliance-installation/dishwasher" },
         ]}
         heading="Also Need Help With…"
         description="Oven issues aren't the only thing we handle — here are more services in Carleton Place:"

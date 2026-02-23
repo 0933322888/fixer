@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Fridge Repair Orleans – Fast, Local Refrigerator Service | Fixer",
@@ -89,29 +92,18 @@ const faqs = [
 export default function FridgeRepairOrleansPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Fridge Repair in Orleans</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Fridge running warm or ice maker refusing to work? Fixer Appliance Repair provides Orleans households with fast, reliable refrigerator service. Our local techs fix everything from faulty thermostats to broken seals, always with clear pricing and a 90-day warranty.
+      <ServiceHero
+        title="Fridge Repair in Orleans"
+        description="Fridge running warm or ice maker refusing to work? Fixer Appliance Repair provides Orleans households with fast, reliable refrigerator service. Our local techs fix everything from faulty thermostats to broken seals, always with clear pricing and a 90-day warranty."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We service major brands such as LG, Samsung, Whirlpool, GE, and Maytag.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We service major brands such as LG, Samsung, Whirlpool, GE, and Maytag.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Fridge Issues We Fix in Orleans" />
 
@@ -144,6 +136,14 @@ export default function FridgeRepairOrleansPage() {
       </section>
 
       <BenefitsSection applianceName="Fridge" benefits={benefits} />
+
+      <RepairOrReplaceSection description="Refrigerators are expensive to replace — and many common issues are easy to fix. If your fridge is less than 12 years old, check our repair vs replace comparison to make a smart decision based on cost, age, and reliability." />
+
+      <InstallationCTASection
+        applianceName="Fridge"
+        description="Upgrading to a new unit? We also offer fridge installation in Orleans — fast, safe, and fully insured."
+        href="/appliance-installation/fridge"
+      />
 
       <CTASection />
 

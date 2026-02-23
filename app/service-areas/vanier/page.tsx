@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Vanier Appliance Service – Skilled Repairs & Local Expertise | Fixer",
@@ -109,17 +110,15 @@ const neighbourhoods = [
 export default function VanierServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Service in Vanier</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Need a trusted appliance repair service in Vanier? From <Link href="/washer-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">washer repair in Vanier</Link> to <Link href="/fridge-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">fridge repair in Vanier</Link>, our Ottawa-based, family-run team keeps local kitchens and laundry rooms working smoothly. We provide clear pricing, a 90-day workmanship guarantee, and same-day service in many parts of Vanier.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Service in Vanier"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            Need a trusted appliance repair service in Vanier? From <Link href="/washer-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">washer repair in Vanier</Link> to <Link href="/fridge-repair/vanier" className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200">fridge repair in Vanier</Link>, our Ottawa-based, family-run team keeps local kitchens and laundry rooms working smoothly. We provide clear pricing, a 90-day workmanship guarantee, and same-day service in many parts of Vanier.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

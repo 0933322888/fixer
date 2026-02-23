@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Queenswood Heights Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function QueenswoodHeightsServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Queenswood Heights Appliance Repair – Fast & Trusted
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Queenswood Heights with insured local service. Same-day
-              appointments often available. Explore our{" "}
-              <Link
-                href="/service-areas/orleans"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Orleans appliance repair
-              </Link>{" "}
-              hub, covering Avalon and Fallingbrook.
-            </p>
-            <p className="text-lg text-gray-100">
-              All repairs backed by 90-day coverage. Experienced, insured team. Orleans technicians who know your area. Same-day repairs offered whenever we can.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Queenswood Heights Appliance Repair – Fast & Trusted"
+        description={
+          <>
+            Appliance repair in Queenswood Heights with insured local service. Same-day
+            appointments often available. Explore our{" "}
+            <Link
+              href="/service-areas/orleans"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Orleans appliance repair
+            </Link>{" "}
+            hub, covering Avalon and Fallingbrook.
+          </>
+        }
+        additionalContent={
+          <p>
+            All repairs backed by 90-day coverage. Experienced, insured team. Orleans technicians who know your area. Same-day repairs offered whenever we can.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

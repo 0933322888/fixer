@@ -6,7 +6,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Washer Repair Stittsville – Fast, Local Experts | Fixer",
@@ -112,24 +115,21 @@ const relatedServices = [
 export default function WasherRepairStittsvillePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaTshirt className="text-[30px] mb-2 inline-block" /> Professional Washer Repair in Stittsville</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Tired of a washer that won't drain, keeps stopping mid-cycle, or shakes across the floor? Fixer Appliance Repair delivers professional washer service throughout Stittsville, with fast response and fair pricing. We fix Whirlpool, GE, Samsung, LG, Maytag, and Frigidaire machines — both top-loaders and front-loaders.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, visit our{" "}
-              <Link href="/service-areas/stittsville" className="font-semibold hover:underline">
-                Stittsville appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Professional Washer Repair in Stittsville"
+        description="Tired of a washer that won't drain, keeps stopping mid-cycle, or shakes across the floor? Fixer Appliance Repair delivers professional washer service throughout Stittsville, with fast response and fair pricing. We fix Whirlpool, GE, Samsung, LG, Maytag, and Frigidaire machines — both top-loaders and front-loaders."
+        icon={<FaTshirt className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, visit our{" "}
+            <Link href="/service-areas/stittsville" className="font-semibold hover:underline">
+              Stittsville appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Washer Problems */}
       <section className="section-padding bg-white">
@@ -185,6 +185,14 @@ export default function WasherRepairStittsvillePage() {
           </div>
         </div>
       </section>
+
+      <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
+
+      <InstallationCTASection
+        applianceName="Washer"
+        description="Upgrading to a new unit? We also offer washer installation in Stittsville — fast, safe, and fully insured."
+        href="/appliance-installation/washer"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

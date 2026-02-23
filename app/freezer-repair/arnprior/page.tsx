@@ -3,12 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
-import InstallationCTASection from "@/components/InstallationCTASection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Arnprior – Upright & Chest Freezer Service | Fixer",
@@ -103,29 +105,18 @@ const relatedServices = [
 export default function FreezerRepairArnpriorPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Local Freezer Repair Specialists in Arnprior</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Whether your freezer is too warm, cycling constantly, or making loud buzzing noises, Fixer Appliance Repair offers professional service in Arnprior homes and cottages.
+      <ServiceHero
+        title="Local Freezer Repair Specialists in Arnprior"
+        description="Whether your freezer is too warm, cycling constantly, or making loud buzzing noises, Fixer Appliance Repair offers professional service in Arnprior homes and cottages."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            We service major models including Whirlpool, Samsung, GE, LG, and Frigidaire.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              We service major models including Whirlpool, Samsung, GE, LG, and Frigidaire.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Arnprior" />
 
@@ -137,6 +128,8 @@ export default function FreezerRepairArnpriorPage() {
       />
 
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
 
       <CTASection />
 

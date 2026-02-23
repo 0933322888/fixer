@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title:
@@ -116,30 +117,27 @@ const additionalAreas = [
 export default function GlenCairnServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Glen Cairn Appliance Repair – Done Right the First Time
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Trusted appliance repair in Glen Cairn. We service washers, dryers, fridges,
-              ovens and more, backed by a 90-day guarantee. Visit our{" "}
-              <Link
-                href="/service-areas/kanata"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Kanata appliance repair
-              </Link>{" "}
-              page, also covering Beaverbrook and Katimavik-Hazeldean.
-            </p>
-            <p className="text-lg text-gray-100">
-              Solid 90-day warranty on every job. Insured and approachable specialists. Kanata locals who understand the community. Same-day service offered whenever we can.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Glen Cairn Appliance Repair – Done Right the First Time"
+        description={
+          <>
+            Trusted appliance repair in Glen Cairn. We service washers, dryers, fridges,
+            ovens and more, backed by a 90-day guarantee. Visit our{" "}
+            <Link
+              href="/service-areas/kanata"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Kanata appliance repair
+            </Link>{" "}
+            page, also covering Beaverbrook and Katimavik-Hazeldean.
+          </>
+        }
+        additionalContent={
+          <p>
+            Solid 90-day warranty on every job. Insured and approachable specialists. Kanata locals who understand the community. Same-day service offered whenever we can.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

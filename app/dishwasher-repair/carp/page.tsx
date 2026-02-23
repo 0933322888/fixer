@@ -7,7 +7,10 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Carp – Expert Service for Homes & Farms | Fixer",
@@ -127,27 +130,26 @@ const relatedServices = [
 export default function DishwasherRepairCarpPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Expert Dishwasher Repair for Carp Kitchens</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              In Carp, dishwashers face everything from leaks to clogged pumps. Fixer Appliance Repair is here with skilled, rural-friendly service — whether you're in a new build or a farmhouse kitchen.
-            </p>
+      <ServiceHero
+        title="Expert Dishwasher Repair for Carp Kitchens"
+        description="In Carp, dishwashers face everything from leaks to clogged pumps. Fixer Appliance Repair is here with skilled, rural-friendly service — whether you're in a new build or a farmhouse kitchen."
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <>
             <p className="text-lg mb-6">
               We handle Bosch, Whirlpool, GE, LG, Maytag, Samsung, and others.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               👉 For all appliance services nearby, see our{" "}
               <Link href="/carp" className="font-semibold hover:underline">
                 Local Carp page
               </Link>
               .
             </p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 
@@ -181,6 +183,14 @@ export default function DishwasherRepairCarpPage() {
       </section>
 
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="When your dishwasher breaks down, it's tempting to shop for a new one — but repairs are often quick and cost-effective. See how to tell when it's worth fixing." />
+
+      <InstallationCTASection
+        applianceName="Dishwasher"
+        description="Upgrading to a new unit? We also offer dishwasher installation in Carp — fast, safe, and fully insured."
+        href="/appliance-installation/dishwasher"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

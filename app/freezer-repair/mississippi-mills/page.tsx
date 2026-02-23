@@ -3,11 +3,14 @@ import Link from "next/link";
 import { FaSnowflake, FaMapMarkerAlt } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import CommonIssuesSection from "@/components/CommonIssuesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Freezer Repair Mississippi Mills – Fast Upright & Chest Freezer Service | Fixer",
@@ -102,61 +105,30 @@ const relatedServices = [
 export default function FreezerRepairMississippiMillsPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-[#DD4F06] text-white py-20">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4"><FaSnowflake className="text-[30px] mb-2 inline-block" /> Expert Freezer Service in Mississippi Mills</h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto">
-            From chest freezers on rural properties to uprights in Almonte kitchens, Fixer Appliance Repair keeps your food safe and frozen. We fix thermostat issues, noisy compressors, and frost build-up — often with same-day availability.
+      <ServiceHero
+        title="Expert Freezer Service in Mississippi Mills"
+        description="From chest freezers on rural properties to uprights in Almonte kitchens, Fixer Appliance Repair keeps your food safe and frozen. We fix thermostat issues, noisy compressors, and frost build-up — often with same-day availability."
+        icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-200 mb-8">
+            Brands we handle include Frigidaire, Whirlpool, GE, LG, and Samsung.
           </p>
-          <Link href="/contact" className="btn-primary bg-white text-primary-700 hover:bg-gray-100">
-            Book Service Now
-          </Link>
-        </div>
-      </section>
-
-      {/* Intro */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700">
-              Brands we handle include Frigidaire, Whirlpool, GE, LG, and Samsung.
-            </p>
-          </div>
-        </div>
-      </section>
+        }
+        useSectionPadding={false}
+      />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Freezer Issues We Fix in Mississippi Mills" />
 
-      {/* Installation Services */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md text-center mb-8">Freezer Installation in Mississippi Mills</h2>
-            <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
-              <p className="text-center">
-                Freezer acting up in Mississippi Mills?
-              </p>
-              <p className="text-center">
-                Before replacing, review our repair vs. replace guide — it may save you money.
-              </p>
-              <p className="text-center">
-                If replacement is the choice, we provide freezer installation in Mississippi Mills. We'll install and test it using your current power connections.
-              </p>
-              <p className="text-center text-sm text-gray-600">
-                ⚠️ We don't run new wiring or plumbing lines.
-              </p>
-              <div className="text-center mt-6">
-                <Link href="/appliance-installation" className="btn-primary">
-                  Learn More About Installation
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <BenefitsSection applianceName="Freezer" benefits={benefits} />
+
+      <RepairOrReplaceSection description="A good freezer can last well over a decade. If yours isn't cooling right, read our article to find out if a repair makes more sense than a new unit." />
+
+      <InstallationCTASection
+        applianceName="Freezer"
+        description="Upgrading to a new unit? We also offer freezer installation in Mississippi Mills — fast, safe, and fully insured."
+        href="/appliance-installation/locations/ottawa"
+      />
 
       <CTASection />
 

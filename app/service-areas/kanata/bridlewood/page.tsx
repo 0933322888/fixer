@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title:
@@ -116,30 +117,27 @@ const additionalAreas = [
 export default function BridlewoodServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Bridlewood Appliance Repair for Local Homes
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Reliable appliance repair in Bridlewood, Kanata. Our local techs bring tools
-              and common parts to fix it right the first time. Learn more through our{" "}
-              <Link
-                href="/service-areas/kanata"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Kanata appliance repair
-              </Link>{" "}
-              page, also serving Kanata Lakes and Glen Cairn.
-            </p>
-            <p className="text-lg text-gray-100">
-              Guaranteed repairs with a 90-day warranty. Safe, insured, and customer-friendly team. Kanata-based techs just around the corner. Same-day scheduling available most days.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Bridlewood Appliance Repair for Local Homes"
+        description={
+          <>
+            Reliable appliance repair in Bridlewood, Kanata. Our local techs bring tools
+            and common parts to fix it right the first time. Learn more through our{" "}
+            <Link
+              href="/service-areas/kanata"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Kanata appliance repair
+            </Link>{" "}
+            page, also serving Kanata Lakes and Glen Cairn.
+          </>
+        }
+        additionalContent={
+          <p>
+            Guaranteed repairs with a 90-day warranty. Safe, insured, and customer-friendly team. Kanata-based techs just around the corner. Same-day scheduling available most days.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

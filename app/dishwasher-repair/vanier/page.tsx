@@ -6,7 +6,10 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Vanier – Fast, Reliable Local Service | Fixer",
@@ -108,28 +111,31 @@ const relatedServices = [
 export default function DishwasherRepairVanierPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Vanier 
-              <br /> Fast, Reliable Local Service</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Vanier residents know the hassle of a dishwasher that won't drain or keeps flashing error codes. Fixer Appliance Repair delivers quick, transparent service with a 90-day workmanship guarantee.
-            </p>
+      <ServiceHero
+        title={
+          <>
+            Dishwasher Repair Vanier
+            <br /> Fast, Reliable Local Service
+          </>
+        }
+        description="Vanier residents know the hassle of a dishwasher that won't drain or keeps flashing error codes. Fixer Appliance Repair delivers quick, transparent service with a 90-day workmanship guarantee."
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <>
             <p className="text-lg mb-6">
               We repair brands such as Whirlpool, LG, Bosch, Samsung, and GE.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-8">
               👉 For all appliance services nearby, see our{" "}
               <Link href="/vanier" className="font-semibold hover:underline">
                 Local Vanier page
               </Link>
               .
             </p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dishwasher Issues */}
       <section className="section-padding bg-white">
@@ -178,6 +184,14 @@ export default function DishwasherRepairVanierPage() {
       </section>
 
       <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="When your dishwasher breaks down, it's tempting to shop for a new one — but repairs are often quick and cost-effective. See how to tell when it's worth fixing." />
+
+      <InstallationCTASection
+        applianceName="Dishwasher"
+        description="Upgrading to a new unit? We also offer dishwasher installation in Vanier — fast, safe, and fully insured."
+        href="/appliance-installation/dishwasher"
+      />
 
       {/* Service Area */}
       <ServiceAreaSection

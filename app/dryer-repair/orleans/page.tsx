@@ -7,7 +7,9 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Orleans Dryer Repair – Fast, Local Service | Fixer",
@@ -119,24 +121,21 @@ const relatedServices = [
 export default function DryerRepairOrleansPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaWind className="text-[30px] mb-2 inline-block" /> Expert Dryer Repair in Orleans</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              Dryer taking two cycles to dry a single load? Fixer Appliance Repair serves Orleans with quick, reliable dryer service. From heating element failures to noisy drums, our local team restores your laundry routine with upfront pricing and a 90-day guarantee. We repair all major brands, including LG, Samsung, Whirlpool, GE, and Maytag.
-            </p>
-            <p className="text-lg">
-              👉 For all appliance services in your area, check our{" "}
-              <Link href="/orleans" className="font-semibold hover:underline">
-                Orleans appliance repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Expert Dryer Repair in Orleans"
+        description="Dryer taking two cycles to dry a single load? Fixer Appliance Repair serves Orleans with quick, reliable dryer service. From heating element failures to noisy drums, our local team restores your laundry routine with upfront pricing and a 90-day guarantee. We repair all major brands, including LG, Samsung, Whirlpool, GE, and Maytag."
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            👉 For all appliance services in your area, check our{" "}
+            <Link href="/orleans" className="font-semibold hover:underline">
+              Orleans appliance repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       {/* Common Dryer Issues */}
       <section className="section-padding bg-white">
@@ -163,6 +162,8 @@ export default function DryerRepairOrleansPage() {
       />
 
       <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+
+      <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 
       {/* Service Area */}
       <ServiceAreaSection

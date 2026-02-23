@@ -9,6 +9,7 @@ import RelatedServicesSection from "@/components/RelatedServicesSection";
 import InstallationNotesSection from "@/components/InstallationNotesSection";
 import WhenNeededSection from "@/components/WhenNeededSection";
 import InstallationProcessSection from "@/components/InstallationProcessSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dryer Installation Ottawa – Professional Setup & Hookups | Fixer",
@@ -81,20 +82,21 @@ const exploreItems = [
 export default function DryerInstallationOttawaPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWind className="text-[30px] mb-2 inline-block" /> Dryer Installation Ottawa</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Installing a dryer isn’t just about plugging it in — proper venting and safe connections are key. Our team offers expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> across all neighborhoods. If your existing unit isn’t working, visit our{" "}
-              <Link href="/dryer-repair" className="text-white underline font-semibold hover:text-gray-100">
-                Dryer Repair Ottawa page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Dryer Installation Ottawa"
+        description={
+          <>
+            Installing a dryer isn't just about plugging it in — proper venting and safe connections are key. Our team offers expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> across all neighborhoods. If your existing unit isn't working, visit our{" "}
+            <Link href="/dryer-repair" className="text-white underline font-semibold hover:text-gray-100">
+              Dryer Repair Ottawa page
+            </Link>
+            .
+          </>
+        }
+        icon={<FaWind className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        useSectionPadding={false}
+      />
 
       <WhenNeededSection
         items={whenNeeded}

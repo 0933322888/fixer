@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Huntley Appliance Repair – Call 613-413-6969 | Fixer",
@@ -106,30 +107,27 @@ const additionalAreas = [
 export default function HuntleyServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Huntley Appliance Repair – Trusted Local Experts
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Looking for appliance repair in Huntley? Our insured team offers same-day
-              service in many cases, backed by a 90-day warranty. Discover more on our{" "}
-              <Link
-                href="/service-areas/carp"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Carp appliance repair
-              </Link>{" "}
-              page, covering Village of Carp and Corkery.
-            </p>
-            <p className="text-lg text-gray-100">
-              90-day guarantee on every repair. Insured, friendly staff who care. Based in Kanata, serving Huntley quickly. Ask about same-day time slots.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Huntley Appliance Repair – Trusted Local Experts"
+        description={
+          <>
+            Looking for appliance repair in Huntley? Our insured team offers same-day
+            service in many cases, backed by a 90-day warranty. Discover more on our{" "}
+            <Link
+              href="/service-areas/carp"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Carp appliance repair
+            </Link>{" "}
+            page, covering Village of Carp and Corkery.
+          </>
+        }
+        additionalContent={
+          <p>
+            90-day guarantee on every repair. Insured, friendly staff who care. Based in Kanata, serving Huntley quickly. Ask about same-day time slots.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

@@ -9,6 +9,7 @@ import InstallationCTASection from "@/components/InstallationCTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import CTASection from "@/components/CTASection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Dishwasher Repair Ottawa – Fast & Reliable Service | Fixer",
@@ -176,29 +177,22 @@ const relatedServices = [
 export default function DishwasherRepairPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-6 text-white"><FaUtensils className="text-[30px] mb-2 inline-block" /> Dishwasher Repair Ottawa 
-              <br /> Get Your Dishes Clean Again</h1>
-            <p className="text-xl leading-relaxed mb-8">
-              A broken dishwasher means more than dirty dishes — it eats up your time. Fixer Appliance Repair delivers professional, affordable dishwasher repair across Ottawa. Whether it's leaking, not draining, or not turning on, we'll get it back in action fast.
-            </p>
-            <p className="text-lg mb-8">
-              We repair all major dishwasher brands, including Bosch, LG, Samsung, Whirlpool, GE, Maytag, and more.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
-                Call us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title={
+          <>
+            Dishwasher Repair Ottawa
+            <br /> Get Your Dishes Clean Again
+          </>
+        }
+        description="A broken dishwasher means more than dirty dishes — it eats up your time. Fixer Appliance Repair delivers professional, affordable dishwasher repair across Ottawa. Whether it's leaking, not draining, or not turning on, we'll get it back in action fast."
+        icon={<FaUtensils className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg mb-8">
+            We repair all major dishwasher brands, including Bosch, LG, Samsung, Whirlpool, GE, Maytag, and more.
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <CommonIssuesSection issues={commonIssues} />
 

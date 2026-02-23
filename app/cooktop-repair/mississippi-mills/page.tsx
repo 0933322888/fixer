@@ -2,10 +2,14 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import BenefitsSection from "@/components/BenefitsSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Cooktop Repair Services in Mississippi Mills - Fast, Reliable | Fixer",
@@ -104,28 +108,24 @@ const otherServices = [
 export default function CooktopRepairMississippiMillsPage() {
   return (
     <>
-      <section className="section-padding bg-[#DD4F06] text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-lg mb-4 text-white"><FaFire className="text-[30px] mb-2 inline-block" /> Trusted Cooktop Repair in Mississippi Mills</h1>
-            <p className="text-xl leading-relaxed text-gray-100">
-              Whether in Almonte, Appleton, or rural areas, Fixer delivers dependable electric cooktop repair
-              for homes across Mississippi Mills. We handle both older models and modern glass tops. We
-              service LG, Samsung, Whirlpool, GE, Maytag, and more.
-            </p>
-            <p className="mt-6 text-lg text-gray-100">
-              Read more about the community on our{" "}
-              <Link
-                href="/mississippi-mills"
-                className="font-semibold text-white underline-offset-4 hover:underline"
-              >
-                Local Mississippi Mills page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Trusted Cooktop Repair in Mississippi Mills"
+        description="Whether in Almonte, Appleton, or rural areas, Fixer delivers dependable electric cooktop repair for homes across Mississippi Mills. We handle both older models and modern glass tops. We service LG, Samsung, Whirlpool, GE, Maytag, and more."
+        icon={<FaFire className="text-[30px] mb-2 inline-block" />}
+        additionalContent={
+          <p className="text-lg text-gray-100">
+            Read more about the community on our{" "}
+            <Link
+              href="/mississippi-mills"
+              className="font-semibold text-white underline-offset-4 hover:underline"
+            >
+              Local Mississippi Mills page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={true}
+      />
 
       <section className="section-padding bg-white">
         <div className="container-custom">
@@ -148,52 +148,19 @@ export default function CooktopRepairMississippiMillsPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-6 text-center">Cooktop Installation in Mississippi Mills</h2>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="text-center">Replacing a cooktop in Mississippi Mills?</p>
-              <p className="text-center">
-                Read our repair vs. replace guide — it explains when a repair might be the better choice.
-              </p>
-              <p className="text-center">
-                <Link href="/repair-vs-replace" className="text-primary-600 hover:text-primary-700">
-                  {"Repair or replace? ->"}
-                </Link>
-              </p>
-              <p className="text-center">
-                If you've bought a new unit, we provide cooktop installation in Mississippi Mills. We'll
-                connect and test it with your current power supply.
-              </p>
-              <p className="text-center text-sm text-gray-600">👉 No new circuits or gas hookups are provided.</p>
-              <p className="text-center">
-                <Link href="/appliance-installation/cooktop" className="btn-primary inline-block">
-                  {"Learn more ->"}
-                </Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <BenefitsSection 
+        heading="Why Choose Us"
+        benefits={whyChooseUs}
+        applianceName="Cooktop"
+      />
 
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-md mb-8 text-center">Why Choose Us</h2>
-            <ul className="mx-auto max-w-2xl space-y-4 text-lg text-gray-700">
-              {whyChooseUs.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-2 inline-block h-6 w-6 text-xl" aria-hidden="true">
-                    ✅
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      <RepairOrReplaceSection description="Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you decide if it is worth saving." />
+
+      <InstallationCTASection
+        applianceName="Cooktop"
+        description="Upgrading to a new unit? We also offer cooktop installation in Mississippi Mills — fast, safe, and fully insured."
+        href="/appliance-installation/cooktop"
+      />
 
       <ServiceAreaSection
         title="Service Area"

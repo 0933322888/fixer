@@ -6,6 +6,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Overbrook Appliance Repair – Friendly Local Team | Fixer",
@@ -106,29 +107,26 @@ const additionalAreas = [
 export default function OverbrookServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">
-              Overbrook Appliance Repair You Can Rely On
-            </h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Appliance repair in Overbrook, Vanier. Our local technicians provide friendly, insured service with a 90-day warranty. Explore our{" "}
-              <Link
-                href="/service-areas/vanier"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                Vanier appliance repair
-              </Link>{" "}
-              page, also serving Beechwood Village and Cardinal Glen.
-            </p>
-            <p className="text-lg text-gray-100">
-              90-day repair guarantee. Friendly, insured specialists. Local Vanier techs. Same-day visits available.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Overbrook Appliance Repair You Can Rely On"
+        description={
+          <>
+            Appliance repair in Overbrook, Vanier. Our local technicians provide friendly, insured service with a 90-day warranty. Explore our{" "}
+            <Link
+              href="/service-areas/vanier"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              Vanier appliance repair
+            </Link>{" "}
+            page, also serving Beechwood Village and Cardinal Glen.
+          </>
+        }
+        additionalContent={
+          <p>
+            90-day repair guarantee. Friendly, insured specialists. Local Vanier techs. Same-day visits available.
+          </p>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

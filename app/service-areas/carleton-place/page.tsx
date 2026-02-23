@@ -7,6 +7,7 @@ import ServiceAreaServicesSection from "@/components/ServiceAreaServicesSection"
 import BrandsSection from "@/components/BrandsSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import ServiceAreaNeighborhoodsSection from "@/components/ServiceAreaNeighborhoodsSection";
+import ServiceAreaHero from "@/components/ServiceAreaHero";
 
 export const metadata: Metadata = {
   title: "Carleton Place Appliance Repair – Friendly Experts, Lasting Results",
@@ -119,34 +120,32 @@ const additionalAreas = [
 export default function CarletonPlaceServiceAreaPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaMapMarkerAlt className="text-[30px] mb-2 inline-block" /> Appliance Repair Services in Carleton Place</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              For fast and dependable appliance repair in Carleton Place, trust the
-              team at Fixer. From{" "}
-              <Link
-                href="/washer-repair/carleton-place"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                washer repair in Carleton Place
-              </Link>{" "}
-              to{" "}
-              <Link
-                href="/oven-repair/carleton-place"
-                className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
-              >
-                oven repair in Carleton Place
-              </Link>
-              , we've been helping households in this vibrant community for years. As a
-              local family business, we offer honest pricing, same-day service in many
-              neighbourhoods, and a 90-day labour guarantee you can count on.
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceAreaHero
+        title="Appliance Repair Services in Carleton Place"
+        icon={<FaMapMarkerAlt className="text-[30px] mb-2 inline-block" />}
+        description={
+          <>
+            For fast and dependable appliance repair in Carleton Place, trust the
+            team at Fixer. From{" "}
+            <Link
+              href="/washer-repair/carleton-place"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              washer repair in Carleton Place
+            </Link>{" "}
+            to{" "}
+            <Link
+              href="/oven-repair/carleton-place"
+              className="font-semibold text-white underline decoration-2 underline-offset-4 hover:text-gray-200"
+            >
+              oven repair in Carleton Place
+            </Link>
+            , we've been helping households in this vibrant community for years. As a
+            local family business, we offer honest pricing, same-day service in many
+            neighbourhoods, and a 90-day labour guarantee you can count on.
+          </>
+        }
+      />
 
       {/* Services Section */}
       <section className="section-padding bg-white">

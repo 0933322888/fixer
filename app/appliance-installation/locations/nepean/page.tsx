@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
+import ServiceHero from "@/components/ServiceHero";
 
 export const metadata: Metadata = {
   title: "Appliance Installation Nepean – Safe, Professional Service | Fixer",
@@ -58,23 +59,26 @@ const faqs = [
 export default function ApplianceInstallationNepeanPage() {
   return (
     <>
-      <section className="bg-[#DD4F06] text-white">
-        <div className="container-custom py-16 md:py-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6"><FaWrench className="text-[30px] mb-2 inline-block" /> Appliance Installation Nepean</h1>
-            <p className="text-lg text-gray-100 leading-relaxed">
-              Getting a new appliance installed in Nepean has never been easier. Fixer delivers expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> with local service in Nepean. We handle washers, dryers, dishwashers, ovens, and more — always with a 90-day warranty.
-            </p>
-            <p className="text-lg text-gray-100 mt-4">
-              For repair services, see our{" "}
-              <Link href="/nepean" className="text-white underline font-semibold hover:text-gray-100">
-                Nepean Appliance Repair page
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title="Appliance Installation Nepean"
+        description={
+          <>
+            Getting a new appliance installed in Nepean has never been easier. Fixer delivers expert <Link href="/appliance-installation/locations/ottawa" className="text-white underline font-semibold hover:text-gray-100">appliance installation in Ottawa</Link> with local service in Nepean. We handle washers, dryers, dishwashers, ovens, and more — always with a 90-day warranty.
+          </>
+        }
+        icon={<FaWrench className="text-[30px] mb-2 inline-block" />}
+        headingSize="xl"
+        additionalContent={
+          <p className="text-lg text-gray-100 mt-4">
+            For repair services, see our{" "}
+            <Link href="/nepean" className="text-white underline font-semibold hover:text-gray-100">
+              Nepean Appliance Repair page
+            </Link>
+            .
+          </p>
+        }
+        useSectionPadding={false}
+      />
 
       <RelatedServicesSection
         services={appliances}
