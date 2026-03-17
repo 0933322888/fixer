@@ -145,7 +145,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/gallery/output2.jpg"
+            src="/images/home_hero.jpg"
             alt="Professional appliance repair service in Ottawa"
             fill
             style={{ objectFit: 'cover', objectPosition: 'center -110px' }}
