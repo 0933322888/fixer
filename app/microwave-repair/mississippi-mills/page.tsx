@@ -166,19 +166,15 @@ export default function MicrowaveRepairMississippiMillsPage() {
 
       <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Mississippi Mills" />
 
-      {/* Installation Section */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
+      <InstallationCTASection
+        applianceName="Microwave"
+        description="Got a new microwave? We also provide microwave installation in Mississippi Mills with same-day service available in most areas."
+        href="/appliance-installation/microwave"
+      />
+
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
 
       <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
-
-      <InstallationCTASection
-        applianceName="Microwave"
-        description="Upgrading to a new unit? We also offer microwave installation in Mississippi Mills — fast, safe, and fully insured."
-        href="/appliance-installation/microwave"
-      />
 
       {/* Service Area */}
       <ServiceAreaSection

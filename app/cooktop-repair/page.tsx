@@ -225,12 +225,21 @@ export default function CooktopRepairPage() {
           </p>
         }
         useSectionPadding={true}
+        imageSrc="/images/Stove 2.png"
+        imageAlt="Cooktop and stove repair in Ottawa"
+        imageSrcRight="/images/Stove.png"
+        imageAltRight="Cooktop repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonProblems} />
 
 
-      <BenefitsSection applianceName="Cooktop" benefits={whyChooseUs} />
+      <BenefitsSection
+        applianceName="Cooktop"
+        benefits={whyChooseUs}
+        imageSrc="/images/Stove 4.png"
+        imageAlt="Cooktop repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Replacing a cooktop can be costly. If it is still under 10 to 12 years old, our guide can help you decide if it is worth saving." />
 

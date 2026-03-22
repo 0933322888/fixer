@@ -178,11 +178,20 @@ export default function OvenRepairPage() {
         description="If your oven won't heat, bake evenly, or keeps shutting off — call Fixer Appliance Repair. We service Ottawa homes with expert electric oven repair, from element issues to control board faults. We fix LG, Samsung, Whirlpool, GE, Frigidaire, Maytag, and more."
         icon={<FaFire className="text-[30px] mb-2 inline-block" />}
         useSectionPadding={true}
+        imageSrc="/images/Stove_and_technicial.png"
+        imageAlt="Oven and stove repair with technician in Ottawa"
+        imageSrcRight="/images/Stove.png"
+        imageAltRight="Oven repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <BenefitsSection applianceName="Oven" benefits={benefits} />
+      <BenefitsSection
+        applianceName="Oven"
+        benefits={benefits}
+        imageSrc="/images/Stove 3.png"
+        imageAlt="Oven and stove repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Faulty heating elements, unresponsive controls — most oven problems are repairable. Before you invest in a new one, explore whether a fix is the better option. Our expert technicians will provide honest advice on the most cost-effective solution for your situation." />
 

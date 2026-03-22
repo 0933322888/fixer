@@ -149,6 +149,12 @@ export default function CooktopRepairOrleansPage() {
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md mb-6 text-center">Cooktop Installation in Orleans</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
+              <p className="text-center">Planning a kitchen upgrade in Orleans?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <BenefitsSection 
         heading="Why Choose Us"
         benefits={whyChooseUs}

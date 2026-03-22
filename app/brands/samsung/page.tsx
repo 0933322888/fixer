@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BrandAppliancesSection from "@/components/BrandAppliancesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -26,21 +27,33 @@ const samsungAppliances = [
     description:
       "Drain errors, loud spin cycles, or faulty sensors — our team has fixed them all.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Washer_icon.png" alt="Samsung washer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Samsung Dryers",
     description:
       "If your Samsung dryer overheats or doesn’t dry at all, we repair heating elements, thermostats, and belts.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dryer_icon.png" alt="Samsung dryer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Samsung Refrigerators",
     description:
       "Ice maker issues and cooling failures are common. We handle sealed system repairs, leaks, and noisy fans.",
     link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Fridge_icon.png" alt="Samsung refrigerator" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Samsung Dishwashers",
@@ -67,14 +80,22 @@ const samsungAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
       { href: "/cooktop-repair", label: "Cooktop Repair Ottawa" },
     ],
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Oven_icon.png" alt="Samsung oven and cooktop" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Samsung Microwaves",
     description:
       "Whether it’s sparking, tripping breakers, or just not starting, we fix microwave issues safely.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Microwave_icon.png" alt="Samsung microwave" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
 ];
 

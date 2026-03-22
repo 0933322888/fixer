@@ -188,11 +188,20 @@ export default function DryerRepairPage() {
         description="Is your dryer not heating, taking forever to dry clothes, or making unusual noises? Fixer Appliance Repair offers professional dryer repair services throughout Ottawa — from central neighbourhoods to nearby suburbs. We repair all major electric dryers, including many stacked and condo-friendly models. Whether it's Whirlpool, LG, Samsung, or another trusted brand — we've got you covered."
         icon={<FaWind className="text-[30px] mb-2 inline-block" />}
         useSectionPadding={true}
+        imageSrc="/images/Dryer.png"
+        imageAlt="Dryer repair service in Ottawa"
+        imageSrcRight="/images/Laundry room3.png"
+        imageAltRight="Dryer and laundry repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonIssues} heading="Common Dryer Problems We Fix" />
 
-      <BenefitsSection applianceName="Dryer" benefits={whyChooseUs} />
+      <BenefitsSection
+        applianceName="Dryer"
+        benefits={whyChooseUs}
+        imageSrc="/images/Laundry room 4.png"
+        imageAlt="Dryer and laundry repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Wondering if your dryer is still worth fixing? Read our dryer repair vs. replacement guide to weigh your options before you buy a new one." />
 

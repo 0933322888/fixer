@@ -16,7 +16,7 @@ const blogPosts = [
     image: "/gallery/oven_blog2.jpg",
     category: "Buying Guide",
     author: "Michael R",
-    date: "December 1, 2024",
+    date: "February 21, 2026",
     readTime: "10 min read",
   },
   {
@@ -27,7 +27,7 @@ const blogPosts = [
     image: "/gallery/oven_blog2.jpg",
     category: "Oven Repair",
     author: "Michael R",
-    date: "November 22, 2024",
+    date: "March 15, 2026",
     readTime: "7 min read",
   },
   {
@@ -38,7 +38,7 @@ const blogPosts = [
     image: "/gallery/oven_blog.jpg",
     category: "Oven Repair",
     author: "Michael R",
-    date: "November 20, 2025",
+    date: "March 18, 2026",
     readTime: "8 min read",
   },
 //   {

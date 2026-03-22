@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
+import InstallationCTASection from "@/components/InstallationCTASection";
+import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";

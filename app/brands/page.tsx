@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import BenefitsSection from "@/components/BenefitsSection";
 
@@ -19,7 +20,7 @@ const brands = [
   { name: "Bosch Appliance Repair", href: "/brands/bosch", logo: "BOSCH", color: "bg-red-600" },
   { name: "Kenmore Appliance Repair", href: "/brands/kenmore", logo: "Kenmore", color: "bg-blue-600" },
   { name: "Panasonic Appliance Repair", href: "/brands/panasonic", logo: "Panasonic", color: "bg-blue-700" },
-  { name: "KitchenAid Appliance Repair", href: "/brands/kitchenaid", logo: "KitchenAid", color: "bg-red-700" },
+  { name: "KitchenAid Appliance Repair", href: null, logo: "KitchenAid", color: "bg-red-700" },
   { name: "Electrolux Appliance Repair", href: null, logo: "electrolux", color: "bg-gray-700" },
   { name: "Amana Appliance Repair", href: null, logo: "AMANA", color: "bg-orange-600" },
   { name: "Hotpoint Appliance Repair", href: null, logo: "Hotpoint", color: "bg-red-600" },
@@ -51,22 +52,36 @@ export default function BrandsPage() {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-r from-accent-500 to-accent-600 text-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-xl text-white mb-6">Brands We Repair</h1>
-            <p className="text-xl text-gray-100 mb-4">
-              Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges
-              to classic washers, our technicians repair the top appliance brands you know and trust.
-            </p>
-            <p className="text-lg text-gray-100 mb-8">
-              👉 Select your brand below to learn more about our repair services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-white text-accent-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
-                Book Online
-              </Link>
-              <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
-                Call us
-              </a>
+          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="heading-xl text-white mb-6">Brands We Repair</h1>
+              <p className="text-xl text-gray-100 mb-4">
+                Not all appliances are built the same — but they all need a Fixer sometimes. From smart fridges
+                to classic washers, our technicians repair the top appliance brands you know and trust.
+              </p>
+              <p className="text-lg text-gray-100 mb-8">
+                👉 Select your brand below to learn more about our repair services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link href="/contact" className="bg-white text-accent-600 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
+                  Book Online
+                </Link>
+                <a href="tel:613-413-6969" className="btn-outline border-white text-white hover:bg-white hover:text-accent-600">
+                  Call us
+                </a>
+              </div>
+            </div>
+            <div className="flex-shrink-0 w-full max-w-sm">
+              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/images/Kitchen 3.png"
+                  alt="We repair all major kitchen appliance brands in Ottawa"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 1024px) 100vw, 384px"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

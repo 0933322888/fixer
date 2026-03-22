@@ -175,11 +175,20 @@ export default function FridgeRepairPage() {
         description="Fridge too warm? Freezer frosting over? Fixer Appliance Repair provides fast, effective fridge repair across Ottawa — with honest diagnostics and long-term fixes."
         icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
         useSectionPadding={true}
+        imageSrc="/images/Fridge 6.png"
+        imageAlt="Fridge repair service in Ottawa"
+        imageSrcRight="/images/Fridge_wine.png"
+        imageAltRight="Fridge and wine cooler repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <BenefitsSection applianceName="Fridge" benefits={benefits} />
+      <BenefitsSection
+        applianceName="Fridge"
+        benefits={benefits}
+        imageSrc="/images/Fridge 2.png"
+        imageAlt="Fridge repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Refrigerators are expensive to replace — and many common issues are easy to fix. If your fridge is less than 12 years old, check our repair vs replace comparison to make a smart decision based on cost, age, and reliability." />
 

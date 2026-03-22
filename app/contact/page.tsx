@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FaPhone, FaEnvelope, FaClock, FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 import Link from "next/link";
 
@@ -70,13 +71,27 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="bg-[#DD4F06] text-white">
         <div className="container-custom py-16 md:py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xl text-gray-100 mb-8">
-              Need help with your appliance? Whether it's a fridge that stopped cooling, a washer making strange noises, or an oven that just won't heat — we're here to fix it quickly and professionally.
-            </p>
-            <p className="text-lg text-gray-100">
-              At Fixer Appliance Repair, we're a local, family-owned company serving Ottawa and surrounding areas. All repairs come with our 90-day labour warranty, and we treat every home like our own.
-            </p>
+          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+            <div className="flex-1 text-center lg:text-left">
+              <p className="text-xl text-gray-100 mb-8">
+                Need help with your appliance? Whether it's a fridge that stopped cooling, a washer making strange noises, or an oven that just won't heat — we're here to fix it quickly and professionally.
+              </p>
+              <p className="text-lg text-gray-100">
+                At Fixer Appliance Repair, we're a local, family-owned company serving Ottawa and surrounding areas. All repairs come with our 90-day labour warranty, and we treat every home like our own.
+              </p>
+            </div>
+            <div className="flex-shrink-0 w-full max-w-xs">
+              <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/images/Technician_2.png"
+                  alt="Contact Fixer – professional appliance repair in Ottawa"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 1024px) 100vw, 320px"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

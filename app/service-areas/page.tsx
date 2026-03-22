@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import ThingsToDoSection from "@/components/ThingsToDoSection";
 import FAQSection from "@/components/FAQSection";
@@ -40,15 +41,54 @@ const serviceAreas = [
   },
 ];
 
-const services = [
-  "Washer Repair & Washer Installation",
-  "Dryer Repair & Dryer Installation",
-  "Dishwasher Repair & Dishwasher Installation",
-  "Fridge Repair",
-  "Freezer Repair",
-  "Oven Repair & Oven Installation",
-  "Cooktop Repair & Cooktop Installation",
-  "Microwave Repair & Microwave Installation",
+const services: {
+  repair: { label: string; href: string };
+  installation?: { label: string; href: string };
+}[] = [
+  {
+    repair: { label: "Washer Repair", href: "/washer-repair" },
+    installation: {
+      label: "Washer Installation",
+      href: "/appliance-installation/washer",
+    },
+  },
+  {
+    repair: { label: "Dryer Repair", href: "/dryer-repair" },
+    installation: {
+      label: "Dryer Installation",
+      href: "/appliance-installation/dryer",
+    },
+  },
+  {
+    repair: { label: "Dishwasher Repair", href: "/dishwasher-repair" },
+    installation: {
+      label: "Dishwasher Installation",
+      href: "/appliance-installation/dishwasher",
+    },
+  },
+  { repair: { label: "Fridge Repair", href: "/fridge-repair" } },
+  { repair: { label: "Freezer Repair", href: "/freezer-repair" } },
+  {
+    repair: { label: "Oven Repair", href: "/oven-repair" },
+    installation: {
+      label: "Oven Installation",
+      href: "/appliance-installation/oven",
+    },
+  },
+  {
+    repair: { label: "Cooktop Repair", href: "/cooktop-repair" },
+    installation: {
+      label: "Cooktop Installation",
+      href: "/appliance-installation/cooktop",
+    },
+  },
+  {
+    repair: { label: "Microwave Repair", href: "/microwave-repair" },
+    installation: {
+      label: "Microwave Installation",
+      href: "/appliance-installation/microwave",
+    },
+  },
 ];
 
 const attractions = [
@@ -113,6 +153,26 @@ export default function ServiceAreasPage() {
 
       {/* Service Areas Section */}
       <section className="section-padding bg-white">
+        <div className="container-custom mb-12">
+          <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <div className="relative aspect-video md:aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/images/Laundry room.png"
+                  alt="Appliance repair service across Ottawa and surrounding areas"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-lg text-gray-700">
+                We cover Ottawa and nearby suburbs with fast, reliable appliance repair. Our technicians bring the tools and common parts needed for most repairs on the first visit.
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="container-custom">
           <h2 className="heading-md text-center mb-8">Our Service Areas</h2>
           <p className="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
@@ -130,9 +190,12 @@ export default function ServiceAreasPage() {
             ))}
           </div>
           <div className="rounded-md border border-accent-200 bg-white/60 p-4 text-sm text-gray-700 max-w-3xl mx-auto text-center">
-            <span className="font-semibold text-accent-600">
+            <Link
+              href="/appliance-installation/locations/ottawa"
+              className="font-semibold text-accent-600 hover:text-accent-700 hover:underline"
+            >
               Appliance Installation
-            </span>{" "}
+            </Link>{" "}
             – available in all service areas.
           </div>
         </div>
@@ -147,9 +210,33 @@ export default function ServiceAreasPage() {
           </p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
             {services.map((service) => (
-              <div key={service} className="flex items-center gap-3 rounded-lg bg-white p-4 shadow-md border border-gray-200">
-                <span className="inline-flex h-2 w-2 rounded-full bg-accent-500" aria-hidden="true" />
-                <span className="text-sm font-medium text-gray-900">{service}</span>
+              <div
+                key={service.repair.href}
+                className="flex items-center gap-3 rounded-lg bg-white p-4 shadow-md border border-gray-200"
+              >
+                <span
+                  className="inline-flex h-2 w-2 shrink-0 rounded-full bg-accent-500"
+                  aria-hidden="true"
+                />
+                <span className="text-sm font-medium text-gray-900">
+                  <Link
+                    href={service.repair.href}
+                    className="text-primary-600 hover:text-primary-700 hover:underline"
+                  >
+                    {service.repair.label}
+                  </Link>
+                  {service.installation && (
+                    <>
+                      {" & "}
+                      <Link
+                        href={service.installation.href}
+                        className="text-primary-600 hover:text-primary-700 hover:underline"
+                      >
+                        {service.installation.label}
+                      </Link>
+                    </>
+                  )}
+                </span>
               </div>
             ))}
           </div>
