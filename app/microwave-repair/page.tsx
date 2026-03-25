@@ -216,7 +216,7 @@ export default function MicrowaveRepairPage() {
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Ottawa with same-day service available in most areas."
-        href="/appliance-installation/microvawe"
+        href="/appliance-installation/microwave"
       />
 
       {/* Brands We Repair */}
