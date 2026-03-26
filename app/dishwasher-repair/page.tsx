@@ -192,11 +192,20 @@ export default function DishwasherRepairPage() {
           </p>
         }
         useSectionPadding={true}
+        imageSrc="/images/Dishwasher-tec.png"
+        imageAlt="Dishwasher repair with technician in Ottawa"
+        imageSrcRight="/images/Dishwasher 3.png"
+        imageAltRight="Dishwasher repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <BenefitsSection applianceName="Dishwasher" benefits={whyChooseUs} />
+      <BenefitsSection
+        applianceName="Dishwasher"
+        benefits={whyChooseUs}
+        imageSrc="/images/Dishwasher smile.png"
+        imageAlt="Dishwasher repair service in Ottawa"
+      />
 
       <RepairOrReplaceSection description="When your dishwasher breaks down, it's tempting to shop for a new one — but repairs are often quick and cost-effective. See how to tell when it's worth fixing." />
 

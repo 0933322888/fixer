@@ -64,18 +64,23 @@ export default function Header() {
       {/* Main Header */}
       <div className="border-b border-gray-200" style={{ backgroundColor: '#FFF9F0' }}>
         <div className="container-custom py-3">
-          <div className="flex items-center justify-between">
-            {/* Logo/Icon on the left */}
-            <div className="flex items-center gap-3">
-                <Image src="/gallery/BRAND1.png" alt="Fixer" width={90} height={90} />
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Fixer</h1>
-                <p className="text-xs text-gray-600">Professional Appliance Repair</p>
-              </div>
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
+            {/* Logo */}
+            <div className="flex shrink-0 items-center">
+              <Image src="/gallery/BRAND1.png" alt="Fixer" width={90} height={90} />
+            </div>
+
+            {/* Title — grows to fill space between logo and CTAs */}
+            <div className="min-w-0 flex-1 px-1 sm:px-2">
+              <h1
+                className="w-full text-balance font-bold leading-tight tracking-tight text-[#0A3F5B] text-[clamp(0.95rem,2.4vw+0.45rem,2rem)]"
+              >
+                FIXER APPLIANCE REPAIR
+              </h1>
             </div>
 
             {/* Phone and Book Now button on the right */}
-            <div className="flex items-center gap-4">
+            <div className="flex shrink-0 items-center gap-2 sm:gap-4">
               <a href="tel:613-413-6969" className="hidden md:flex items-center gap-2 transition-colors">
                 <FaPhone className="text-lg" style={{ color: '#0A3F5B' }} />
                 <div className="text-left">

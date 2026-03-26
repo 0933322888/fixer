@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BrandAppliancesSection from "@/components/BrandAppliancesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -26,28 +27,44 @@ const whirlpoolAppliances = [
     description:
       "From leaking hoses to stubborn error codes, Whirlpool washers are one of our most common calls.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Washer_icon.png" alt="Whirlpool washer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Whirlpool Dryers",
     description:
       "If your Whirlpool dryer leaves clothes damp or overheats, we replace elements, thermostats, and belts fast.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dryer_icon.png" alt="Whirlpool dryer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Whirlpool Refrigerators",
     description:
       "Cooling issues, ice maker leaks, or noisy fans — our team repairs all major Whirlpool fridge problems.",
     link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Fridge_icon.png" alt="Whirlpool refrigerator" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Whirlpool Dishwashers",
     description:
       "When Whirlpool dishwashers stop draining or leave dishes dirty, our Ottawa techs clean filters, fix pumps, and replace control boards.",
     link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dishwasher_icon.png" alt="Whirlpool dishwasher" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Whirlpool Ovens & Cooktops",
@@ -58,14 +75,8 @@ const whirlpoolAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
     ],
     media: (
-      <div className="aspect-video w-full overflow-hidden rounded-lg">
-        <iframe
-          className="h-full w-full"
-          src="https://www.youtube.com/embed/NWqRokO-Wgo"
-          title="Whirlpool Cooktop Cleaning Tips"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Oven_icon.png" alt="Whirlpool oven and cooktop" width={160} height={160} className="object-contain max-h-36 w-auto" />
       </div>
     ),
   },
@@ -74,7 +85,11 @@ const whirlpoolAppliances = [
     description:
       "From sparking to dead touchpads, we repair Whirlpool microwaves safely and effectively.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Microwave_icon.png" alt="Whirlpool microwave" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
 ];
 

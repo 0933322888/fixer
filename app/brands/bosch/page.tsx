@@ -27,7 +27,7 @@ const boschAppliances = [
     description:
       "From drain pumps to drum bearings, Bosch washers sometimes need expert care. Fixer can repair leaks, error codes, and noisy cycles.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">
+    media: <div className="h-40 w-full rounded-lg flex items-center justify-center text-primary-700 font-semibold">
       <Image src="/brands-img/bosch/washer.webp" alt="Bosch Washer" width={100} height={100} />
     </div>,
   },
@@ -36,7 +36,7 @@ const boschAppliances = [
     description:
       "If your Bosch dryer won’t heat or leaves clothes damp, we can replace heating elements, thermostats, or sensors.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">
+    media: <div className="h-40 w-full rounded-lg flex items-center justify-center text-primary-700 font-semibold">
       <Image src="/brands-img/bosch/dryer.webp" alt="Bosch Dryer" width={100} height={100} />
     </div>,
   },
@@ -62,7 +62,7 @@ const boschAppliances = [
     description:
       "Bosch dishwashers are famous for quiet cycles — but if they won’t drain or leave dishes dirty, we clean filters, replace pumps, and fix sensors.",
     link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">
+    media: <div className="h-40 w-full rounded-lg flex items-center justify-center text-primary-700 font-semibold">
       <Image src="/brands-img/bosch/dishwasher.webp" alt="Bosch Dishwasher" width={100} height={100} />
     </div>,
   },
@@ -74,7 +74,7 @@ const boschAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
       { href: "/cooktop-repair", label: "Cooktop Repair Ottawa" },
     ],
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">
+    media: <div className="h-40 w-full rounded-lg flex items-center justify-center text-primary-700 font-semibold">
       <Image src="/brands-img/bosch/cooktop.webp" alt="Bosch Cooktop" width={100} height={100} />
     </div>,
   },
@@ -83,7 +83,7 @@ const boschAppliances = [
     description:
       "From sparking to control issues, Fixer technicians bring Bosch microwaves back to life.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">
+    media: <div className="h-40 w-full rounded-lg flex items-center justify-center text-primary-700 font-semibold">
       <Image src="/brands-img/bosch/mw.webp" alt="Bosch Microwave" width={200} height={200} />
     </div>,
   },

@@ -141,7 +141,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-[#DD4F06] text-white overflow-hidden">
+      <section className="relative text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -195,18 +195,31 @@ export default function Home() {
       {/* Welcome Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <h2 className="heading-md text-center mb-8">Welcome to Fixer – Your Local Appliance Repair Experts</h2>
-            <div className="prose prose-lg max-w-none text-neutral-600 space-y-4">
-              <p className="text-center">
-                Looking for fast, dependable appliance repair in Ottawa? At <strong>Fixer Appliance Repair Inc.</strong>, we fix it fast and fix it right — so you don't have to see us again. (Unless it's for a different appliance.)
-              </p>
-              <p className="text-center">
-                Your satisfaction isn't just a goal — it's how we measure success. We're a locally owned and operated company, proudly serving Ottawa and nearby communities like Kanata, Nepean, Stittsville, Carp, Arnprior, Orleans, Barrhaven, Vanier, Carleton Place, and Mississippi Mills.
-              </p>
-              <p className="text-center">
-                We offer same-day appointments in many areas, clear pricing with no hidden fees, and repairs backed by a 90-day guarantee. Whether it's a noisy washer, a warm fridge, or a stubborn dishwasher, we make the process smooth, respectful, and stress-free.
-              </p>
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+              <div className="prose prose-lg max-w-none text-neutral-600 space-y-4 flex-1">
+                <p className="text-center lg:text-left">
+                  Looking for fast, dependable appliance repair in Ottawa? At <strong>Fixer Appliance Repair Inc.</strong>, we fix it fast and fix it right — so you don't have to see us again. (Unless it's for a different appliance.)
+                </p>
+                <p className="text-center lg:text-left">
+                  Your satisfaction isn't just a goal — it's how we measure success. We're a locally owned and operated company, proudly serving Ottawa and nearby communities like Kanata, Nepean, Stittsville, Carp, Arnprior, Orleans, Barrhaven, Vanier, Carleton Place, and Mississippi Mills.
+                </p>
+                <p className="text-center lg:text-left">
+                  We offer same-day appointments in many areas, clear pricing with no hidden fees, and repairs backed by a 90-day guarantee. Whether it's a noisy washer, a warm fridge, or a stubborn dishwasher, we make the process smooth, respectful, and stress-free.
+                </p>
+              </div>
+              <div className="flex-shrink-0 w-full max-w-md">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/Kitchen.png"
+                    alt="Kitchen appliances – we repair them all in Ottawa"
+                    fill
+                    style={{ objectFit: "unset" }}
+                    sizes="(max-width: 1024px) 100vw, 448px"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

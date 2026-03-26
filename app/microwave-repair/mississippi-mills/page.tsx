@@ -1,17 +1,10 @@
 import { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceHero from "@/components/ServiceHero";
-import {
-  FaBolt,
-  FaMapMarkerAlt,
-  FaTools,
-  FaUtensils,
-  FaTree,
-  FaBook,
-  FaWaveSquare,
-} from "react-icons/fa";
+import { FaWaveSquare } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
 import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
@@ -139,25 +132,25 @@ const services = [
 
 export default function MicrowaveRepairMississippiMillsPage() {
   return (
-    <>
+    <Fragment>
       <ServiceHero
         title="Trusted Microwave Repair in Mississippi Mills"
         description="Living in Almonte, Appleton, or Pakenham and dealing with a broken microwave? Fixer provides safe, dependable repair service across all of Mississippi Mills."
         icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
         headingSize="xl"
         additionalContent={
-          <>
+          <div>
             <p className="text-lg text-gray-200 mb-6">
-              We service LG, Samsung, Whirlpool, GE, and Maytag microwaves — same-day or next-day appointments when available.
+              We service LG, Samsung, Whirlpool, GE, and Maytag microwaves - same-day or next-day appointments when available.
             </p>
             <p className="text-lg text-gray-200 mb-8">
-              👉 Check out what we do in your neighbourhood on our{" "}
+              Check out what we do in your neighbourhood on our{" "}
               <Link href="/mississippi-mills" className="font-semibold text-white underline hover:text-gray-200">
                 Local Mississippi Mills page
               </Link>
               .
             </p>
-          </>
+          </div>
         }
         phoneNumber="613-413-6969"
         phoneText="Call us"
@@ -166,19 +159,15 @@ export default function MicrowaveRepairMississippiMillsPage() {
 
       <CommonIssuesSection issues={commonIssues} heading="Common Microwave Issues We Fix in Mississippi Mills" />
 
-      {/* Installation Section */}
-      <section className="section-padding bg-gray-100">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
+      <InstallationCTASection
+        applianceName="Microwave"
+        description="Got a new microwave? We also provide microwave installation in Mississippi Mills with same-day service available in most areas."
+        href="/appliance-installation/microwave"
+      />
+
       <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
 
       <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
-
-      <InstallationCTASection
-        applianceName="Microwave"
-        description="Upgrading to a new unit? We also offer microwave installation in Mississippi Mills — fast, safe, and fully insured."
-        href="/appliance-installation/microwave"
-      />
 
       {/* Service Area */}
       <ServiceAreaSection
@@ -226,6 +215,6 @@ export default function MicrowaveRepairMississippiMillsPage() {
         description="Microwaves are just the beginning — here are our other services in Mississippi Mills:"
         applianceName="Microwave"
       />
-    </>
+    </Fragment>
   );
 }

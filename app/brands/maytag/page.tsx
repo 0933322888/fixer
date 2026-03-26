@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BrandAppliancesSection from "@/components/BrandAppliancesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -26,21 +27,33 @@ const maytagAppliances = [
     description:
     "Front-load washers need regular cleaning to stay fresh and prevent odor. Maytag’s own guide shows how — and if your washer still leaks or throws error codes, Fixer is ready to repair it.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Washer_icon.png" alt="Maytag washer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Maytag Dryers",
     description:
     "When dryers stop heating or shut off mid-cycle, we replace heating elements, thermostats, and fuses quickly.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dryer_icon.png" alt="Maytag dryer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Maytag Refrigerators",
     description:
     "From cooling failures to noisy fans and ice maker issues, our Ottawa techs repair all common Maytag fridge problems.",
     link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Fridge_icon.png" alt="Maytag refrigerator" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Maytag Dishwashers",
@@ -67,14 +80,22 @@ const maytagAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
       { href: "/cooktop-repair", label: "Cooktop Repair Ottawa" },
     ],
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Oven_icon.png" alt="Maytag oven and cooktop" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Maytag Microwaves",
     description:
       "From sparking to control panel issues, we repair Maytag microwaves quickly and safely.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Microwave_icon.png" alt="Maytag microwave" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
 ];
 

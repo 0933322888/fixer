@@ -196,18 +196,27 @@ export default function MicrowaveRepairPage() {
           </p>
         }
         useSectionPadding={true}
+        imageSrc="/images/Microwave.png"
+        imageAlt="Microwave repair service in Ottawa"
+        imageSrcRight="/images/microwave_5.jpg"
+        imageAltRight="Microwave repair Ottawa"
       />
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <BenefitsSection applianceName="Microwave" benefits={whyChooseUs} />
+      <BenefitsSection
+        applianceName="Microwave"
+        benefits={whyChooseUs}
+        imageSrc="/images/Microwave 1.png"
+        imageAlt="Microwave repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Microwaves often fail due to a single component like the magnetron or door switch. We'll help you decide when it's smarter to repair than replace — and give you an honest estimate either way." />
 
       <InstallationCTASection
         applianceName="Microwave"
         description="Got a new microwave? We also provide microwave installation in Ottawa with same-day service available in most areas."
-        href="/appliance-installation/microvawe"
+        href="/appliance-installation/microwave"
       />
 
       {/* Brands We Repair */}

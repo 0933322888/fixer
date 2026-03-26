@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BrandAppliancesSection from "@/components/BrandAppliancesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -26,28 +27,44 @@ const panasonicAppliances = [
     description:
       "From clogged filters to draining issues, we fix all common Panasonic washer problems.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Washer_icon.png" alt="Panasonic washer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Panasonic Dryers",
     description:
       "If your dryer overheats or won’t dry at all, we repair heating elements, thermostats, and fuses.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dryer_icon.png" alt="Panasonic dryer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Panasonic Refrigerators",
     description:
       "Cooling issues, noisy fans, or leaking water lines — we repair Panasonic fridges across Ottawa.",
     link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Fridge_icon.png" alt="Panasonic refrigerator" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Panasonic Dishwashers",
     description:
       "When dishwashers leave dishes dirty or won’t drain, Fixer cleans filters, replaces pumps, and restores performance.",
     link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dishwasher_icon.png" alt="Panasonic dishwasher" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Panasonic Ovens & Cooktops",
@@ -57,14 +74,22 @@ const panasonicAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
       { href: "/cooktop-repair", label: "Cooktop Repair Ottawa" },
     ],
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Oven_icon.png" alt="Panasonic oven and cooktop" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Panasonic Microwaves",
     description:
       "Panasonic microwaves are popular, but when they spark or stop heating, we repair switches, fuses, and magnetrons safely.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Microwave_icon.png" alt="Panasonic microwave" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
 ];
 

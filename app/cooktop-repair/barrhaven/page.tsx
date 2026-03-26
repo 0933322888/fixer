@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
@@ -110,10 +111,10 @@ const otherServices = [
 
 export default function CooktopRepairBarrhavenPage() {
   return (
-    <>
+    <Fragment>
       <ServiceHero
         title="Cooktop Repair Specialists in Barrhaven"
-        description="Fixer Appliance Repair brings fast and reliable cooktop repair to Barrhaven homes — from townhouses to single-family kitchens. We service LG, Samsung, Whirlpool, GE, Maytag, and more."
+        description="Fixer Appliance Repair brings fast and reliable cooktop repair to Barrhaven homes - from townhouses to single-family kitchens. We service LG, Samsung, Whirlpool, GE, Maytag, and more."
         icon={<FaFire className="text-[30px] mb-2 inline-block" />}
         additionalContent={
           <p className="text-lg text-gray-100">
@@ -154,6 +155,11 @@ export default function CooktopRepairBarrhavenPage() {
             <h2 className="heading-md mb-6 text-center">Cooktop Installation in Barrhaven</h2>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="text-center">Planning a kitchen upgrade in Barrhaven?</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <BenefitsSection 
         heading="Why Choose Us"
         benefits={whyChooseUs}
@@ -211,6 +217,6 @@ export default function CooktopRepairBarrhavenPage() {
         description="Beyond cooktop repair, we also provide these services in Barrhaven:"
         applianceName="Cooktop"
       />
-    </>
+    </Fragment>
   );
 }

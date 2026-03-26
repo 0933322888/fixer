@@ -189,11 +189,20 @@ export default function WasherRepairPage() {
             front-loaders to high-efficiency units, we know how to fix them all — quickly and reliably.</p>
         }
         useSectionPadding={true}
+        imageSrc="/images/Washing machine.png"
+        imageAlt="Washing machine repair service in Ottawa"
+        imageSrcRight="/images/Laundry room 2.png"
+        imageAltRight="Laundry room – washer repair Ottawa"
       />
 
       <CommonIssuesSection issues={washerProblems} heading="Common Washer Problems We Fix" />
 
-      <BenefitsSection applianceName="Washer" benefits={whyChooseUs} />
+      <BenefitsSection
+        applianceName="Washer"
+        benefits={whyChooseUs}
+        imageSrc="/images/Laundry room3.png"
+        imageAlt="Laundry room – washer repair in Ottawa"
+      />
 
       <RepairOrReplaceSection description="Not sure if it's time to fix or replace your washing machine? Check out our repair vs. replace guide for washers to make a smart decision based on cost, age, and reliability." />
 

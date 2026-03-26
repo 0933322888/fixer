@@ -157,6 +157,10 @@ export default function FreezerRepairPage() {
         description="Frozen over or not freezing at all? Fixer Appliance Repair handles freezer repair across Ottawa with same-day appointments and honest advice."
         icon={<FaSnowflake className="text-[30px] mb-2 inline-block" />}
         useSectionPadding={true}
+        imageSrc="/images/Fridge 1.png"
+        imageAlt="Freezer repair service in Ottawa"
+        imageSrcRight="/images/Fridge 4.png"
+        imageAltRight="Freezer repair Ottawa"
       />
 
       {/* Service Description */}
@@ -172,7 +176,12 @@ export default function FreezerRepairPage() {
 
       <CommonIssuesSection issues={commonIssues} />
 
-      <BenefitsSection applianceName="Freezer" benefits={benefits} />
+      <BenefitsSection
+        applianceName="Freezer"
+        benefits={benefits}
+        imageSrc="/images/Fridge 3.png"
+        imageAlt="Freezer repair in Ottawa"
+      />
 
       <CTASection />
 

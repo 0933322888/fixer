@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import BrandAppliancesSection from "@/components/BrandAppliancesSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -26,28 +27,44 @@ const kenmoreAppliances = [
     description:
       "From clogged drains to noisy spin cycles, Kenmore washers sometimes need a professional touch.",
     link: { href: "/washer-repair", label: "Washer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Washer_icon.png" alt="Kenmore washer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Kenmore Dryers",
     description:
       "If your Kenmore dryer overheats or won’t start, we replace heating elements, thermostats, and belts quickly.",
     link: { href: "/dryer-repair", label: "Dryer Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dryer_icon.png" alt="Kenmore dryer" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Kenmore Refrigerators",
     description:
       "Cooling failures, broken ice makers, or leaking water lines — our Ottawa team repairs all common Kenmore fridge problems.",
     link: { href: "/fridge-repair", label: "Fridge Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Fridge_icon.png" alt="Kenmore refrigerator" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Kenmore Dishwashers",
     description:
       "From poor cleaning to draining issues, we fix Kenmore dishwashers weekly for Ottawa families.",
     link: { href: "/dishwasher-repair", label: "Dishwasher Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Dishwasher_icon.png" alt="Kenmore dishwasher" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Kenmore Ovens & Cooktops",
@@ -57,14 +74,22 @@ const kenmoreAppliances = [
       { href: "/oven-repair", label: "Oven Repair Ottawa" },
       { href: "/cooktop-repair", label: "Cooktop Repair Ottawa" },
     ],
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Oven_icon.png" alt="Kenmore oven and cooktop" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
   {
     title: "Kenmore Microwaves",
     description:
       "From sparking to dead control panels, Fixer technicians bring Kenmore microwaves back to life.",
     link: { href: "/microwave-repair", label: "Microwave Repair Ottawa" },
-    media: <div className="h-40 w-full rounded-lg bg-primary-100 flex items-center justify-center text-primary-700 font-semibold">Photo</div>,
+    media: (
+      <div className="h-40 w-full rounded-lg flex items-center justify-center p-4">
+        <Image src="/images/Microwave_icon.png" alt="Kenmore microwave" width={160} height={160} className="object-contain max-h-36 w-auto" />
+      </div>
+    ),
   },
 ];
 

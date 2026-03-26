@@ -77,20 +77,22 @@ export default function AboutPage() {
       {/* Photo Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
-                <Image
-                  src="/gallery/output2.jpg"
-                  alt="Michael R. - Owner & Head Technician at Fixer Appliance Repair"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  quality={85}
-                />
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-1 gap-8">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="relative aspect-square rounded-lg overflow-hidden mb-6">
+                  <Image
+                    src="/images/michael.jpg"
+                    alt="Michael R. - Owner & Head Technician at Fixer Appliance Repair"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    quality={85}
+                  />
+                </div>
+                <p className="text-center text-gray-600 italic">
+                  Michael R - Owner & Head Technician
+                </p>
               </div>
-              <p className="text-center text-gray-600 italic">
-                Michael R - Owner & Head Technician
-              </p>
             </div>
           </div>
         </div>
