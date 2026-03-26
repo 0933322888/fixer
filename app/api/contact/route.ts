@@ -22,7 +22,7 @@ function buildMessagePayload(
   safeMessage: string
 ) {
   const to = process.env.CONTACT_EMAIL || CONTACT_INBOX;
-  const subject = `New Contact Form Submission from ${name}`;
+  const subject = `New Request for Service from ${name}`;
   const html = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #DD4F06;">New Contact Form Submission</h2>

@@ -15,13 +15,10 @@ export default function Footer() {
               Professional appliance repair services in Ottawa and surrounding areas. Fast, reliable, and affordable solutions for all your appliance needs.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-light-300 hover:text-accent-500 transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/FixerApplianceRepair" className="text-light-300 hover:text-accent-500 transition-colors" aria-label="Facebook">
                 <FaFacebook size={20} />
               </a>
-              <a href="#" className="text-light-300 hover:text-accent-500 transition-colors" aria-label="Twitter">
-                <FaTwitter size={20} />
-              </a>
-              <a href="#" className="text-light-300 hover:text-accent-500 transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/fixerappliancerepair/" className="text-light-300 hover:text-accent-500 transition-colors" aria-label="Instagram">
                 <FaInstagram size={20} />
               </a>
             </div>

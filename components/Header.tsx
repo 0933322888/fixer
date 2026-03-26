@@ -30,7 +30,7 @@ export default function Header() {
             {/* Right side - Social Media Icons */}
             <div className="flex items-center gap-4">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/FixerApplianceRepair" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-gray-200 transition-colors"
@@ -39,16 +39,7 @@ export default function Header() {
                 <FaFacebookF className="text-lg" />
               </a>
               <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-white hover:text-gray-200 transition-colors"
-                aria-label="YouTube"
-              >
-                <FaYoutube className="text-lg" />
-              </a>
-              <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/fixerappliancerepair/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-white hover:text-gray-200 transition-colors"
@@ -70,12 +61,17 @@ export default function Header() {
               <Image src="/gallery/BRAND1.png" alt="Fixer" width={90} height={90} />
             </div>
 
-            {/* Title — grows to fill space between logo and CTAs */}
+            {/* Wordmark — grows to fill space between logo and CTAs */}
             <div className="min-w-0 flex-1 px-1 sm:px-2">
-              <h1
-                className="w-full text-balance font-bold leading-tight tracking-tight text-[#0A3F5B] text-[clamp(0.95rem,2.4vw+0.45rem,2rem)]"
-              >
-                FIXER APPLIANCE REPAIR
+              <h1 className="m-0 w-full">
+                <Image
+                  src="/images/Fixer_clear.png"
+                  alt="Fixer Appliance Repair"
+                  width={1536}
+                  height={1024}
+                  className="h-16 w-auto max-w-full object-contain object-left sm:h-16 md:h-10 lg:h-[4.625rem]"
+                  priority
+                />
               </h1>
             </div>
 
