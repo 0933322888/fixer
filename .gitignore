@@ -35,6 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-out/
-public/
+# Keep public/ tracked — /images and other assets must exist on the server after git pull
 out.zip

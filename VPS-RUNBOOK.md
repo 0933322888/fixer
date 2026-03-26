@@ -49,6 +49,10 @@ npm run build
 pm2 restart fixer-web
 ```
 
+### Static images (`public/`)
+
+Images are served from **`public/`** (e.g. `public/images/Microwave.png` → `/images/Microwave.png`). That folder **must be in Git** and present on the VPS after `git pull`. If images 404 on production but work locally, run **`git status`** on your machine: ensure `public/images/` is committed and pushed, then pull on the server again.
+
 ---
 
 ## After a VPS reboot
