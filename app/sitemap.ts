@@ -1,7 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { MetadataRoute } from "next";
-import { getSiteUrl } from "@/lib/site-url";
+import { resolveSiteUrl } from "@/lib/site-url";
+
+/** Resolve URLs from the request (or env), not from a snapshot baked at build time. */
+export const dynamic = "force-dynamic";
 
 const APP_DIR = path.join(process.cwd(), "app");
 
@@ -27,8 +30,8 @@ function collectPageRoutes(dir: string, segments: string[] = []): string[] {
   return routes;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = getSiteUrl();
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const base = await resolveSiteUrl();
   const paths = Array.from(new Set(collectPageRoutes(APP_DIR))).sort();
 
   return paths.map((pathname) => ({
