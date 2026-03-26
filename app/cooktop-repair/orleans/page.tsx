@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import { FaFire } from "react-icons/fa";
 import CTASection from "@/components/CTASection";
@@ -108,7 +109,7 @@ const otherServices = [
 
 export default function CooktopRepairOrleansPage() {
   return (
-    <>
+    <Fragment>
       <ServiceHero
         title="Orleans Cooktop Repair You Can Count On"
         description="From glass tops to coil burners, Fixer Appliance Repair provides expert cooktop repair in Orleans homes and apartments. Fast, local, and reliable service is just a call away. We service LG, Samsung, Whirlpool, GE, Maytag, and more."
@@ -212,6 +213,6 @@ export default function CooktopRepairOrleansPage() {
         description="Our expertise goes beyond cooktops — here's what else we do in Orleans:"
         applianceName="Cooktop"
       />
-    </>
+    </Fragment>
   );
 }

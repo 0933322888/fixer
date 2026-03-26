@@ -1,17 +1,10 @@
 import { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceHero from "@/components/ServiceHero";
-import {
-  FaBolt,
-  FaMapMarkerAlt,
-  FaTools,
-  FaUtensils,
-  FaTree,
-  FaBook,
-  FaWaveSquare,
-} from "react-icons/fa";
+import { FaWaveSquare } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
 import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
@@ -138,25 +131,27 @@ const services = [
 
 export default function MicrowaveRepairVanierPage() {
   return (
-    <>
+    <Fragment>
       <ServiceHero
         title="Reliable Microwave Repair in Vanier"
-        description="From Beechwood Village to Overbrook, our Vanier microwave repair team handles all issues — from heating failures to control board problems."
+        description={
+          "From Beechwood Village to Overbrook, our Vanier microwave repair team handles all issues - from heating failures to control board problems."
+        }
         icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
         headingSize="xl"
         additionalContent={
-          <>
+          <div>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves. Same-day and next-day appointments available.
             </p>
             <p className="text-lg text-gray-200 mb-8">
-              👉 Learn more about the community on our{" "}
+              Learn more about the community on our{" "}
               <Link href="/vanier" className="font-semibold text-white underline hover:text-gray-200">
                 Local Vanier page
               </Link>
               .
             </p>
-          </>
+          </div>
         }
         phoneNumber="613-413-6969"
         phoneText="Call us"
@@ -221,6 +216,6 @@ export default function MicrowaveRepairVanierPage() {
         description="Microwaves aren't all we repair — here are our other services in Vanier:"
         applianceName="Microwave"
       />
-    </>
+    </Fragment>
   );
 }

@@ -1,17 +1,10 @@
 import { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import RelatedServicesSection from "@/components/RelatedServicesSection";
 import ServiceHero from "@/components/ServiceHero";
-import {
-  FaBolt,
-  FaMapMarkerAlt,
-  FaTools,
-  FaUtensils,
-  FaTree,
-  FaBook,
-  FaWaveSquare,
-} from "react-icons/fa";
+import { FaWaveSquare } from "react-icons/fa";
 import BenefitsSection from "@/components/BenefitsSection";
 import InstallationCTASection from "@/components/InstallationCTASection";
 import RepairOrReplaceSection from "@/components/RepairOrReplaceSection";
@@ -138,25 +131,27 @@ const services = [
 
 export default function MicrowaveRepairCarletonPlacePage() {
   return (
-    <>
+    <Fragment>
       <ServiceHero
         title="Reliable Microwave Repair in Carleton Place"
-        description="Microwave won't heat, keeps running, or flashes codes? Our Carleton Place team provides expert repairs with honest pricing and fast response."
+        description={
+          "Microwave won't heat, keeps running, or flashes codes? Our Carleton Place team provides expert repairs with honest pricing and fast response."
+        }
         icon={<FaWaveSquare className="text-[30px] mb-2 inline-block" />}
         headingSize="xl"
         additionalContent={
-          <>
+          <div>
             <p className="text-lg text-gray-200 mb-6">
               We service LG, Samsung, Whirlpool, GE, and Maytag microwaves. Same-day bookings when available.
             </p>
             <p className="text-lg text-gray-200 mb-8">
-              👉 Explore local insights on our{" "}
+              Explore local insights on our{" "}
               <Link href="/carleton-place" className="font-semibold text-white underline hover:text-gray-200">
                 Local Carleton Place page
               </Link>
               .
             </p>
-          </>
+          </div>
         }
         phoneNumber="613-413-6969"
         phoneText="Call us"
@@ -221,6 +216,6 @@ export default function MicrowaveRepairCarletonPlacePage() {
         description="Microwave issues aren't the only thing we fix — here are more services in Carleton Place:"
         applianceName="Microwave"
       />
-    </>
+    </Fragment>
   );
 }
