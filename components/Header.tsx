@@ -63,15 +63,13 @@ export default function Header() {
 
             {/* Wordmark — grows to fill space between logo and CTAs */}
             <div className="min-w-0 flex-1 px-1 sm:px-2">
-              <h1 className="m-0 w-full">
-                <Image
-                  src="/images/Fixer_clear.png"
-                  alt="Fixer Appliance Repair"
-                  width={1536}
-                  height={1024}
-                  className="h-16 w-auto max-w-full object-contain object-left sm:h-16 md:h-10 lg:h-[4.625rem]"
-                  priority
-                />
+              <h1 className="m-0 w-full leading-none text-[#0A3F5B]">
+                <span className="block text-5xl font-extrabold italic sm:inline sm:text-5xl">
+                  Fixer
+                </span>
+                <span className="mt-2 block text-sm font-semibold tracking-wide sm:ml-7 sm:mt-0 sm:inline sm:text-2xl">
+                  APPLIANCE REPAIR
+                </span>
               </h1>
             </div>
 
