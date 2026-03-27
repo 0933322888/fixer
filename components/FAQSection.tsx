@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { descriptiveLinkText } from "@/lib/descriptiveLinkText";
 
 interface FAQ {
   question: string;
   answer: string;
   link?: string | null;
+  /** Overrides auto-generated label from the URL */
+  linkLabel?: string;
 }
 
 interface FAQSectionProps {
@@ -27,7 +30,7 @@ export default function FAQSection({ applianceName, faqs }: FAQSectionProps) {
                     <>
                       {" "}→{" "}
                       <Link href={faq.link} className="text-primary-500 hover:text-primary-600 font-semibold">
-                        Learn more
+                        {faq.linkLabel ?? descriptiveLinkText(faq.link)}
                       </Link>
                     </>
                   )}

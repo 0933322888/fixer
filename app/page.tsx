@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaCheckCircle, FaPhone, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
+import { descriptiveLinkText } from "@/lib/descriptiveLinkText";
 
 export const metadata: Metadata = {
   title: "Appliance Repair Ottawa – Same-Day Service & Trusted Techs | Fixer",
@@ -385,7 +386,7 @@ export default function Home() {
                         <>
                           {" "}→{" "}
                           <Link href={faq.link} className="text-primary-500 hover:text-primary-600 font-semibold">
-                            Learn more
+                            {descriptiveLinkText(faq.link)}
                           </Link>
                         </>
                       )}
@@ -407,7 +408,7 @@ export default function Home() {
                         <>
                           {" "}→{" "}
                           <Link href={faq.link} className="text-primary-500 hover:text-primary-600 font-semibold">
-                            Learn more
+                            {descriptiveLinkText(faq.link)}
                           </Link>
                         </>
                       )}
