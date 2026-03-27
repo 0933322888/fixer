@@ -8,6 +8,7 @@ export async function GET() {
   const body = [
     "User-Agent: *",
     "Allow: /",
+    "Allow: /favicon.ico",
     "",
     `Sitemap: ${base}/sitemap.xml`,
     "",
