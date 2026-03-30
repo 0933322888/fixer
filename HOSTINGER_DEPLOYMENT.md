@@ -172,6 +172,49 @@ Your Next.js app has API routes (contact form), so you need **Node.js hosting**.
    sudo certbot renew --dry-run
    ```
 
+### Step 6b (optional): Redirect `www` → apex in Nginx
+
+The Next.js app already redirects `www` → apex via **middleware**, but handling this in **Nginx** means those requests never hit Node (less load, slightly faster).
+
+After SSL works for both hostnames (`-d yourdomain.com -d www.yourdomain.com`), add **dedicated** `server` blocks for `www` that only return **301** to the apex URL. Keep your existing `server` that `proxy_pass`es to Node with **`server_name` = apex only** (not `www`). If Certbot merged `www` into the same block as the proxy, split it: apex block proxies to Node; `www` uses the snippets below.
+
+Replace `yourdomain.com` with your real domain (e.g. `fixerappliancerepair.ca`). Use the **same** `ssl_certificate` paths Certbot created (usually under `/etc/letsencrypt/live/yourdomain.com/`).
+
+```nginx
+# HTTP: www → canonical HTTPS apex (no proxy to Node)
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.yourdomain.com;
+    return 301 https://yourdomain.com$request_uri;
+}
+
+# HTTPS: www → canonical HTTPS apex (no proxy to Node)
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name www.yourdomain.com;
+    ssl_certificate     /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+    return 301 https://yourdomain.com$request_uri;
+}
+```
+
+You can copy the same `ssl_*` / `include` lines Certbot added on your **apex** `443` server if you want TLS settings to match exactly.
+
+Then test and reload:
+
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+Verify:
+
+```bash
+curl -sI https://www.yourdomain.com/ | head -n 5
+# Expect: HTTP/2 301 (or 308) and Location: https://yourdomain.com/
+```
+
 ### Step 7: Configure Firewall
 
 ```bash

@@ -83,6 +83,8 @@ sudo systemctl status nginx
 sudo systemctl reload nginx   # after config changes
 ```
 
+**Optional:** redirect `www` → apex **in Nginx** (before Node) so those hits never reach Next.js — see **Step 6b** in `HOSTINGER_DEPLOYMENT.md`. The app middleware still redirects `www` if Nginx is not configured that way.
+
 ---
 
 ## Quick health checks

@@ -8,6 +8,9 @@ import { descriptiveLinkText } from "@/lib/descriptiveLinkText";
 export const metadata: Metadata = {
   title: "Appliance Repair Ottawa – Same-Day Service & Trusted Techs | Fixer",
   description: "Fast, affordable appliance repair in Ottawa from Fixer Appliance Repair Inc. No hidden fees — just trusted local technicians with a 90-day warranty.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const services = [
