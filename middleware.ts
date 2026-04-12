@@ -17,6 +17,9 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.hostname = targetHost;
   url.protocol = "https:";
+  // Behind a reverse proxy, nextUrl can retain the Node listen port (e.g. :3000); never
+  // emit that in Location — browsers must use default HTTPS (443).
+  url.port = "";
   return NextResponse.redirect(url, 308);
 }
 
