@@ -64,8 +64,8 @@ export default function Header() {
             {/* Wordmark — grows to fill space between logo and CTAs */}
             <div className="min-w-0 flex-1 px-1 sm:px-2">
               <h1 className="m-0 w-full leading-none text-[#0A3F5B]">
-                <span className="block text-5xl font-extrabold italic sm:inline sm:text-5xl">
-                  Fixer
+                <span className="block text-5xl font-extrabold sm:inline sm:text-5xl">
+                  FIXER
                 </span>
                 <span className="mt-2 block text-sm font-semibold tracking-wide sm:ml-7 sm:mt-0 sm:inline sm:text-2xl">
                   APPLIANCE REPAIR
