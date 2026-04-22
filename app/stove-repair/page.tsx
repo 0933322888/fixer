@@ -189,7 +189,7 @@ export default function StoveRepairPage() {
       <BenefitsSection
         applianceName="Stove"
         benefits={whyChooseUs}
-        imageSrc="/images/Microwave 1.png"
+        imageSrc="/images/Stove.png"
         imageAlt="Stove repair in Ottawa"
       />
 
