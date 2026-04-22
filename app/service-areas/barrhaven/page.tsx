@@ -56,6 +56,18 @@ const services = [
     description: "Quick heating without sparks.",
     href: "/microwave-repair/barrhaven",
   },
+  {
+    name: "Stove repair Barrhaven",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/barrhaven",
+  },
+
+  {
+    name: "Appliance installation Barrhaven",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

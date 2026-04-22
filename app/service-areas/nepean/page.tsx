@@ -57,6 +57,18 @@ const services = [
     description: "Fast, efficient heating.",
     href: "/microwave-repair/nepean",
   },
+  {
+    name: "Stove repair Nepean",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/nepean",
+  },
+
+  {
+    name: "Appliance installation Nepean",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -159,7 +171,7 @@ export default function NepeanServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Nepean",
-                href: "/appliance-installation/locations/nepean",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

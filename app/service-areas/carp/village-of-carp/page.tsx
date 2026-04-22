@@ -55,6 +55,18 @@ const services = [
     description: "Dependable cold storage year-round.",
     href: "/freezer-repair/carp",
   },
+  {
+    name: "Stove repair Village of Carp",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carp",
+  },
+
+  {
+    name: "Appliance installation Village of Carp",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

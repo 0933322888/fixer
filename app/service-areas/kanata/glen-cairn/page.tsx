@@ -56,6 +56,18 @@ const services = [
     description: "Steady freezing for long-term storage.",
     href: "/freezer-repair/kanata",
   },
+  {
+    name: "Stove repair Glen Cairn",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/kanata",
+  },
+
+  {
+    name: "Appliance installation Glen Cairn",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -149,7 +161,7 @@ export default function GlenCairnServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Kanata",
-                href: "/appliance-installation/locations/kanata",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

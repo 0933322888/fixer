@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/orleans",
   },
+  {
+    name: "Stove repair Queenswood Heights",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/orleans",
+  },
+
+  {
+    name: "Appliance installation Queenswood Heights",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

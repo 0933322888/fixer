@@ -55,6 +55,18 @@ const services = [
     description: "Dependable long-term cold storage.",
     href: "/freezer-repair/nepean",
   },
+  {
+    name: "Stove repair Barrhaven East",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/nepean",
+  },
+
+  {
+    name: "Appliance installation Barrhaven East",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -139,7 +151,7 @@ export default function BarrhavenEastServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation across Nepean",
-                href: "/appliance-installation/locations/nepean",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

@@ -225,7 +225,7 @@ export default function CooktopRepairPage() {
           </p>
         }
         useSectionPadding={true}
-        imageSrc="/images/Stove 2.png"
+        imageSrc="/images/Stove 4.png"
         imageAlt="Cooktop and stove repair in Ottawa"
         imageSrcRight="/images/Stove.png"
         imageAltRight="Cooktop repair Ottawa"

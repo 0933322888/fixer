@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/vanier",
   },
+  {
+    name: "Stove repair Beechwood Village",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/vanier",
+  },
+
+  {
+    name: "Appliance installation Beechwood Village",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

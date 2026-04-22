@@ -96,6 +96,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/stove-repair" className="text-sm text-light-200 hover:text-accent-500 transition-colors">
+                  Stove Repair
+                </Link>
+              </li>
+              <li>
                 <Link href="/microwave-repair" className="text-sm text-light-200 hover:text-accent-500 transition-colors">
                   Microwave Repair
                 </Link>

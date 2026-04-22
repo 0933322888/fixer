@@ -54,6 +54,18 @@ const services = [
     description: "Dependable cold storage.",
     href: "/freezer-repair/arnprior",
   },
+  {
+    name: "Stove repair McNab",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/arnprior",
+  },
+
+  {
+    name: "Appliance installation McNab",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const faqs = [

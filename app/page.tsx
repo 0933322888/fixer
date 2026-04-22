@@ -21,6 +21,7 @@ const services = [
   { name: "Freezer Repair Ottawa", href: "/freezer-repair", description: "Reliable fixes for deep-freeze problems." },
   { name: "Oven Repair Ottawa", href: "/oven-repair", description: "Perfect bakes, every time." },
   { name: "Cooktop Repair Ottawa", href: "/cooktop-repair", description: "From uneven heat to total shutdowns." },
+  { name: "Stove Repair Ottawa", href: "/stove-repair", description: "Burners, oven, and controls on your range." },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair", description: "Fast heating without sparks." },
   { name: "Appliance Installation Ottawa", href: "/appliance-installation/locations/ottawa", description: "Professional, safe, and precise setup." },
 ];

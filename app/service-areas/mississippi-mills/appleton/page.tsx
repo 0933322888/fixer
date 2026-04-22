@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/mississippi-mills",
   },
+  {
+    name: "Stove repair Appleton",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/mississippi-mills",
+  },
+
+  {
+    name: "Appliance installation Appleton",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

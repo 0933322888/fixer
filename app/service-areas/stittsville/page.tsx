@@ -57,6 +57,18 @@ const services = [
     description: "Safe, quick reheating.",
     href: "/microwave-repair/stittsville",
   },
+  {
+    name: "Stove repair Stittsville",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/stittsville",
+  },
+
+  {
+    name: "Appliance installation Stittsville",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -142,7 +154,7 @@ export default function StittsvilleServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Stittsville",
-                href: "/appliance-installation/locations/stittsville",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

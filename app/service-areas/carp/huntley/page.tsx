@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze performance.",
     href: "/freezer-repair/carp",
   },
+  {
+    name: "Stove repair Huntley",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carp",
+  },
+
+  {
+    name: "Appliance installation Huntley",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

@@ -55,6 +55,18 @@ const services = [
     description: "Reliable deep-freeze storage.",
     href: "/freezer-repair/mississippi-mills",
   },
+  {
+    name: "Stove repair Blakeney",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/mississippi-mills",
+  },
+
+  {
+    name: "Appliance installation Blakeney",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

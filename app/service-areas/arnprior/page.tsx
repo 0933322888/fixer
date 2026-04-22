@@ -56,6 +56,18 @@ const services = [
     description: "Fast, safe heating.",
     href: "/microwave-repair/arnprior",
   },
+  {
+    name: "Stove repair Arnprior",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/arnprior",
+  },
+
+  {
+    name: "Appliance installation Arnprior",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

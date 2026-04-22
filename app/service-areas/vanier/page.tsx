@@ -56,6 +56,18 @@ const services = [
     description: "Fast and safe warming.",
     href: "/microwave-repair/vanier",
   },
+  {
+    name: "Stove repair Vanier",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/vanier",
+  },
+
+  {
+    name: "Appliance installation Vanier",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

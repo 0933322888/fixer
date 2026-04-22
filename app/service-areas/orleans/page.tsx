@@ -57,6 +57,18 @@ const services = [
     description: "Fast, safe meal prep.",
     href: "/microwave-repair/orleans",
   },
+  {
+    name: "Stove repair Orleans",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/orleans",
+  },
+
+  {
+    name: "Appliance installation Orleans",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

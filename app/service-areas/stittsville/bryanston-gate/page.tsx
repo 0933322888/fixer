@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/stittsville",
   },
+  {
+    name: "Stove repair Bryanston Gate",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/stittsville",
+  },
+
+  {
+    name: "Appliance installation Bryanston Gate",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -139,7 +151,7 @@ export default function BryanstonGateServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Stittsville",
-                href: "/appliance-installation/locations/stittsville",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

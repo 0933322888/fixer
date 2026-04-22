@@ -55,6 +55,18 @@ const services = [
     description: "Dependable cold storage.",
     href: "/freezer-repair/carleton-place",
   },
+  {
+    name: "Stove repair Carleton Place West",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carleton-place",
+  },
+
+  {
+    name: "Appliance installation Carleton Place West",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

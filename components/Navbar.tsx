@@ -24,9 +24,12 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/oven-repair",
-    label: "OVEN REPAIR",
-    children: [{ href: "/cooktop-repair", label: "Cooktop Repair" }],
+    href: "/stove-repair",
+    label: "STOVE REPAIR",
+    children: [
+      { href: "/oven-repair", label: "Oven Repair" },
+      { href: "/cooktop-repair", label: "Cooktop Repair" },
+    ],
   },
   { href: "/microwave-repair", label: "MICROWAVE REPAIR" },
   { href: "/appliance-installation/locations/ottawa", label: "INSTALLATION SERVICE" },

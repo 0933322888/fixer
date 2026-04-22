@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/arnprior",
   },
+  {
+    name: "Stove repair Braeside",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/arnprior",
+  },
+
+  {
+    name: "Appliance installation Braeside",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

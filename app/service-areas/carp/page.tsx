@@ -57,6 +57,18 @@ const services = [
     description: "Safe, quick meal prep.",
     href: "/microwave-repair/carp",
   },
+  {
+    name: "Stove repair Carp",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carp",
+  },
+
+  {
+    name: "Appliance installation Carp",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const brands = [

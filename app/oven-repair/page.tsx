@@ -109,7 +109,8 @@ const relatedServices = [
   { name: "Freezer Repair Ottawa", href: "/freezer-repair" },
   { name: "Dishwasher Repair Ottawa", href: "/dishwasher-repair" },
   { name: "Microwave Repair Ottawa", href: "/microwave-repair" },
-  { name: "Cooktop Repair Ottawa", href: "/stove-repair" },
+  { name: "Cooktop Repair Ottawa", href: "/cooktop-repair" },
+  { name: "Stove Repair Ottawa", href: "/stove-repair" },
   { name: "Oven Installation Ottawa", href: "/appliance-installation/oven" },
 ];
 

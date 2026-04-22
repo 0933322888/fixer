@@ -56,6 +56,18 @@ const services = [
     description: "Safe, speedy reheating.",
     href: "/microwave-repair/carleton-place",
   },
+  {
+    name: "Stove repair Carleton Place",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carleton-place",
+  },
+
+  {
+    name: "Appliance installation Carleton Place",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

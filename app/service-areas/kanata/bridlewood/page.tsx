@@ -56,6 +56,18 @@ const services = [
     description: "Dependable long-term cold storage.",
     href: "/freezer-repair/kanata",
   },
+  {
+    name: "Stove repair Bridlewood",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/kanata",
+  },
+
+  {
+    name: "Appliance installation Bridlewood",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -149,7 +161,7 @@ export default function BridlewoodServiceAreaPage() {
               services={services}
               installationNote={{
                 label: "appliance installation in Kanata",
-                href: "/appliance-installation/locations/kanata",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>

@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze storage.",
     href: "/freezer-repair/vanier",
   },
+  {
+    name: "Stove repair Cardinal Glen",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/vanier",
+  },
+
+  {
+    name: "Appliance installation Cardinal Glen",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

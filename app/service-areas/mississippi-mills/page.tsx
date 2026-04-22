@@ -56,6 +56,18 @@ const services = [
     description: "Quick reheating done right.",
     href: "/microwave-repair/mississippi-mills",
   },
+  {
+    name: "Stove repair Mississippi Mills",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/mississippi-mills",
+  },
+
+  {
+    name: "Appliance installation Mississippi Mills",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

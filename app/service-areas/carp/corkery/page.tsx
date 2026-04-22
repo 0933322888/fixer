@@ -55,6 +55,18 @@ const services = [
     description: "Dependable long-term cold storage.",
     href: "/freezer-repair/carp",
   },
+  {
+    name: "Stove repair Corkery",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/carp",
+  },
+
+  {
+    name: "Appliance installation Corkery",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

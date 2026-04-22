@@ -55,6 +55,18 @@ const services = [
     description: "Dependable deep-freeze performance.",
     href: "/freezer-repair/mississippi-mills",
   },
+  {
+    name: "Stove repair Almonte",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/mississippi-mills",
+  },
+
+  {
+    name: "Appliance installation Almonte",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

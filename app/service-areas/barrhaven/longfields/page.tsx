@@ -55,6 +55,18 @@ const services = [
     description: "Dependable cold storage.",
     href: "/freezer-repair/barrhaven",
   },
+  {
+    name: "Stove repair Longfields",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/barrhaven",
+  },
+
+  {
+    name: "Appliance installation Longfields",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [

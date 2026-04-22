@@ -56,6 +56,18 @@ const services = [
     description: "Rapid, safe reheating.",
     href: "/microwave-repair/kanata",
   },
+  {
+    name: "Stove repair Kanata",
+    description: "Full range service for burners and ovens.",
+    href: "/stove-repair/kanata",
+  },
+
+  {
+    name: "Appliance installation Kanata",
+    description: "Professional setup for new appliances.",
+    href: "/appliance-installation/locations/ottawa",
+  },
+
 ];
 
 const attractions = [
@@ -152,7 +164,7 @@ export default function KanataServiceAreaPage() {
               installationNote={{
                 prefix: "👉 We also provide",
                 label: "appliance installation in Kanata",
-                href: "/appliance-installation/locations/kanata",
+                href: "/appliance-installation/locations/ottawa",
               }}
             />
           </div>
