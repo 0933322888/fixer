@@ -210,15 +210,21 @@ export default function StoveRepairPage() {
               We service electric stoves and ranges from leading brands — freestanding and slide-in models.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-              {brands.map((brand, index) => (
-                <Link
-                  key={index}
-                  href={brand.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                >
-                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
-                </Link>
-              ))}
+              {brands.map((brand, index) =>
+                brand.href === "/brands/kitchenaid" ? (
+                  <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="font-semibold text-gray-900">{brand.name}</p>
+                  </div>
+                ) : (
+                  <Link
+                    key={index}
+                    href={brand.href}
+                    className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                  >
+                    <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                  </Link>
+                )
+              )}
             </div>
             <p className="text-center text-gray-700">
               Even less common brands? We&apos;ve seen them. Reach out with your model number.

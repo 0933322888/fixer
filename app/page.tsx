@@ -276,16 +276,26 @@ export default function Home() {
               We repair all major brands and models — from the latest smart appliances to reliable classics:
             </p>
             <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {brands.map((brand, index) => (
-                <Link
-                  key={index}
-                  href={brand.href}
-                  className="bg-light-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-light-200 border border-light-200"
-                >
-                  <h3 className="text-lg font-semibold text-primary-500 mb-2">{brand.name}</h3>
-                  <p className="text-neutral-600">{brand.description}</p>
-                </Link>
-              ))}
+              {brands.map((brand, index) =>
+                brand.href === "/brands/kitchenaid" ? (
+                  <div
+                    key={index}
+                    className="bg-light-100 p-6 rounded-lg shadow-sm border border-light-200"
+                  >
+                    <h3 className="text-lg font-semibold text-primary-500 mb-2">{brand.name}</h3>
+                    <p className="text-neutral-600">{brand.description}</p>
+                  </div>
+                ) : (
+                  <Link
+                    key={index}
+                    href={brand.href}
+                    className="bg-light-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:bg-light-200 border border-light-200"
+                  >
+                    <h3 className="text-lg font-semibold text-primary-500 mb-2">{brand.name}</h3>
+                    <p className="text-neutral-600">{brand.description}</p>
+                  </Link>
+                )
+              )}
             </div>
             <p className="text-center text-neutral-600">
               and more — just ask!

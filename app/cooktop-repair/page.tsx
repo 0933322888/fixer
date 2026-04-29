@@ -259,15 +259,21 @@ export default function CooktopRepairPage() {
               We repair cooktops from these well-known brands:
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-              {brands.map((brand, index) => (
-                <Link
-                  key={index}
-                  href={brand.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                >
-                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
-                </Link>
-              ))}
+              {brands.map((brand, index) =>
+                brand.href === "/brands/kitchenaid" ? (
+                  <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="font-semibold text-gray-900">{brand.name}</p>
+                  </div>
+                ) : (
+                  <Link
+                    key={index}
+                    href={brand.href}
+                    className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                  >
+                    <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                  </Link>
+                )
+              )}
             </div>
             <p className="text-center text-gray-700">
               Do not see your cooktop brand here? Just give us a call - we are happy to help.

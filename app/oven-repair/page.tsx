@@ -211,15 +211,21 @@ export default function OvenRepairPage() {
               We fix electric ovens from all major brands. Whether it's built-in, wall-mounted, or freestanding — we've got you covered.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
-              {brands.map((brand, index) => (
-                <Link
-                  key={index}
-                  href={brand.href}
-                  className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                >
-                  <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
-                </Link>
-              ))}
+              {brands.map((brand, index) =>
+                brand.href === "/brands/kitchenaid" ? (
+                  <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
+                    <p className="font-semibold text-gray-900">{brand.name}</p>
+                  </div>
+                ) : (
+                  <Link
+                    key={index}
+                    href={brand.href}
+                    className="text-center p-4 bg-gray-50 rounded-lg hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                  >
+                    <p className="font-semibold text-gray-900 hover:text-primary-700">{brand.name}</p>
+                  </Link>
+                )
+              )}
             </div>
             <p className="text-center text-gray-700">
               Not sure about your model? No problem. We'll identify the issue and explain your options.
