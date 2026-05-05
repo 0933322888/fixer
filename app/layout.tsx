@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
@@ -68,11 +69,18 @@ export default function RootLayout({
         </main>
         <a
           href="tel:613-413-6969"
-          className="fixed bottom-6 right-4 sm:right-6 z-50 bg-primary-500 text-white font-semibold px-5 py-3 rounded-full shadow-lg hover:bg-primary-600 transition-colors duration-300"
+          className="fixed bottom-6 right-4 z-50 sm:hidden bg-primary-500 text-white font-semibold px-5 py-3 rounded-full shadow-lg hover:bg-primary-600 transition-colors duration-300"
           aria-label="Call now at 613-413-6969"
         >
           CALL NOW
         </a>
+        <Link
+          href="/contact"
+          className="hidden sm:inline-flex fixed bottom-6 right-6 z-50 bg-primary-500 text-white font-semibold px-5 py-3 rounded-full shadow-lg hover:bg-primary-600 transition-colors duration-300"
+          aria-label="Open contact page"
+        >
+          CALL NOW
+        </Link>
         <Footer />
       </body>
     </html>

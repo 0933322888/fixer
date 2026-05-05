@@ -79,9 +79,12 @@ export default function ServiceHero({
                 <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
                   {buttonText}
                 </Link>
-                <a href={`tel:${phoneNumber}`} className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                <a href={`tel:${phoneNumber}`} className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 sm:hidden">
                   {phoneText}
                 </a>
+                <Link href="/contact" className="hidden sm:inline-flex btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                  {phoneText}
+                </Link>
               </div>
               <p className="mt-4 text-sm sm:text-base font-semibold text-white">
                 Available Today - Limited Spots
@@ -127,9 +130,12 @@ export default function ServiceHero({
               <Link href="/contact" className="bg-white text-primary-500 hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg">
                 {buttonText}
               </Link>
-              <a href={`tel:${phoneNumber}`} className="btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+              <a href={`tel:${phoneNumber}`} className="btn-outline border-white text-white hover:bg-white hover:text-primary-500 sm:hidden">
                 {phoneText}
               </a>
+              <Link href="/contact" className="hidden sm:inline-flex btn-outline border-white text-white hover:bg-white hover:text-primary-500">
+                {phoneText}
+              </Link>
             </div>
             <p className="mt-4 text-sm sm:text-base font-semibold text-white">
               Available Today - Limited Spots
