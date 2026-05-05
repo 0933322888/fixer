@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { FaCheckCircle, FaPhone, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
+import Script from "next/script";
 import CTASection from "@/components/CTASection";
 import { descriptiveLinkText } from "@/lib/descriptiveLinkText";
 
@@ -10,6 +11,19 @@ export const metadata: Metadata = {
   description: "Fast, affordable appliance repair in Ottawa from Fixer Appliance Repair Inc. No hidden fees — just trusted local technicians with a 90-day warranty.",
   alternates: {
     canonical: "/",
+  },
+};
+
+const applianceRepairSchema = {
+  "@context": "https://schema.org",
+  "@type": "ApplianceRepair",
+  name: "Fixer Appliance Repair",
+  url: "https://fixerappliancerepair.ca",
+  logo: "https://fixerappliancerepair.ca/gallery/BRAND1.png",
+  telephone: "+1-613-413-6969",
+  areaServed: {
+    "@type": "Place",
+    name: "Ottawa, ON",
   },
 };
 
@@ -145,6 +159,13 @@ const whyFAQs = [
 export default function Home() {
   return (
     <>
+      <Script
+        id="homepage-appliance-repair-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(applianceRepairSchema),
+        }}
+      />
       {/* Hero Section */}
       <section className="relative text-white overflow-hidden">
         {/* Background Image */}

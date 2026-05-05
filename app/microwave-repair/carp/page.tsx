@@ -170,7 +170,7 @@ export default function MicrowaveRepairCarpPage() {
           </>
         }
         phoneNumber="613-413-6969"
-        phoneText="Call us"
+        phoneText="CALL NOW"
         useSectionPadding={false}
       />
 

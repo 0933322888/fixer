@@ -26,7 +26,7 @@ export default function ServiceHero({
   additionalContent,
   buttonText = "Book Online",
   phoneNumber = "613-413-6969",
-  phoneText = "Call us",
+  phoneText = "CALL NOW",
   headingSize = "lg",
   useSectionPadding = false,
   imageSrc,
@@ -83,6 +83,9 @@ export default function ServiceHero({
                   {phoneText}
                 </a>
               </div>
+              <p className="mt-4 text-sm sm:text-base font-semibold text-white">
+                Available Today - Limited Spots
+              </p>
             </div>
           </div>
           {/* Right image */}
@@ -128,6 +131,9 @@ export default function ServiceHero({
                 {phoneText}
               </a>
             </div>
+            <p className="mt-4 text-sm sm:text-base font-semibold text-white">
+              Available Today - Limited Spots
+            </p>
           </div>
         </div>
       )}

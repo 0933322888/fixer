@@ -157,7 +157,7 @@ export default function StoveRepairMississippiMillsPage() {
           </div>
         }
         phoneNumber="613-413-6969"
-        phoneText="Call us"
+        phoneText="CALL NOW"
         useSectionPadding={false}
       />
 

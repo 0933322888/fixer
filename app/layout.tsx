@@ -50,6 +50,7 @@ export default function RootLayout({
             `,
           }}
         />
+
       </head>
       <body className={inter.className}>
         <noscript>
@@ -62,9 +63,16 @@ export default function RootLayout({
         </noscript>
         <Header />
         <Navbar />
-        <main className="min-h-screen">
+        <main className="min-h-screen pb-24 sm:pb-0">
           {children}
         </main>
+        <a
+          href="tel:613-413-6969"
+          className="fixed bottom-6 right-4 sm:right-6 z-50 bg-primary-500 text-white font-semibold px-5 py-3 rounded-full shadow-lg hover:bg-primary-600 transition-colors duration-300"
+          aria-label="Call now at 613-413-6969"
+        >
+          CALL NOW
+        </a>
         <Footer />
       </body>
     </html>
